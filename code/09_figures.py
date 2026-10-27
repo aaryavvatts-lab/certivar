@@ -39,7 +39,7 @@ plt.rcParams.update({"font.size": 10, "axes.titlesize": 10, "axes.labelsize": 10
                      "axes.spines.top": False, "axes.spines.right": False, "axes.edgecolor": MUTED,
                      "axes.labelcolor": INK, "xtick.color": INK, "ytick.color": INK, "lines.linewidth": 1.6,
                      "lines.markersize": 5, "legend.handletextpad": 0.4, "legend.columnspacing": 1.2,
-                     "pdf.fonttype": 42})
+                     "figure.constrained_layout.w_pad": 0.15, "pdf.fonttype": 42})
 
 METHODS = ["Mondrian conformal", "Pooled conformal", "Fixed 0.1/0.9 tiers", "AlphaMissense classes",
            "REVEL PP3/BP4 supporting"]
@@ -58,9 +58,9 @@ def predictor_legend(fig, **kw):
 def fig_overview():
     """Schematic of the method (the damaging shares shown in earlier drafts are given in Table 1)."""
     src_prev = json.loads((RES / "paper_numbers.json").read_text())["source_prev"]
-    fig = plt.figure(figsize=(WIDTH, 1.95))
+    fig = plt.figure(figsize=(WIDTH, 1.62))
     ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(0, WIDTH); ax.set_ylim(0, 1.95); ax.axis("off")
+    ax.set_xlim(0, WIDTH); ax.set_ylim(0, 1.62); ax.axis("off")
 
     def box(x, y, w, h, text, fc):
         ax.add_patch(matplotlib.patches.FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.06",
@@ -70,18 +70,18 @@ def fig_overview():
     def arrow(x0, y0, x1, y1):
         ax.annotate("", xy=(x1, y1), xytext=(x0, y0), arrowprops=dict(arrowstyle="->", color=INK, lw=0.9))
 
-    h, rows = 0.50, (1.40, 0.73, 0.06)
+    h, rows = 0.44, (1.15, 0.60, 0.04)
     box(0.03, rows[0], 1.85, h, f"ClinVar P/LP vs B/LB\n(≥2 stars, {src_prev:.0%} P/LP)", "#e9f1fb")
     box(0.03, rows[1], 1.85, h, "Assay labels, part A\n(one variant per residue)", "#e8f6f0")
     box(0.03, rows[2], 1.85, h, "Assay labels, part B\n(one variant per residue)", "#e8f6f0")
     box(2.20, rows[0], 1.95, h, "Platt scaling: common\nscore scale $q(s)$", "#f5f5f3")
     box(2.20, rows[1], 1.95, h, "Per-class thresholds\n" + r"(miss rate $\leq\alpha$)", "#f5f5f3")
     box(2.20, rows[2], 1.95, h, "Certify likelihood ratios\n(exact, simultaneous)", "#f5f5f3")
-    box(4.47, 0.40, 2.00, 1.15, "Calls: LoF, functional\nor abstain, each type\nwith a certified LR\nfor the assay outcome", "#fdf3e1")
+    box(4.47, 0.27, 2.00, 1.08, "Calls: LoF, functional\nor abstain, each type\nwith a certified LR\nfor the assay outcome", "#fdf3e1")
     for y in rows:
         arrow(1.90, y + h / 2, 2.18, y + h / 2)
     arrow(3.175, rows[0], 3.175, rows[1] + h + 0.01); arrow(3.175, rows[1], 3.175, rows[2] + h + 0.01)
-    arrow(4.17, rows[1] + h / 2, 4.45, 1.10); arrow(4.17, rows[2] + h / 2, 4.45, 0.70)
+    arrow(4.17, rows[1] + h / 2, 4.45, 0.95); arrow(4.17, rows[2] + h / 2, 4.45, 0.55)
     fig.savefig(FIG / "fig_overview.pdf")
     plt.close(fig)
 
@@ -116,7 +116,7 @@ def fig_main():
     rel["worst"] = rel[["coverage_lof_rw", "coverage_func_rw"]].min(axis=1)
     vs = pd.read_csv(RES / "vus_shift.csv")
     vs = vs[vs.part == "coverage"].groupby(["thresholds", "predictor", "gene"])[["coverage_lof_rw", "coverage_func_rw"]].mean().reset_index()
-    fig, ax = plt.subplots(1, 3, figsize=(WIDTH, 2.9), layout="constrained", gridspec_kw={"width_ratios": [1.15, 1, 1]})
+    fig, ax = plt.subplots(1, 3, figsize=(WIDTH, 2.7), layout="constrained", gridspec_kw={"width_ratios": [1.15, 1, 1]})
     strip(ax[0], c, "A  By method")
     bins = np.linspace(0.70, 1.0, 31)
     for name, col, hatch, lab in (("in expectation", "#2a78d6", None, "in exp."),
@@ -135,7 +135,6 @@ def fig_main():
     ax[2].set(xlim=(0.80, 1.01), ylim=(0.80, 1.01), xlabel="Func. coverage", ylabel="LoF coverage",
               title="C  Test on VUS")
     ax[2].set_xticks([0.8, 0.9, 1.0]); ax[2].set_yticks([0.8, 0.9, 1.0])
-    ax[2].legend(frameon=False, loc="lower right", handletextpad=0.2, borderaxespad=0.1)
     predictor_legend(fig)
     fig.savefig(FIG / "fig_main.pdf")
     plt.close(fig)
@@ -155,7 +154,7 @@ def fig_evidence():
     """Selection rules judged against the exact population likelihood ratio (oracle design)."""
     ev = pd.read_csv(RES / "oracle.csv")
     ci = json.loads((RES / "paper_numbers.json").read_text())["oracle_validity_ci"]
-    fig, ax = plt.subplots(1, 2, figsize=(WIDTH, 3.0), layout="constrained", gridspec_kw={"width_ratios": [2.6, 1]})
+    fig, ax = plt.subplots(1, 2, figsize=(WIDTH, 2.8), layout="constrained", gridspec_kw={"width_ratios": [2.6, 1]})
     x = np.arange(len(LEVELS)) + np.array([0, 0, 0, 0.5, 0.5, 0.5])
     w = 0.16
     for i, (sel, lab, col) in enumerate(RULES):

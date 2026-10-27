@@ -5,7 +5,9 @@ Code and data for the RECOMB 2027 submission
 > **CertiVar: Prevalence-Free Certified Error Rates and Likelihood Ratios for Missense Variant-Effect Predictor Calls**
 > Aaryav Sharma (Eastview High School, Apple Valley, MN, USA)
 
-Release `v1.0.0` is the version that matches the submitted paper.
+Release `v1.0.0` is the version that matches the submitted paper. The supplementary material (full proofs,
+simulation, per-gene tables, strata, label sensitivity and implementation details) is in
+[`supplement/CertiVar_supplement.pdf`](supplement/CertiVar_supplement.pdf).
 
 ## What CertiVar does
 
@@ -69,6 +71,7 @@ make results figures
 | Calls judged against ClinVar pathogenicity labels | `code/15_clinvar_check.py` | `results/clinvar_check.csv` |
 | Numbers quoted in the paper | `code/11_numbers.py` | `results/paper_numbers.json` |
 | Figures and tables | `code/09_figures.py`, `code/12_tables.py` | `results/figures/*.pdf`, LaTeX tables |
+| Short-author bibliography for the paper | `code/16_short_bib.py` | `paper/refs_short.bib` |
 
 The method itself is in `code/certivar.py` (NumPy, SciPy and scikit-learn only).
 
