@@ -2,9 +2,12 @@ PY ?= .venv/bin/python
 RAW = data/raw
 PROC = data/processed
 
-.PHONY: reproduce data annotate results figures manifest clean-results
+.PHONY: reproduce data annotate results figures manifest clean-results test
 
-reproduce: data annotate results figures manifest
+reproduce: data annotate test results figures manifest
+
+test:
+	cd code && ../$(PY) test_certivar.py
 
 $(RAW)/variant_summary.txt.gz:
 	mkdir -p $(RAW)
@@ -31,6 +34,7 @@ results:
 figures:
 	cd code && ../$(PY) 09_figures.py
 	cd code && ../$(PY) 12_tables.py
+	cd code && ../$(PY) 16_short_bib.py
 
 clean-results:
 	rm -f results/*.csv results/figures/*

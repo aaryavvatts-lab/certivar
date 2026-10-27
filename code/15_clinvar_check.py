@@ -1,11 +1,16 @@
-"""Calls judged against clinical labels (E11).
+"""Calls judged against clinical labels (E11), an exploratory check.
 
 For each gene and predictor, per-class thresholds (alpha = 0.1, in-expectation rank) are set on all of the gene's
 assay-labelled residues (one variant per residue, outside the ClinVar labelled set) and applied to the gene's ClinVar
 variants with >= 2 review stars and a P/LP or B/LB call. These ClinVar variants never enter the thresholds; the Platt
-map fitted on them is monotone, so it does not change which variants are called. Counts are pooled over genes, and
-the likelihood ratios of the calls against ClinVar pathogenicity get 95% Clopper-Pearson-based bounds
-(each rate at one-sided level 0.025).
+map fitted on them is monotone, so it does not change which variants are called.
+
+Estimand and interval. One ClinVar variant is kept per residue (residue-first weighting, as in the paper's law Q),
+so kept variants are treated as independent draws. The four call rates against ClinVar P/LP (y = 1) and B/LB (y = 0)
+get one-sided Clopper-Pearson endpoints at level 0.025 each, and the likelihood-ratio bounds are l_TP / u_FP and
+u_FN / l_TN, so each ratio bound holds with probability at least 0.95 (Bonferroni over its two endpoints). Results
+are given per gene and, descriptively, pooled by summing the kept counts over genes (each gene with its own
+thresholds). Counts below 20 per class make a gene's bounds uninformative; they are reported, not interpreted.
 
 Output: results/clinvar_check.csv
 """
@@ -33,11 +38,11 @@ def main():
             keep = sc.one_per_cluster(cl, np.random.default_rng(ev.SEED + 20))
             thr = sc.mondrian_thresholds(p[keep], y[keep], 0.10)
             cv = d[(d.gene == g) & (d.src == 1) & d[col].notna()]
-            dec = sc.decisions(cal.predict(cv[col].values), thr)
-            yc = cv.y_src.values.astype(int)
-            cells.append((g, dec, yc))
-        for scope in ["pooled", "BRCA1"]:
-            use = cells if scope == "pooled" else [c for c in cells if c[0] == "BRCA1"]
+            kc = sc.one_per_cluster(cv.cluster.values, np.random.default_rng(ev.SEED + 21))
+            cv = cv.iloc[kc]
+            cells.append((g, sc.decisions(cal.predict(cv[col].values), thr), cv.y_src.values.astype(int)))
+        for scope in GENES + ["pooled"]:
+            use = cells if scope == "pooled" else [c for c in cells if c[0] == scope]
             dec = np.concatenate([c[1] for c in use]); yc = np.concatenate([c[2] for c in use])
             b = sc.certify(dec, yc, 0.025)
             rows.append(dict(predictor=pr, scope=scope, n_path=int((yc == 1).sum()), n_benign=int((yc == 0).sum()),

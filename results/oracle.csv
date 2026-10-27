@@ -85,7 +85,7 @@ AlphaMissense,BRCA1,2,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.1887770482
 AlphaMissense,BRCA1,2,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,BRCA1,2,PS3-supporting,point estimate,True,0.2,5.90625,6.050466667612704,True,True,0.25454474949588957
 AlphaMissense,BRCA1,2,PS3-moderate,point estimate,True,0.2,5.90625,6.050466667612704,True,True,0.25454474949588957
-AlphaMissense,BRCA1,2,PS3-strong,point estimate,True,0.05,441176470588.2353,26.9653815854344,True,False,0.06077245230339692
+AlphaMissense,BRCA1,2,PS3-strong,point estimate,True,0.05,inf,26.9653815854344,True,False,0.06077245230339692
 AlphaMissense,BRCA1,2,BS3-supporting,point estimate,True,0.2,0.21649484536082475,0.23404614618909594,True,False,0.7121141616255622
 AlphaMissense,BRCA1,2,BS3-moderate,point estimate,True,0.2,0.21649484536082475,0.23404614618909594,False,False,0.7121141616255622
 AlphaMissense,BRCA1,2,BS3-strong,point estimate,True,0.1,0.04430379746835443,0.11858512186353223,False,False,0.569056667183703
@@ -358,7 +358,7 @@ AlphaMissense,BRCA1,11,PS3-moderate,point estimate,True,0.1,5.757575757575758,7.
 AlphaMissense,BRCA1,11,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,11,BS3-supporting,point estimate,True,0.2,0.3481624758220503,0.23026680020465942,True,True,0.688506281991624
 AlphaMissense,BRCA1,11,BS3-moderate,point estimate,True,0.3,0.12684989429175475,0.11747377711933876,True,True,0.5583695258776692
-AlphaMissense,BRCA1,11,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,11,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,12,PS3-supporting,certified,True,0.1,2.126278920403966,4.987933769529298,True,True,0.2932759422987436
 AlphaMissense,BRCA1,12,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,12,PS3-strong,certified,False,,,,,,
@@ -778,7 +778,7 @@ AlphaMissense,BRCA1,25,PS3-moderate,point estimate,True,0.2,6.149193548387096,5.
 AlphaMissense,BRCA1,25,PS3-strong,point estimate,True,0.05,19.67741935483871,10.662935217129997,False,False,0.13343157023938781
 AlphaMissense,BRCA1,25,BS3-supporting,point estimate,True,0.2,0.2248847926267281,0.24509096829130494,True,False,0.717643865363735
 AlphaMissense,BRCA1,25,BS3-moderate,point estimate,True,0.2,0.2248847926267281,0.24509096829130494,False,False,0.717643865363735
-AlphaMissense,BRCA1,25,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,25,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,26,PS3-supporting,certified,False,,,,,,
 AlphaMissense,BRCA1,26,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,26,PS3-strong,certified,False,,,,,,
@@ -868,7 +868,7 @@ AlphaMissense,BRCA1,28,PS3-moderate,point estimate,True,0.2,5.466666666666667,5.
 AlphaMissense,BRCA1,28,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,28,BS3-supporting,point estimate,True,0.2,0.3416666666666667,0.18693078021263532,True,True,0.6409454009616876
 AlphaMissense,BRCA1,28,BS3-moderate,point estimate,False,,,,,,
-AlphaMissense,BRCA1,28,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,28,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,29,PS3-supporting,certified,True,0.2,2.2775609175174365,5.1462554564135985,True,True,0.2878858383744377
 AlphaMissense,BRCA1,29,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,29,PS3-strong,certified,False,,,,,,
@@ -898,7 +898,7 @@ AlphaMissense,BRCA1,29,PS3-moderate,point estimate,True,0.2,5.131034482758621,5.
 AlphaMissense,BRCA1,29,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,29,BS3-supporting,point estimate,True,0.2,0.20756611985269502,0.2319407247798759,True,False,0.7037071506126881
 AlphaMissense,BRCA1,29,BS3-moderate,point estimate,True,0.2,0.20756611985269502,0.2319407247798759,False,False,0.7037071506126881
-AlphaMissense,BRCA1,29,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,29,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,30,PS3-supporting,certified,True,0.3,2.100448661542134,7.2367743218552025,True,True,0.20779432294090272
 AlphaMissense,BRCA1,30,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,30,PS3-strong,certified,False,,,,,,
@@ -988,7 +988,7 @@ AlphaMissense,BRCA1,32,PS3-moderate,point estimate,True,0.1,8.0,7.93987458967811
 AlphaMissense,BRCA1,32,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,32,BS3-supporting,point estimate,True,0.3,0.14167650531286893,0.11690999055780357,True,True,0.5162220154076832
 AlphaMissense,BRCA1,32,BS3-moderate,point estimate,True,0.3,0.14167650531286893,0.11690999055780357,True,True,0.5162220154076832
-AlphaMissense,BRCA1,32,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,32,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,33,PS3-supporting,certified,True,0.2,3.4360861960712814,5.1462554564135985,True,True,0.2878858383744377
 AlphaMissense,BRCA1,33,PS3-moderate,certified,True,0.3,4.642172360342598,6.14609111467831,True,True,0.2488095238095238
 AlphaMissense,BRCA1,33,PS3-strong,certified,False,,,,,,
@@ -1045,7 +1045,7 @@ AlphaMissense,BRCA1,34,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,BRCA1,34,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,BRCA1,34,PS3-supporting,point estimate,True,0.2,6.271264367816092,5.223354266930249,True,False,0.2823561346362649
 AlphaMissense,BRCA1,34,PS3-moderate,point estimate,True,0.2,6.271264367816092,5.223354266930249,True,False,0.2823561346362649
-AlphaMissense,BRCA1,34,PS3-strong,point estimate,True,0.05,344827586206.8966,29.284100207973662,True,False,0.07088180549092601
+AlphaMissense,BRCA1,34,PS3-strong,point estimate,True,0.05,inf,29.284100207973662,True,False,0.07088180549092601
 AlphaMissense,BRCA1,34,BS3-supporting,point estimate,True,0.2,0.2443349753694581,0.22034145492938856,True,True,0.6746510004653327
 AlphaMissense,BRCA1,34,BS3-moderate,point estimate,True,0.3,0.0950191570881226,0.11912884951158595,True,False,0.5508388914740705
 AlphaMissense,BRCA1,34,BS3-strong,point estimate,False,,,,,,
@@ -1138,7 +1138,7 @@ AlphaMissense,BRCA1,37,PS3-moderate,point estimate,True,0.2,5.0903119868637114,4
 AlphaMissense,BRCA1,37,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,37,BS3-supporting,point estimate,True,0.3,0.13089373680506686,0.20607882281333445,True,False,0.6533348844423762
 AlphaMissense,BRCA1,37,BS3-moderate,point estimate,True,0.3,0.13089373680506686,0.20607882281333445,True,False,0.6533348844423762
-AlphaMissense,BRCA1,37,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,37,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,38,PS3-supporting,certified,True,0.2,2.5133399908657017,6.004218948962883,True,True,0.257104079416783
 AlphaMissense,BRCA1,38,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,38,PS3-strong,certified,False,,,,,,
@@ -1498,7 +1498,7 @@ AlphaMissense,BRCA1,49,PS3-moderate,point estimate,True,0.3,4.417690417690418,4.
 AlphaMissense,BRCA1,49,PS3-strong,point estimate,True,0.05,26.64864864864865,15.898689676736451,False,False,0.1010586319218241
 AlphaMissense,BRCA1,49,BS3-supporting,point estimate,True,0.3,0.16286416286416286,0.12159084671495884,True,True,0.5400160281267773
 AlphaMissense,BRCA1,49,BS3-moderate,point estimate,True,0.3,0.16286416286416286,0.12159084671495884,True,True,0.5400160281267773
-AlphaMissense,BRCA1,49,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,49,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,50,PS3-supporting,certified,True,0.1,2.983511206574906,14.29651697534426,True,True,0.10858668114368439
 AlphaMissense,BRCA1,50,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,50,PS3-strong,certified,False,,,,,,
@@ -1648,7 +1648,7 @@ AlphaMissense,BRCA1,54,PS3-moderate,point estimate,True,0.2,5.777310924369748,5.
 AlphaMissense,BRCA1,54,PS3-strong,point estimate,True,0.05,22.321428571428573,29.284100207973662,True,True,0.07088180549092601
 AlphaMissense,BRCA1,54,BS3-supporting,point estimate,True,0.2,0.21258503401360546,0.23003633486118436,True,False,0.7092058321700015
 AlphaMissense,BRCA1,54,BS3-moderate,point estimate,True,0.2,0.21258503401360546,0.23003633486118436,False,False,0.7092058321700015
-AlphaMissense,BRCA1,54,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,54,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,55,PS3-supporting,certified,True,0.1,2.138018986804202,5.977050301287145,True,True,0.258461299829378
 AlphaMissense,BRCA1,55,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,55,PS3-strong,certified,False,,,,,,
@@ -1708,7 +1708,7 @@ AlphaMissense,BRCA1,56,PS3-moderate,point estimate,True,0.2,4.675324675324676,3.
 AlphaMissense,BRCA1,56,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,56,BS3-supporting,point estimate,True,0.3,0.1711229946524064,0.12159084671495884,True,True,0.5400160281267773
 AlphaMissense,BRCA1,56,BS3-moderate,point estimate,True,0.3,0.1711229946524064,0.12159084671495884,True,True,0.5400160281267773
-AlphaMissense,BRCA1,56,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,56,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,57,PS3-supporting,certified,True,0.2,2.6779148364746863,5.00603678449064,True,True,0.29281060958585386
 AlphaMissense,BRCA1,57,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,57,PS3-strong,certified,False,,,,,,
@@ -1798,7 +1798,7 @@ AlphaMissense,BRCA1,59,PS3-moderate,point estimate,True,0.2,4.454545454545454,3.
 AlphaMissense,BRCA1,59,PS3-strong,point estimate,True,0.05,52.5,29.284100207973662,True,False,0.07088180549092601
 AlphaMissense,BRCA1,59,BS3-supporting,point estimate,True,0.2,0.19662921348314608,0.15613965442071537,True,True,0.616922599658756
 AlphaMissense,BRCA1,59,BS3-moderate,point estimate,True,0.2,0.19662921348314608,0.15613965442071537,True,True,0.616922599658756
-AlphaMissense,BRCA1,59,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,59,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,60,PS3-supporting,certified,True,0.2,2.9880346805179814,5.413018705496274,True,True,0.27620598728090584
 AlphaMissense,BRCA1,60,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,60,PS3-strong,certified,False,,,,,,
@@ -1948,7 +1948,7 @@ AlphaMissense,BRCA1,64,PS3-moderate,point estimate,True,0.1,7.482758620689656,5.
 AlphaMissense,BRCA1,64,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,64,BS3-supporting,point estimate,True,0.2,0.09608678806664084,0.12876132789013267,True,False,0.5763623907760714
 AlphaMissense,BRCA1,64,BS3-moderate,point estimate,True,0.2,0.09608678806664084,0.12876132789013267,True,False,0.5763623907760714
-AlphaMissense,BRCA1,64,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,64,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,65,PS3-supporting,certified,True,0.3,2.6717773912026135,6.14609111467831,True,True,0.2488095238095238
 AlphaMissense,BRCA1,65,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,65,PS3-strong,certified,False,,,,,,
@@ -2007,8 +2007,8 @@ AlphaMissense,BRCA1,66,PS3-supporting,point estimate,True,0.2,3.0264550264550265
 AlphaMissense,BRCA1,66,PS3-moderate,point estimate,True,0.05,5.587301587301587,9.642090551912489,True,True,0.15808903365906624
 AlphaMissense,BRCA1,66,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,66,BS3-supporting,point estimate,True,0.2,0.44,0.2043877781746639,True,True,0.6584690553745928
-AlphaMissense,BRCA1,66,BS3-moderate,point estimate,True,0.05,0.0,inf,False,False,0.0
-AlphaMissense,BRCA1,66,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,66,BS3-moderate,point estimate,False,,,,,,
+AlphaMissense,BRCA1,66,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,67,PS3-supporting,certified,True,0.2,2.488889308898149,6.558587119192755,True,True,0.23446176516209088
 AlphaMissense,BRCA1,67,PS3-moderate,certified,True,0.05,4.990740180503438,13.89126925700671,True,True,0.11855255674473915
 AlphaMissense,BRCA1,67,PS3-strong,certified,False,,,,,,
@@ -2038,7 +2038,7 @@ AlphaMissense,BRCA1,67,PS3-moderate,point estimate,True,0.2,6.1465517241379315,6
 AlphaMissense,BRCA1,67,PS3-strong,point estimate,True,0.05,64.13793103448276,13.89126925700671,False,False,0.11855255674473915
 AlphaMissense,BRCA1,67,BS3-supporting,point estimate,True,0.2,0.23754789272030652,0.3066764857511247,True,False,0.7603265084535442
 AlphaMissense,BRCA1,67,BS3-moderate,point estimate,True,0.3,0.2116763400477979,0.22324593300054,True,False,0.6838878548161935
-AlphaMissense,BRCA1,67,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,67,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,68,PS3-supporting,certified,True,0.3,2.613533708319118,6.083341504944117,True,True,0.24606406080347445
 AlphaMissense,BRCA1,68,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,68,PS3-strong,certified,False,,,,,,
@@ -2068,7 +2068,7 @@ AlphaMissense,BRCA1,68,PS3-moderate,point estimate,True,0.3,6.018975332068312,6.
 AlphaMissense,BRCA1,68,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,68,BS3-supporting,point estimate,True,0.3,0.08649415101028003,0.15133233473740426,True,False,0.606702083656481
 AlphaMissense,BRCA1,68,BS3-moderate,point estimate,True,0.3,0.08649415101028003,0.15133233473740426,True,False,0.606702083656481
-AlphaMissense,BRCA1,68,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,68,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,69,PS3-supporting,certified,True,0.2,2.132156415353494,5.9563503663700885,True,True,0.2606638746703893
 AlphaMissense,BRCA1,69,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,69,PS3-strong,certified,False,,,,,,
@@ -2098,7 +2098,7 @@ AlphaMissense,BRCA1,69,PS3-moderate,point estimate,True,0.2,4.507317073170732,5.
 AlphaMissense,BRCA1,69,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,69,BS3-supporting,point estimate,True,0.1,0.18839360807401176,0.2320116931456949,True,False,0.6919032107957189
 AlphaMissense,BRCA1,69,BS3-moderate,point estimate,True,0.2,0.1024390243902439,0.18757296603907547,True,False,0.6388514037536839
-AlphaMissense,BRCA1,69,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,69,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,70,PS3-supporting,certified,True,0.3,2.353673819264268,3.7096466647475057,True,True,0.3585117108732744
 AlphaMissense,BRCA1,70,PS3-moderate,certified,True,0.1,4.505841578036898,6.622539703146823,True,True,0.2280479292694276
 AlphaMissense,BRCA1,70,PS3-strong,certified,False,,,,,,
@@ -2275,7 +2275,7 @@ AlphaMissense,BRCA1,75,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,BRCA1,75,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,BRCA1,75,PS3-supporting,point estimate,True,0.2,5.1046875,4.12093395155955,True,False,0.3282805956258725
 AlphaMissense,BRCA1,75,PS3-moderate,point estimate,True,0.2,5.1046875,4.12093395155955,False,False,0.3282805956258725
-AlphaMissense,BRCA1,75,PS3-strong,point estimate,True,0.05,281250000000.0,21.944871316937594,True,False,0.08039139651517502
+AlphaMissense,BRCA1,75,PS3-strong,point estimate,True,0.05,inf,21.944871316937594,True,False,0.08039139651517502
 AlphaMissense,BRCA1,75,BS3-supporting,point estimate,True,0.2,0.15125,0.21247215366315592,True,False,0.6661819450907398
 AlphaMissense,BRCA1,75,BS3-moderate,point estimate,True,0.2,0.15125,0.21247215366315592,True,False,0.6661819450907398
 AlphaMissense,BRCA1,75,BS3-strong,point estimate,False,,,,,,
@@ -2338,7 +2338,7 @@ AlphaMissense,BRCA1,77,PS3-moderate,point estimate,True,0.3,4.515,3.474892722566
 AlphaMissense,BRCA1,77,PS3-strong,point estimate,True,0.05,91.375,14.369491969522953,False,False,0.11665244816710615
 AlphaMissense,BRCA1,77,BS3-supporting,point estimate,True,0.3,0.11082474226804123,0.12541858658889593,True,False,0.573810816400393
 AlphaMissense,BRCA1,77,BS3-moderate,point estimate,True,0.3,0.11082474226804123,0.12541858658889593,True,False,0.573810816400393
-AlphaMissense,BRCA1,77,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,77,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,78,PS3-supporting,certified,True,0.1,2.181542902818566,6.51007486599963,True,True,0.2351132309601365
 AlphaMissense,BRCA1,78,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,78,PS3-strong,certified,False,,,,,,
@@ -2368,7 +2368,7 @@ AlphaMissense,BRCA1,78,PS3-moderate,point estimate,True,0.1,7.85909090909091,6.5
 AlphaMissense,BRCA1,78,PS3-strong,point estimate,True,0.05,19.950000000000003,15.591863164547835,False,False,0.09251460627682126
 AlphaMissense,BRCA1,78,BS3-supporting,point estimate,True,0.2,0.1975247524752475,0.18676500474971253,True,True,0.6414882891267255
 AlphaMissense,BRCA1,78,BS3-moderate,point estimate,True,0.2,0.1975247524752475,0.18676500474971253,True,True,0.6414882891267255
-AlphaMissense,BRCA1,78,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,78,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,79,PS3-supporting,certified,False,,,,,,
 AlphaMissense,BRCA1,79,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,79,PS3-strong,certified,False,,,,,,
@@ -2398,7 +2398,7 @@ AlphaMissense,BRCA1,79,PS3-moderate,point estimate,True,0.2,4.461538461538462,4.
 AlphaMissense,BRCA1,79,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,79,BS3-supporting,point estimate,True,0.2,0.2569737954353339,0.19713946606367622,True,True,0.6431169536218395
 AlphaMissense,BRCA1,79,BS3-moderate,point estimate,True,0.3,0.10439560439560441,0.12640336645275013,True,False,0.5867703324543715
-AlphaMissense,BRCA1,79,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,79,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,80,PS3-supporting,certified,True,0.2,2.699091704148967,5.575755609676487,True,True,0.2717232821467349
 AlphaMissense,BRCA1,80,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,80,PS3-strong,certified,False,,,,,,
@@ -2428,7 +2428,7 @@ AlphaMissense,BRCA1,80,PS3-moderate,point estimate,True,0.2,6.40625,5.5757556096
 AlphaMissense,BRCA1,80,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,80,BS3-supporting,point estimate,True,0.2,0.18222222222222223,0.16015013282051888,True,True,0.6185822863347293
 AlphaMissense,BRCA1,80,BS3-moderate,point estimate,True,0.2,0.18222222222222223,0.16015013282051888,True,True,0.6185822863347293
-AlphaMissense,BRCA1,80,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,80,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,81,PS3-supporting,certified,True,0.05,3.1971573747236066,29.284100207973662,True,True,0.07088180549092601
 AlphaMissense,BRCA1,81,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,81,PS3-strong,certified,False,,,,,,
@@ -2455,7 +2455,7 @@ AlphaMissense,BRCA1,81,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.0,0.07536
 AlphaMissense,BRCA1,81,BS3-strong,"bootstrap, Bonferroni",True,0.1,0.0,0.07536771372601965,False,False,0.43151724316219436
 AlphaMissense,BRCA1,81,PS3-supporting,point estimate,True,0.3,3.1060267857142856,4.12093395155955,True,True,0.3282805956258725
 AlphaMissense,BRCA1,81,PS3-moderate,point estimate,True,0.2,5.401785714285714,6.091221845610979,True,True,0.2512059872809058
-AlphaMissense,BRCA1,81,PS3-strong,point estimate,True,0.05,312500000000.0,29.284100207973662,True,False,0.07088180549092601
+AlphaMissense,BRCA1,81,PS3-strong,point estimate,True,0.05,inf,29.284100207973662,True,False,0.07088180549092601
 AlphaMissense,BRCA1,81,BS3-supporting,point estimate,True,0.3,0.37396978021978017,0.2043877781746639,True,True,0.6584690553745928
 AlphaMissense,BRCA1,81,BS3-moderate,point estimate,True,0.2,0.11634615384615385,0.10112779032316856,True,True,0.47401763093945504
 AlphaMissense,BRCA1,81,BS3-strong,point estimate,True,0.1,0.0,0.07536771372601965,False,False,0.43151724316219436
@@ -2518,7 +2518,7 @@ AlphaMissense,BRCA1,83,PS3-moderate,point estimate,True,0.2,5.147058823529412,5.
 AlphaMissense,BRCA1,83,PS3-strong,point estimate,True,0.05,49.0,29.284100207973662,True,False,0.07088180549092601
 AlphaMissense,BRCA1,83,BS3-supporting,point estimate,True,0.2,0.34239130434782605,0.22288116953001527,True,True,0.6849464867380176
 AlphaMissense,BRCA1,83,BS3-moderate,point estimate,False,,,,,,
-AlphaMissense,BRCA1,83,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,83,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,84,PS3-supporting,certified,True,0.2,2.464382170554116,5.086025900486641,True,True,0.29079416782999845
 AlphaMissense,BRCA1,84,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,84,PS3-strong,certified,False,,,,,,
@@ -2575,7 +2575,7 @@ AlphaMissense,BRCA1,85,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.0,0.04747
 AlphaMissense,BRCA1,85,BS3-strong,"bootstrap, Bonferroni",True,0.1,0.0,0.04747310675063588,True,False,0.13540794167829998
 AlphaMissense,BRCA1,85,PS3-supporting,point estimate,True,0.3,3.257142857142857,3.4854704759367947,True,True,0.3790212501938886
 AlphaMissense,BRCA1,85,PS3-moderate,point estimate,True,0.1,9.0,15.196185806895874,True,True,0.1046507419471589
-AlphaMissense,BRCA1,85,PS3-strong,point estimate,True,0.05,222222222222.22223,28.127000450744525,True,False,0.05860089964324491
+AlphaMissense,BRCA1,85,PS3-strong,point estimate,True,0.05,inf,28.127000450744525,True,False,0.05860089964324491
 AlphaMissense,BRCA1,85,BS3-supporting,point estimate,True,0.3,0.16666666666666666,0.1178514918476842,True,True,0.5566322837495477
 AlphaMissense,BRCA1,85,BS3-moderate,point estimate,True,0.3,0.16666666666666666,0.1178514918476842,True,True,0.5566322837495477
 AlphaMissense,BRCA1,85,BS3-strong,point estimate,True,0.1,0.0,0.04747310675063588,True,False,0.13540794167829998
@@ -2638,7 +2638,7 @@ AlphaMissense,BRCA1,87,PS3-moderate,point estimate,True,0.2,9.920634920634921,7.
 AlphaMissense,BRCA1,87,PS3-strong,point estimate,True,0.05,25.297619047619044,13.89126925700671,False,False,0.11855255674473915
 AlphaMissense,BRCA1,87,BS3-supporting,point estimate,True,0.2,0.1263477088948787,0.23073105843349628,True,False,0.7071893904141461
 AlphaMissense,BRCA1,87,BS3-moderate,point estimate,True,0.2,0.1263477088948787,0.23073105843349628,False,False,0.7071893904141461
-AlphaMissense,BRCA1,87,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,87,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,88,PS3-supporting,certified,True,0.1,2.1464094965073826,9.550401596172774,True,True,0.16595315650690243
 AlphaMissense,BRCA1,88,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,88,PS3-strong,certified,False,,,,,,
@@ -2758,7 +2758,7 @@ AlphaMissense,BRCA1,91,PS3-moderate,point estimate,True,0.2,4.326153846153846,3.
 AlphaMissense,BRCA1,91,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,91,BS3-supporting,point estimate,True,0.2,0.06568712186689715,0.13707604804526707,True,False,0.6000710924978025
 AlphaMissense,BRCA1,91,BS3-moderate,point estimate,True,0.2,0.06568712186689715,0.13707604804526707,True,False,0.6000710924978025
-AlphaMissense,BRCA1,91,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,BRCA1,91,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,BRCA1,92,PS3-supporting,certified,False,,,,,,
 AlphaMissense,BRCA1,92,PS3-moderate,certified,False,,,,,,
 AlphaMissense,BRCA1,92,PS3-strong,certified,False,,,,,,
@@ -2815,7 +2815,7 @@ AlphaMissense,BRCA1,93,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.0,0.06337
 AlphaMissense,BRCA1,93,BS3-strong,"bootstrap, Bonferroni",True,0.1,0.0,0.06337528176262842,False,False,0.38068739982420763
 AlphaMissense,BRCA1,93,PS3-supporting,point estimate,True,0.2,3.491048593350383,3.567599381395213,True,True,0.36753140995812006
 AlphaMissense,BRCA1,93,PS3-moderate,point estimate,True,0.3,4.396135265700483,7.062828267992327,True,True,0.22008298433379866
-AlphaMissense,BRCA1,93,PS3-strong,point estimate,True,0.05,434782608695.65216,21.944871316937594,True,False,0.08039139651517502
+AlphaMissense,BRCA1,93,PS3-strong,point estimate,True,0.05,inf,21.944871316937594,True,False,0.08039139651517502
 AlphaMissense,BRCA1,93,BS3-supporting,point estimate,True,0.2,0.11899313501144165,0.16860830318513445,True,False,0.6215216379711493
 AlphaMissense,BRCA1,93,BS3-moderate,point estimate,True,0.3,0.06496751624187906,0.12797269796227623,True,False,0.579800682487979
 AlphaMissense,BRCA1,93,BS3-strong,point estimate,True,0.1,0.0,0.06337528176262842,False,False,0.38068739982420763
@@ -6082,7 +6082,7 @@ AlphaMissense,BAP1,2,PS3-moderate,"bootstrap, Bonferroni",True,0.1,4.38650853460
 AlphaMissense,BAP1,2,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,BAP1,2,BS3-supporting,"bootstrap, Bonferroni",True,0.3,0.2574371655871586,0.22946947759000044,True,True,0.5840597062579821
 AlphaMissense,BAP1,2,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-AlphaMissense,BAP1,2,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+AlphaMissense,BAP1,2,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.05217374398479368,True,False,0.013367200328407226
 AlphaMissense,BAP1,2,PS3-supporting,point estimate,True,0.2,4.518142235123367,3.6023985977844513,True,False,0.33196325944170774
 AlphaMissense,BAP1,2,PS3-moderate,point estimate,True,0.2,4.518142235123367,3.6023985977844513,False,False,0.33196325944170774
 AlphaMissense,BAP1,2,PS3-strong,point estimate,False,,,,,,
@@ -8896,13 +8896,13 @@ AlphaMissense,BAP1,96,PS3-moderate,bootstrap,True,0.1,4.610169491525424,6.241755
 AlphaMissense,BAP1,96,PS3-strong,bootstrap,False,,,,,,
 AlphaMissense,BAP1,96,BS3-supporting,bootstrap,True,0.2,0.3634211712702322,0.2945115049171072,True,True,0.6779716292647326
 AlphaMissense,BAP1,96,BS3-moderate,bootstrap,False,,,,,,
-AlphaMissense,BAP1,96,BS3-strong,bootstrap,False,,,,,,
+AlphaMissense,BAP1,96,BS3-strong,bootstrap,True,0.05,0.0,0.18511309305732437,False,False,0.027275474365991606
 AlphaMissense,BAP1,96,PS3-supporting,"bootstrap, Bonferroni",True,0.2,3.3951936050136005,4.121931714574546,True,True,0.2948024995438789
 AlphaMissense,BAP1,96,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,BAP1,96,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,BAP1,96,BS3-supporting,"bootstrap, Bonferroni",True,0.2,0.41568049055603334,0.2945115049171072,True,True,0.6779716292647326
-AlphaMissense,BAP1,96,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-AlphaMissense,BAP1,96,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+AlphaMissense,BAP1,96,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.18511309305732437,True,False,0.027275474365991606
+AlphaMissense,BAP1,96,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.18511309305732437,False,False,0.027275474365991606
 AlphaMissense,BAP1,96,PS3-supporting,point estimate,True,0.2,4.919836956521739,4.121931714574546,True,False,0.2948024995438789
 AlphaMissense,BAP1,96,PS3-moderate,point estimate,True,0.2,4.919836956521739,4.121931714574546,False,False,0.2948024995438789
 AlphaMissense,BAP1,96,PS3-strong,point estimate,False,,,,,,
@@ -11626,13 +11626,13 @@ AlphaMissense,RAD51C,87,PS3-moderate,bootstrap,True,0.1,4.699705882352941,7.1905
 AlphaMissense,RAD51C,87,PS3-strong,bootstrap,False,,,,,,
 AlphaMissense,RAD51C,87,BS3-supporting,bootstrap,True,0.2,0.16288961038961036,0.13554992654954973,True,True,0.5879957522915269
 AlphaMissense,RAD51C,87,BS3-moderate,bootstrap,True,0.2,0.16288961038961036,0.13554992654954973,True,True,0.5879957522915269
-AlphaMissense,RAD51C,87,BS3-strong,bootstrap,False,,,,,,
+AlphaMissense,RAD51C,87,BS3-strong,bootstrap,True,0.05,0.0,0.0,True,True,0.01567404426559356
 AlphaMissense,RAD51C,87,PS3-supporting,"bootstrap, Bonferroni",True,0.2,3.002174165857661,4.183133039634053,True,True,0.3762530739995528
 AlphaMissense,RAD51C,87,PS3-moderate,"bootstrap, Bonferroni",True,0.05,5.164718289522978,12.471858804453127,True,True,0.2079096803040465
 AlphaMissense,RAD51C,87,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,RAD51C,87,BS3-supporting,"bootstrap, Bonferroni",True,0.2,0.20104949956819462,0.13554992654954973,True,True,0.5879957522915269
 AlphaMissense,RAD51C,87,BS3-moderate,"bootstrap, Bonferroni",True,0.2,0.20104949956819462,0.13554992654954973,True,True,0.5879957522915269
-AlphaMissense,RAD51C,87,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+AlphaMissense,RAD51C,87,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.01567404426559356
 AlphaMissense,RAD51C,87,PS3-supporting,point estimate,True,0.2,4.388571428571428,4.183133039634053,True,False,0.3762530739995528
 AlphaMissense,RAD51C,87,PS3-moderate,point estimate,True,0.2,4.388571428571428,4.183133039634053,False,False,0.3762530739995528
 AlphaMissense,RAD51C,87,PS3-strong,point estimate,False,,,,,,
@@ -11866,13 +11866,13 @@ AlphaMissense,RAD51C,95,PS3-moderate,bootstrap,True,0.1,6.447484563055992,7.8532
 AlphaMissense,RAD51C,95,PS3-strong,bootstrap,False,,,,,,
 AlphaMissense,RAD51C,95,BS3-supporting,bootstrap,True,0.2,0.32266666666666666,0.17720524293467388,True,True,0.6254907221104403
 AlphaMissense,RAD51C,95,BS3-moderate,bootstrap,True,0.1,0.1444428915288454,0.0797402358580079,True,True,0.5284004024144869
-AlphaMissense,RAD51C,95,BS3-strong,bootstrap,False,,,,,,
+AlphaMissense,RAD51C,95,BS3-strong,bootstrap,True,0.05,0.0,0.0,True,True,0.01567404426559356
 AlphaMissense,RAD51C,95,PS3-supporting,"bootstrap, Bonferroni",True,0.2,2.655859375,4.724513523310334,True,True,0.3531310082718533
 AlphaMissense,RAD51C,95,PS3-moderate,"bootstrap, Bonferroni",True,0.1,5.1916259057971015,7.85326678293179,True,True,0.2636116700201207
 AlphaMissense,RAD51C,95,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 AlphaMissense,RAD51C,95,BS3-supporting,"bootstrap, Bonferroni",True,0.2,0.3993647333723283,0.17720524293467388,True,True,0.6254907221104403
 AlphaMissense,RAD51C,95,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.1916331527269032,0.0797402358580079,True,True,0.5284004024144869
-AlphaMissense,RAD51C,95,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+AlphaMissense,RAD51C,95,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.01567404426559356
 AlphaMissense,RAD51C,95,PS3-supporting,point estimate,True,0.2,4.306956521739131,4.724513523310334,True,True,0.3531310082718533
 AlphaMissense,RAD51C,95,PS3-moderate,point estimate,True,0.2,4.306956521739131,4.724513523310334,True,True,0.3531310082718533
 AlphaMissense,RAD51C,95,PS3-strong,point estimate,False,,,,,,
@@ -12058,7 +12058,7 @@ AlphaMissense,MSH2,1,PS3-moderate,point estimate,True,0.2,4.7134986225895315,4.7
 AlphaMissense,MSH2,1,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,1,BS3-supporting,point estimate,True,0.2,0.08153193169479815,0.10078131907518324,True,False,0.7057404148669546
 AlphaMissense,MSH2,1,BS3-moderate,point estimate,True,0.2,0.08153193169479815,0.10078131907518324,True,False,0.7057404148669546
-AlphaMissense,MSH2,1,BS3-strong,point estimate,True,0.1,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,1,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,2,PS3-supporting,certified,True,0.2,2.64824221853385,4.97987224032202,True,True,0.20125579907214844
 AlphaMissense,MSH2,2,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,2,PS3-strong,certified,False,,,,,,
@@ -12178,7 +12178,7 @@ AlphaMissense,MSH2,5,PS3-moderate,point estimate,True,0.2,5.259991216512955,4.87
 AlphaMissense,MSH2,5,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,5,BS3-supporting,point estimate,True,0.2,0.1137741046831956,0.13886851442196574,True,False,0.7394203594091611
 AlphaMissense,MSH2,5,BS3-moderate,point estimate,True,0.2,0.1137741046831956,0.13886851442196574,True,False,0.7394203594091611
-AlphaMissense,MSH2,5,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,5,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,6,PS3-supporting,certified,True,0.3,2.5051029179772337,4.8422320373647025,True,True,0.22210313016584013
 AlphaMissense,MSH2,6,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,6,PS3-strong,certified,False,,,,,,
@@ -12268,7 +12268,7 @@ AlphaMissense,MSH2,8,PS3-moderate,point estimate,True,0.1,5.494791666666667,6.07
 AlphaMissense,MSH2,8,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,8,BS3-supporting,point estimate,True,0.2,0.17071197411003236,0.11189340737496055,True,True,0.719850157308164
 AlphaMissense,MSH2,8,BS3-moderate,point estimate,True,0.2,0.17071197411003236,0.11189340737496055,True,True,0.719850157308164
-AlphaMissense,MSH2,8,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,8,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,9,PS3-supporting,certified,True,0.2,2.2813138243497155,4.108071847038756,True,True,0.26537620647363086
 AlphaMissense,MSH2,9,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,9,PS3-strong,certified,False,,,,,,
@@ -12418,7 +12418,7 @@ AlphaMissense,MSH2,13,PS3-moderate,point estimate,True,0.2,5.078612209046992,4.5
 AlphaMissense,MSH2,13,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,13,BS3-supporting,point estimate,True,0.2,0.11343037627025543,0.12666890541343517,True,False,0.7359302511598145
 AlphaMissense,MSH2,13,BS3-moderate,point estimate,True,0.2,0.11343037627025543,0.12666890541343517,True,False,0.7359302511598145
-AlphaMissense,MSH2,13,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,13,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,14,PS3-supporting,certified,True,0.2,2.4637747049723173,4.855389441858462,True,True,0.21321921825841195
 AlphaMissense,MSH2,14,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,14,PS3-strong,certified,False,,,,,,
@@ -12478,7 +12478,7 @@ AlphaMissense,MSH2,15,PS3-moderate,point estimate,True,0.3,5.858749437696806,6.9
 AlphaMissense,MSH2,15,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,15,BS3-supporting,point estimate,True,0.2,0.10034516765285996,0.17308452912264588,True,False,0.7716632005545779
 AlphaMissense,MSH2,15,BS3-moderate,point estimate,True,0.3,0.07730294396961063,0.09437579979254336,True,False,0.6258651949021489
-AlphaMissense,MSH2,15,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,15,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,16,PS3-supporting,certified,True,0.2,2.506556616337016,5.177679506248384,True,True,0.1934623793526369
 AlphaMissense,MSH2,16,PS3-moderate,certified,True,0.05,4.650203840877643,13.510709341969653,True,True,0.04632325494587532
 AlphaMissense,MSH2,16,PS3-strong,certified,False,,,,,,
@@ -12508,7 +12508,7 @@ AlphaMissense,MSH2,16,PS3-moderate,point estimate,True,0.2,4.776923076923077,5.1
 AlphaMissense,MSH2,16,PS3-strong,point estimate,True,0.05,28.4625,13.510709341969653,False,False,0.04632325494587532
 AlphaMissense,MSH2,16,BS3-supporting,point estimate,True,0.2,0.29656160458452724,0.2527174505638375,True,True,0.8051645070122114
 AlphaMissense,MSH2,16,BS3-moderate,point estimate,True,0.3,0.17079207920792078,0.09713674265153939,True,True,0.6907534794432891
-AlphaMissense,MSH2,16,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,16,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,17,PS3-supporting,certified,True,0.2,2.760402855102332,5.204386054671152,True,True,0.19168932970724686
 AlphaMissense,MSH2,17,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,17,PS3-strong,certified,False,,,,,,
@@ -12538,7 +12538,7 @@ AlphaMissense,MSH2,17,PS3-moderate,point estimate,True,0.2,5.124733475479744,5.2
 AlphaMissense,MSH2,17,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,17,BS3-supporting,point estimate,True,0.2,0.08966108966108965,0.15625914630304014,True,False,0.7506852236975416
 AlphaMissense,MSH2,17,BS3-moderate,point estimate,True,0.2,0.08966108966108965,0.15625914630304014,True,False,0.7506852236975416
-AlphaMissense,MSH2,17,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,17,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,18,PS3-supporting,certified,True,0.2,3.450449091635107,4.818641442519117,True,True,0.21590678824721377
 AlphaMissense,MSH2,18,PS3-moderate,certified,True,0.1,4.718792916712363,9.165306611175852,True,True,0.10341012104729908
 AlphaMissense,MSH2,18,PS3-strong,certified,False,,,,,,
@@ -12598,7 +12598,7 @@ AlphaMissense,MSH2,19,PS3-moderate,point estimate,True,0.2,6.408730158730159,5.8
 AlphaMissense,MSH2,19,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,19,BS3-supporting,point estimate,True,0.2,0.11869850579527998,0.17513389600615187,True,False,0.7627419612861942
 AlphaMissense,MSH2,19,BS3-moderate,point estimate,True,0.2,0.11869850579527998,0.17513389600615187,True,False,0.7627419612861942
-AlphaMissense,MSH2,19,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,19,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,20,PS3-supporting,certified,True,0.1,2.9691896912971703,6.391170694211928,True,True,0.15665760145043459
 AlphaMissense,MSH2,20,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,20,PS3-strong,certified,False,,,,,,
@@ -12628,7 +12628,7 @@ AlphaMissense,MSH2,20,PS3-moderate,point estimate,True,0.1,5.968770331815225,6.3
 AlphaMissense,MSH2,20,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,20,BS3-supporting,point estimate,True,0.2,0.14236940935472855,0.10561500097796586,True,True,0.711656801578414
 AlphaMissense,MSH2,20,BS3-moderate,point estimate,True,0.2,0.14236940935472855,0.10561500097796586,True,True,0.711656801578414
-AlphaMissense,MSH2,20,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,20,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,21,PS3-supporting,certified,True,0.2,3.2174382791462675,4.818641442519117,True,True,0.21590678824721377
 AlphaMissense,MSH2,21,PS3-moderate,certified,True,0.1,5.903643044318266,7.3285811386834405,True,True,0.13273076307790752
 AlphaMissense,MSH2,21,PS3-strong,certified,False,,,,,,
@@ -12748,7 +12748,7 @@ AlphaMissense,MSH2,24,PS3-moderate,point estimate,True,0.3,4.445344129554656,4.3
 AlphaMissense,MSH2,24,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,24,BS3-supporting,point estimate,True,0.3,0.07023026315789473,0.10091301168230274,True,False,0.7048258945235428
 AlphaMissense,MSH2,24,BS3-moderate,point estimate,True,0.3,0.07023026315789473,0.10091301168230274,True,False,0.7048258945235428
-AlphaMissense,MSH2,24,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,24,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,25,PS3-supporting,certified,True,0.3,2.8614469173498636,4.855389441858462,True,True,0.21321921825841195
 AlphaMissense,MSH2,25,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,25,PS3-strong,certified,False,,,,,,
@@ -12838,7 +12838,7 @@ AlphaMissense,MSH2,27,PS3-moderate,point estimate,True,0.2,7.139076576576577,5.8
 AlphaMissense,MSH2,27,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,27,BS3-supporting,point estimate,True,0.2,0.1352177865939334,0.17445114166625597,True,False,0.7656908228016851
 AlphaMissense,MSH2,27,BS3-moderate,point estimate,True,0.2,0.1352177865939334,0.17445114166625597,True,False,0.7656908228016851
-AlphaMissense,MSH2,27,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,27,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,28,PS3-supporting,certified,True,0.2,2.1181486481989658,4.283221056307078,True,True,0.24856822908334666
 AlphaMissense,MSH2,28,PS3-moderate,certified,True,0.05,4.507856538370936,11.06948241025184,True,True,0.07523329600597237
 AlphaMissense,MSH2,28,PS3-strong,certified,False,,,,,,
@@ -12928,7 +12928,7 @@ AlphaMissense,MSH2,30,PS3-moderate,point estimate,True,0.2,7.524255319148936,6.5
 AlphaMissense,MSH2,30,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,30,BS3-supporting,point estimate,True,0.2,0.14902654867256637,0.17526413705352084,True,False,0.7621820508718604
 AlphaMissense,MSH2,30,BS3-moderate,point estimate,True,0.2,0.14902654867256637,0.17526413705352084,True,False,0.7621820508718604
-AlphaMissense,MSH2,30,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,30,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,31,PS3-supporting,certified,True,0.2,3.5397807160624195,4.305838269539871,True,True,0.24274516077427608
 AlphaMissense,MSH2,31,PS3-moderate,certified,True,0.1,6.359095935170908,8.023032020251122,True,True,0.11961019570202101
 AlphaMissense,MSH2,31,PS3-strong,certified,False,,,,,,
@@ -12988,7 +12988,7 @@ AlphaMissense,MSH2,32,PS3-moderate,point estimate,True,0.1,7.298245614035087,7.8
 AlphaMissense,MSH2,32,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,32,BS3-supporting,point estimate,True,0.2,0.16507936507936508,0.17426195416996818,True,False,0.766512024742708
 AlphaMissense,MSH2,32,BS3-moderate,point estimate,True,0.2,0.16507936507936508,0.17426195416996818,True,False,0.766512024742708
-AlphaMissense,MSH2,32,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,32,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,33,PS3-supporting,certified,True,0.2,2.205882898785223,4.689579976284326,True,True,0.2274969338239215
 AlphaMissense,MSH2,33,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,33,PS3-strong,certified,False,,,,,,
@@ -13138,7 +13138,7 @@ AlphaMissense,MSH2,37,PS3-moderate,point estimate,True,0.2,7.897435897435898,6.3
 AlphaMissense,MSH2,37,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,37,BS3-supporting,point estimate,True,0.2,0.09760632117127586,0.14937664384701055,True,False,0.7417906468298406
 AlphaMissense,MSH2,37,BS3-moderate,point estimate,True,0.2,0.09760632117127586,0.14937664384701055,True,False,0.7417906468298406
-AlphaMissense,MSH2,37,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,37,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,38,PS3-supporting,certified,True,0.2,2.1902152087042444,5.204386054671152,True,True,0.19168932970724686
 AlphaMissense,MSH2,38,PS3-moderate,certified,True,0.05,4.641540791572868,11.06948241025184,True,True,0.07523329600597237
 AlphaMissense,MSH2,38,PS3-strong,certified,False,,,,,,
@@ -13258,7 +13258,7 @@ AlphaMissense,MSH2,41,PS3-moderate,point estimate,True,0.2,4.517030233448144,4.7
 AlphaMissense,MSH2,41,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,41,BS3-supporting,point estimate,True,0.2,0.2770592239618789,0.18294029059551942,True,True,0.7820402069002292
 AlphaMissense,MSH2,41,BS3-moderate,point estimate,True,0.3,0.150156797638812,0.08902923514981427,True,True,0.6632032208180024
-AlphaMissense,MSH2,41,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,41,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,42,PS3-supporting,certified,True,0.3,2.709919358889245,4.308475188373914,True,True,0.24744840825467923
 AlphaMissense,MSH2,42,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,42,PS3-strong,certified,False,,,,,,
@@ -13318,7 +13318,7 @@ AlphaMissense,MSH2,43,PS3-moderate,point estimate,True,0.2,5.101978691019786,4.6
 AlphaMissense,MSH2,43,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,43,BS3-supporting,point estimate,True,0.2,0.1415062478892266,0.11090803658552666,True,True,0.7261958086706127
 AlphaMissense,MSH2,43,BS3-moderate,point estimate,True,0.2,0.1415062478892266,0.11090803658552666,True,True,0.7261958086706127
-AlphaMissense,MSH2,43,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,43,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,44,PS3-supporting,certified,True,0.2,2.2853094915649863,5.8673567072383666,True,True,0.17186850103983362
 AlphaMissense,MSH2,44,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,44,PS3-strong,certified,False,,,,,,
@@ -13378,7 +13378,7 @@ AlphaMissense,MSH2,45,PS3-moderate,point estimate,True,0.2,4.810033444816053,5.5
 AlphaMissense,MSH2,45,PS3-strong,point estimate,True,0.05,30.652173913043477,13.853775951780701,False,False,0.030981709593131762
 AlphaMissense,MSH2,45,BS3-supporting,point estimate,True,0.2,0.16323642912271674,0.17176419485685204,True,False,0.7775235962246041
 AlphaMissense,MSH2,45,BS3-moderate,point estimate,True,0.2,0.16323642912271674,0.17176419485685204,True,False,0.7775235962246041
-AlphaMissense,MSH2,45,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,45,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,46,PS3-supporting,certified,True,0.3,2.8198352683476307,4.105948389817998,True,True,0.26714925611902096
 AlphaMissense,MSH2,46,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,46,PS3-strong,certified,False,,,,,,
@@ -13828,7 +13828,7 @@ AlphaMissense,MSH2,60,PS3-moderate,point estimate,True,0.1,7.521064301552106,6.5
 AlphaMissense,MSH2,60,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,60,BS3-supporting,point estimate,True,0.2,0.11370340573880397,0.14945263901440187,True,False,0.7414173732202848
 AlphaMissense,MSH2,60,BS3-moderate,point estimate,True,0.2,0.11370340573880397,0.14945263901440187,True,False,0.7414173732202848
-AlphaMissense,MSH2,60,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,60,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,61,PS3-supporting,certified,True,0.1,3.523860439692598,7.026902755313414,True,True,0.13762064736308857
 AlphaMissense,MSH2,61,PS3-moderate,certified,True,0.05,4.438926720956633,10.28221120928676,True,True,0.08002986188876447
 AlphaMissense,MSH2,61,PS3-strong,certified,False,,,,,,
@@ -13858,7 +13858,7 @@ AlphaMissense,MSH2,61,PS3-moderate,point estimate,True,0.1,8.675151515151516,7.0
 AlphaMissense,MSH2,61,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,61,BS3-supporting,point estimate,True,0.1,0.3472164948453608,0.33774726135154187,True,True,0.8603076841038766
 AlphaMissense,MSH2,61,BS3-moderate,point estimate,True,0.2,0.10114114114114114,0.1215667422590502,True,False,0.7335039726977016
-AlphaMissense,MSH2,61,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,61,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,62,PS3-supporting,certified,True,0.1,2.384304126026266,7.591422480608535,True,True,0.12905401802378286
 AlphaMissense,MSH2,62,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,62,PS3-strong,certified,False,,,,,,
@@ -13888,7 +13888,7 @@ AlphaMissense,MSH2,62,PS3-moderate,point estimate,True,0.1,5.9889643463497455,7.
 AlphaMissense,MSH2,62,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,62,BS3-supporting,point estimate,True,0.2,0.2857002360346184,0.15625914630304014,True,True,0.7506852236975416
 AlphaMissense,MSH2,62,BS3-moderate,point estimate,True,0.3,0.1983273596176822,0.09307382789582319,True,True,0.6345624700047993
-AlphaMissense,MSH2,62,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,62,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,63,PS3-supporting,certified,True,0.2,3.4341427528388535,4.706007109921365,True,True,0.22689969604863222
 AlphaMissense,MSH2,63,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,63,PS3-strong,certified,False,,,,,,
@@ -14038,7 +14038,7 @@ AlphaMissense,MSH2,67,PS3-moderate,point estimate,True,0.2,4.528125,5.1079166239
 AlphaMissense,MSH2,67,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,67,BS3-supporting,point estimate,True,0.2,0.34861526946107785,0.17596204057333292,True,True,0.759195861995414
 AlphaMissense,MSH2,67,BS3-moderate,point estimate,True,0.3,0.2253919860627178,0.08768204864546754,True,True,0.6733296005972378
-AlphaMissense,MSH2,67,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,67,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,68,PS3-supporting,certified,True,0.3,2.638574260573639,4.8422320373647025,True,True,0.22210313016584013
 AlphaMissense,MSH2,68,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,68,PS3-strong,certified,False,,,,,,
@@ -14158,7 +14158,7 @@ AlphaMissense,MSH2,71,PS3-moderate,point estimate,True,0.3,4.810033444816053,4.8
 AlphaMissense,MSH2,71,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,71,BS3-supporting,point estimate,True,0.3,0.1171420659097203,0.09162838220413232,True,True,0.6882525462592651
 AlphaMissense,MSH2,71,BS3-moderate,point estimate,True,0.3,0.1171420659097203,0.09162838220413232,True,True,0.6882525462592651
-AlphaMissense,MSH2,71,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,71,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,72,PS3-supporting,certified,True,0.2,2.5693958071193856,4.308475188373914,True,True,0.24744840825467923
 AlphaMissense,MSH2,72,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,72,PS3-strong,certified,False,,,,,,
@@ -14218,7 +14218,7 @@ AlphaMissense,MSH2,73,PS3-moderate,point estimate,True,0.1,6.207407407407407,6.3
 AlphaMissense,MSH2,73,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,73,BS3-supporting,point estimate,True,0.2,0.26392038296800197,0.08609254439541826,True,True,0.6856849570735348
 AlphaMissense,MSH2,73,BS3-moderate,point estimate,True,0.1,0.1686795491143317,0.14729748519844607,True,True,0.2258278675411934
-AlphaMissense,MSH2,73,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,73,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,74,PS3-supporting,certified,True,0.2,2.795006291802934,4.042622377905087,True,True,0.27039673652215646
 AlphaMissense,MSH2,74,PS3-moderate,certified,True,0.1,4.343924193421004,7.165239157642707,True,True,0.1347277768890311
 AlphaMissense,MSH2,74,PS3-strong,certified,False,,,,,,
@@ -14368,7 +14368,7 @@ AlphaMissense,MSH2,78,PS3-moderate,point estimate,True,0.1,6.8568056648308415,6.
 AlphaMissense,MSH2,78,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,78,BS3-supporting,point estimate,True,0.2,0.20852175660737612,0.14869399891961782,True,True,0.7451607742761158
 AlphaMissense,MSH2,78,BS3-moderate,point estimate,True,0.2,0.20852175660737612,0.14869399891961782,True,True,0.7451607742761158
-AlphaMissense,MSH2,78,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,78,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,79,PS3-supporting,certified,True,0.2,2.3590546617740125,4.849002404536319,True,True,0.21034501146483225
 AlphaMissense,MSH2,79,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,79,PS3-strong,certified,False,,,,,,
@@ -14428,7 +14428,7 @@ AlphaMissense,MSH2,80,PS3-moderate,point estimate,True,0.2,5.747282608695652,6.5
 AlphaMissense,MSH2,80,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,80,BS3-supporting,point estimate,True,0.2,0.21764857216362232,0.17491292990280502,True,True,0.7636938089905616
 AlphaMissense,MSH2,80,BS3-moderate,point estimate,True,0.2,0.21764857216362232,0.17491292990280502,True,True,0.7636938089905616
-AlphaMissense,MSH2,80,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,80,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,81,PS3-supporting,certified,True,0.3,2.1662392279589118,4.217687232836363,True,True,0.25349544072948327
 AlphaMissense,MSH2,81,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,81,PS3-strong,certified,False,,,,,,
@@ -14458,7 +14458,7 @@ AlphaMissense,MSH2,81,PS3-moderate,point estimate,True,0.1,8.233333333333333,8.0
 AlphaMissense,MSH2,81,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,81,BS3-supporting,point estimate,True,0.2,0.1760846560846561,0.10078131907518324,True,True,0.7057404148669546
 AlphaMissense,MSH2,81,BS3-moderate,point estimate,True,0.2,0.1760846560846561,0.10078131907518324,True,True,0.7057404148669546
-AlphaMissense,MSH2,81,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,81,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,82,PS3-supporting,certified,True,0.1,2.4077013526543616,6.842451962591867,True,True,0.1407934730443129
 AlphaMissense,MSH2,82,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,82,PS3-strong,certified,False,,,,,,
@@ -14518,7 +14518,7 @@ AlphaMissense,MSH2,83,PS3-moderate,point estimate,True,0.2,4.518049695264885,4.8
 AlphaMissense,MSH2,83,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,83,BS3-supporting,point estimate,True,0.2,0.14065122524337026,0.17481778323969993,True,False,0.7641044099610729
 AlphaMissense,MSH2,83,BS3-moderate,point estimate,True,0.2,0.14065122524337026,0.17481778323969993,True,False,0.7641044099610729
-AlphaMissense,MSH2,83,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,83,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,84,PS3-supporting,certified,True,0.3,2.1253811537746854,3.5395749969125188,True,True,0.3061296859169199
 AlphaMissense,MSH2,84,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,84,PS3-strong,certified,False,,,,,,
@@ -14548,7 +14548,7 @@ AlphaMissense,MSH2,84,PS3-moderate,point estimate,True,0.1,6.877061469265367,6.5
 AlphaMissense,MSH2,84,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,84,BS3-supporting,point estimate,True,0.3,0.14672765657987333,0.08869018071977074,True,True,0.6657228176825042
 AlphaMissense,MSH2,84,BS3-moderate,point estimate,True,0.2,0.14236940935472855,0.08609254439541826,True,True,0.6856849570735348
-AlphaMissense,MSH2,84,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,84,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,85,PS3-supporting,certified,True,0.2,2.8283156200251938,4.308475188373914,True,True,0.24744840825467923
 AlphaMissense,MSH2,85,PS3-moderate,certified,False,,,,,,
 AlphaMissense,MSH2,85,PS3-strong,certified,False,,,,,,
@@ -14968,7 +14968,7 @@ AlphaMissense,MSH2,98,PS3-moderate,point estimate,True,0.1,6.3979591836734695,7.
 AlphaMissense,MSH2,98,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,98,BS3-supporting,point estimate,True,0.3,0.15443349753694582,0.09734860279901293,True,True,0.6892603850050658
 AlphaMissense,MSH2,98,BS3-moderate,point estimate,True,0.2,0.14354395604395603,0.13886851442196574,True,True,0.7394203594091611
-AlphaMissense,MSH2,98,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,98,BS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,99,PS3-supporting,certified,True,0.2,3.157595647174264,6.182624846712068,True,True,0.16289127073001652
 AlphaMissense,MSH2,99,PS3-moderate,certified,True,0.05,4.5256164107740915,11.407701724827575,True,True,0.07095931317655842
 AlphaMissense,MSH2,99,PS3-strong,certified,False,,,,,,
@@ -14998,7 +14998,7 @@ AlphaMissense,MSH2,99,PS3-moderate,point estimate,True,0.2,7.195767195767195,6.1
 AlphaMissense,MSH2,99,PS3-strong,point estimate,False,,,,,,
 AlphaMissense,MSH2,99,BS3-supporting,point estimate,True,0.2,0.0618901995048784,0.11099428242030895,True,False,0.7256358982562789
 AlphaMissense,MSH2,99,BS3-moderate,point estimate,True,0.2,0.0618901995048784,0.11099428242030895,True,False,0.7256358982562789
-AlphaMissense,MSH2,99,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+AlphaMissense,MSH2,99,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,0,PS3-supporting,certified,True,0.3,2.5547018784363327,6.437931392104972,True,True,0.1922134326043121
 REVEL,BRCA1,0,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,0,PS3-strong,certified,False,,,,,,
@@ -15118,7 +15118,7 @@ REVEL,BRCA1,3,PS3-moderate,point estimate,True,0.05,14.615384615384615,10.259569
 REVEL,BRCA1,3,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,3,BS3-supporting,point estimate,True,0.2,0.2751131221719457,0.2164737168430242,True,True,0.6322617755028178
 REVEL,BRCA1,3,BS3-moderate,point estimate,True,0.1,0.14990138067061143,0.09811409784632108,True,True,0.26432836978439583
-REVEL,BRCA1,3,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,3,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,4,PS3-supporting,certified,False,,,,,,
 REVEL,BRCA1,4,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,4,PS3-strong,certified,False,,,,,,
@@ -15132,7 +15132,7 @@ REVEL,BRCA1,4,BS3-supporting,"Clopper-Pearson, uncorrected",True,0.1,0.470190853
 REVEL,BRCA1,4,BS3-moderate,"Clopper-Pearson, uncorrected",False,,,,,,
 REVEL,BRCA1,4,BS3-strong,"Clopper-Pearson, uncorrected",False,,,,,,
 REVEL,BRCA1,4,PS3-supporting,bootstrap,True,0.3,2.488402777777778,4.698251397106813,True,True,0.27043586164107336
-REVEL,BRCA1,4,PS3-moderate,bootstrap,True,0.05,6.220770202020202,21.704157260824964,True,True,0.027803629595160535
+REVEL,BRCA1,4,PS3-moderate,bootstrap,True,0.05,6.219318181818182,21.704157260824964,True,True,0.027803629595160535
 REVEL,BRCA1,4,PS3-strong,bootstrap,False,,,,,,
 REVEL,BRCA1,4,BS3-supporting,bootstrap,True,0.3,0.455594684071542,0.22829505487082866,True,True,0.6365816141874774
 REVEL,BRCA1,4,BS3-moderate,bootstrap,False,,,,,,
@@ -15148,7 +15148,7 @@ REVEL,BRCA1,4,PS3-moderate,point estimate,True,0.1,7.428571428571428,12.20861168
 REVEL,BRCA1,4,PS3-strong,point estimate,True,0.05,22.749999999999996,21.704157260824964,True,False,0.027803629595160535
 REVEL,BRCA1,4,BS3-supporting,point estimate,True,0.3,0.2808641975308642,0.22829505487082866,True,True,0.6365816141874774
 REVEL,BRCA1,4,BS3-moderate,point estimate,True,0.1,0.1455223880597015,0.15565532852867806,True,False,0.4975401995760302
-REVEL,BRCA1,4,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,4,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,5,PS3-supporting,certified,True,0.05,2.158892035137353,13.6040893940101,True,True,0.09402823018458197
 REVEL,BRCA1,5,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,5,PS3-strong,certified,False,,,,,,
@@ -15208,7 +15208,7 @@ REVEL,BRCA1,6,PS3-moderate,point estimate,True,0.1,9.343749999999998,6.615704616
 REVEL,BRCA1,6,PS3-strong,point estimate,True,0.05,23.833333333333336,8.72870112167971,False,False,0.1419923995656895
 REVEL,BRCA1,6,BS3-supporting,point estimate,True,0.3,0.21103896103896105,0.17896779627969744,True,True,0.5623222687554935
 REVEL,BRCA1,6,BS3-moderate,point estimate,True,0.3,0.21103896103896105,0.17896779627969744,True,True,0.5623222687554935
-REVEL,BRCA1,6,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,6,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,7,PS3-supporting,certified,True,0.2,2.9159957302912716,4.656241807982719,True,True,0.26170958068352207
 REVEL,BRCA1,7,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,7,PS3-strong,certified,False,,,,,,
@@ -15298,7 +15298,7 @@ REVEL,BRCA1,9,PS3-moderate,point estimate,True,0.1,4.545454545454546,5.249941767
 REVEL,BRCA1,9,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,9,BS3-supporting,point estimate,True,0.3,0.34632034632034636,0.19987450077101002,True,True,0.618383227340882
 REVEL,BRCA1,9,BS3-moderate,point estimate,True,0.2,0.06379585326953749,0.10444396602900624,True,False,0.442549506230288
-REVEL,BRCA1,9,BS3-strong,point estimate,True,0.1,0.0,0.0,True,True,0.00965565379246161
+REVEL,BRCA1,9,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,10,PS3-supporting,certified,True,0.3,2.7572043047095454,4.677405785755031,True,True,0.27850550643710253
 REVEL,BRCA1,10,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,10,PS3-strong,certified,False,,,,,,
@@ -15328,7 +15328,7 @@ REVEL,BRCA1,10,PS3-moderate,point estimate,True,0.3,6.716346153846154,4.67740578
 REVEL,BRCA1,10,PS3-strong,point estimate,True,0.05,58.61538461538462,13.884295672821446,False,False,0.09256243213897937
 REVEL,BRCA1,10,BS3-supporting,point estimate,True,0.3,0.14801864801864803,0.21700755269728703,True,False,0.6307882219120005
 REVEL,BRCA1,10,BS3-moderate,point estimate,True,0.3,0.14801864801864803,0.21700755269728703,True,False,0.6307882219120005
-REVEL,BRCA1,10,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,10,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,11,PS3-supporting,certified,False,,,,,,
 REVEL,BRCA1,11,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,11,PS3-strong,certified,False,,,,,,
@@ -15448,7 +15448,7 @@ REVEL,BRCA1,14,PS3-moderate,point estimate,True,0.1,4.8232848232848236,6.6586098
 REVEL,BRCA1,14,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,14,BS3-supporting,point estimate,True,0.3,0.18441971383147857,0.2382911040195785,True,False,0.6666589111214518
 REVEL,BRCA1,14,BS3-moderate,point estimate,True,0.3,0.18441971383147857,0.2382911040195785,False,False,0.6666589111214518
-REVEL,BRCA1,14,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,14,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,15,PS3-supporting,certified,False,,,,,,
 REVEL,BRCA1,15,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,15,PS3-strong,certified,False,,,,,,
@@ -15525,14 +15525,14 @@ REVEL,BRCA1,17,PS3-supporting,bootstrap,True,0.2,2.2172634885439764,3.8780835247
 REVEL,BRCA1,17,PS3-moderate,bootstrap,True,0.05,6.841379310344828,12.803941754208688,True,True,0.10135722041259501
 REVEL,BRCA1,17,PS3-strong,bootstrap,False,,,,,,
 REVEL,BRCA1,17,BS3-supporting,bootstrap,True,0.3,0.46020408163265303,0.2098549019158187,True,True,0.6222997776743705
-REVEL,BRCA1,17,BS3-moderate,bootstrap,False,,,,,,
-REVEL,BRCA1,17,BS3-strong,bootstrap,False,,,,,,
+REVEL,BRCA1,17,BS3-moderate,bootstrap,True,0.1,0.0,0.0,True,True,0.00965565379246161
+REVEL,BRCA1,17,BS3-strong,bootstrap,True,0.1,0.0,0.0,True,True,0.00965565379246161
 REVEL,BRCA1,17,PS3-supporting,"bootstrap, Bonferroni",True,0.3,3.159805534055727,6.6606772106084335,True,True,0.18070808127811383
 REVEL,BRCA1,17,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,17,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,17,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-REVEL,BRCA1,17,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-REVEL,BRCA1,17,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+REVEL,BRCA1,17,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.0,0.0,True,True,0.00965565379246161
+REVEL,BRCA1,17,BS3-strong,"bootstrap, Bonferroni",True,0.1,0.0,0.0,True,True,0.00965565379246161
 REVEL,BRCA1,17,PS3-supporting,point estimate,True,0.2,3.0963139120095127,3.87808352471809,True,True,0.33102993640452916
 REVEL,BRCA1,17,PS3-moderate,point estimate,True,0.3,6.413793103448276,6.6606772106084335,True,True,0.18070808127811383
 REVEL,BRCA1,17,PS3-strong,point estimate,False,,,,,,
@@ -15565,7 +15565,7 @@ REVEL,BRCA1,18,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,18,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,18,PS3-supporting,point estimate,True,0.2,6.074324324324325,4.3906073285572225,True,False,0.3003218551264154
 REVEL,BRCA1,18,PS3-moderate,point estimate,True,0.2,6.074324324324325,4.3906073285572225,True,False,0.3003218551264154
-REVEL,BRCA1,18,PS3-strong,point estimate,True,0.05,459459459459.4595,18.449149547398275,False,False,0.07507367767954087
+REVEL,BRCA1,18,PS3-strong,point estimate,True,0.05,inf,18.449149547398275,False,False,0.07507367767954087
 REVEL,BRCA1,18,BS3-supporting,point estimate,True,0.2,0.15834015834015835,0.24130984713197765,True,False,0.6699782844733985
 REVEL,BRCA1,18,BS3-moderate,point estimate,True,0.2,0.15834015834015835,0.24130984713197765,False,False,0.6699782844733985
 REVEL,BRCA1,18,BS3-strong,point estimate,False,,,,,,
@@ -15658,7 +15658,7 @@ REVEL,BRCA1,21,PS3-moderate,point estimate,True,0.2,6.222222222222222,4.65624180
 REVEL,BRCA1,21,PS3-strong,point estimate,True,0.05,51.333333333333336,13.884295672821446,False,False,0.09256243213897937
 REVEL,BRCA1,21,BS3-supporting,point estimate,True,0.2,0.2545454545454545,0.2847109167401067,True,False,0.7087482550023266
 REVEL,BRCA1,21,BS3-moderate,point estimate,True,0.3,0.19858156028368792,0.20095689085698057,True,False,0.6019220826224083
-REVEL,BRCA1,21,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,21,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,22,PS3-supporting,certified,True,0.05,2.5028079877782408,9.474457481312518,True,True,0.13854118194509074
 REVEL,BRCA1,22,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,22,PS3-strong,certified,False,,,,,,
@@ -15868,7 +15868,7 @@ REVEL,BRCA1,28,PS3-moderate,point estimate,True,0.1,6.0606060606060606,6.4584993
 REVEL,BRCA1,28,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,28,BS3-supporting,point estimate,True,0.3,0.14742014742014742,0.14995775834457517,True,False,0.49372834910294194
 REVEL,BRCA1,28,BS3-moderate,point estimate,True,0.3,0.14742014742014742,0.14995775834457517,True,False,0.49372834910294194
-REVEL,BRCA1,28,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,28,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,29,PS3-supporting,certified,False,,,,,,
 REVEL,BRCA1,29,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,29,PS3-strong,certified,False,,,,,,
@@ -15898,7 +15898,7 @@ REVEL,BRCA1,29,PS3-moderate,point estimate,True,0.1,6.746543778801843,8.73318418
 REVEL,BRCA1,29,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,29,BS3-supporting,point estimate,True,0.3,0.23425499231950844,0.20002957693137252,True,True,0.5950390362442479
 REVEL,BRCA1,29,BS3-moderate,point estimate,True,0.2,0.05391073795846222,0.11648873641037359,True,False,0.4541324130086345
-REVEL,BRCA1,29,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,29,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,30,PS3-supporting,certified,True,0.3,2.587384140211643,6.790732542119469,True,True,0.1741313789359392
 REVEL,BRCA1,30,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,30,PS3-strong,certified,False,,,,,,
@@ -16045,7 +16045,7 @@ REVEL,BRCA1,34,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,34,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,34,PS3-supporting,point estimate,True,0.2,5.490196078431373,4.656241807982719,True,False,0.26170958068352207
 REVEL,BRCA1,34,PS3-moderate,point estimate,True,0.2,5.490196078431373,4.656241807982719,True,False,0.26170958068352207
-REVEL,BRCA1,34,PS3-strong,point estimate,True,0.05,333333333333.3333,15.339967083962582,False,False,0.08621064060803474
+REVEL,BRCA1,34,PS3-strong,point estimate,True,0.05,inf,15.339967083962582,False,False,0.08621064060803474
 REVEL,BRCA1,34,BS3-supporting,point estimate,True,0.3,0.14,0.22829505487082866,True,False,0.6365816141874774
 REVEL,BRCA1,34,BS3-moderate,point estimate,True,0.3,0.14,0.22829505487082866,True,False,0.6365816141874774
 REVEL,BRCA1,34,BS3-strong,point estimate,False,,,,,,
@@ -16078,7 +16078,7 @@ REVEL,BRCA1,35,PS3-moderate,point estimate,True,0.2,7.443181818181818,4.52328145
 REVEL,BRCA1,35,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,35,BS3-supporting,point estimate,True,0.2,0.10925771476230191,0.240977266882751,True,False,0.6596556537924616
 REVEL,BRCA1,35,BS3-moderate,point estimate,True,0.2,0.10925771476230191,0.240977266882751,False,False,0.6596556537924616
-REVEL,BRCA1,35,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,35,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,36,PS3-supporting,certified,True,0.2,2.100879907588685,3.9864238698315866,True,True,0.32398790134946487
 REVEL,BRCA1,36,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,36,PS3-strong,certified,False,,,,,,
@@ -16168,7 +16168,7 @@ REVEL,BRCA1,38,PS3-moderate,point estimate,True,0.2,4.333333333333333,4.79468489
 REVEL,BRCA1,38,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,38,BS3-supporting,point estimate,True,0.2,0.39795918367346933,0.3042590328026102,True,True,0.7214944935628974
 REVEL,BRCA1,38,BS3-moderate,point estimate,True,0.3,0.21428571428571427,0.2362623002406296,False,False,0.654314668321183
-REVEL,BRCA1,38,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,38,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,39,PS3-supporting,certified,False,,,,,,
 REVEL,BRCA1,39,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,39,PS3-strong,certified,False,,,,,,
@@ -16318,7 +16318,7 @@ REVEL,BRCA1,43,PS3-moderate,point estimate,True,0.2,7.334183673469387,4.48458313
 REVEL,BRCA1,43,PS3-strong,point estimate,True,0.05,26.78571428571429,9.474457481312518,False,False,0.13854118194509074
 REVEL,BRCA1,43,BS3-supporting,point estimate,True,0.2,0.17006802721088435,0.23580579292078613,True,False,0.6555090222842666
 REVEL,BRCA1,43,BS3-moderate,point estimate,True,0.2,0.17006802721088435,0.23580579292078613,False,False,0.6555090222842666
-REVEL,BRCA1,43,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,43,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,44,PS3-supporting,certified,True,0.2,2.3465913342584104,5.2499417674743984,True,True,0.23159350602347342
 REVEL,BRCA1,44,PS3-moderate,certified,True,0.05,4.36332068024509,17.4749315457936,True,True,0.08327904451682952
 REVEL,BRCA1,44,PS3-strong,certified,False,,,,,,
@@ -16378,7 +16378,7 @@ REVEL,BRCA1,45,PS3-moderate,point estimate,True,0.05,5.6000000000000005,6.615704
 REVEL,BRCA1,45,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,45,BS3-supporting,point estimate,True,0.3,0.1917808219178082,0.15565532852867806,True,True,0.4975401995760302
 REVEL,BRCA1,45,BS3-moderate,point estimate,True,0.3,0.1917808219178082,0.15565532852867806,True,True,0.4975401995760302
-REVEL,BRCA1,45,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,45,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,46,PS3-supporting,certified,True,0.2,2.696964049583648,5.2499417674743984,True,True,0.23159350602347342
 REVEL,BRCA1,46,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,46,PS3-strong,certified,False,,,,,,
@@ -16456,13 +16456,13 @@ REVEL,BRCA1,48,PS3-moderate,bootstrap,True,0.1,5.466666666666668,6.6157046166586
 REVEL,BRCA1,48,PS3-strong,bootstrap,False,,,,,,
 REVEL,BRCA1,48,BS3-supporting,bootstrap,True,0.3,0.21647009693205346,0.18430041797452207,True,True,0.5835414404632645
 REVEL,BRCA1,48,BS3-moderate,bootstrap,True,0.3,0.21647009693205346,0.18430041797452207,True,True,0.5835414404632645
-REVEL,BRCA1,48,BS3-strong,bootstrap,False,,,,,,
+REVEL,BRCA1,48,BS3-strong,bootstrap,True,0.05,0.0,0.0,True,True,0.00965565379246161
 REVEL,BRCA1,48,PS3-supporting,"bootstrap, Bonferroni",True,0.3,3.5477969348659,4.677405785755031,True,True,0.27850550643710253
 REVEL,BRCA1,48,PS3-moderate,"bootstrap, Bonferroni",True,0.05,4.770618686868687,10.694017753493801,True,True,0.1251395998138669
 REVEL,BRCA1,48,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,48,BS3-supporting,"bootstrap, Bonferroni",True,0.3,0.2991112574061883,0.18430041797452207,True,True,0.5835414404632645
-REVEL,BRCA1,48,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-REVEL,BRCA1,48,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+REVEL,BRCA1,48,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.00965565379246161
+REVEL,BRCA1,48,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.00965565379246161
 REVEL,BRCA1,48,PS3-supporting,point estimate,True,0.3,6.036511156186613,4.677405785755031,True,False,0.27850550643710253
 REVEL,BRCA1,48,PS3-moderate,point estimate,True,0.3,6.036511156186613,4.677405785755031,True,False,0.27850550643710253
 REVEL,BRCA1,48,PS3-strong,point estimate,False,,,,,,
@@ -16525,7 +16525,7 @@ REVEL,BRCA1,50,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,50,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,50,PS3-supporting,point estimate,True,0.3,2.49671052631579,2.709298870707742,True,True,0.4376777312445065
 REVEL,BRCA1,50,PS3-moderate,point estimate,True,0.1,7.15311004784689,5.696024303149839,True,False,0.21223566516726125
-REVEL,BRCA1,50,PS3-strong,point estimate,True,0.05,289473684210.5263,18.258091055296546,False,False,0.07751667442221188
+REVEL,BRCA1,50,PS3-strong,point estimate,True,0.05,inf,18.258091055296546,False,False,0.07751667442221188
 REVEL,BRCA1,50,BS3-supporting,point estimate,True,0.3,0.23279352226720648,0.15565532852867806,True,True,0.4975401995760302
 REVEL,BRCA1,50,BS3-moderate,point estimate,True,0.2,0.20175438596491227,0.11234588874464184,True,True,0.4510069282870586
 REVEL,BRCA1,50,BS3-strong,point estimate,False,,,,,,
@@ -16558,7 +16558,7 @@ REVEL,BRCA1,51,PS3-moderate,point estimate,True,0.2,6.413793103448276,4.39060732
 REVEL,BRCA1,51,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,51,BS3-supporting,point estimate,True,0.2,0.2420299284320104,0.2392628206423844,True,True,0.6641073367457733
 REVEL,BRCA1,51,BS3-moderate,point estimate,False,,,,,,
-REVEL,BRCA1,51,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,51,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,52,PS3-supporting,certified,True,0.3,2.209792145203088,4.099871736731161,True,True,0.31828369784395844
 REVEL,BRCA1,52,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,52,PS3-strong,certified,False,,,,,,
@@ -16585,7 +16585,7 @@ REVEL,BRCA1,52,BS3-moderate,"bootstrap, Bonferroni",True,0.3,0.21358990147783258
 REVEL,BRCA1,52,BS3-strong,"bootstrap, Bonferroni",True,0.2,0.0,0.11648873641037359,False,False,0.4541324130086345
 REVEL,BRCA1,52,PS3-supporting,point estimate,True,0.3,4.62809917355372,4.099871736731161,True,False,0.31828369784395844
 REVEL,BRCA1,52,PS3-moderate,point estimate,True,0.3,4.62809917355372,4.099871736731161,False,False,0.31828369784395844
-REVEL,BRCA1,52,PS3-strong,point estimate,True,0.05,303030303030.30304,20.00111728483776,True,False,0.06512331316891577
+REVEL,BRCA1,52,PS3-strong,point estimate,True,0.05,inf,20.00111728483776,True,False,0.06512331316891577
 REVEL,BRCA1,52,BS3-supporting,point estimate,True,0.3,0.047225501770956316,0.16730126458886166,True,False,0.5514270203195285
 REVEL,BRCA1,52,BS3-moderate,point estimate,True,0.3,0.047225501770956316,0.16730126458886166,True,False,0.5514270203195285
 REVEL,BRCA1,52,BS3-strong,point estimate,True,0.3,0.047225501770956316,0.16730126458886166,False,False,0.5514270203195285
@@ -16827,8 +16827,8 @@ REVEL,BRCA1,60,PS3-supporting,point estimate,True,0.2,2.4347826086956523,4.65624
 REVEL,BRCA1,60,PS3-moderate,point estimate,True,0.05,8.4,11.98899678197788,True,True,0.11300217155266014
 REVEL,BRCA1,60,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,60,BS3-supporting,point estimate,True,0.2,0.42,0.2523881707721755,True,True,0.6874476500697998
-REVEL,BRCA1,60,BS3-moderate,point estimate,True,0.05,0.0,inf,False,False,0.0
-REVEL,BRCA1,60,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,60,BS3-moderate,point estimate,False,,,,,,
+REVEL,BRCA1,60,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,61,PS3-supporting,certified,True,0.3,2.4160162990205114,3.3837933269548075,True,True,0.36773822449718213
 REVEL,BRCA1,61,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,61,PS3-strong,certified,False,,,,,,
@@ -16948,7 +16948,7 @@ REVEL,BRCA1,64,PS3-moderate,point estimate,False,,,,,,
 REVEL,BRCA1,64,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,64,BS3-supporting,point estimate,True,0.2,0.3181818181818182,0.19628045469590427,True,True,0.6155602088826845
 REVEL,BRCA1,64,BS3-moderate,point estimate,True,0.1,0.125,0.10399729622737179,True,True,0.2676554986815573
-REVEL,BRCA1,64,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,64,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,65,PS3-supporting,certified,True,0.2,2.1557811648014953,4.484583133280475,True,True,0.28989452458507836
 REVEL,BRCA1,65,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,65,PS3-strong,certified,False,,,,,,
@@ -17008,7 +17008,7 @@ REVEL,BRCA1,66,PS3-moderate,point estimate,True,0.2,4.976076555023924,4.64699126
 REVEL,BRCA1,66,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,66,BS3-supporting,point estimate,True,0.2,0.18744142455482662,0.24936906969135098,True,False,0.6817163021560416
 REVEL,BRCA1,66,BS3-moderate,point estimate,True,0.2,0.18744142455482662,0.24936906969135098,False,False,0.6817163021560416
-REVEL,BRCA1,66,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,66,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,67,PS3-supporting,certified,True,0.3,2.3382689197877493,3.7970448834418895,True,True,0.3358926632542268
 REVEL,BRCA1,67,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,67,PS3-strong,certified,False,,,,,,
@@ -17098,7 +17098,7 @@ REVEL,BRCA1,69,PS3-moderate,point estimate,True,0.3,4.829912023460411,4.48458313
 REVEL,BRCA1,69,PS3-strong,point estimate,True,0.05,31.483870967741932,18.278885211432478,False,False,0.07185512641538701
 REVEL,BRCA1,69,BS3-supporting,point estimate,True,0.3,0.08463406174124176,0.19987450077101002,True,False,0.618383227340882
 REVEL,BRCA1,69,BS3-moderate,point estimate,True,0.3,0.08463406174124176,0.19987450077101002,True,False,0.618383227340882
-REVEL,BRCA1,69,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,69,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,70,PS3-supporting,certified,True,0.2,2.6977047492424857,4.217544976503405,True,True,0.3076857453078951
 REVEL,BRCA1,70,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,70,PS3-strong,certified,False,,,,,,
@@ -17125,10 +17125,10 @@ REVEL,BRCA1,70,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,70,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA1,70,PS3-supporting,point estimate,True,0.2,6.441471571906355,4.217544976503405,True,False,0.3076857453078951
 REVEL,BRCA1,70,PS3-moderate,point estimate,True,0.2,6.441471571906355,4.217544976503405,False,False,0.3076857453078951
-REVEL,BRCA1,70,PS3-strong,point estimate,True,0.05,173913043478.26086,20.869018685205955,True,False,0.03206917946331627
+REVEL,BRCA1,70,PS3-strong,point estimate,True,0.05,inf,20.869018685205955,True,False,0.03206917946331627
 REVEL,BRCA1,70,BS3-supporting,point estimate,True,0.2,0.24342770475227504,0.23508574748652225,True,True,0.6478542991572307
 REVEL,BRCA1,70,BS3-moderate,point estimate,True,0.3,0.20610897083104018,0.1905012704984396,True,True,0.5893813660100304
-REVEL,BRCA1,70,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,70,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,71,PS3-supporting,certified,True,0.2,3.058499642241468,4.677405785755031,True,True,0.27850550643710253
 REVEL,BRCA1,71,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,71,PS3-strong,certified,False,,,,,,
@@ -17308,7 +17308,7 @@ REVEL,BRCA1,76,PS3-moderate,point estimate,True,0.1,4.944761904761905,5.89068547
 REVEL,BRCA1,76,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,76,BS3-supporting,point estimate,True,0.2,0.1873015873015873,0.23289664704695787,True,False,0.6439648932319941
 REVEL,BRCA1,76,BS3-moderate,point estimate,True,0.2,0.1873015873015873,0.23289664704695787,False,False,0.6439648932319941
-REVEL,BRCA1,76,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,76,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,77,PS3-supporting,certified,False,,,,,,
 REVEL,BRCA1,77,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,77,PS3-strong,certified,False,,,,,,
@@ -17458,7 +17458,7 @@ REVEL,BRCA1,81,PS3-moderate,point estimate,True,0.1,5.703703703703703,9.47445748
 REVEL,BRCA1,81,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,81,BS3-supporting,point estimate,True,0.2,0.29473684210526313,0.2164737168430242,True,True,0.6322617755028178
 REVEL,BRCA1,81,BS3-moderate,point estimate,True,0.3,0.16470588235294115,0.18041048267760385,True,False,0.5685460937903934
-REVEL,BRCA1,81,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,81,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,82,PS3-supporting,certified,True,0.1,2.5845129031622682,4.677405785755031,True,True,0.27850550643710253
 REVEL,BRCA1,82,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,82,PS3-strong,certified,False,,,,,,
@@ -17758,7 +17758,7 @@ REVEL,BRCA1,91,PS3-moderate,point estimate,True,0.1,5.411290322580645,11.7132703
 REVEL,BRCA1,91,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,91,BS3-supporting,point estimate,True,0.3,0.2777988614800759,0.18430041797452207,True,True,0.5835414404632645
 REVEL,BRCA1,91,BS3-moderate,point estimate,True,0.1,0.1157495256166983,0.13184718659464897,True,False,0.4784111473036554
-REVEL,BRCA1,91,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,91,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,92,PS3-supporting,certified,False,,,,,,
 REVEL,BRCA1,92,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,92,PS3-strong,certified,False,,,,,,
@@ -17878,7 +17878,7 @@ REVEL,BRCA1,95,PS3-moderate,point estimate,True,0.2,6.363636363636363,6.38596567
 REVEL,BRCA1,95,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,95,BS3-supporting,point estimate,True,0.2,0.2282608695652174,0.21493046381596753,True,True,0.6276549816452096
 REVEL,BRCA1,95,BS3-moderate,point estimate,True,0.2,0.2282608695652174,0.21493046381596753,True,True,0.6276549816452096
-REVEL,BRCA1,95,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,95,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,96,PS3-supporting,certified,False,,,,,,
 REVEL,BRCA1,96,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,96,PS3-strong,certified,False,,,,,,
@@ -17908,7 +17908,7 @@ REVEL,BRCA1,96,PS3-moderate,point estimate,True,0.05,7.2727272727272725,9.474457
 REVEL,BRCA1,96,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,96,BS3-supporting,point estimate,True,0.3,0.13986013986013987,0.19897811341483007,True,False,0.6076146528100925
 REVEL,BRCA1,96,BS3-moderate,point estimate,True,0.3,0.13986013986013987,0.19897811341483007,True,False,0.6076146528100925
-REVEL,BRCA1,96,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,BRCA1,96,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,97,PS3-supporting,certified,True,0.1,2.8638062538143814,8.587701014882652,True,True,0.14721188149526912
 REVEL,BRCA1,97,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA1,97,PS3-strong,certified,False,,,,,,
@@ -17998,7 +17998,7 @@ REVEL,BRCA1,99,PS3-moderate,point estimate,True,0.05,6.000000000000001,11.713270
 REVEL,BRCA1,99,PS3-strong,point estimate,False,,,,,,
 REVEL,BRCA1,99,BS3-supporting,point estimate,True,0.3,0.21604938271604937,0.20054894393821895,True,True,0.5935732381986454
 REVEL,BRCA1,99,BS3-moderate,point estimate,True,0.3,0.21604938271604937,0.20054894393821895,True,True,0.5935732381986454
-REVEL,BRCA1,99,BS3-strong,point estimate,True,0.1,0.0,0.0,True,True,0.00965565379246161
+REVEL,BRCA1,99,BS3-strong,point estimate,False,,,,,,
 REVEL,BRCA2,0,PS3-supporting,certified,True,0.2,2.1437470478674214,3.347426335398061,True,True,0.32257326007326004
 REVEL,BRCA2,0,PS3-moderate,certified,False,,,,,,
 REVEL,BRCA2,0,PS3-strong,certified,False,,,,,,
@@ -18501,8 +18501,8 @@ REVEL,BRCA2,16,PS3-supporting,"bootstrap, Bonferroni",True,0.2,2.938868109349667
 REVEL,BRCA2,16,PS3-moderate,"bootstrap, Bonferroni",True,0.05,10.431839364035087,7.818610483261689,True,False,0.11589414858645629
 REVEL,BRCA2,16,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA2,16,BS3-supporting,"bootstrap, Bonferroni",True,0.3,0.4716589204898397,0.2582500026340566,True,True,0.6147981825866441
-REVEL,BRCA2,16,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-REVEL,BRCA2,16,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+REVEL,BRCA2,16,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.016774091293322062
+REVEL,BRCA2,16,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.016774091293322062
 REVEL,BRCA2,16,PS3-supporting,point estimate,True,0.2,4.179084967320262,3.668342422481949,True,False,0.2942730346576501
 REVEL,BRCA2,16,PS3-moderate,point estimate,True,0.1,6.081249999999999,5.362131022355105,True,False,0.20398410350333426
 REVEL,BRCA2,16,PS3-strong,point estimate,True,0.05,25.94666666666667,7.818610483261689,False,False,0.11589414858645629
@@ -19581,8 +19581,8 @@ REVEL,BRCA2,52,PS3-supporting,"bootstrap, Bonferroni",True,0.2,2.180167682926829
 REVEL,BRCA2,52,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA2,52,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,BRCA2,52,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-REVEL,BRCA2,52,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-REVEL,BRCA2,52,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+REVEL,BRCA2,52,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.016774091293322062
+REVEL,BRCA2,52,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.016774091293322062
 REVEL,BRCA2,52,PS3-supporting,point estimate,True,0.2,3.340909090909091,4.063954459036204,True,True,0.2686038320653706
 REVEL,BRCA2,52,PS3-moderate,point estimate,True,0.1,5.790909090909091,6.299833028536809,True,True,0.17549192260730723
 REVEL,BRCA2,52,PS3-strong,point estimate,False,,,,,,
@@ -24295,7 +24295,7 @@ REVEL,RAD51C,9,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,RAD51C,9,BS3-strong,"bootstrap, Bonferroni",True,0.1,0.0,0.023612165310953843,True,False,0.13755533199195172
 REVEL,RAD51C,9,PS3-supporting,point estimate,True,0.2,6.054054054054054,4.764234036890001,True,False,0.317053431701319
 REVEL,RAD51C,9,PS3-moderate,point estimate,True,0.2,6.054054054054054,4.764234036890001,True,False,0.317053431701319
-REVEL,RAD51C,9,PS3-strong,point estimate,True,0.05,216216216216.21625,16.802811463628103,False,False,0.07333668678739103
+REVEL,RAD51C,9,PS3-strong,point estimate,True,0.05,inf,16.802811463628103,False,False,0.07333668678739103
 REVEL,RAD51C,9,BS3-supporting,point estimate,True,0.2,0.1603298213467705,0.2535035819136417,True,False,0.6565805946791862
 REVEL,RAD51C,9,BS3-moderate,point estimate,True,0.2,0.1603298213467705,0.2535035819136417,False,False,0.6565805946791862
 REVEL,RAD51C,9,BS3-strong,point estimate,True,0.1,0.0,0.023612165310953843,True,False,0.13755533199195172
@@ -24475,7 +24475,7 @@ REVEL,RAD51C,15,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,RAD51C,15,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.04826919332156756,True,False,0.17619047619047618
 REVEL,RAD51C,15,PS3-supporting,point estimate,True,0.3,3.5586734693877555,4.261866895152978,True,True,0.34499552872792305
 REVEL,RAD51C,15,PS3-moderate,point estimate,True,0.1,17.678571428571427,13.24838949703673,True,False,0.15524703778224902
-REVEL,RAD51C,15,PS3-strong,point estimate,True,0.05,190476190476.19046,18.973480469212134,True,False,0.06752850435949027
+REVEL,RAD51C,15,PS3-strong,point estimate,True,0.05,inf,18.973480469212134,True,False,0.06752850435949027
 REVEL,RAD51C,15,BS3-supporting,point estimate,True,0.3,0.3120665742024965,0.23789305531516852,True,True,0.6255197853789403
 REVEL,RAD51C,15,BS3-moderate,point estimate,True,0.1,0.18194070080862532,0.058714565968355024,True,True,0.2932226693494299
 REVEL,RAD51C,15,BS3-strong,point estimate,True,0.05,0.0,0.04826919332156756,True,False,0.17619047619047618
@@ -24658,7 +24658,7 @@ REVEL,RAD51C,21,PS3-moderate,point estimate,True,0.3,5.968645016797312,4.2481591
 REVEL,RAD51C,21,PS3-strong,point estimate,True,0.05,21.205673758865245,12.448366351558912,False,False,0.1296501229599821
 REVEL,RAD51C,21,BS3-supporting,point estimate,True,0.3,0.13171225937183384,0.1961579009848862,True,False,0.5924413145539906
 REVEL,RAD51C,21,BS3-moderate,point estimate,True,0.3,0.13171225937183384,0.1961579009848862,True,False,0.5924413145539906
-REVEL,RAD51C,21,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,RAD51C,21,BS3-strong,point estimate,False,,,,,,
 REVEL,RAD51C,22,PS3-supporting,certified,True,0.2,3.6844887677193254,7.198289245594573,True,True,0.2465112899619942
 REVEL,RAD51C,22,PS3-moderate,certified,True,0.1,4.380226673457449,7.884535665570862,True,True,0.23510619271182648
 REVEL,RAD51C,22,PS3-strong,certified,False,,,,,,
@@ -24895,7 +24895,7 @@ REVEL,RAD51C,29,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,RAD51C,29,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,RAD51C,29,PS3-supporting,point estimate,True,0.2,5.86593707250342,4.810984700985759,True,False,0.31209031969595347
 REVEL,RAD51C,29,PS3-moderate,point estimate,True,0.2,5.86593707250342,4.810984700985759,True,False,0.31209031969595347
-REVEL,RAD51C,29,PS3-strong,point estimate,True,0.05,162790697674.4186,33.51702924257683,True,False,0.04328638497652582
+REVEL,RAD51C,29,PS3-strong,point estimate,True,0.05,inf,33.51702924257683,True,False,0.04328638497652582
 REVEL,RAD51C,29,BS3-supporting,point estimate,True,0.2,0.23971377459749552,0.23376307488836018,True,True,0.6221395036887993
 REVEL,RAD51C,29,BS3-moderate,point estimate,True,0.3,0.22722868217054268,0.17278118787493338,True,True,0.5720545495193382
 REVEL,RAD51C,29,BS3-strong,point estimate,False,,,,,,
@@ -26961,8 +26961,8 @@ REVEL,RAD51C,98,PS3-supporting,"bootstrap, Bonferroni",True,0.3,2.45872416674512
 REVEL,RAD51C,98,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,RAD51C,98,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,RAD51C,98,BS3-supporting,"bootstrap, Bonferroni",True,0.3,0.4787813826025464,0.18740922568001492,True,True,0.584842387659289
-REVEL,RAD51C,98,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-REVEL,RAD51C,98,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+REVEL,RAD51C,98,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.0466934942991281
+REVEL,RAD51C,98,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.0466934942991281
 REVEL,RAD51C,98,PS3-supporting,point estimate,True,0.3,3.8336120401337794,3.831328837779067,True,False,0.36401632014308066
 REVEL,RAD51C,98,PS3-moderate,point estimate,True,0.1,5.458333333333333,8.348571936476272,True,True,0.22877040017885086
 REVEL,RAD51C,98,PS3-strong,point estimate,False,,,,,,
@@ -27028,7 +27028,7 @@ REVEL,MSH2,0,PS3-moderate,point estimate,True,0.1,5.526315789473684,6.5321505326
 REVEL,MSH2,0,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,0,BS3-supporting,point estimate,True,0.3,0.3000714455822815,0.2641406979989746,True,True,0.7269263584493147
 REVEL,MSH2,0,BS3-moderate,point estimate,True,0.1,0.22592791823561054,0.17030722954262775,True,True,0.6673492241241401
-REVEL,MSH2,0,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,0,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,1,PS3-supporting,certified,True,0.1,2.168104796344892,4.549226903376664,True,True,0.19002559590465526
 REVEL,MSH2,1,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,1,PS3-strong,certified,False,,,,,,
@@ -27298,7 +27298,7 @@ REVEL,MSH2,9,PS3-moderate,point estimate,True,0.2,5.209895052473763,4.2180428614
 REVEL,MSH2,9,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,9,BS3-supporting,point estimate,True,0.3,0.13565387117761873,0.2117558700466713,True,False,0.6909694448888177
 REVEL,MSH2,9,BS3-moderate,point estimate,True,0.3,0.13565387117761873,0.2117558700466713,True,False,0.6909694448888177
-REVEL,MSH2,9,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,9,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,10,PS3-supporting,certified,True,0.2,2.242625684379029,4.181731365667007,True,True,0.21270196768517036
 REVEL,MSH2,10,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,10,PS3-strong,certified,False,,,,,,
@@ -27358,7 +27358,7 @@ REVEL,MSH2,11,PS3-moderate,point estimate,True,0.1,4.39304347826087,5.2249815866
 REVEL,MSH2,11,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,11,BS3-supporting,point estimate,True,0.3,0.17541666666666667,0.17059585582264447,True,True,0.6347331093691675
 REVEL,MSH2,11,BS3-moderate,point estimate,True,0.2,0.1684,0.17030722954262775,True,False,0.6673492241241401
-REVEL,MSH2,11,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,11,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,12,PS3-supporting,certified,False,,,,,,
 REVEL,MSH2,12,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,12,PS3-strong,certified,False,,,,,,
@@ -27375,14 +27375,14 @@ REVEL,MSH2,12,PS3-supporting,bootstrap,True,0.2,2.456470930664619,4.303702172481
 REVEL,MSH2,12,PS3-moderate,bootstrap,False,,,,,,
 REVEL,MSH2,12,PS3-strong,bootstrap,False,,,,,,
 REVEL,MSH2,12,BS3-supporting,bootstrap,False,,,,,,
-REVEL,MSH2,12,BS3-moderate,bootstrap,False,,,,,,
-REVEL,MSH2,12,BS3-strong,bootstrap,False,,,,,,
+REVEL,MSH2,12,BS3-moderate,bootstrap,True,0.05,0.0,0.0,True,True,0.01187010078387458
+REVEL,MSH2,12,BS3-strong,bootstrap,True,0.05,0.0,0.0,True,True,0.01187010078387458
 REVEL,MSH2,12,PS3-supporting,"bootstrap, Bonferroni",False,,,,,,
 REVEL,MSH2,12,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,MSH2,12,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
-REVEL,MSH2,12,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-REVEL,MSH2,12,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-REVEL,MSH2,12,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+REVEL,MSH2,12,BS3-supporting,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.01187010078387458
+REVEL,MSH2,12,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.01187010078387458
+REVEL,MSH2,12,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.01187010078387458
 REVEL,MSH2,12,PS3-supporting,point estimate,True,0.3,2.310960591133005,3.2368331743771868,True,True,0.2888817789153735
 REVEL,MSH2,12,PS3-moderate,point estimate,True,0.1,4.313793103448276,6.4126618240303745,True,True,0.10505785740948115
 REVEL,MSH2,12,PS3-strong,point estimate,False,,,,,,
@@ -27508,7 +27508,7 @@ REVEL,MSH2,16,PS3-moderate,point estimate,True,0.2,4.751131221719457,4.549226903
 REVEL,MSH2,16,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,16,BS3-supporting,point estimate,True,0.2,0.284231897135123,0.3169441116607782,True,False,0.7835839598997494
 REVEL,MSH2,16,BS3-moderate,point estimate,True,0.3,0.20512820512820515,0.26766866725252436,False,False,0.7175198634885086
-REVEL,MSH2,16,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,16,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,17,PS3-supporting,certified,True,0.3,2.4085561776035633,3.2368331743771868,True,True,0.2888817789153735
 REVEL,MSH2,17,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,17,PS3-strong,certified,False,,,,,,
@@ -27658,7 +27658,7 @@ REVEL,MSH2,21,PS3-moderate,point estimate,True,0.3,4.363736263736263,4.610181489
 REVEL,MSH2,21,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,21,BS3-supporting,point estimate,True,0.2,0.2764550264550264,0.2783993381308756,True,False,0.7341305391137418
 REVEL,MSH2,21,BS3-moderate,point estimate,True,0.3,0.1449375866851595,0.21158186771179704,True,False,0.6915293553031515
-REVEL,MSH2,21,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,21,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,22,PS3-supporting,certified,True,0.3,2.281386170390388,4.34914410987455,True,True,0.20079453954034018
 REVEL,MSH2,22,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,22,PS3-strong,certified,False,,,,,,
@@ -27688,7 +27688,7 @@ REVEL,MSH2,22,PS3-moderate,point estimate,True,0.3,4.622222222222223,4.349144109
 REVEL,MSH2,22,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,22,BS3-supporting,point estimate,True,0.2,0.3659824046920821,0.30201087947884575,True,True,0.7721057964059083
 REVEL,MSH2,22,BS3-moderate,point estimate,True,0.3,0.22958057395143489,0.19283249486590026,True,True,0.6740494854156668
-REVEL,MSH2,22,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,22,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,23,PS3-supporting,certified,True,0.2,2.2081788143033134,3.666001334246402,True,True,0.2490348210952914
 REVEL,MSH2,23,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,23,PS3-strong,certified,False,,,,,,
@@ -27778,7 +27778,7 @@ REVEL,MSH2,25,PS3-moderate,point estimate,True,0.3,5.155102040816327,4.996626473
 REVEL,MSH2,25,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,25,BS3-supporting,point estimate,True,0.2,0.3397118155619597,0.3207030969288508,True,True,0.7872980323148298
 REVEL,MSH2,25,BS3-moderate,point estimate,False,,,,,,
-REVEL,MSH2,25,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,25,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,26,PS3-supporting,certified,True,0.3,2.3323947615516727,6.338245668094372,True,True,0.11196341918626351
 REVEL,MSH2,26,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,26,PS3-strong,certified,False,,,,,,
@@ -27808,7 +27808,7 @@ REVEL,MSH2,26,PS3-moderate,point estimate,True,0.3,5.871428571428571,6.338245668
 REVEL,MSH2,26,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,26,BS3-supporting,point estimate,True,0.3,0.28344827586206894,0.21362142048915825,True,True,0.6850237295366075
 REVEL,MSH2,26,BS3-moderate,point estimate,False,,,,,,
-REVEL,MSH2,26,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,26,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,27,PS3-supporting,certified,True,0.2,3.25543942049952,4.032644661350167,True,True,0.22300431930891054
 REVEL,MSH2,27,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,27,PS3-strong,certified,False,,,,,,
@@ -27898,7 +27898,7 @@ REVEL,MSH2,29,PS3-moderate,point estimate,True,0.1,5.776223776223776,5.969720899
 REVEL,MSH2,29,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,29,BS3-supporting,point estimate,True,0.2,0.2203371745625267,0.17030722954262775,True,True,0.6673492241241401
 REVEL,MSH2,29,BS3-moderate,point estimate,True,0.2,0.2203371745625267,0.17030722954262775,True,True,0.6673492241241401
-REVEL,MSH2,29,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,29,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,30,PS3-supporting,certified,False,,,,,,
 REVEL,MSH2,30,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,30,PS3-strong,certified,False,,,,,,
@@ -27958,7 +27958,7 @@ REVEL,MSH2,31,PS3-moderate,point estimate,True,0.1,6.634615384615384,5.969720899
 REVEL,MSH2,31,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,31,BS3-supporting,point estimate,True,0.3,0.17722602739726026,0.19404142237351146,True,False,0.6699061483495973
 REVEL,MSH2,31,BS3-moderate,point estimate,True,0.2,0.16911764705882354,0.24690046560370157,False,False,0.7111182210846265
-REVEL,MSH2,31,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,31,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,32,PS3-supporting,certified,True,0.05,2.261025988233411,7.8078575485938195,True,True,0.079003359462486
 REVEL,MSH2,32,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,32,PS3-strong,certified,False,,,,,,
@@ -27988,7 +27988,7 @@ REVEL,MSH2,32,PS3-moderate,point estimate,True,0.1,4.475757575757576,5.247782513
 REVEL,MSH2,32,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,32,BS3-supporting,point estimate,True,0.2,0.29701576576576577,0.17030722954262775,True,True,0.6673492241241401
 REVEL,MSH2,32,BS3-moderate,point estimate,False,,,,,,
-REVEL,MSH2,32,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,32,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,33,PS3-supporting,certified,True,0.2,2.5750260975048707,3.551219551091385,True,True,0.2568362395350077
 REVEL,MSH2,33,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,33,PS3-strong,certified,False,,,,,,
@@ -28018,7 +28018,7 @@ REVEL,MSH2,33,PS3-moderate,point estimate,True,0.2,4.33841684822077,3.5512195510
 REVEL,MSH2,33,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,33,BS3-supporting,point estimate,True,0.2,0.20400079223608636,0.1978107265080983,True,True,0.6777262304697915
 REVEL,MSH2,33,BS3-moderate,point estimate,True,0.2,0.20400079223608636,0.1978107265080983,True,True,0.6777262304697915
-REVEL,MSH2,33,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,33,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,34,PS3-supporting,certified,False,,,,,,
 REVEL,MSH2,34,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,34,PS3-strong,certified,False,,,,,,
@@ -28168,7 +28168,7 @@ REVEL,MSH2,38,PS3-moderate,point estimate,True,0.1,5.506072874493928,5.575575324
 REVEL,MSH2,38,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,38,BS3-supporting,point estimate,True,0.3,0.2901849217638691,0.2117558700466713,True,True,0.6909694448888177
 REVEL,MSH2,38,BS3-moderate,point estimate,True,0.2,0.16908412764193947,0.11462076934624459,True,True,0.5790966778648748
-REVEL,MSH2,38,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,38,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,39,PS3-supporting,certified,True,0.2,2.2583735170736077,3.7647002003347585,True,True,0.24384365168239747
 REVEL,MSH2,39,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,39,PS3-strong,certified,False,,,,,,
@@ -28288,7 +28288,7 @@ REVEL,MSH2,42,PS3-moderate,point estimate,True,0.1,5.714583333333334,6.326927985
 REVEL,MSH2,42,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,42,BS3-supporting,point estimate,True,0.1,0.4153543307086614,0.4953003147117989,False,False,0.8753452780888392
 REVEL,MSH2,42,BS3-moderate,point estimate,True,0.2,0.2170781893004115,0.28539294548604266,False,False,0.7449554737908601
-REVEL,MSH2,42,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,42,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,43,PS3-supporting,certified,True,0.2,3.090106228628318,3.7170028272917164,True,True,0.2463179224657388
 REVEL,MSH2,43,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,43,PS3-strong,certified,False,,,,,,
@@ -28318,7 +28318,7 @@ REVEL,MSH2,43,PS3-moderate,point estimate,True,0.2,5.042424242424242,3.717002827
 REVEL,MSH2,43,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,43,BS3-supporting,point estimate,True,0.2,0.08481141692150866,0.2641406979989746,True,False,0.7269263584493147
 REVEL,MSH2,43,BS3-moderate,point estimate,True,0.2,0.08481141692150866,0.2641406979989746,False,False,0.7269263584493147
-REVEL,MSH2,43,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,43,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,44,PS3-supporting,certified,False,,,,,,
 REVEL,MSH2,44,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,44,PS3-strong,certified,False,,,,,,
@@ -28341,8 +28341,8 @@ REVEL,MSH2,44,PS3-supporting,"bootstrap, Bonferroni",True,0.2,2.460716760713543,
 REVEL,MSH2,44,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 REVEL,MSH2,44,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 REVEL,MSH2,44,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-REVEL,MSH2,44,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-REVEL,MSH2,44,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+REVEL,MSH2,44,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.0,0.0,True,True,0.01187010078387458
+REVEL,MSH2,44,BS3-strong,"bootstrap, Bonferroni",True,0.1,0.0,0.0,True,True,0.01187010078387458
 REVEL,MSH2,44,PS3-supporting,point estimate,True,0.2,3.5801393728222997,3.8295623667911207,True,True,0.2370580707086866
 REVEL,MSH2,44,PS3-moderate,point estimate,True,0.05,8.807142857142857,11.122080136402388,True,True,0.043896976483762604
 REVEL,MSH2,44,PS3-strong,point estimate,False,,,,,,
@@ -28408,7 +28408,7 @@ REVEL,MSH2,46,PS3-moderate,point estimate,True,0.1,4.975961538461538,6.338245668
 REVEL,MSH2,46,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,46,BS3-supporting,point estimate,True,0.3,0.2253919860627178,0.21292072453170302,True,True,0.6872447075134646
 REVEL,MSH2,46,BS3-moderate,point estimate,True,0.3,0.2253919860627178,0.21292072453170302,True,True,0.6872447075134646
-REVEL,MSH2,46,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,46,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,47,PS3-supporting,certified,True,0.2,2.399449648058178,4.181731365667007,True,True,0.21270196768517036
 REVEL,MSH2,47,PS3-moderate,certified,True,0.05,4.708447570953711,11.035587224931268,True,True,0.041526689063083246
 REVEL,MSH2,47,PS3-strong,certified,False,,,,,,
@@ -28588,7 +28588,7 @@ REVEL,MSH2,52,PS3-moderate,point estimate,True,0.3,5.546666666666668,3.963926166
 REVEL,MSH2,52,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,52,BS3-supporting,point estimate,True,0.3,0.09663182346109175,0.12938673043261262,True,False,0.6067189249720044
 REVEL,MSH2,52,BS3-moderate,point estimate,True,0.3,0.09663182346109175,0.12938673043261262,True,False,0.6067189249720044
-REVEL,MSH2,52,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,52,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,53,PS3-supporting,certified,True,0.2,2.559316263542966,4.265135174236332,True,True,0.20544179597930995
 REVEL,MSH2,53,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,53,PS3-strong,certified,False,,,,,,
@@ -28738,7 +28738,7 @@ REVEL,MSH2,57,PS3-moderate,point estimate,True,0.2,4.371413667188315,3.960260584
 REVEL,MSH2,57,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,57,BS3-supporting,point estimate,True,0.3,0.14686295127935506,0.23305244317206064,True,False,0.6982296165946781
 REVEL,MSH2,57,BS3-moderate,point estimate,True,0.3,0.14686295127935506,0.23305244317206064,False,False,0.6982296165946781
-REVEL,MSH2,57,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,57,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,58,PS3-supporting,certified,True,0.3,2.1400297192661597,3.766778298000504,True,True,0.24106276329120674
 REVEL,MSH2,58,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,58,PS3-strong,certified,False,,,,,,
@@ -28858,7 +28858,7 @@ REVEL,MSH2,61,PS3-moderate,point estimate,True,0.2,4.574884792626729,4.126909397
 REVEL,MSH2,61,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,61,BS3-supporting,point estimate,True,0.3,0.20173745173745172,0.16592510797568275,True,True,0.652388951101157
 REVEL,MSH2,61,BS3-moderate,point estimate,True,0.3,0.20173745173745172,0.16592510797568275,True,True,0.652388951101157
-REVEL,MSH2,61,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,61,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,62,PS3-supporting,certified,True,0.1,2.1809637018831585,6.532150532694203,True,True,0.10005599104143337
 REVEL,MSH2,62,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,62,PS3-strong,certified,False,,,,,,
@@ -29038,7 +29038,7 @@ REVEL,MSH2,67,PS3-moderate,point estimate,True,0.2,4.750260145681581,4.107555918
 REVEL,MSH2,67,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,67,BS3-supporting,point estimate,True,0.2,0.29102384291725103,0.22269809343124577,True,True,0.6938436516823975
 REVEL,MSH2,67,BS3-moderate,point estimate,False,,,,,,
-REVEL,MSH2,67,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,67,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,68,PS3-supporting,certified,True,0.3,2.4170883191614103,3.0869917142540424,True,True,0.3115048258945235
 REVEL,MSH2,68,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,68,PS3-strong,certified,False,,,,,,
@@ -29248,7 +29248,7 @@ REVEL,MSH2,74,PS3-moderate,point estimate,False,,,,,,
 REVEL,MSH2,74,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,74,BS3-supporting,point estimate,True,0.2,0.18209212225570381,0.21158186771179704,True,False,0.6915293553031515
 REVEL,MSH2,74,BS3-moderate,point estimate,True,0.2,0.18209212225570381,0.21158186771179704,True,False,0.6915293553031515
-REVEL,MSH2,74,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,74,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,75,PS3-supporting,certified,False,,,,,,
 REVEL,MSH2,75,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,75,PS3-strong,certified,False,,,,,,
@@ -29278,7 +29278,7 @@ REVEL,MSH2,75,PS3-moderate,point estimate,True,0.3,4.685483870967742,5.607170755
 REVEL,MSH2,75,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,75,BS3-supporting,point estimate,True,0.2,0.4395763119884449,0.32161523888292254,True,True,0.7851143816989282
 REVEL,MSH2,75,BS3-moderate,point estimate,False,,,,,,
-REVEL,MSH2,75,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,75,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,76,PS3-supporting,certified,True,0.3,2.81362507285431,3.766778298000504,True,True,0.24106276329120674
 REVEL,MSH2,76,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,76,PS3-strong,certified,False,,,,,,
@@ -29428,7 +29428,7 @@ REVEL,MSH2,80,PS3-moderate,point estimate,True,0.1,4.93681917211329,5.1888212261
 REVEL,MSH2,80,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,80,BS3-supporting,point estimate,True,0.3,0.2423529411764706,0.19283249486590026,True,True,0.6740494854156668
 REVEL,MSH2,80,BS3-moderate,point estimate,False,,,,,,
-REVEL,MSH2,80,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,80,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,81,PS3-supporting,certified,True,0.05,2.5154776317417635,8.993157097207412,True,True,0.06269130272489735
 REVEL,MSH2,81,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,81,PS3-strong,certified,False,,,,,,
@@ -29458,7 +29458,7 @@ REVEL,MSH2,81,PS3-moderate,point estimate,True,0.1,4.823188405797102,5.328299032
 REVEL,MSH2,81,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,81,BS3-supporting,point estimate,True,0.3,0.18126361655773418,0.1932392278494505,True,False,0.6726497093798325
 REVEL,MSH2,81,BS3-moderate,point estimate,True,0.3,0.18126361655773418,0.1932392278494505,True,False,0.6726497093798325
-REVEL,MSH2,81,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,81,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,82,PS3-supporting,certified,True,0.1,2.326794057368695,5.827881772122654,True,True,0.12465472191116088
 REVEL,MSH2,82,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,82,PS3-strong,certified,False,,,,,,
@@ -29518,7 +29518,7 @@ REVEL,MSH2,83,PS3-moderate,point estimate,True,0.1,4.625850340136054,5.672248117
 REVEL,MSH2,83,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,83,BS3-supporting,point estimate,True,0.3,0.3867151956323931,0.19283249486590026,True,True,0.6740494854156668
 REVEL,MSH2,83,BS3-moderate,point estimate,False,,,,,,
-REVEL,MSH2,83,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,83,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,84,PS3-supporting,certified,True,0.2,2.1757660194826145,3.9602605846412953,True,True,0.22789420359409157
 REVEL,MSH2,84,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,84,PS3-strong,certified,False,,,,,,
@@ -29548,7 +29548,7 @@ REVEL,MSH2,84,PS3-moderate,point estimate,True,0.3,4.392641129032257,4.722248474
 REVEL,MSH2,84,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,84,BS3-supporting,point estimate,True,0.2,0.23241487455197132,0.21008820535126937,True,True,0.683549298778862
 REVEL,MSH2,84,BS3-moderate,point estimate,True,0.3,0.09953231802374385,0.17218417620061835,True,False,0.6289473684210526
-REVEL,MSH2,84,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,84,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,85,PS3-supporting,certified,True,0.3,2.189239264011711,4.610181489944201,True,True,0.18812190049592065
 REVEL,MSH2,85,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,85,PS3-strong,certified,False,,,,,,
@@ -29638,7 +29638,7 @@ REVEL,MSH2,87,PS3-moderate,point estimate,True,0.1,4.315569487983281,5.045433042
 REVEL,MSH2,87,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,87,BS3-supporting,point estimate,True,0.2,0.3240168677061881,0.24690046560370157,True,True,0.7111182210846265
 REVEL,MSH2,87,BS3-moderate,point estimate,False,,,,,,
-REVEL,MSH2,87,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,87,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,88,PS3-supporting,certified,False,,,,,,
 REVEL,MSH2,88,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,88,PS3-strong,certified,False,,,,,,
@@ -29667,8 +29667,8 @@ REVEL,MSH2,88,PS3-supporting,point estimate,True,0.3,2.8019504876219057,4.032644
 REVEL,MSH2,88,PS3-moderate,point estimate,False,,,,,,
 REVEL,MSH2,88,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,88,BS3-supporting,point estimate,False,,,,,,
-REVEL,MSH2,88,BS3-moderate,point estimate,True,0.05,0.0,inf,False,False,0.0
-REVEL,MSH2,88,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,88,BS3-moderate,point estimate,False,,,,,,
+REVEL,MSH2,88,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,89,PS3-supporting,certified,False,,,,,,
 REVEL,MSH2,89,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,89,PS3-strong,certified,False,,,,,,
@@ -29878,7 +29878,7 @@ REVEL,MSH2,95,PS3-moderate,point estimate,True,0.2,5.049019607843137,3.829562366
 REVEL,MSH2,95,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,95,BS3-supporting,point estimate,True,0.2,0.15944272445820434,0.16373109612382664,True,False,0.661030235162374
 REVEL,MSH2,95,BS3-moderate,point estimate,True,0.2,0.15944272445820434,0.16373109612382664,True,False,0.661030235162374
-REVEL,MSH2,95,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,95,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,96,PS3-supporting,certified,True,0.05,2.5400580120321177,7.353161502517886,True,True,0.08215752146323255
 REVEL,MSH2,96,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,96,PS3-strong,certified,False,,,,,,
@@ -29938,7 +29938,7 @@ REVEL,MSH2,97,PS3-moderate,point estimate,True,0.1,5.065546218487395,4.983580262
 REVEL,MSH2,97,PS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,97,BS3-supporting,point estimate,True,0.3,0.1701863354037267,0.16729534946382413,True,True,0.6471071295259426
 REVEL,MSH2,97,BS3-moderate,point estimate,True,0.3,0.1701863354037267,0.16729534946382413,True,True,0.6471071295259426
-REVEL,MSH2,97,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+REVEL,MSH2,97,BS3-strong,point estimate,False,,,,,,
 REVEL,MSH2,98,PS3-supporting,certified,True,0.3,2.1460679328917984,4.982629780009712,True,True,0.1561323521569882
 REVEL,MSH2,98,PS3-moderate,certified,False,,,,,,
 REVEL,MSH2,98,PS3-strong,certified,False,,,,,,
@@ -30178,7 +30178,7 @@ ESM-2,BRCA1,5,PS3-moderate,point estimate,True,0.1,4.58235294117647,5.0855023632
 ESM-2,BRCA1,5,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,5,BS3-supporting,point estimate,True,0.3,0.23033707865168537,0.2538081908157264,True,False,0.6250969443151854
 ESM-2,BRCA1,5,BS3-moderate,point estimate,True,0.1,0.10789473684210525,0.09451706864622708,True,True,0.305110904296572
-ESM-2,BRCA1,5,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,5,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,6,PS3-supporting,certified,False,,,,,,
 ESM-2,BRCA1,6,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,6,PS3-strong,certified,False,,,,,,
@@ -30208,7 +30208,7 @@ ESM-2,BRCA1,6,PS3-moderate,point estimate,True,0.3,4.45046439628483,6.2477384261
 ESM-2,BRCA1,6,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,6,BS3-supporting,point estimate,True,0.3,0.3161822466614297,0.22687751102446735,True,True,0.5752895403546869
 ESM-2,BRCA1,6,BS3-moderate,point estimate,False,,,,,,
-ESM-2,BRCA1,6,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,6,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,7,PS3-supporting,certified,True,0.2,2.528733327543333,4.750033069424929,True,True,0.2666744222118815
 ESM-2,BRCA1,7,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,7,PS3-strong,certified,False,,,,,,
@@ -30355,10 +30355,10 @@ ESM-2,BRCA1,11,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA1,11,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA1,11,PS3-supporting,point estimate,True,0.2,2.943722943722944,4.316181218875653,True,True,0.28671604363786773
 ESM-2,BRCA1,11,PS3-moderate,point estimate,True,0.3,5.619834710743802,6.209864964860975,True,True,0.21736466573600122
-ESM-2,BRCA1,11,PS3-strong,point estimate,True,0.05,333333333333.3333,24.938222755544963,True,False,0.07111964221084743
+ESM-2,BRCA1,11,PS3-strong,point estimate,True,0.05,inf,24.938222755544963,True,False,0.07111964221084743
 ESM-2,BRCA1,11,BS3-supporting,point estimate,True,0.2,0.37488284910965325,0.2808861959570989,True,True,0.6805374592833877
 ESM-2,BRCA1,11,BS3-moderate,point estimate,False,,,,,,
-ESM-2,BRCA1,11,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,11,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,12,PS3-supporting,certified,True,0.2,2.7059692710406287,4.122003589114006,True,True,0.3050346414352929
 ESM-2,BRCA1,12,PS3-moderate,certified,True,0.05,4.8259490687803925,8.58818414884166,True,True,0.15651465798045602
 ESM-2,BRCA1,12,PS3-strong,certified,False,,,,,,
@@ -30418,7 +30418,7 @@ ESM-2,BRCA1,13,PS3-moderate,point estimate,True,0.1,8.822916666666666,8.78331207
 ESM-2,BRCA1,13,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,13,BS3-supporting,point estimate,True,0.2,0.27287371134020616,0.2811607479622565,True,False,0.692026006928287
 ESM-2,BRCA1,13,BS3-moderate,point estimate,True,0.3,0.21984011627906977,0.25335120148638973,False,False,0.6261555762370095
-ESM-2,BRCA1,13,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,13,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,14,PS3-supporting,certified,True,0.2,2.6028157084032513,4.856675986203537,True,True,0.2610981852024197
 ESM-2,BRCA1,14,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,14,PS3-strong,certified,False,,,,,,
@@ -30448,7 +30448,7 @@ ESM-2,BRCA1,14,PS3-moderate,point estimate,True,0.2,6.55632183908046,4.856675986
 ESM-2,BRCA1,14,PS3-strong,point estimate,True,0.05,27.793103448275865,27.226276464275756,True,False,0.08567680057908071
 ESM-2,BRCA1,14,BS3-supporting,point estimate,True,0.3,0.18195157740278797,0.2375948574718537,True,False,0.6112649294245386
 ESM-2,BRCA1,14,BS3-moderate,point estimate,True,0.3,0.18195157740278797,0.2375948574718537,False,False,0.6112649294245386
-ESM-2,BRCA1,14,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,14,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,15,PS3-supporting,certified,True,0.1,2.706906175917678,6.3129318154485885,True,True,0.20848068869241504
 ESM-2,BRCA1,15,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,15,PS3-strong,certified,False,,,,,,
@@ -30508,7 +30508,7 @@ ESM-2,BRCA1,16,PS3-moderate,point estimate,True,0.3,5.344827586206897,4.15854308
 ESM-2,BRCA1,16,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,16,BS3-supporting,point estimate,True,0.3,0.17632420902950588,0.25492002218656384,True,False,0.6402318908019233
 ESM-2,BRCA1,16,BS3-moderate,point estimate,True,0.3,0.17632420902950588,0.25492002218656384,False,False,0.6402318908019233
-ESM-2,BRCA1,16,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,16,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,17,PS3-supporting,certified,True,0.2,2.477042773846189,5.968704198203425,True,True,0.22344501318442686
 ESM-2,BRCA1,17,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,17,PS3-strong,certified,False,,,,,,
@@ -30598,7 +30598,7 @@ ESM-2,BRCA1,19,PS3-moderate,point estimate,True,0.2,9.365079365079366,5.95390784
 ESM-2,BRCA1,19,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,19,BS3-supporting,point estimate,True,0.2,0.23366336633663365,0.31357787775845225,True,False,0.7257445323406235
 ESM-2,BRCA1,19,BS3-moderate,point estimate,True,0.3,0.22229199372056513,0.25126316944944055,False,False,0.6310415697223514
-ESM-2,BRCA1,19,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,19,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,20,PS3-supporting,certified,False,,,,,,
 ESM-2,BRCA1,20,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,20,PS3-strong,certified,False,,,,,,
@@ -30718,7 +30718,7 @@ ESM-2,BRCA1,23,PS3-moderate,point estimate,True,0.3,4.694444444444444,6.24773842
 ESM-2,BRCA1,23,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,23,BS3-supporting,point estimate,True,0.2,0.2585227272727273,0.2811607479622565,True,False,0.692026006928287
 ESM-2,BRCA1,23,BS3-moderate,point estimate,False,,,,,,
-ESM-2,BRCA1,23,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,23,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,24,PS3-supporting,certified,False,,,,,,
 ESM-2,BRCA1,24,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,24,PS3-strong,certified,False,,,,,,
@@ -30748,7 +30748,7 @@ ESM-2,BRCA1,24,PS3-moderate,point estimate,True,0.1,7.0625,9.808715966160952,Tru
 ESM-2,BRCA1,24,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,24,BS3-supporting,point estimate,True,0.3,0.18585526315789472,0.22500737481090244,True,False,0.5698567809316994
 ESM-2,BRCA1,24,BS3-moderate,point estimate,True,0.3,0.18585526315789472,0.22500737481090244,True,False,0.5698567809316994
-ESM-2,BRCA1,24,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,24,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,25,PS3-supporting,certified,True,0.2,2.68955812022287,4.380257104479881,True,True,0.2836991365492994
 ESM-2,BRCA1,25,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,25,PS3-strong,certified,False,,,,,,
@@ -30805,7 +30805,7 @@ ESM-2,BRCA1,26,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.0,0.0479431017362
 ESM-2,BRCA1,26,BS3-strong,"bootstrap, Bonferroni",True,0.1,0.0,0.04794310173620604,True,False,0.11174706581872706
 ESM-2,BRCA1,26,PS3-supporting,point estimate,True,0.2,4.239130434782608,4.651036634575,True,True,0.2759203246988263
 ESM-2,BRCA1,26,PS3-moderate,point estimate,True,0.3,8.164251207729468,9.136196462084012,True,True,0.15358306188925083
-ESM-2,BRCA1,26,PS3-strong,point estimate,True,0.05,304347826086.95654,26.21389405001479,True,False,0.07785921100253348
+ESM-2,BRCA1,26,PS3-strong,point estimate,True,0.05,inf,26.21389405001479,True,False,0.07785921100253348
 ESM-2,BRCA1,26,BS3-supporting,point estimate,True,0.2,0.3697683868346201,0.2808861959570989,True,True,0.6805374592833877
 ESM-2,BRCA1,26,BS3-moderate,point estimate,False,,,,,,
 ESM-2,BRCA1,26,BS3-strong,point estimate,True,0.1,0.0,0.04794310173620604,True,False,0.11174706581872706
@@ -30838,7 +30838,7 @@ ESM-2,BRCA1,27,PS3-moderate,point estimate,True,0.1,4.730769230769231,7.68536361
 ESM-2,BRCA1,27,PS3-strong,point estimate,True,0.05,20.499999999999996,30.468927012652404,True,True,0.04449873326094825
 ESM-2,BRCA1,27,BS3-supporting,point estimate,True,0.3,0.19759036144578312,0.2229230537681824,True,False,0.5849335608293262
 ESM-2,BRCA1,27,BS3-moderate,point estimate,True,0.3,0.19759036144578312,0.2229230537681824,True,False,0.5849335608293262
-ESM-2,BRCA1,27,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,27,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,28,PS3-supporting,certified,True,0.05,2.290732007373498,9.676798174819966,True,True,0.1405382348379091
 ESM-2,BRCA1,28,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,28,PS3-strong,certified,False,,,,,,
@@ -30868,7 +30868,7 @@ ESM-2,BRCA1,28,PS3-moderate,point estimate,True,0.1,5.357142857142858,7.12378553
 ESM-2,BRCA1,28,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,28,BS3-supporting,point estimate,True,0.3,0.18098455598455598,0.2039440299683941,True,False,0.540847164055633
 ESM-2,BRCA1,28,BS3-moderate,point estimate,True,0.3,0.18098455598455598,0.2039440299683941,True,False,0.540847164055633
-ESM-2,BRCA1,28,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,28,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,29,PS3-supporting,certified,True,0.1,2.2367933346648488,6.544208231878576,True,True,0.19504808438033194
 ESM-2,BRCA1,29,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,29,PS3-strong,certified,False,,,,,,
@@ -30927,8 +30927,8 @@ ESM-2,BRCA1,30,PS3-supporting,point estimate,True,0.2,2.7935222672064777,4.65451
 ESM-2,BRCA1,30,PS3-moderate,point estimate,True,0.05,12.105263157894736,19.139057868524755,True,True,0.09567369836099479
 ESM-2,BRCA1,30,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,30,BS3-supporting,point estimate,True,0.2,0.4059691912708601,0.2830242405307899,True,True,0.6817589576547232
-ESM-2,BRCA1,30,BS3-moderate,point estimate,True,0.05,0.0,inf,False,False,0.0
-ESM-2,BRCA1,30,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,30,BS3-moderate,point estimate,False,,,,,,
+ESM-2,BRCA1,30,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,31,PS3-supporting,certified,True,0.2,2.3481200402605866,5.742121456670956,True,True,0.2350550643710253
 ESM-2,BRCA1,31,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,31,PS3-strong,certified,False,,,,,,
@@ -31258,7 +31258,7 @@ ESM-2,BRCA1,41,PS3-moderate,point estimate,True,0.2,5.552941176470588,4.26372439
 ESM-2,BRCA1,41,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,41,BS3-supporting,point estimate,True,0.3,0.19831932773109243,0.22526509499610572,True,False,0.5891215552453337
 ESM-2,BRCA1,41,BS3-moderate,point estimate,True,0.3,0.19831932773109243,0.22526509499610572,True,False,0.5891215552453337
-ESM-2,BRCA1,41,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,41,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,42,PS3-supporting,certified,True,0.3,2.1986901545802193,4.274139705723666,True,True,0.29695336332144145
 ESM-2,BRCA1,42,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,42,PS3-strong,certified,False,,,,,,
@@ -31378,7 +31378,7 @@ ESM-2,BRCA1,45,PS3-moderate,point estimate,True,0.3,4.3977272727272725,4.7133977
 ESM-2,BRCA1,45,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,45,BS3-supporting,point estimate,True,0.2,0.18323863636363635,0.20872980110332007,True,False,0.5504330179411613
 ESM-2,BRCA1,45,BS3-moderate,point estimate,True,0.3,0.19907407407407407,0.1946034906917797,True,True,0.5146101545938679
-ESM-2,BRCA1,45,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,45,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,46,PS3-supporting,certified,True,0.3,2.47321211838334,3.7367169630363586,True,True,0.32720257484101134
 ESM-2,BRCA1,46,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,46,PS3-strong,certified,False,,,,,,
@@ -31498,7 +31498,7 @@ ESM-2,BRCA1,49,PS3-moderate,point estimate,True,0.1,4.464285714285715,5.03387760
 ESM-2,BRCA1,49,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,49,BS3-supporting,point estimate,True,0.3,0.24801587301587302,0.22913715458006084,True,True,0.5992735639315444
 ESM-2,BRCA1,49,BS3-moderate,point estimate,True,0.2,0.21258503401360543,0.16930089598106338,True,True,0.47155912310635434
-ESM-2,BRCA1,49,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,49,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,50,PS3-supporting,certified,True,0.05,2.3583095708749573,16.347770999856877,True,True,0.10180057908070937
 ESM-2,BRCA1,50,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,50,PS3-strong,certified,False,,,,,,
@@ -31585,7 +31585,7 @@ ESM-2,BRCA1,52,BS3-moderate,"bootstrap, Bonferroni",True,0.1,0.0,0.0479431017362
 ESM-2,BRCA1,52,BS3-strong,"bootstrap, Bonferroni",True,0.1,0.0,0.04794310173620604,True,False,0.11174706581872706
 ESM-2,BRCA1,52,PS3-supporting,point estimate,True,0.3,4.274038461538462,3.6538773021884894,True,False,0.3374437722971925
 ESM-2,BRCA1,52,PS3-moderate,point estimate,True,0.2,5.155982905982905,4.724432720101396,True,False,0.26732588800992707
-ESM-2,BRCA1,52,PS3-strong,point estimate,True,0.05,269230769230.76923,29.636225252927726,True,False,0.057427227134067525
+ESM-2,BRCA1,52,PS3-strong,point estimate,True,0.05,inf,29.636225252927726,True,False,0.057427227134067525
 ESM-2,BRCA1,52,BS3-supporting,point estimate,True,0.3,0.2418126428027418,0.2581751766152004,True,False,0.6506398324802234
 ESM-2,BRCA1,52,BS3-moderate,point estimate,True,0.2,0.06183057448880234,0.17853008422452255,True,False,0.47742619306137224
 ESM-2,BRCA1,52,BS3-strong,point estimate,True,0.1,0.0,0.04794310173620604,True,False,0.11174706581872706
@@ -31678,7 +31678,7 @@ ESM-2,BRCA1,55,PS3-moderate,point estimate,True,0.3,4.363636363636364,3.83391035
 ESM-2,BRCA1,55,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,55,BS3-supporting,point estimate,True,0.3,0.27972027972027974,0.22872972627827562,True,True,0.600281784809472
 ESM-2,BRCA1,55,BS3-moderate,point estimate,False,,,,,,
-ESM-2,BRCA1,55,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,55,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,56,PS3-supporting,certified,False,,,,,,
 ESM-2,BRCA1,56,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,56,PS3-strong,certified,False,,,,,,
@@ -31767,8 +31767,8 @@ ESM-2,BRCA1,58,PS3-supporting,point estimate,True,0.3,2.147619047619047,2.864249
 ESM-2,BRCA1,58,PS3-moderate,point estimate,True,0.05,12.3,10.75657444015427,True,False,0.12338296882270823
 ESM-2,BRCA1,58,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,58,BS3-supporting,point estimate,False,,,,,,
-ESM-2,BRCA1,58,BS3-moderate,point estimate,True,0.05,0.0,inf,False,False,0.0
-ESM-2,BRCA1,58,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,58,BS3-moderate,point estimate,False,,,,,,
+ESM-2,BRCA1,58,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,59,PS3-supporting,certified,False,,,,,,
 ESM-2,BRCA1,59,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,59,PS3-strong,certified,False,,,,,,
@@ -31918,7 +31918,7 @@ ESM-2,BRCA1,63,PS3-moderate,point estimate,True,0.1,5.797916666666667,6.20754465
 ESM-2,BRCA1,63,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,63,BS3-supporting,point estimate,True,0.3,0.20550271739130435,0.21873575541514226,True,False,0.5648622098133499
 ESM-2,BRCA1,63,BS3-moderate,point estimate,True,0.3,0.20550271739130435,0.21873575541514226,True,False,0.5648622098133499
-ESM-2,BRCA1,63,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,63,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,64,PS3-supporting,certified,True,0.2,2.344125073599147,5.968704198203425,True,True,0.22344501318442686
 ESM-2,BRCA1,64,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,64,PS3-strong,certified,False,,,,,,
@@ -31978,7 +31978,7 @@ ESM-2,BRCA1,65,PS3-moderate,point estimate,True,0.2,5.445234708392603,4.71339776
 ESM-2,BRCA1,65,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,65,BS3-supporting,point estimate,True,0.2,0.1292839230983561,0.31357787775845225,True,False,0.7257445323406235
 ESM-2,BRCA1,65,BS3-moderate,point estimate,True,0.2,0.1292839230983561,0.31357787775845225,False,False,0.7257445323406235
-ESM-2,BRCA1,65,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,65,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,66,PS3-supporting,certified,True,0.3,2.103337836924372,3.1860269040536493,True,True,0.36895843027764846
 ESM-2,BRCA1,66,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,66,PS3-strong,certified,False,,,,,,
@@ -32035,10 +32035,10 @@ ESM-2,BRCA1,67,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA1,67,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA1,67,PS3-supporting,point estimate,True,0.3,4.275862068965518,4.3944911999432765,True,True,0.2904387053409854
 ESM-2,BRCA1,67,PS3-moderate,point estimate,True,0.1,6.413793103448277,7.198313338760996,True,True,0.17905615014735535
-ESM-2,BRCA1,67,PS3-strong,point estimate,True,0.05,241379310344.8276,24.512703934214112,True,False,0.09086526032780105
+ESM-2,BRCA1,67,PS3-strong,point estimate,True,0.05,inf,24.512703934214112,True,False,0.09086526032780105
 ESM-2,BRCA1,67,BS3-supporting,point estimate,True,0.3,0.24859663191659984,0.23074631442634688,True,True,0.6050436895713769
 ESM-2,BRCA1,67,BS3-moderate,point estimate,True,0.2,0.2298850574712644,0.24882505355700474,False,False,0.6232743911897005
-ESM-2,BRCA1,67,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,67,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,68,PS3-supporting,certified,True,0.2,2.1993575650562995,4.658526390479366,True,True,0.2690359857297968
 ESM-2,BRCA1,68,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,68,PS3-strong,certified,False,,,,,,
@@ -32188,7 +32188,7 @@ ESM-2,BRCA1,72,PS3-moderate,point estimate,True,0.1,4.9411764705882355,5.1631191
 ESM-2,BRCA1,72,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,72,BS3-supporting,point estimate,True,0.3,0.13815789473684212,0.2051513336356875,True,False,0.5378225014218498
 ESM-2,BRCA1,72,BS3-moderate,point estimate,True,0.3,0.13815789473684212,0.2051513336356875,True,False,0.5378225014218498
-ESM-2,BRCA1,72,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,72,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,73,PS3-supporting,certified,True,0.2,2.133728105137356,3.54673886584596,True,True,0.3436831084225221
 ESM-2,BRCA1,73,PS3-moderate,certified,True,0.1,4.927140232350822,7.191064379518935,True,True,0.1847293314720025
 ESM-2,BRCA1,73,PS3-strong,certified,False,,,,,,
@@ -32415,14 +32415,14 @@ ESM-2,BRCA1,80,PS3-supporting,bootstrap,True,0.2,2.987475732179993,3.40819660535
 ESM-2,BRCA1,80,PS3-moderate,bootstrap,True,0.05,5.956756756756756,10.52740834226337,True,True,0.12558554366371955
 ESM-2,BRCA1,80,PS3-strong,bootstrap,False,,,,,,
 ESM-2,BRCA1,80,BS3-supporting,bootstrap,True,0.2,0.38236611849040686,0.1747632125341341,True,True,0.47641797218344445
-ESM-2,BRCA1,80,BS3-moderate,bootstrap,False,,,,,,
-ESM-2,BRCA1,80,BS3-strong,bootstrap,False,,,,,,
+ESM-2,BRCA1,80,BS3-moderate,bootstrap,True,0.05,0.0,0.0,True,True,0.015132361304999741
+ESM-2,BRCA1,80,BS3-strong,bootstrap,True,0.05,0.0,0.0,True,True,0.015132361304999741
 ESM-2,BRCA1,80,PS3-supporting,"bootstrap, Bonferroni",True,0.2,2.643217868382601,3.4081966053509545,True,True,0.35199705289281835
 ESM-2,BRCA1,80,PS3-moderate,"bootstrap, Bonferroni",True,0.05,4.635271317829457,10.52740834226337,True,True,0.12558554366371955
 ESM-2,BRCA1,80,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA1,80,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA1,80,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA1,80,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BRCA1,80,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.015132361304999741
+ESM-2,BRCA1,80,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.015132361304999741
 ESM-2,BRCA1,80,PS3-supporting,point estimate,True,0.2,4.170238095238095,3.4081966053509545,True,False,0.35199705289281835
 ESM-2,BRCA1,80,PS3-moderate,point estimate,True,0.3,4.37875,3.713640996750004,False,False,0.32907553901039244
 ESM-2,BRCA1,80,PS3-strong,point estimate,False,,,,,,
@@ -32458,7 +32458,7 @@ ESM-2,BRCA1,81,PS3-moderate,point estimate,True,0.2,7.265508684863524,5.32368878
 ESM-2,BRCA1,81,PS3-strong,point estimate,True,0.05,31.483870967741932,18.717013173749177,True,False,0.09931880461196423
 ESM-2,BRCA1,81,BS3-supporting,point estimate,True,0.3,0.16926812348248352,0.25126316944944055,True,False,0.6310415697223514
 ESM-2,BRCA1,81,BS3-moderate,point estimate,True,0.3,0.16926812348248352,0.25126316944944055,False,False,0.6310415697223514
-ESM-2,BRCA1,81,BS3-strong,point estimate,True,0.1,0.0,0.0,True,True,0.015132361304999741
+ESM-2,BRCA1,81,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,82,PS3-supporting,certified,True,0.2,2.6038758253136827,3.8921386847665564,True,True,0.31623752649811276
 ESM-2,BRCA1,82,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,82,PS3-strong,certified,False,,,,,,
@@ -32518,7 +32518,7 @@ ESM-2,BRCA1,83,PS3-moderate,point estimate,True,0.1,5.328671328671329,7.12378553
 ESM-2,BRCA1,83,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,83,BS3-supporting,point estimate,True,0.3,0.4579326923076923,0.28155960040666006,True,True,0.6850654050979783
 ESM-2,BRCA1,83,BS3-moderate,point estimate,False,,,,,,
-ESM-2,BRCA1,83,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,83,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,84,PS3-supporting,certified,True,0.3,3.184834639804092,6.321654734507447,True,True,0.21407631456491394
 ESM-2,BRCA1,84,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,84,PS3-strong,certified,False,,,,,,
@@ -32608,7 +32608,7 @@ ESM-2,BRCA1,86,PS3-moderate,point estimate,True,0.05,8.666666666666666,13.000016
 ESM-2,BRCA1,86,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,86,BS3-supporting,point estimate,True,0.3,0.10655737704918032,0.15421538681029015,True,False,0.4305542629646864
 ESM-2,BRCA1,86,BS3-moderate,point estimate,True,0.3,0.10655737704918032,0.15421538681029015,True,False,0.4305542629646864
-ESM-2,BRCA1,86,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,86,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,87,PS3-supporting,certified,True,0.3,2.135181854271146,5.106717059878357,True,True,0.2534899953466728
 ESM-2,BRCA1,87,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,87,PS3-strong,certified,False,,,,,,
@@ -32668,7 +32668,7 @@ ESM-2,BRCA1,88,PS3-moderate,point estimate,True,0.05,5.9204244031830235,7.218891
 ESM-2,BRCA1,88,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,88,BS3-supporting,point estimate,True,0.1,0.33868214407647657,0.3410019291004978,True,False,0.7439584302776485
 ESM-2,BRCA1,88,BS3-moderate,point estimate,True,0.2,0.1623745089480576,0.23914808063657503,False,False,0.6075228788583836
-ESM-2,BRCA1,88,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,88,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,89,PS3-supporting,certified,True,0.2,2.1339034116739133,4.489177239499071,True,True,0.280457318649501
 ESM-2,BRCA1,89,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,89,PS3-strong,certified,False,,,,,,
@@ -32698,7 +32698,7 @@ ESM-2,BRCA1,89,PS3-moderate,point estimate,True,0.2,5.903225806451612,4.48917723
 ESM-2,BRCA1,89,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,89,BS3-supporting,point estimate,True,0.3,0.26236559139784943,0.25678117367143377,True,True,0.6464208158833566
 ESM-2,BRCA1,89,BS3-moderate,point estimate,False,,,,,,
-ESM-2,BRCA1,89,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,89,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,90,PS3-supporting,certified,True,0.3,2.1835232607345776,4.274139705723666,True,True,0.29695336332144145
 ESM-2,BRCA1,90,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,90,PS3-strong,certified,False,,,,,,
@@ -32728,7 +32728,7 @@ ESM-2,BRCA1,90,PS3-moderate,point estimate,True,0.3,5.846153846153846,4.27413970
 ESM-2,BRCA1,90,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,90,BS3-supporting,point estimate,True,0.2,0.2923076923076923,0.20872980110332007,True,True,0.5504330179411613
 ESM-2,BRCA1,90,BS3-moderate,point estimate,False,,,,,,
-ESM-2,BRCA1,90,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,90,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,91,PS3-supporting,certified,True,0.3,2.8002964890608095,4.262523994786927,True,True,0.29555736518277237
 ESM-2,BRCA1,91,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,91,PS3-strong,certified,False,,,,,,
@@ -32935,7 +32935,7 @@ ESM-2,BRCA1,97,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.047943101736
 ESM-2,BRCA1,97,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.04794310173620604,True,False,0.11174706581872706
 ESM-2,BRCA1,97,PS3-supporting,point estimate,True,0.3,4.136363636363637,4.229555211005677,True,True,0.29969882632749084
 ESM-2,BRCA1,97,PS3-moderate,point estimate,True,0.1,8.9375,6.198445116426893,True,False,0.20353265084535443
-ESM-2,BRCA1,97,PS3-strong,point estimate,True,0.05,388888888888.8889,24.512703934214112,True,False,0.09086526032780105
+ESM-2,BRCA1,97,PS3-strong,point estimate,True,0.05,inf,24.512703934214112,True,False,0.09086526032780105
 ESM-2,BRCA1,97,BS3-supporting,point estimate,True,0.3,0.2993421052631579,0.22523433130974022,True,True,0.5693138927666614
 ESM-2,BRCA1,97,BS3-moderate,point estimate,False,,,,,,
 ESM-2,BRCA1,97,BS3-strong,point estimate,True,0.05,0.0,0.04794310173620604,True,False,0.11174706581872706
@@ -32968,7 +32968,7 @@ ESM-2,BRCA1,98,PS3-moderate,point estimate,True,0.1,7.466666666666667,6.95143330
 ESM-2,BRCA1,98,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,98,BS3-supporting,point estimate,True,0.3,0.3712121212121212,0.22526509499610572,True,True,0.5891215552453337
 ESM-2,BRCA1,98,BS3-moderate,point estimate,False,,,,,,
-ESM-2,BRCA1,98,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,98,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA1,99,PS3-supporting,certified,True,0.05,2.4379469885549963,19.705302184161585,True,True,0.09520836564810506
 ESM-2,BRCA1,99,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA1,99,PS3-strong,certified,False,,,,,,
@@ -32998,7 +32998,7 @@ ESM-2,BRCA1,99,PS3-moderate,point estimate,True,0.1,4.7804878048780495,6.9514333
 ESM-2,BRCA1,99,PS3-strong,point estimate,True,0.05,20.48780487804878,19.705302184161585,True,False,0.09520836564810506
 ESM-2,BRCA1,99,BS3-supporting,point estimate,True,0.3,0.2953197099538563,0.23074631442634688,True,True,0.6050436895713769
 ESM-2,BRCA1,99,BS3-moderate,point estimate,True,0.2,0.1951219512195122,0.2182484019007755,True,False,0.5660565637764334
-ESM-2,BRCA1,99,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,BRCA1,99,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,0,PS3-supporting,certified,True,0.2,2.4525668613387763,3.7164122044231953,True,True,0.28550882877805955
 ESM-2,BRCA2,0,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA2,0,PS3-strong,certified,False,,,,,,
@@ -33088,7 +33088,7 @@ ESM-2,BRCA2,2,PS3-moderate,point estimate,True,0.05,5.46,7.179761916134508,True,
 ESM-2,BRCA2,2,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,2,BS3-supporting,point estimate,True,0.2,0.23937823834196892,0.2622506942124177,True,False,0.6255324269747347
 ESM-2,BRCA2,2,BS3-moderate,point estimate,True,0.1,0.11559633027522935,0.1507767184645699,True,False,0.3379854653893115
-ESM-2,BRCA2,2,BS3-strong,point estimate,True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
+ESM-2,BRCA2,2,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,3,PS3-supporting,certified,True,0.1,2.485393114835495,7.179761916134508,True,True,0.12223513665821358
 ESM-2,BRCA2,3,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA2,3,PS3-strong,certified,False,,,,,,
@@ -33735,14 +33735,14 @@ ESM-2,BRCA2,24,PS3-supporting,bootstrap,True,0.3,3.1701590432213176,3.8653543789
 ESM-2,BRCA2,24,PS3-moderate,bootstrap,True,0.05,5.006739042132861,8.695427584127083,True,True,0.09439806987883911
 ESM-2,BRCA2,24,PS3-strong,bootstrap,False,,,,,,
 ESM-2,BRCA2,24,BS3-supporting,bootstrap,True,0.3,0.4461134543411941,0.2780497110475471,True,True,0.6668468817507279
-ESM-2,BRCA2,24,BS3-moderate,bootstrap,False,,,,,,
-ESM-2,BRCA2,24,BS3-strong,bootstrap,False,,,,,,
+ESM-2,BRCA2,24,BS3-moderate,bootstrap,True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
+ESM-2,BRCA2,24,BS3-strong,bootstrap,True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
 ESM-2,BRCA2,24,PS3-supporting,"bootstrap, Bonferroni",True,0.3,2.7799244402985073,3.8653543789972664,True,True,0.26951312576312575
 ESM-2,BRCA2,24,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,24,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,24,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA2,24,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA2,24,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BRCA2,24,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
+ESM-2,BRCA2,24,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
 ESM-2,BRCA2,24,PS3-supporting,point estimate,True,0.3,4.033018867924528,3.8653543789972664,True,False,0.26951312576312575
 ESM-2,BRCA2,24,PS3-moderate,point estimate,True,0.1,5.953504043126684,6.077450212879919,True,True,0.15169590025359256
 ESM-2,BRCA2,24,PS3-strong,point estimate,False,,,,,,
@@ -33838,7 +33838,7 @@ ESM-2,BRCA2,27,PS3-moderate,point estimate,True,0.05,8.286868686868686,9.5304542
 ESM-2,BRCA2,27,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,27,BS3-supporting,point estimate,True,0.3,0.31303418803418803,0.26993663061340145,True,True,0.6327122663661124
 ESM-2,BRCA2,27,BS3-moderate,point estimate,True,0.1,0.13564814814814816,0.09924752313059818,True,True,0.14291643185873953
-ESM-2,BRCA2,27,BS3-strong,point estimate,True,0.05,0.0,0.0,True,True,0.0022682445759368832
+ESM-2,BRCA2,27,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,28,PS3-supporting,certified,True,0.3,2.2425421699076673,5.8060599666430495,True,True,0.1665193246924016
 ESM-2,BRCA2,28,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA2,28,PS3-strong,certified,False,,,,,,
@@ -34168,7 +34168,7 @@ ESM-2,BRCA2,38,PS3-moderate,point estimate,True,0.1,6.620338983050848,6.79398100
 ESM-2,BRCA2,38,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,38,BS3-supporting,point estimate,True,0.3,0.1576271186440678,0.27994061914886187,True,False,0.6859261998685076
 ESM-2,BRCA2,38,BS3-moderate,point estimate,True,0.3,0.1576271186440678,0.27994061914886187,False,False,0.6859261998685076
-ESM-2,BRCA2,38,BS3-strong,point estimate,True,0.05,0.0,0.0,True,True,0.0022682445759368832
+ESM-2,BRCA2,38,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,39,PS3-supporting,certified,True,0.1,2.4656994873276354,5.5168621266763385,True,True,0.17250340471494316
 ESM-2,BRCA2,39,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA2,39,PS3-strong,certified,False,,,,,,
@@ -34755,14 +34755,14 @@ ESM-2,BRCA2,58,PS3-supporting,bootstrap,True,0.3,2.1450238688252385,3.8695428840
 ESM-2,BRCA2,58,PS3-moderate,bootstrap,True,0.05,4.387093548948009,9.275320222239316,True,True,0.08461714567483798
 ESM-2,BRCA2,58,PS3-strong,bootstrap,False,,,,,,
 ESM-2,BRCA2,58,BS3-supporting,bootstrap,False,,,,,,
-ESM-2,BRCA2,58,BS3-moderate,bootstrap,False,,,,,,
-ESM-2,BRCA2,58,BS3-strong,bootstrap,False,,,,,,
+ESM-2,BRCA2,58,BS3-moderate,bootstrap,True,0.05,0.0,0.0,True,True,0.0022682445759368832
+ESM-2,BRCA2,58,BS3-strong,bootstrap,True,0.05,0.0,0.0,True,True,0.0022682445759368832
 ESM-2,BRCA2,58,PS3-supporting,"bootstrap, Bonferroni",True,0.1,2.5312718713356173,6.661684034414656,True,True,0.13571076359537898
 ESM-2,BRCA2,58,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,58,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,58,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA2,58,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA2,58,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BRCA2,58,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.0022682445759368832
+ESM-2,BRCA2,58,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.0,True,True,0.0022682445759368832
 ESM-2,BRCA2,58,PS3-supporting,point estimate,True,0.3,2.800273224043716,3.8695428840428607,True,True,0.27236251995867383
 ESM-2,BRCA2,58,PS3-moderate,point estimate,True,0.1,4.738417676407698,6.661684034414656,True,True,0.13571076359537898
 ESM-2,BRCA2,58,PS3-strong,point estimate,False,,,,,,
@@ -34905,14 +34905,14 @@ ESM-2,BRCA2,63,PS3-supporting,bootstrap,True,0.3,2.9556132445141063,4.2229128754
 ESM-2,BRCA2,63,PS3-moderate,bootstrap,True,0.05,6.972051597051598,10.395469969593062,True,True,0.07524830938292476
 ESM-2,BRCA2,63,PS3-strong,bootstrap,False,,,,,,
 ESM-2,BRCA2,63,BS3-supporting,bootstrap,True,0.3,0.34006040108767505,0.2712482184582404,True,True,0.6640467972198741
-ESM-2,BRCA2,63,BS3-moderate,bootstrap,False,,,,,,
-ESM-2,BRCA2,63,BS3-strong,bootstrap,False,,,,,,
+ESM-2,BRCA2,63,BS3-moderate,bootstrap,True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
+ESM-2,BRCA2,63,BS3-strong,bootstrap,True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
 ESM-2,BRCA2,63,PS3-supporting,"bootstrap, Bonferroni",True,0.3,2.3728822837912595,4.222912875457104,True,True,0.2277795388372311
 ESM-2,BRCA2,63,PS3-moderate,"bootstrap, Bonferroni",True,0.05,4.337468547077922,10.395469969593062,True,True,0.07524830938292476
 ESM-2,BRCA2,63,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,63,BS3-supporting,"bootstrap, Bonferroni",True,0.3,0.4491522903712539,0.2712482184582404,True,True,0.6640467972198741
-ESM-2,BRCA2,63,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA2,63,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BRCA2,63,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
+ESM-2,BRCA2,63,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
 ESM-2,BRCA2,63,PS3-supporting,point estimate,True,0.3,3.994993742177722,4.222912875457104,True,True,0.2277795388372311
 ESM-2,BRCA2,63,PS3-moderate,point estimate,True,0.1,4.768627450980392,6.082616617899584,True,True,0.1522030853761623
 ESM-2,BRCA2,63,PS3-strong,point estimate,False,,,,,,
@@ -34966,13 +34966,13 @@ ESM-2,BRCA2,65,PS3-moderate,bootstrap,True,0.1,4.710547452395444,6.6616840344146
 ESM-2,BRCA2,65,PS3-strong,bootstrap,False,,,,,,
 ESM-2,BRCA2,65,BS3-supporting,bootstrap,True,0.2,0.2585106673661661,0.2998859290589689,True,False,0.7082124072508688
 ESM-2,BRCA2,65,BS3-moderate,bootstrap,True,0.1,0.19701731619655286,0.1889354440523456,True,True,0.5235336244951629
-ESM-2,BRCA2,65,BS3-strong,bootstrap,False,,,,,,
+ESM-2,BRCA2,65,BS3-strong,bootstrap,True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
 ESM-2,BRCA2,65,PS3-supporting,"bootstrap, Bonferroni",True,0.2,3.205489805209138,4.044847778522146,True,True,0.2491271015309477
 ESM-2,BRCA2,65,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,65,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,65,BS3-supporting,"bootstrap, Bonferroni",True,0.2,0.31075546755896355,0.2998859290589689,True,True,0.7082124072508688
-ESM-2,BRCA2,65,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA2,65,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BRCA2,65,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
+ESM-2,BRCA2,65,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
 ESM-2,BRCA2,65,PS3-supporting,point estimate,True,0.2,4.6080000000000005,4.044847778522146,True,False,0.2491271015309477
 ESM-2,BRCA2,65,PS3-moderate,point estimate,True,0.2,4.6080000000000005,4.044847778522146,False,False,0.2491271015309477
 ESM-2,BRCA2,65,PS3-strong,point estimate,False,,,,,,
@@ -34995,14 +34995,14 @@ ESM-2,BRCA2,66,PS3-supporting,bootstrap,True,0.2,2.8540544265910524,3.6815840727
 ESM-2,BRCA2,66,PS3-moderate,bootstrap,True,0.05,4.340354421407053,7.755273134205079,True,True,0.10518103691180615
 ESM-2,BRCA2,66,PS3-strong,bootstrap,False,,,,,,
 ESM-2,BRCA2,66,BS3-supporting,bootstrap,True,0.3,0.4366660890660197,0.2688871399600088,True,True,0.6350685639147178
-ESM-2,BRCA2,66,BS3-moderate,bootstrap,False,,,,,,
-ESM-2,BRCA2,66,BS3-strong,bootstrap,False,,,,,,
+ESM-2,BRCA2,66,BS3-moderate,bootstrap,True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
+ESM-2,BRCA2,66,BS3-strong,bootstrap,True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
 ESM-2,BRCA2,66,PS3-supporting,"bootstrap, Bonferroni",True,0.2,2.510871622408572,3.6815840727316753,True,True,0.28788156288156286
 ESM-2,BRCA2,66,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,66,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BRCA2,66,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA2,66,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BRCA2,66,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BRCA2,66,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
+ESM-2,BRCA2,66,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.6105517827584966,False,False,0.002514792899408284
 ESM-2,BRCA2,66,PS3-supporting,point estimate,True,0.2,3.6122033898305084,3.6815840727316753,True,True,0.28788156288156286
 ESM-2,BRCA2,66,PS3-moderate,point estimate,True,0.05,7.295999999999999,7.755273134205079,True,True,0.10518103691180615
 ESM-2,BRCA2,66,PS3-strong,point estimate,False,,,,,,
@@ -35157,8 +35157,8 @@ ESM-2,BRCA2,71,PS3-supporting,point estimate,True,0.2,3.7189904586026468,3.75066
 ESM-2,BRCA2,71,PS3-moderate,point estimate,True,0.05,7.394736842105263,8.826248537250963,True,True,0.0930420540997464
 ESM-2,BRCA2,71,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,71,BS3-supporting,point estimate,True,0.2,0.25340219708148876,0.27463163354917264,True,False,0.6800442612942613
-ESM-2,BRCA2,71,BS3-moderate,point estimate,True,0.05,0.0,0.0,True,True,0.0022682445759368832
-ESM-2,BRCA2,71,BS3-strong,point estimate,True,0.05,0.0,0.0,True,True,0.0022682445759368832
+ESM-2,BRCA2,71,BS3-moderate,point estimate,False,,,,,,
+ESM-2,BRCA2,71,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,72,PS3-supporting,certified,True,0.05,2.8851825655560783,11.054056263705485,True,True,0.06977141448295293
 ESM-2,BRCA2,72,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA2,72,PS3-strong,certified,False,,,,,,
@@ -35578,7 +35578,7 @@ ESM-2,BRCA2,85,PS3-moderate,point estimate,True,0.1,6.191489361702128,6.37803117
 ESM-2,BRCA2,85,PS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,85,BS3-supporting,point estimate,True,0.3,0.2772308669418863,0.26702803328617997,True,True,0.6392880623649854
 ESM-2,BRCA2,85,BS3-moderate,point estimate,True,0.1,0.22514506769825918,0.1887371889503555,True,True,0.5354419085188316
-ESM-2,BRCA2,85,BS3-strong,point estimate,True,0.05,0.0,0.0,True,True,0.0022682445759368832
+ESM-2,BRCA2,85,BS3-strong,point estimate,False,,,,,,
 ESM-2,BRCA2,86,PS3-supporting,certified,True,0.3,2.135099466181909,3.4625723337985503,True,True,0.3079505964121348
 ESM-2,BRCA2,86,PS3-moderate,certified,False,,,,,,
 ESM-2,BRCA2,86,PS3-strong,certified,False,,,,,,
@@ -36111,8 +36111,8 @@ ESM-2,BAP1,3,PS3-supporting,"bootstrap, Bonferroni",True,0.2,2.5043995742341494,
 ESM-2,BAP1,3,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BAP1,3,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BAP1,3,BS3-supporting,"bootstrap, Bonferroni",True,0.3,0.47263486278209255,0.26359152030408173,True,True,0.5972809478197408
-ESM-2,BAP1,3,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BAP1,3,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BAP1,3,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.2808482727237248,False,False,0.012020502645502645
+ESM-2,BAP1,3,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.2808482727237248,False,False,0.012020502645502645
 ESM-2,BAP1,3,PS3-supporting,point estimate,True,0.3,2.695256660168941,2.7651458963526165,True,True,0.399917328042328
 ESM-2,BAP1,3,PS3-moderate,point estimate,True,0.1,5.879699248120301,5.015750575606061,True,False,0.22037778233898922
 ESM-2,BAP1,3,PS3-strong,point estimate,False,,,,,,
@@ -36586,13 +36586,13 @@ ESM-2,BAP1,19,PS3-moderate,bootstrap,True,0.1,5.89646645021645,5.282051628096332
 ESM-2,BAP1,19,PS3-strong,bootstrap,False,,,,,,
 ESM-2,BAP1,19,BS3-supporting,bootstrap,True,0.3,0.3601223002862346,0.259313544016134,True,True,0.5788992656449552
 ESM-2,BAP1,19,BS3-moderate,bootstrap,False,,,,,,
-ESM-2,BAP1,19,BS3-strong,bootstrap,False,,,,,,
+ESM-2,BAP1,19,BS3-strong,bootstrap,True,0.05,0.0,0.4727251603352295,False,False,0.0037373426382047072
 ESM-2,BAP1,19,PS3-supporting,"bootstrap, Bonferroni",True,0.3,2.591859100258611,3.389724221346905,True,True,0.336271323663565
 ESM-2,BAP1,19,PS3-moderate,"bootstrap, Bonferroni",True,0.1,5.01969696514784,5.282051628096332,True,True,0.20076400291917532
 ESM-2,BAP1,19,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BAP1,19,BS3-supporting,"bootstrap, Bonferroni",True,0.3,0.41253545477349157,0.259313544016134,True,True,0.5788992656449552
 ESM-2,BAP1,19,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BAP1,19,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BAP1,19,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.4727251603352295,False,False,0.0037373426382047072
 ESM-2,BAP1,19,PS3-supporting,point estimate,True,0.3,3.441615452151009,3.389724221346905,True,False,0.336271323663565
 ESM-2,BAP1,19,PS3-moderate,point estimate,True,0.1,8.063725490196077,5.282051628096332,True,False,0.20076400291917532
 ESM-2,BAP1,19,PS3-strong,point estimate,False,,,,,,
@@ -38326,13 +38326,13 @@ ESM-2,BAP1,77,PS3-moderate,bootstrap,True,0.05,5.107015189873417,8.5147750373034
 ESM-2,BAP1,77,PS3-strong,bootstrap,False,,,,,,
 ESM-2,BAP1,77,BS3-supporting,bootstrap,True,0.3,0.46443311176908064,0.2600120478965141,True,True,0.5742131910235359
 ESM-2,BAP1,77,BS3-moderate,bootstrap,True,0.1,0.17940185706131764,0.24239380621606743,False,False,0.1745638341543514
-ESM-2,BAP1,77,BS3-strong,bootstrap,False,,,,,,
+ESM-2,BAP1,77,BS3-strong,bootstrap,True,0.05,0.0,0.26799190140773976,False,False,0.00941833150884875
 ESM-2,BAP1,77,PS3-supporting,"bootstrap, Bonferroni",True,0.3,2.219760148092904,3.3978732882308122,True,True,0.3369897144681627
 ESM-2,BAP1,77,PS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BAP1,77,PS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,BAP1,77,BS3-supporting,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BAP1,77,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
-ESM-2,BAP1,77,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
+ESM-2,BAP1,77,BS3-moderate,"bootstrap, Bonferroni",True,0.05,0.0,0.26799190140773976,False,False,0.00941833150884875
+ESM-2,BAP1,77,BS3-strong,"bootstrap, Bonferroni",True,0.05,0.0,0.26799190140773976,False,False,0.00941833150884875
 ESM-2,BAP1,77,PS3-supporting,point estimate,True,0.3,3.1245059288537544,3.3978732882308122,True,True,0.3369897144681627
 ESM-2,BAP1,77,PS3-moderate,point estimate,True,0.1,6.065217391304348,6.238963972423591,True,True,0.15804711731435866
 ESM-2,BAP1,77,PS3-strong,point estimate,False,,,,,,
@@ -40585,7 +40585,7 @@ ESM-2,RAD51C,52,BS3-moderate,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,RAD51C,52,BS3-strong,"bootstrap, Bonferroni",False,,,,,,
 ESM-2,RAD51C,52,PS3-supporting,point estimate,True,0.3,5.138636363636364,4.075854729674202,True,False,0.34844399731723674
 ESM-2,RAD51C,52,PS3-moderate,point estimate,True,0.3,5.138636363636364,4.075854729674202,False,False,0.34844399731723674
-ESM-2,RAD51C,52,PS3-strong,point estimate,True,0.05,409090909090.9091,11.667994106173502,False,False,0.1245741113346747
+ESM-2,RAD51C,52,PS3-strong,point estimate,True,0.05,inf,11.667994106173502,False,False,0.1245741113346747
 ESM-2,RAD51C,52,BS3-supporting,point estimate,True,0.3,0.17780748663101603,0.14413340881503445,True,True,0.47565727699530513
 ESM-2,RAD51C,52,BS3-moderate,point estimate,True,0.3,0.17780748663101603,0.14413340881503445,True,True,0.47565727699530513
 ESM-2,RAD51C,52,BS3-strong,point estimate,False,,,,,,
@@ -42088,7 +42088,7 @@ ESM-2,MSH2,2,PS3-moderate,point estimate,True,0.2,4.620140515222482,3.8840319926
 ESM-2,MSH2,2,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,2,BS3-supporting,point estimate,True,0.3,0.2272811059907834,0.26359553901725785,True,False,0.6842878472777688
 ESM-2,MSH2,2,BS3-moderate,point estimate,True,0.3,0.2272811059907834,0.26359553901725785,False,False,0.6842878472777688
-ESM-2,MSH2,2,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,2,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,3,PS3-supporting,certified,True,0.1,2.7232826623709827,5.2372447980802646,True,True,0.1280381805577774
 ESM-2,MSH2,3,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,3,PS3-strong,certified,False,,,,,,
@@ -42208,7 +42208,7 @@ ESM-2,MSH2,6,PS3-moderate,point estimate,True,0.1,6.156156156156157,4.9856877332
 ESM-2,MSH2,6,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,6,BS3-supporting,point estimate,True,0.2,0.24305555555555555,0.30637076723601503,True,False,0.7454114008425318
 ESM-2,MSH2,6,BS3-moderate,point estimate,True,0.3,0.08223024468511832,0.2295441828496933,True,False,0.628806057697435
-ESM-2,MSH2,6,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,6,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,7,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,7,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,7,PS3-strong,certified,False,,,,,,
@@ -42328,7 +42328,7 @@ ESM-2,MSH2,10,PS3-moderate,point estimate,True,0.3,4.868012422360248,4.932737613
 ESM-2,MSH2,10,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,10,BS3-supporting,point estimate,True,0.2,0.3894409937888199,0.4185999188370208,True,False,0.7952807550791874
 ESM-2,MSH2,10,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,10,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,10,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,11,PS3-supporting,certified,True,0.2,2.1086070027504187,3.3353700146743495,True,True,0.2630619100943849
 ESM-2,MSH2,11,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,11,PS3-strong,certified,False,,,,,,
@@ -42418,7 +42418,7 @@ ESM-2,MSH2,13,PS3-moderate,point estimate,True,0.2,5.0327586206896555,3.85685436
 ESM-2,MSH2,13,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,13,BS3-supporting,point estimate,True,0.3,0.15189412336085478,0.21370890764123343,True,False,0.621695195435397
 ESM-2,MSH2,13,BS3-moderate,point estimate,True,0.3,0.15189412336085478,0.21370890764123343,True,False,0.621695195435397
-ESM-2,MSH2,13,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,13,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,14,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,14,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,14,PS3-strong,certified,False,,,,,,
@@ -42478,7 +42478,7 @@ ESM-2,MSH2,15,PS3-moderate,point estimate,True,0.1,7.031969309462915,5.295788589
 ESM-2,MSH2,15,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,15,BS3-supporting,point estimate,True,0.2,0.24199084668192217,0.27437095869367517,True,False,0.6924252119660854
 ESM-2,MSH2,15,BS3-moderate,point estimate,True,0.3,0.1909131939220701,0.2392059971933961,False,False,0.6512131392310563
-ESM-2,MSH2,15,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,15,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,16,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,16,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,16,PS3-strong,certified,False,,,,,,
@@ -42508,7 +42508,7 @@ ESM-2,MSH2,16,PS3-moderate,point estimate,True,0.1,4.622222222222222,5.318428457
 ESM-2,MSH2,16,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,16,BS3-supporting,point estimate,True,0.3,0.2549019607843137,0.17031017503590176,True,True,0.5853010185037061
 ESM-2,MSH2,16,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,16,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,16,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,17,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,17,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,17,PS3-strong,certified,False,,,,,,
@@ -42538,7 +42538,7 @@ ESM-2,MSH2,17,PS3-moderate,point estimate,True,0.1,4.794871794871795,5.571034257
 ESM-2,MSH2,17,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,17,BS3-supporting,point estimate,True,0.3,0.3342458253490282,0.26380492462295907,True,True,0.6837545992641177
 ESM-2,MSH2,17,BS3-moderate,point estimate,True,0.1,0.21651239493563146,0.17031017503590176,True,True,0.5853010185037061
-ESM-2,MSH2,17,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,17,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,18,PS3-supporting,certified,True,0.1,2.834564886270735,5.673043469003746,True,True,0.09616861302191648
 ESM-2,MSH2,18,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,18,PS3-strong,certified,False,,,,,,
@@ -42568,7 +42568,7 @@ ESM-2,MSH2,18,PS3-moderate,point estimate,True,0.1,7.049603174603174,5.673043469
 ESM-2,MSH2,18,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,18,BS3-supporting,point estimate,True,0.2,0.3119402985074627,0.35722887009636217,True,False,0.7740974777368954
 ESM-2,MSH2,18,BS3-moderate,point estimate,True,0.1,0.21557503867973182,0.22612735510946244,True,False,0.638156561616808
-ESM-2,MSH2,18,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,18,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,19,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,19,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,19,PS3-strong,certified,False,,,,,,
@@ -42718,7 +42718,7 @@ ESM-2,MSH2,23,PS3-moderate,point estimate,True,0.1,4.62253743104807,4.9856877332
 ESM-2,MSH2,23,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,23,BS3-supporting,point estimate,True,0.2,0.25357056402808037,0.29911961854313346,True,False,0.7359115874793366
 ESM-2,MSH2,23,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,23,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,23,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,24,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,24,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,24,PS3-strong,certified,False,,,,,,
@@ -42808,7 +42808,7 @@ ESM-2,MSH2,26,PS3-moderate,point estimate,True,0.1,4.727954971857411,5.342111909
 ESM-2,MSH2,26,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,26,BS3-supporting,point estimate,True,0.3,0.340080971659919,0.23840009856499636,True,True,0.65337812616648
 ESM-2,MSH2,26,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,26,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,26,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,27,PS3-supporting,certified,True,0.2,2.235202058122228,3.332451383497061,True,True,0.2632485468991628
 ESM-2,MSH2,27,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,27,PS3-strong,certified,False,,,,,,
@@ -42928,7 +42928,7 @@ ESM-2,MSH2,30,PS3-moderate,point estimate,True,0.1,5.714634146341464,5.615616795
 ESM-2,MSH2,30,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,30,BS3-supporting,point estimate,True,0.3,0.29790209790209793,0.22612735510946244,True,True,0.638156561616808
 ESM-2,MSH2,30,BS3-moderate,point estimate,True,0.2,0.22985611510791368,0.20815804494445295,True,True,0.6186156881565615
-ESM-2,MSH2,30,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,30,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,31,PS3-supporting,certified,True,0.1,2.448673454869016,5.3184284579414,True,True,0.11995680691089425
 ESM-2,MSH2,31,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,31,PS3-strong,certified,False,,,,,,
@@ -42958,7 +42958,7 @@ ESM-2,MSH2,31,PS3-moderate,point estimate,True,0.1,6.418482999128161,5.318428457
 ESM-2,MSH2,31,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,31,BS3-supporting,point estimate,True,0.3,0.4236745456257652,0.2640765738112072,True,True,0.6830640430864394
 ESM-2,MSH2,31,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,31,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,31,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,32,PS3-supporting,certified,True,0.1,2.2585425310200167,4.796957081973659,True,True,0.1414387031408308
 ESM-2,MSH2,32,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,32,PS3-strong,certified,False,,,,,,
@@ -42988,7 +42988,7 @@ ESM-2,MSH2,32,PS3-moderate,point estimate,True,0.1,4.818376068376069,4.796957081
 ESM-2,MSH2,32,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,32,BS3-supporting,point estimate,True,0.3,0.2605301379811184,0.2904103940565566,True,False,0.7015517517197248
 ESM-2,MSH2,32,BS3-moderate,point estimate,True,0.1,0.19434963974213124,0.25616454957979,False,False,0.6615714818962299
-ESM-2,MSH2,32,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,32,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,33,PS3-supporting,certified,True,0.1,2.3992221194022663,5.673043469003746,True,True,0.09616861302191648
 ESM-2,MSH2,33,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,33,PS3-strong,certified,False,,,,,,
@@ -43018,7 +43018,7 @@ ESM-2,MSH2,33,PS3-moderate,point estimate,True,0.1,7.190123456790123,5.673043469
 ESM-2,MSH2,33,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,33,BS3-supporting,point estimate,True,0.2,0.4114737883283877,0.3952688227569002,True,True,0.7877219644856823
 ESM-2,MSH2,33,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,33,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,33,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,34,PS3-supporting,certified,True,0.3,2.707507219875395,3.490996155454904,True,True,0.2535620967311897
 ESM-2,MSH2,34,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,34,PS3-strong,certified,False,,,,,,
@@ -43107,8 +43107,8 @@ ESM-2,MSH2,36,PS3-supporting,point estimate,True,0.2,3.195266272189349,3.4588495
 ESM-2,MSH2,36,PS3-moderate,point estimate,True,0.05,5.1692307692307695,6.656044858926469,True,True,0.07366021436570148
 ESM-2,MSH2,36,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,36,BS3-supporting,point estimate,True,0.2,0.3695324283559578,0.26165477871320597,True,True,0.6892710499653388
-ESM-2,MSH2,36,BS3-moderate,point estimate,True,0.05,0.0,inf,False,False,0.0
-ESM-2,MSH2,36,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,36,BS3-moderate,point estimate,False,,,,,,
+ESM-2,MSH2,36,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,37,PS3-supporting,certified,True,0.1,2.7142637743853597,5.420659296466995,True,True,0.11458966565349543
 ESM-2,MSH2,37,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,37,PS3-strong,certified,False,,,,,,
@@ -43168,7 +43168,7 @@ ESM-2,MSH2,38,PS3-moderate,point estimate,True,0.1,5.2695374800637955,5.26822688
 ESM-2,MSH2,38,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,38,BS3-supporting,point estimate,True,0.3,0.40516677567037274,0.22800337464551773,True,True,0.6448194955473792
 ESM-2,MSH2,38,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,38,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,38,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,39,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,39,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,39,PS3-strong,certified,False,,,,,,
@@ -43288,7 +43288,7 @@ ESM-2,MSH2,42,PS3-moderate,point estimate,True,0.1,4.9523809523809526,4.78008802
 ESM-2,MSH2,42,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,42,BS3-supporting,point estimate,True,0.2,0.4722394220846233,0.30794605397808367,True,True,0.7416786647469737
 ESM-2,MSH2,42,BS3-moderate,point estimate,True,0.1,0.16124031007751938,0.17031017503590176,True,False,0.5853010185037061
-ESM-2,MSH2,42,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,42,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,43,PS3-supporting,certified,True,0.05,2.6819993898102146,6.453834718073412,True,True,0.08306670932650774
 ESM-2,MSH2,43,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,43,PS3-strong,certified,False,,,,,,
@@ -43438,7 +43438,7 @@ ESM-2,MSH2,47,PS3-moderate,point estimate,True,0.2,4.852203389830509,4.068743505
 ESM-2,MSH2,47,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,47,BS3-supporting,point estimate,True,0.3,0.22013071895424838,0.26076346277131324,True,False,0.6708473310936917
 ESM-2,MSH2,47,BS3-moderate,point estimate,True,0.3,0.22013071895424838,0.26076346277131324,False,False,0.6708473310936917
-ESM-2,MSH2,47,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,47,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,48,PS3-supporting,certified,True,0.1,2.4151801396508215,5.514835895459042,True,True,0.11016637338025914
 ESM-2,MSH2,48,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,48,PS3-strong,certified,False,,,,,,
@@ -43468,7 +43468,7 @@ ESM-2,MSH2,48,PS3-moderate,point estimate,True,0.1,5.360869565217391,5.514835895
 ESM-2,MSH2,48,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,48,BS3-supporting,point estimate,True,0.3,0.17396825396825397,0.2316572274410358,True,False,0.6487868607689437
 ESM-2,MSH2,48,BS3-moderate,point estimate,True,0.2,0.22582417582417583,0.31650135053851186,False,False,0.7477816882632111
-ESM-2,MSH2,48,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,48,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,49,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,49,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,49,PS3-strong,certified,False,,,,,,
@@ -43588,7 +43588,7 @@ ESM-2,MSH2,52,PS3-moderate,point estimate,True,0.05,6.205882352941177,6.94990407
 ESM-2,MSH2,52,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,52,BS3-supporting,point estimate,True,0.3,0.19393382352941177,0.17031017503590176,True,True,0.5853010185037061
 ESM-2,MSH2,52,BS3-moderate,point estimate,True,0.3,0.19393382352941177,0.17031017503590176,True,True,0.5853010185037061
-ESM-2,MSH2,52,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,52,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,53,PS3-supporting,certified,True,0.05,2.979814445087103,6.299521140308301,True,True,0.08446648536234201
 ESM-2,MSH2,53,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,53,PS3-strong,certified,False,,,,,,
@@ -43738,7 +43738,7 @@ ESM-2,MSH2,57,PS3-moderate,point estimate,True,0.1,5.45467032967033,4.9602798008
 ESM-2,MSH2,57,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,57,BS3-supporting,point estimate,True,0.3,0.3036319612590799,0.29390534500702326,True,True,0.7072068469044952
 ESM-2,MSH2,57,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,57,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,57,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,58,PS3-supporting,certified,True,0.3,2.234439516901047,4.809152368962626,True,True,0.14227856876233133
 ESM-2,MSH2,58,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,58,PS3-strong,certified,False,,,,,,
@@ -43768,7 +43768,7 @@ ESM-2,MSH2,58,PS3-moderate,point estimate,True,0.2,4.604705882352941,4.576178136
 ESM-2,MSH2,58,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,58,BS3-supporting,point estimate,True,0.2,0.25782227784730916,0.3172788580930562,True,False,0.7562549992001278
 ESM-2,MSH2,58,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,58,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,58,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,59,PS3-supporting,certified,True,0.3,2.1658100939749048,4.6390314583663,True,True,0.1651522423078974
 ESM-2,MSH2,59,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,59,PS3-strong,certified,False,,,,,,
@@ -43827,8 +43827,8 @@ ESM-2,MSH2,60,PS3-supporting,point estimate,True,0.2,2.752659574468085,3.5888753
 ESM-2,MSH2,60,PS3-moderate,point estimate,False,,,,,,
 ESM-2,MSH2,60,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,60,BS3-supporting,point estimate,True,0.3,0.3532423208191126,0.26676414399775344,True,True,0.6763077907534794
-ESM-2,MSH2,60,BS3-moderate,point estimate,True,0.05,0.0,inf,False,False,0.0
-ESM-2,MSH2,60,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,60,BS3-moderate,point estimate,False,,,,,,
+ESM-2,MSH2,60,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,61,PS3-supporting,certified,True,0.2,2.227428737452245,3.6396962329184572,True,True,0.23754865888124563
 ESM-2,MSH2,61,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,61,PS3-strong,certified,False,,,,,,
@@ -43978,7 +43978,7 @@ ESM-2,MSH2,65,PS3-moderate,point estimate,True,0.3,4.525215810995002,3.687454555
 ESM-2,MSH2,65,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,65,BS3-supporting,point estimate,True,0.2,0.29654961208656594,0.2979531928817148,True,False,0.7250866528022183
 ESM-2,MSH2,65,BS3-moderate,point estimate,True,0.3,0.14604105571847506,0.22556565711267387,True,False,0.6253719404895216
-ESM-2,MSH2,65,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,65,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,66,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,66,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,66,PS3-strong,certified,False,,,,,,
@@ -44008,7 +44008,7 @@ ESM-2,MSH2,66,PS3-moderate,point estimate,True,0.3,4.622222222222222,4.576178136
 ESM-2,MSH2,66,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,66,BS3-supporting,point estimate,True,0.2,0.4370582617000955,0.4216769177501407,True,True,0.7993681011038233
 ESM-2,MSH2,66,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,66,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,66,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,67,PS3-supporting,certified,True,0.1,2.1065422395424385,5.69773907120831,True,True,0.10663893776995681
 ESM-2,MSH2,67,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,67,PS3-strong,certified,False,,,,,,
@@ -44038,7 +44038,7 @@ ESM-2,MSH2,67,PS3-moderate,point estimate,True,0.1,6.393939393939394,5.697739071
 ESM-2,MSH2,67,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,67,BS3-supporting,point estimate,True,0.3,0.3414239482200647,0.25616454957979,True,True,0.6615714818962299
 ESM-2,MSH2,67,BS3-moderate,point estimate,True,0.1,0.22835497835497834,0.14519692213700228,True,True,0.5098464245720684
-ESM-2,MSH2,67,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,67,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,68,PS3-supporting,certified,True,0.2,2.5636721446151363,3.440223108090792,True,True,0.2565669492881139
 ESM-2,MSH2,68,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,68,PS3-strong,certified,False,,,,,,
@@ -44128,7 +44128,7 @@ ESM-2,MSH2,70,PS3-moderate,point estimate,True,0.05,5.7379310344827585,5.6730434
 ESM-2,MSH2,70,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,70,BS3-supporting,point estimate,True,0.3,0.25584255842558423,0.22862191809259655,True,True,0.6431024369434224
 ESM-2,MSH2,70,BS3-moderate,point estimate,True,0.2,0.22456140350877193,0.17031017503590176,True,True,0.5853010185037061
-ESM-2,MSH2,70,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,70,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,71,PS3-supporting,certified,True,0.2,3.487479325612502,4.6959513013153655,True,True,0.16589878952700904
 ESM-2,MSH2,71,PS3-moderate,certified,True,0.05,4.360091345199206,7.511594177072591,True,True,0.04034554471284594
 ESM-2,MSH2,71,PS3-strong,certified,False,,,,,,
@@ -44188,7 +44188,7 @@ ESM-2,MSH2,72,PS3-moderate,point estimate,True,0.2,4.767598842815816,4.043114777
 ESM-2,MSH2,72,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,72,BS3-supporting,point estimate,True,0.2,0.2826273366489453,0.3737496168020785,True,False,0.7808164027088998
 ESM-2,MSH2,72,BS3-moderate,point estimate,True,0.3,0.16103185460230604,0.2745595394273853,False,False,0.6919586199541405
-ESM-2,MSH2,72,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,72,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,73,PS3-supporting,certified,True,0.3,2.336524831685776,4.547137985490423,True,True,0.15456993547699036
 ESM-2,MSH2,73,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,73,PS3-strong,certified,False,,,,,,
@@ -44278,7 +44278,7 @@ ESM-2,MSH2,75,PS3-moderate,point estimate,True,0.1,5.631578947368421,5.562751098
 ESM-2,MSH2,75,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,75,BS3-supporting,point estimate,True,0.3,0.12580834803057023,0.1390145717851816,True,False,0.416576014504346
 ESM-2,MSH2,75,BS3-moderate,point estimate,True,0.3,0.12580834803057023,0.1390145717851816,True,False,0.416576014504346
-ESM-2,MSH2,75,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,75,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,76,PS3-supporting,certified,True,0.1,2.245154959572926,5.163107864639289,True,True,0.1293819655521783
 ESM-2,MSH2,76,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,76,PS3-strong,certified,False,,,,,,
@@ -44458,7 +44458,7 @@ ESM-2,MSH2,81,PS3-moderate,point estimate,True,0.1,5.8106060606060606,5.34247805
 ESM-2,MSH2,81,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,81,BS3-supporting,point estimate,True,0.2,0.39109848484848486,0.2998998193577315,True,True,0.7204767237242041
 ESM-2,MSH2,81,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,81,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,81,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,82,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,82,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,82,PS3-strong,certified,False,,,,,,
@@ -44488,7 +44488,7 @@ ESM-2,MSH2,82,PS3-moderate,point estimate,False,,,,,,
 ESM-2,MSH2,82,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,82,BS3-supporting,point estimate,True,0.3,0.18787049703602368,0.17031017503590176,True,True,0.5853010185037061
 ESM-2,MSH2,82,BS3-moderate,point estimate,True,0.3,0.18787049703602368,0.17031017503590176,True,True,0.5853010185037061
-ESM-2,MSH2,82,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,82,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,83,PS3-supporting,certified,True,0.1,3.549074934840953,5.5244171997533575,True,True,0.11169679517943795
 ESM-2,MSH2,83,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,83,PS3-strong,certified,False,,,,,,
@@ -44578,7 +44578,7 @@ ESM-2,MSH2,85,PS3-moderate,point estimate,False,,,,,,
 ESM-2,MSH2,85,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,85,BS3-supporting,point estimate,True,0.3,0.2366863905325444,0.21370890764123343,True,True,0.621695195435397
 ESM-2,MSH2,85,BS3-moderate,point estimate,True,0.2,0.13631937682570594,0.15056494300317008,True,False,0.5274942675838532
-ESM-2,MSH2,85,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,85,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,86,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,86,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,86,PS3-strong,certified,False,,,,,,
@@ -44608,7 +44608,7 @@ ESM-2,MSH2,86,PS3-moderate,point estimate,True,0.1,6.049122807017544,5.655167563
 ESM-2,MSH2,86,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,86,BS3-supporting,point estimate,True,0.2,0.2513119533527697,0.3385340344902632,True,False,0.7676211806111022
 ESM-2,MSH2,86,BS3-moderate,point estimate,True,0.3,0.1847802786709539,0.2673916002235928,False,False,0.6899242787820614
-ESM-2,MSH2,86,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,86,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,87,PS3-supporting,certified,True,0.2,2.132910578087983,3.2635611917588636,True,True,0.2707513464512345
 ESM-2,MSH2,87,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,87,PS3-strong,certified,False,,,,,,
@@ -44728,7 +44728,7 @@ ESM-2,MSH2,90,PS3-moderate,point estimate,True,0.3,5.519480519480519,4.546547156
 ESM-2,MSH2,90,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,90,BS3-supporting,point estimate,True,0.2,0.36685369011652996,0.30671594595332585,True,True,0.744590198901509
 ESM-2,MSH2,90,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,90,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,90,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,91,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,91,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,91,PS3-strong,certified,False,,,,,,
@@ -44758,7 +44758,7 @@ ESM-2,MSH2,91,PS3-moderate,point estimate,True,0.1,4.4338624338624335,4.58962641
 ESM-2,MSH2,91,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,91,BS3-supporting,point estimate,True,0.2,0.4232323232323232,0.31633992849662684,True,True,0.748154961872767
 ESM-2,MSH2,91,BS3-moderate,point estimate,False,,,,,,
-ESM-2,MSH2,91,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,91,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,92,PS3-supporting,certified,True,0.3,2.3740559038273483,3.3653794117114906,True,True,0.2640884125206634
 ESM-2,MSH2,92,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,92,PS3-strong,certified,False,,,,,,
@@ -44907,8 +44907,8 @@ ESM-2,MSH2,96,PS3-supporting,point estimate,True,0.2,2.590769230769231,3.6028608
 ESM-2,MSH2,96,PS3-moderate,point estimate,False,,,,,,
 ESM-2,MSH2,96,PS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,96,BS3-supporting,point estimate,True,0.3,0.35957295373665477,0.2571022862355024,True,True,0.6592011944755507
-ESM-2,MSH2,96,BS3-moderate,point estimate,True,0.05,0.0,inf,False,False,0.0
-ESM-2,MSH2,96,BS3-strong,point estimate,True,0.05,0.0,inf,False,False,0.0
+ESM-2,MSH2,96,BS3-moderate,point estimate,False,,,,,,
+ESM-2,MSH2,96,BS3-strong,point estimate,False,,,,,,
 ESM-2,MSH2,97,PS3-supporting,certified,False,,,,,,
 ESM-2,MSH2,97,PS3-moderate,certified,False,,,,,,
 ESM-2,MSH2,97,PS3-strong,certified,False,,,,,,

@@ -6,7 +6,8 @@ Code and data for the RECOMB 2027 submission
 > Aaryav Sharma (Eastview High School, Apple Valley, MN, USA)
 
 Release `v1.0.0` is the version that matches the submitted paper. The supplementary material (full proofs,
-simulation, per-gene tables, strata, label sensitivity and implementation details) is in
+simulation, per-gene tables, strata, label sensitivity, the ClinVar check and implementation details; items S1-S5,
+Figs. S1-S2, Tables S1-S4) is in
 [`supplement/CertiVar_supplement.pdf`](supplement/CertiVar_supplement.pdf).
 
 ## What CertiVar does
@@ -17,13 +18,19 @@ gene with saturation genome editing (SGE) or deep mutational scanning (DMS) data
 1. **Per-class thresholds.** Class-conditional ("Mondrian") split-conformal thresholds, set from assay labels with one
    variant per residue, bound the rate at which each class is mis-called, either in expectation or with probability at
    least 1 - delta over the calibration data (PAC version).
-2. **Certified likelihood ratios.** Exact Clopper-Pearson bounds on the likelihood ratio of each call type, valid
-   simultaneously over a grid of thresholds, so a call type can be reported at an OddsPath level (supporting, moderate
-   or strong; thresholds of Tavtigian et al. 2018 and Brnich et al. 2020) with a finite-sample guarantee.
-3. **No prevalence estimate.** Both guarantees condition on the true class, so they hold whatever the share of damaging
+2. **Certified likelihood ratios.** One-sided Clopper-Pearson endpoints `l_TP`, `u_FP`, `u_FN`, `l_TN` give
+   `L+ = l_TP / u_FP` and `U- = u_FN / l_TN` (`U- = inf` when `l_TN = 0`), valid simultaneously over a grid of
+   thresholds, for the call-averaged likelihood ratio of each call type **against the assay labels**. These are
+   compared with the numerical OddsPath thresholds (2.1 / 4.3 / 18.7 and 0.48 / 0.23 / 0.053; Tavtigian et al. 2018,
+   Brnich et al. 2020).
+3. **No prevalence estimate.** Both certificates are class-conditional, so they hold whatever the share of damaging
    variants among the variants being called, provided that within each class those variants resemble the assayed ones.
 
 ## What it certifies, and what it does not
+
+CertiVar provides finite-sample certificates for class-conditional call rates and call-averaged likelihood ratios with
+respect to functional-assay labels, under the sampling assumptions stated in the paper. Numerical alignment with
+OddsPath thresholds is not, by itself, validation of clinical PP3/BP4/PS3/BS3 use.
 
 - The certified likelihood ratios are defined **with respect to the assay outcome** and averaged over all variants
   that receive a call. They state how strongly a call predicts the functional-assay result.
@@ -33,6 +40,8 @@ gene with saturation genome editing (SGE) or deep mutational scanning (DMS) data
   variant.
 - The guarantees are proved for residues exchangeable with the calibrated ones (Assumptions 1-2 of the paper). Calls
   in other protein regions or other genes are supported only by the empirical checks in the paper.
+- The check against ClinVar labels in the paper is exploratory: it is reported per gene (Table S4) and is not
+  independent clinical validation.
 - The calls are research results, not clinical classifications.
 
 The benchmark covers BRCA1, BRCA2, BAP1, RAD51C (SGE) and MSH2 (DMS) with AlphaMissense, REVEL and ESM-2.
@@ -50,10 +59,12 @@ present. All random draws use fixed seeds (2027 plus a fixed offset per experime
 read from `results/paper_numbers.json`, and `EVIDENCE.md` maps each claim to its key. SHA-256 checksums of the input
 data are in `data/MANIFEST.txt`; data sources and access dates are in `SOURCES.md`.
 
-To rebuild only the results, figures and tables from the processed data already in this repository:
+`make test` runs the boundary-case unit tests of the method (zero denominators, empty classes, Platt slope sign,
+disjoint calls, coverage of the certified bounds). To rebuild only the results, figures and tables from the processed
+data already in this repository:
 
 ```bash
-make results figures
+make test results figures
 ```
 
 | Step | Script | Output |

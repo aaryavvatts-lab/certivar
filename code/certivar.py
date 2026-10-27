@@ -1,8 +1,12 @@
 """certivar: per-class (Mondrian) conformal calls for variant-effect predictors, with PAC thresholds
 and certified likelihood ratios (with respect to the assay outcome) on the ACMG/AMP OddsPath scale.
 
-Notation. y = 1 for loss of function / pathogenic, 0 otherwise. s(x) is a predictor
-score (higher = more damaging). A *source* calibrator maps s to P_S(y = 1 | s) under
+Two label types are used and never mixed:
+  y_clinvar = 1 for ClinVar pathogenic/likely pathogenic, 0 for benign/likely benign. Used only by Platt (and the
+              label-shift helpers below) to put scores on a common, monotone scale q(s).
+  y_assay   = 1 for loss of function (LoF) in the functional assay, 0 for functional. Used by mondrian_thresholds,
+              decisions, coverage_report and certify; every guarantee and certified likelihood ratio refers to y_assay.
+s is a predictor score oriented so that higher = more damaging. A *source* calibrator maps s to P_S(y = 1 | s) under
 the source prior pi_S. Under label shift (p(s | y) fixed, p(y) changes) the target
 posterior is the prior-adjusted source posterior (Saerens et al. 2002):
 
@@ -14,7 +18,8 @@ Conformal part. Nonconformity of label k at score s is 1 - P(y = k | s). For eac
 k a threshold is the finite-sample quantile of calibration nonconformities among
 calibration points with y = k (Mondrian / class-conditional split conformal, Vovk et al.).
 Class-conditional thresholds do not depend on the class prior, so the per-class coverage
-guarantee survives any label shift. To respect dependence among substitutions at the same
+guarantee carries over to targets with a different class share, provided the score distribution within each class is
+unchanged (class-conditional invariance, Assumption 2 of the paper). To respect dependence among substitutions at the same
 residue, calibration uses one randomly chosen variant per (gene, protein position)
 cluster, which makes calibration points exchangeable with a test variant drawn from a
 new position. The prediction set is {k : nonconformity_k <= threshold_k}; the set {0, 1}
@@ -37,6 +42,9 @@ class Platt:
     def fit(self, s, y):
         self.m = LogisticRegression(C=1e6).fit(np.asarray(s).reshape(-1, 1), y)
         self.prior = float(np.mean(y))
+        self.slope = float(self.m.coef_[0, 0])
+        if self.slope <= 0:  # calls are invariant to the map only if it is increasing in s
+            raise ValueError(f"Platt slope {self.slope:.4g} is not positive; orient the score so higher = more damaging")
         return self
 
     def predict(self, s):
@@ -252,13 +260,22 @@ def clopper_pearson(k, n, level):
     return lo, hi
 
 
+def ratio(num, den):
+    """num / den with the conventions of the paper: x / 0 = inf for x > 0, and 0 / 0 is undefined (nan)."""
+    if den > 0:
+        return num / den
+    return np.inf if num > 0 else np.nan
+
+
 def certify(dec, y, level):
     """Certified bounds on the likelihood ratios of the two call types.
 
-    dec, y: decisions and labels for one variant per residue on data independent of the thresholds.
-    Returns lower bound on LR+ = P(call LoF | LoF) / P(call LoF | functional) and upper bound on
-    LR- = P(call functional | LoF) / P(call functional | functional), each holding with probability
-    at least 1 - 2 * level (union of two one-sided bounds), plus point estimates and yields.
+    dec, y: decisions and assay labels for one variant per residue on data independent of the thresholds.
+    With one-sided Clopper-Pearson endpoints l_TP, u_FP, u_FN, l_TN at `level` each, returns
+    L+ = l_TP / u_FP, a lower bound on LR+ = P(call LoF | Y=1) / P(call LoF | Y=0), and
+    U- = u_FN / l_TN, an upper bound on LR- = P(call functional | Y=1) / P(call functional | Y=0)
+    (U- = inf when l_TN = 0); each holds with probability at least 1 - 2 * level. Also returns the empirical
+    ratios (inf for x/0 with x > 0, nan for 0/0 or an absent class) and the call yields.
     """
     dec, y = np.asarray(dec), np.asarray(y)
     n1, n0 = int((y == 1).sum()), int((y == 0).sum())
@@ -270,9 +287,9 @@ def certify(dec, y, level):
     _, fp_hi = clopper_pearson(b, n0, level)
     _, fn_hi = clopper_pearson(c, n1, level)
     tn_lo, _ = clopper_pearson(e, n0, level)
-    eps = 1e-12
+    both = n1 > 0 and n0 > 0
     return {
-        "lr_pos_lower": tp_lo / max(fp_hi, eps), "lr_pos_hat": (a / n1) / max(b / n0, eps) if n1 and n0 else np.nan,
-        "lr_neg_upper": fn_hi / max(tn_lo, eps), "lr_neg_hat": (c / n1) / max(e / n0, eps) if n1 and n0 else np.nan,
+        "lr_pos_lower": ratio(tp_lo, fp_hi), "lr_pos_hat": ratio(a / n1, b / n0) if both else np.nan,
+        "lr_neg_upper": np.inf if tn_lo == 0 else fn_hi / tn_lo, "lr_neg_hat": ratio(c / n1, e / n0) if both else np.nan,
         "yield_lof": float((dec == 1).mean()), "yield_func": float((dec == 0).mean()), "n1": n1, "n0": n0,
     }

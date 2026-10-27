@@ -1527,14 +1527,14 @@
    "level_held": 0.999
   },
   "bootstrap": {
-   "n": 5266,
-   "bound_ok": 0.766,
-   "level_held": 0.911
+   "n": 5287,
+   "bound_ok": 0.765,
+   "level_held": 0.91
   },
   "bootstrap, Bonferroni": {
-   "n": 4496,
-   "bound_ok": 0.794,
-   "level_held": 0.912
+   "n": 4533,
+   "bound_ok": 0.792,
+   "level_held": 0.91
   },
   "certified": {
    "n": 2181,
@@ -1542,9 +1542,9 @@
    "level_held": 1.0
   },
   "point estimate": {
-   "n": 6671,
-   "bound_ok": 0.355,
-   "level_held": 0.775
+   "n": 6484,
+   "bound_ok": 0.364,
+   "level_held": 0.797
   }
  },
  "oracle_by_level": {
@@ -1585,16 +1585,16 @@
    "yield": 0.275
   },
   "bootstrap|BS3-moderate": {
-   "achieved": 0.444,
-   "holds": 0.904,
-   "n": 666,
-   "yield": 0.447
+   "achieved": 0.449,
+   "holds": 0.9,
+   "n": 673,
+   "yield": 0.442
   },
   "bootstrap|BS3-strong": {
-   "achieved": 0.348,
-   "holds": 0.295,
-   "n": 522,
-   "yield": 0.21
+   "achieved": 0.357,
+   "holds": 0.3,
+   "n": 536,
+   "yield": 0.205
   },
   "bootstrap|BS3-supporting": {
    "achieved": 0.916,
@@ -1621,21 +1621,21 @@
    "yield": 0.295
   },
   "bootstrap, Bonferroni|BS3-moderate": {
-   "achieved": 0.375,
-   "holds": 0.954,
-   "n": 563,
-   "yield": 0.336
+   "achieved": 0.386,
+   "holds": 0.945,
+   "n": 579,
+   "yield": 0.327
   },
   "bootstrap, Bonferroni|BS3-strong": {
-   "achieved": 0.344,
-   "holds": 0.289,
-   "n": 516,
-   "yield": 0.212
+   "achieved": 0.357,
+   "holds": 0.3,
+   "n": 536,
+   "yield": 0.205
   },
   "bootstrap, Bonferroni|BS3-supporting": {
    "achieved": 0.761,
    "holds": 1.0,
-   "n": 1141,
+   "n": 1142,
    "yield": 0.619
   },
   "bootstrap, Bonferroni|PS3-moderate": {
@@ -1693,16 +1693,16 @@
    "yield": 0.258
   },
   "point estimate|BS3-moderate": {
-   "achieved": 0.774,
-   "holds": 0.674,
-   "n": 1161,
-   "yield": 0.574
+   "achieved": 0.768,
+   "holds": 0.679,
+   "n": 1152,
+   "yield": 0.578
   },
   "point estimate|BS3-strong": {
-   "achieved": 0.535,
-   "holds": 0.189,
-   "n": 803,
-   "yield": 0.22
+   "achieved": 0.417,
+   "holds": 0.232,
+   "n": 625,
+   "yield": 0.282
   },
   "point estimate|BS3-supporting": {
    "achieved": 0.997,
@@ -1736,14 +1736,14 @@
    "level_held": 0.991
   },
   "bootstrap": {
-   "n": 5102,
+   "n": 5137,
    "bound_ok": 0.768,
-   "level_held": 0.908
+   "level_held": 0.907
   },
   "bootstrap, Bonferroni": {
-   "n": 4282,
-   "bound_ok": 0.823,
-   "level_held": 0.922
+   "n": 4342,
+   "bound_ok": 0.822,
+   "level_held": 0.92
   },
   "certified": {
    "n": 2091,
@@ -1751,9 +1751,9 @@
    "level_held": 0.997
   },
   "point estimate": {
-   "n": 6548,
-   "bound_ok": 0.434,
-   "level_held": 0.784
+   "n": 6350,
+   "bound_ok": 0.447,
+   "level_held": 0.808
   }
  },
  "evidence_by_level": {
@@ -1794,16 +1794,16 @@
    "yield": 0.275
   },
   "bootstrap|BS3-moderate": {
-   "achieved": 0.398,
-   "holds": 0.799,
-   "n": 597,
-   "yield": 0.429
+   "achieved": 0.407,
+   "holds": 0.797,
+   "n": 610,
+   "yield": 0.42
   },
   "bootstrap|BS3-strong": {
-   "achieved": 0.305,
-   "holds": 0.481,
-   "n": 457,
-   "yield": 0.188
+   "achieved": 0.319,
+   "holds": 0.493,
+   "n": 479,
+   "yield": 0.18
   },
   "bootstrap|BS3-supporting": {
    "achieved": 0.905,
@@ -1830,22 +1830,22 @@
    "yield": 0.296
   },
   "bootstrap, Bonferroni|BS3-moderate": {
-   "achieved": 0.313,
-   "holds": 0.862,
-   "n": 470,
-   "yield": 0.319
+   "achieved": 0.331,
+   "holds": 0.855,
+   "n": 496,
+   "yield": 0.303
   },
   "bootstrap, Bonferroni|BS3-strong": {
-   "achieved": 0.297,
-   "holds": 0.471,
-   "n": 446,
-   "yield": 0.193
+   "achieved": 0.319,
+   "holds": 0.493,
+   "n": 479,
+   "yield": 0.18
   },
   "bootstrap, Bonferroni|BS3-supporting": {
    "achieved": 0.737,
    "holds": 0.995,
-   "n": 1105,
-   "yield": 0.617
+   "n": 1106,
+   "yield": 0.616
   },
   "bootstrap, Bonferroni|PS3-moderate": {
    "achieved": 0.519,
@@ -1902,16 +1902,16 @@
    "yield": 0.256
   },
   "point estimate|BS3-moderate": {
-   "achieved": 0.747,
-   "holds": 0.651,
-   "n": 1121,
-   "yield": 0.565
+   "achieved": 0.743,
+   "holds": 0.655,
+   "n": 1115,
+   "yield": 0.568
   },
   "point estimate|BS3-strong": {
-   "achieved": 0.495,
-   "holds": 0.315,
-   "n": 742,
-   "yield": 0.187
+   "achieved": 0.367,
+   "holds": 0.42,
+   "n": 550,
+   "yield": 0.253
   },
   "point estimate|BS3-supporting": {
    "achieved": 0.999,
@@ -2004,8 +2004,8 @@
   "PS3-moderate": {
    "achieved": 0.101,
    "n": 152,
-   "holds": 0.875,
-   "bound_ok": 0.842
+   "holds": 0.855,
+   "bound_ok": 0.822
   },
   "PS3-strong": {
    "achieved": 0.0,
@@ -2016,14 +2016,14 @@
   "PS3-supporting": {
    "achieved": 0.799,
    "n": 1198,
-   "holds": 0.957,
-   "bound_ok": 0.922
+   "holds": 0.947,
+   "bound_ok": 0.912
   }
  },
  "region_bound_ok_all": {
   "n": 1891,
-  "bound_ok": 0.896,
-  "holds": 0.938
+  "bound_ok": 0.888,
+  "holds": 0.93
  },
  "reliability": {
   "PAC, delta = 0.1": {
@@ -2069,7 +2069,8 @@
  },
  "vus_shift_prev": {
   "cal_prev": 0.17,
-  "vus_prev": 0.201
+  "vus_prev_rw": 0.198,
+  "vus_prev_variant_level": 0.201
  },
  "vus_evidence": {
   "BS3-moderate": {
@@ -2114,41 +2115,51 @@
    "ok": 3090,
    "n": 3115,
    "draws": 1463,
+   "draws_total": 1500,
+   "draws_all_ok_uncond": 0.988,
    "draws_all_ok": 0.988,
    "lo": 0.988,
    "hi": 0.996
   },
   "bootstrap": {
-   "ok": 4034,
-   "n": 5266,
+   "ok": 4045,
+   "n": 5287,
    "draws": 1500,
-   "draws_all_ok": 0.567,
-   "lo": 0.752,
-   "hi": 0.78
+   "draws_total": 1500,
+   "draws_all_ok_uncond": 0.565,
+   "draws_all_ok": 0.565,
+   "lo": 0.751,
+   "hi": 0.779
   },
   "bootstrap, Bonferroni": {
-   "ok": 3569,
-   "n": 4496,
-   "draws": 1487,
-   "draws_all_ok": 0.662,
-   "lo": 0.781,
-   "hi": 0.808
+   "ok": 3590,
+   "n": 4533,
+   "draws": 1488,
+   "draws_total": 1500,
+   "draws_all_ok_uncond": 0.659,
+   "draws_all_ok": 0.656,
+   "lo": 0.778,
+   "hi": 0.805
   },
   "certified": {
    "ok": 2178,
    "n": 2181,
    "draws": 1326,
+   "draws_total": 1500,
+   "draws_all_ok_uncond": 0.998,
    "draws_all_ok": 0.998,
    "lo": 0.997,
    "hi": 1.0
   },
   "point estimate": {
-   "ok": 2369,
-   "n": 6671,
+   "ok": 2361,
+   "n": 6484,
    "draws": 1500,
-   "draws_all_ok": 0.116,
-   "lo": 0.34,
-   "hi": 0.372
+   "draws_total": 1500,
+   "draws_all_ok_uncond": 0.141,
+   "draws_all_ok": 0.141,
+   "lo": 0.347,
+   "hi": 0.381
   }
  },
  "label_sensitivity": {
@@ -2260,87 +2271,260 @@
  "clinvar_check": [
   {
    "predictor": "AlphaMissense",
-   "scope": "pooled",
-   "n_path": 387,
-   "n_benign": 472,
-   "lof_calls_path": 307,
-   "lof_calls_benign": 17,
-   "func_calls_path": 36,
-   "func_calls_benign": 392,
-   "lr_pos_hat": 22.025,
-   "lr_pos_lower": 13.139,
-   "lr_neg_hat": 0.112,
-   "lr_neg_upper": 0.159
+   "scope": "BRCA1",
+   "n_path": 75,
+   "n_benign": 170,
+   "lof_calls_path": 56,
+   "lof_calls_benign": 1,
+   "func_calls_path": 8,
+   "func_calls_benign": 153,
+   "lr_pos_hat": 126.933,
+   "lr_pos_lower": 19.575,
+   "lr_neg_hat": 0.119,
+   "lr_neg_upper": 0.236
   },
   {
    "predictor": "AlphaMissense",
-   "scope": "BRCA1",
-   "n_path": 156,
-   "n_benign": 189,
-   "lof_calls_path": 129,
-   "lof_calls_benign": 2,
-   "func_calls_path": 12,
-   "func_calls_benign": 166,
-   "lr_pos_hat": 78.144,
-   "lr_pos_lower": 20.112,
-   "lr_neg_hat": 0.088,
-   "lr_neg_upper": 0.159
-  },
-  {
-   "predictor": "REVEL",
-   "scope": "pooled",
-   "n_path": 387,
-   "n_benign": 472,
-   "lof_calls_path": 270,
-   "lof_calls_benign": 23,
-   "func_calls_path": 39,
-   "func_calls_benign": 386,
-   "lr_pos_hat": 14.317,
-   "lr_pos_lower": 8.989,
-   "lr_neg_hat": 0.123,
-   "lr_neg_upper": 0.173
-  },
-  {
-   "predictor": "REVEL",
-   "scope": "BRCA1",
-   "n_path": 156,
-   "n_benign": 189,
-   "lof_calls_path": 112,
-   "lof_calls_benign": 11,
-   "func_calls_path": 10,
-   "func_calls_benign": 149,
-   "lr_pos_hat": 12.336,
-   "lr_pos_lower": 6.294,
-   "lr_neg_hat": 0.081,
-   "lr_neg_upper": 0.159
-  },
-  {
-   "predictor": "ESM-2",
-   "scope": "pooled",
-   "n_path": 387,
-   "n_benign": 472,
-   "lof_calls_path": 238,
+   "scope": "BRCA2",
+   "n_path": 60,
+   "n_benign": 210,
+   "lof_calls_path": 49,
    "lof_calls_benign": 8,
-   "func_calls_path": 36,
-   "func_calls_benign": 403,
-   "lr_pos_hat": 36.284,
-   "lr_pos_lower": 17.042,
-   "lr_neg_hat": 0.109,
-   "lr_neg_upper": 0.154
+   "func_calls_path": 6,
+   "func_calls_benign": 164,
+   "lr_pos_hat": 21.437,
+   "lr_pos_lower": 9.441,
+   "lr_neg_hat": 0.128,
+   "lr_neg_upper": 0.285
+  },
+  {
+   "predictor": "AlphaMissense",
+   "scope": "BAP1",
+   "n_path": 6,
+   "n_benign": 8,
+   "lof_calls_path": 5,
+   "lof_calls_benign": 0,
+   "func_calls_path": 1,
+   "func_calls_benign": 8,
+   "lr_pos_hat": Infinity,
+   "lr_pos_lower": 0.971,
+   "lr_neg_hat": 0.167,
+   "lr_neg_upper": 1.017
+  },
+  {
+   "predictor": "AlphaMissense",
+   "scope": "RAD51C",
+   "n_path": 8,
+   "n_benign": 3,
+   "lof_calls_path": 5,
+   "lof_calls_benign": 1,
+   "func_calls_path": 2,
+   "func_calls_benign": 2,
+   "lr_pos_hat": 1.875,
+   "lr_pos_lower": 0.27,
+   "lr_neg_hat": 0.375,
+   "lr_neg_upper": 6.902
+  },
+  {
+   "predictor": "AlphaMissense",
+   "scope": "MSH2",
+   "n_path": 72,
+   "n_benign": 55,
+   "lof_calls_path": 50,
+   "lof_calls_benign": 6,
+   "func_calls_path": 9,
+   "func_calls_benign": 46,
+   "lr_pos_hat": 6.366,
+   "lr_pos_lower": 2.583,
+   "lr_neg_hat": 0.149,
+   "lr_neg_upper": 0.315
+  },
+  {
+   "predictor": "AlphaMissense",
+   "scope": "pooled",
+   "n_path": 221,
+   "n_benign": 446,
+   "lof_calls_path": 165,
+   "lof_calls_benign": 16,
+   "func_calls_path": 26,
+   "func_calls_benign": 373,
+   "lr_pos_hat": 20.812,
+   "lr_pos_lower": 11.872,
+   "lr_neg_hat": 0.141,
+   "lr_neg_upper": 0.21
+  },
+  {
+   "predictor": "REVEL",
+   "scope": "BRCA1",
+   "n_path": 75,
+   "n_benign": 170,
+   "lof_calls_path": 48,
+   "lof_calls_benign": 10,
+   "func_calls_path": 8,
+   "func_calls_benign": 134,
+   "lr_pos_hat": 10.88,
+   "lr_pos_lower": 4.937,
+   "lr_neg_hat": 0.135,
+   "lr_neg_upper": 0.277
+  },
+  {
+   "predictor": "REVEL",
+   "scope": "BRCA2",
+   "n_path": 60,
+   "n_benign": 210,
+   "lof_calls_path": 44,
+   "lof_calls_benign": 9,
+   "func_calls_path": 11,
+   "func_calls_benign": 182,
+   "lr_pos_hat": 17.111,
+   "lr_pos_lower": 7.562,
+   "lr_neg_hat": 0.212,
+   "lr_neg_upper": 0.374
+  },
+  {
+   "predictor": "REVEL",
+   "scope": "BAP1",
+   "n_path": 6,
+   "n_benign": 8,
+   "lof_calls_path": 4,
+   "lof_calls_benign": 0,
+   "func_calls_path": 2,
+   "func_calls_benign": 8,
+   "lr_pos_hat": Infinity,
+   "lr_pos_lower": 0.603,
+   "lr_neg_hat": 0.333,
+   "lr_neg_upper": 1.233
+  },
+  {
+   "predictor": "REVEL",
+   "scope": "RAD51C",
+   "n_path": 8,
+   "n_benign": 3,
+   "lof_calls_path": 6,
+   "lof_calls_benign": 0,
+   "func_calls_path": 2,
+   "func_calls_benign": 3,
+   "lr_pos_hat": Infinity,
+   "lr_pos_lower": 0.493,
+   "lr_neg_hat": 0.25,
+   "lr_neg_upper": 2.226
+  },
+  {
+   "predictor": "REVEL",
+   "scope": "MSH2",
+   "n_path": 72,
+   "n_benign": 55,
+   "lof_calls_path": 43,
+   "lof_calls_benign": 3,
+   "func_calls_path": 5,
+   "func_calls_benign": 38,
+   "lr_pos_hat": 10.949,
+   "lr_pos_lower": 3.141,
+   "lr_neg_hat": 0.101,
+   "lr_neg_upper": 0.28
+  },
+  {
+   "predictor": "REVEL",
+   "scope": "pooled",
+   "n_path": 221,
+   "n_benign": 446,
+   "lof_calls_path": 145,
+   "lof_calls_benign": 22,
+   "func_calls_path": 28,
+   "func_calls_benign": 365,
+   "lr_pos_hat": 13.301,
+   "lr_pos_lower": 7.994,
+   "lr_neg_hat": 0.155,
+   "lr_neg_upper": 0.228
   },
   {
    "predictor": "ESM-2",
    "scope": "BRCA1",
-   "n_path": 156,
-   "n_benign": 189,
-   "lof_calls_path": 108,
+   "n_path": 75,
+   "n_benign": 170,
+   "lof_calls_path": 47,
    "lof_calls_benign": 1,
-   "func_calls_path": 15,
-   "func_calls_benign": 174,
-   "lr_pos_hat": 130.846,
-   "lr_pos_lower": 21.064,
-   "lr_neg_hat": 0.104,
-   "lr_neg_upper": 0.176
+   "func_calls_path": 10,
+   "func_calls_benign": 159,
+   "lr_pos_hat": 106.533,
+   "lr_pos_lower": 15.688,
+   "lr_neg_hat": 0.143,
+   "lr_neg_upper": 0.261
+  },
+  {
+   "predictor": "ESM-2",
+   "scope": "BRCA2",
+   "n_path": 60,
+   "n_benign": 210,
+   "lof_calls_path": 33,
+   "lof_calls_benign": 4,
+   "func_calls_path": 9,
+   "func_calls_benign": 184,
+   "lr_pos_hat": 28.875,
+   "lr_pos_lower": 8.66,
+   "lr_neg_hat": 0.171,
+   "lr_neg_upper": 0.323
+  },
+  {
+   "predictor": "ESM-2",
+   "scope": "BAP1",
+   "n_path": 6,
+   "n_benign": 8,
+   "lof_calls_path": 5,
+   "lof_calls_benign": 0,
+   "func_calls_path": 1,
+   "func_calls_benign": 5,
+   "lr_pos_hat": Infinity,
+   "lr_pos_lower": 0.971,
+   "lr_neg_hat": 0.267,
+   "lr_neg_upper": 2.619
+  },
+  {
+   "predictor": "ESM-2",
+   "scope": "RAD51C",
+   "n_path": 8,
+   "n_benign": 3,
+   "lof_calls_path": 5,
+   "lof_calls_benign": 0,
+   "func_calls_path": 1,
+   "func_calls_benign": 1,
+   "lr_pos_hat": Infinity,
+   "lr_pos_lower": 0.346,
+   "lr_neg_hat": 0.375,
+   "lr_neg_upper": 62.652
+  },
+  {
+   "predictor": "ESM-2",
+   "scope": "MSH2",
+   "n_path": 72,
+   "n_benign": 55,
+   "lof_calls_path": 44,
+   "lof_calls_benign": 3,
+   "func_calls_path": 3,
+   "func_calls_benign": 33,
+   "lr_pos_hat": 11.204,
+   "lr_pos_lower": 3.233,
+   "lr_neg_hat": 0.069,
+   "lr_neg_upper": 0.255
+  },
+  {
+   "predictor": "ESM-2",
+   "scope": "pooled",
+   "n_path": 221,
+   "n_benign": 446,
+   "lof_calls_path": 134,
+   "lof_calls_benign": 8,
+   "func_calls_path": 24,
+   "func_calls_benign": 382,
+   "lr_pos_hat": 33.803,
+   "lr_pos_lower": 15.372,
+   "lr_neg_hat": 0.127,
+   "lr_neg_upper": 0.192
   }
+ ],
+ "pooled_abstain_AM_BAP1": 0.686,
+ "n_cal_lof_range": [
+  17,
+  93
  ]
 }

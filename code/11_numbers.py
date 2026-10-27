@@ -1,6 +1,7 @@
 """Collect every number quoted in the paper into results/paper_numbers.json.
 
-The manuscript cites only values that appear in this file (checked by qc/check_numbers.py).
+Numbers in the manuscript come from this file; a few counts derived directly from results/*.csv (e.g. the per-gene
+ClinVar bounds) are listed in EVIDENCE.md with their source file.
 """
 import json
 import pathlib
@@ -115,14 +116,17 @@ def main():
                             "abstain_mean": r3(g.abstain.mean()), "n_pairs_lof_below_09": int((g.coverage_lof_rw < 0.9).sum()),
                             "n_pairs_func_below_09": int((g.coverage_func_rw < 0.9).sum())}
                         for t, g in agg.groupby(level=0)}
-    out["vus_shift_prev"] = {"cal_prev": r3(vc.cal_prev.mean()), "vus_prev": r3(vc.vus_prev.mean())}
+    # residue-weighted shares for both (calibration keeps one variant per residue); variant-level VUS share kept for reference
+    out["vus_shift_prev"] = {"cal_prev": r3(vc.cal_prev.mean()), "vus_prev_rw": r3(vc.vus_prev_rw.mean()),
+                             "vus_prev_variant_level": r3(vc.vus_prev.mean())}
     ve = vs[vs.part == "evidence"]
     out["vus_evidence"] = {lvl: {"achieved": r3(g.achieved.mean()), "n": int(g.achieved.sum()),
                                  "holds": r3(g[g.achieved].holds.astype(float).mean()) if g.achieved.any() else None,
                                  "bound_ok": r3(g[g.achieved].bound_ok.astype(float).mean()) if g.achieved.any() else None}
                            for lvl, g in ve.groupby("level")}
     # oracle validity with a 95% interval that resamples whole draws (selections within a draw are dependent)
-    acc = pd.read_csv(RES / "oracle.csv").query("achieved")
+    orc = pd.read_csv(RES / "oracle.csv")
+    acc = orc.query("achieved")
     rng = np.random.default_rng(0)
     out["oracle_validity_ci"] = {}
     for sel, g in acc.groupby("selection"):
@@ -131,7 +135,11 @@ def main():
         for _ in range(2000):
             k = per.iloc[rng.integers(0, len(per), len(per))]
             boot.append(k["sum"].sum() / k["count"].sum())
+        allg = orc[orc.selection == sel]
+        uncond = allg.groupby(["predictor", "gene", "split"]).apply(
+            lambda t: bool((~t.achieved | t.bound_ok.fillna(False).astype(bool)).all()))
         out["oracle_validity_ci"][sel] = {"ok": int(g.bound_ok.sum()), "n": int(len(g)), "draws": int(len(per)),
+                                          "draws_total": int(len(uncond)), "draws_all_ok_uncond": r3(uncond.mean()),
                                           "draws_all_ok": r3((per["sum"] == per["count"]).mean()),
                                           "lo": r3(np.percentile(boot, 2.5)), "hi": r3(np.percentile(boot, 97.5))}
     ls = pd.read_csv(RES / "label_sensitivity.csv")
@@ -149,6 +157,9 @@ def main():
                                                      claims=("oracle_claims", "sum"), ok=("oracle_bound_ok", "sum"))
                      .round(3).reset_index().to_dict(orient="records")}
     out["clinvar_check"] = pd.read_csv(RES / "clinvar_check.csv").round(3).to_dict(orient="records")
+    pooled = conf[(conf.alpha == A) & (conf.design == "within-gene random split") & (conf.method == "Pooled conformal")]
+    out["pooled_abstain_AM_BAP1"] = r3(pooled[(pooled.predictor == "AlphaMissense") & (pooled.gene == "BAP1")].abstain.iloc[0])
+    out["n_cal_lof_range"] = [int(rel.n_cal_lof.min()), int(rel.n_cal_lof.max())]
     (RES / "paper_numbers.json").write_text(json.dumps(out, indent=1, default=str))
     print(json.dumps({k: out[k] for k in ["source_prev", "target_prev_min", "target_prev_max", "em_abs_err_mean",
                                            "em_abs_err_max", "dual_agree", "ece_by_method"]}, indent=1))

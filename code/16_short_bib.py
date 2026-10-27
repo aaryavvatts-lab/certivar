@@ -1,5 +1,6 @@
 """Write paper/refs_short.bib from paper/refs.bib: author lists longer than three names are cut to the first three
-followed by 'others' (printed as 'et al.'), and publisher fields are dropped. refs.bib keeps the full records."""
+followed by 'others' (printed as 'et al.'), and journal articles lose their publisher field. refs.bib keeps the full
+records."""
 import pathlib
 import re
 
@@ -17,7 +18,10 @@ def main():
         return m.group(1) + " and ".join(names) + m.group(3)
 
     text = re.sub(r"(\n\s*author\s*=\s*\{)(.*?)(\},\n)", cut, text, flags=re.S)
-    text = re.sub(r"\n\s*publisher\s*=\s*\{.*?\},", "", text)
+    # drop publisher only from journal articles; books and chapters keep it
+    text = re.sub(r"\n\s*note\s*=\s*\{.*?\},", "", text)   # preprint notes; the DOI or venue identifies the work
+    entries = re.split(r"(?=@)", text)
+    text = "".join(re.sub(r"\n\s*publisher\s*=\s*\{.*?\},", "", e) if e.startswith("@article") else e for e in entries)
     (PAPER / "refs_short.bib").write_text(text)
 
 

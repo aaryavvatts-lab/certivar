@@ -63,9 +63,16 @@ def weighted_rates(dec, y, cl):
         return np.sum(w[m] * mask[m]) / np.sum(w[m])
 
     tp, fp, fn, tn = rate(dec == 1, 1), rate(dec == 1, 0), rate(dec == 0, 1), rate(dec == 0, 0)
-    return dict(lr_pos=tp / fp if fp > 0 else np.inf, lr_neg=fn / tn if tn > 0 else np.inf,
+    return dict(lr_pos=sc.ratio(tp, fp), lr_neg=sc.ratio(fn, tn),
                 yield_lof=float(np.sum(w * (dec == 1)) / np.sum(w)),
                 yield_func=float(np.sum(w * (dec == 0)) / np.sum(w)))
+
+
+def residue_share(y, cl):
+    """LoF share under the residue-first law: draw a residue uniformly, then one of its variants uniformly."""
+    _, inv, cnt = np.unique(cl, return_inverse=True, return_counts=True)
+    w = 1.0 / cnt[inv]
+    return float(np.sum(w * (y == 1)) / np.sum(w))
 
 
 def boot_bounds(dec, y, rng, pct):
@@ -77,9 +84,10 @@ def boot_bounds(dec, y, rng, pct):
     ok = (n1 > 0) & (n0 > 0)
     c, n1, n0 = c[ok], n1[ok], n0[ok]
     tp, fn, fp, tn = c[:, 0] / n1, c[:, 1] / n1, c[:, 3] / n0, c[:, 4] / n0
-    lp = np.where(fp > 0, tp / np.where(fp > 0, fp, 1), np.inf)
-    ln = np.where(tn > 0, fn / np.where(tn > 0, tn, 1), np.inf)
-    return float(np.percentile(lp, pct)), float(np.percentile(ln, 100 - pct))
+    # x / 0 = inf for x > 0; 0 / 0 is undefined and dropped from the percentile
+    lp = np.where(fp > 0, tp / np.where(fp > 0, fp, 1), np.where(tp > 0, np.inf, np.nan))
+    ln = np.where(tn > 0, fn / np.where(tn > 0, tn, 1), np.where(fn > 0, np.inf, np.nan))
+    return float(np.nanpercentile(lp, pct)), float(np.nanpercentile(ln, 100 - pct))
 
 
 def certify_all(p, y, ic, iz, rng):
@@ -205,7 +213,7 @@ def vus_shift(d):
                 for delta, name in ((None, "in expectation"), (0.1, "PAC, delta = 0.1")):
                     thr = sc.mondrian_thresholds(p[ic], y[ic], 0.10, delta=delta)
                     rows.append(dict(predictor=pr, gene=g, rep=rep, part="coverage", thresholds=name,
-                                     cal_prev=y[ic].mean(), vus_prev=y[iv].mean(),
+                                     cal_prev=y[ic].mean(), vus_prev=y[iv].mean(), vus_prev_rw=residue_share(y[iv], cl[iv]),
                                      **sc.coverage_report(sc.decisions(p[iv], thr), y[iv], cl[iv])))
                 thrs, cert = certify_all(p, y, ic, iz, rng)
                 for name, best in select(cert, "certified").items():

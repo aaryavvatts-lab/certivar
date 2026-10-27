@@ -116,17 +116,16 @@ def fig_main():
     rel["worst"] = rel[["coverage_lof_rw", "coverage_func_rw"]].min(axis=1)
     vs = pd.read_csv(RES / "vus_shift.csv")
     vs = vs[vs.part == "coverage"].groupby(["thresholds", "predictor", "gene"])[["coverage_lof_rw", "coverage_func_rw"]].mean().reset_index()
-    fig, ax = plt.subplots(1, 3, figsize=(WIDTH, 2.7), layout="constrained", gridspec_kw={"width_ratios": [1.15, 1, 1]})
+    fig, ax = plt.subplots(1, 3, figsize=(WIDTH, 2.45), layout="constrained", gridspec_kw={"width_ratios": [1.15, 1, 1]})
     strip(ax[0], c, "A  By method")
     bins = np.linspace(0.70, 1.0, 31)
-    for name, col, hatch, lab in (("in expectation", "#2a78d6", None, "in exp."),
+    for name, col, hatch, lab in (("in expectation", "#2a78d6", None, "in expectation"),
                                   ("PAC, delta = 0.1", "#1baf7a", "///", "PAC")):
         v = rel[rel.thresholds == name].worst
         ax[1].hist(v, bins=bins, color=col, alpha=0.75, label=lab, hatch=hatch, edgecolor="white", lw=0.3)
     ax[1].axvline(0.90, color=INK, lw=0.8, ls="--")
     ax[1].set_xticks([0.7, 0.8, 0.9, 1.0])
     ax[1].set(xlabel="Worst-class coverage", ylabel="Splits", title="B  Per split")
-    ax[1].legend(frameon=False, loc="upper left")
     for j, (name, col, mk) in enumerate((("in expectation", "#2a78d6", "o"), ("PAC, delta = 0.1", "#1baf7a", "s"))):
         v = vs[vs.thresholds == name]
         ax[2].scatter(v.coverage_func_rw, v.coverage_lof_rw, marker=mk, s=20, color=col, edgecolor="white", lw=0.4,
@@ -135,14 +134,17 @@ def fig_main():
     ax[2].set(xlim=(0.80, 1.01), ylim=(0.80, 1.01), xlabel="Func. coverage", ylabel="LoF coverage",
               title="C  Test on VUS")
     ax[2].set_xticks([0.8, 0.9, 1.0]); ax[2].set_yticks([0.8, 0.9, 1.0])
-    predictor_legend(fig)
+    marks = [plt.Line2D([], [], marker=mk, ls="", color=MUTED, markersize=6, label=pr) for pr, mk in PRED_MARK.items()]
+    rules = [matplotlib.patches.Patch(facecolor="#2a78d6", alpha=0.75, label="in expectation"),
+             matplotlib.patches.Patch(facecolor="#1baf7a", alpha=0.75, hatch="///", edgecolor="white", label="PAC")]
+    fig.legend(handles=marks + rules, frameon=False, loc="outside lower center", ncol=5, columnspacing=1.0)
     fig.savefig(FIG / "fig_main.pdf")
     plt.close(fig)
 
 
 # selection rules of the oracle experiment: (key in oracle.csv, legend label, colour)
 RULES = [("certified", "Certified (ours)", "#2a78d6"),
-         ("Clopper-Pearson, uncorrected", "Exact, no correction", "#6250d6"),
+         ("Clopper-Pearson, uncorrected", "Clopper-Pearson, uncorr.", "#6250d6"),
          ("bootstrap", "Bootstrap 95%", "#eda100"),
          ("bootstrap, Bonferroni", "Bootstrap, corrected", "#1baf7a"),
          ("point estimate", "Point estimate", "#eb6834")]
@@ -154,7 +156,7 @@ def fig_evidence():
     """Selection rules judged against the exact population likelihood ratio (oracle design)."""
     ev = pd.read_csv(RES / "oracle.csv")
     ci = json.loads((RES / "paper_numbers.json").read_text())["oracle_validity_ci"]
-    fig, ax = plt.subplots(1, 2, figsize=(WIDTH, 2.8), layout="constrained", gridspec_kw={"width_ratios": [2.6, 1]})
+    fig, ax = plt.subplots(1, 2, figsize=(WIDTH, 2.55), layout="constrained", gridspec_kw={"width_ratios": [2.6, 1]})
     x = np.arange(len(LEVELS)) + np.array([0, 0, 0, 0.5, 0.5, 0.5])
     w = 0.16
     for i, (sel, lab, col) in enumerate(RULES):
@@ -169,16 +171,20 @@ def fig_evidence():
         ax[0].text(xc, -0.22, lab, ha="center", va="top", transform=ax[0].get_xaxis_transform())
     ax[0].set_ylim(0, 1.05)
     ax[0].set(ylabel="Share of draws", title="A  Level claimed (bar) and truly held (solid)")
-    vals = [ci[s]["ok"] / ci[s]["n"] for s, *_ in RULES]
-    err = np.array([[v - ci[s]["lo"], ci[s]["hi"] - v] for v, (s, *_) in zip(vals, RULES)]).T
-    ax[1].bar(range(len(RULES)), vals, color=[r[2] for r in RULES], edgecolor="white",
+    bound_rules = [r for r in RULES if r[0] != "point estimate"]   # a point estimate is not a confidence bound
+    vals = [ci[s]["ok"] / ci[s]["n"] for s, *_ in bound_rules]
+    err = np.array([[v - ci[s]["lo"], ci[s]["hi"] - v] for v, (s, *_) in zip(vals, bound_rules)]).T
+    ax[1].bar(range(len(bound_rules)), vals, color=[r[2] for r in bound_rules], edgecolor="white",
               yerr=np.clip(err, 0, None), error_kw=dict(lw=0.9, capsize=2, ecolor=INK))
     for i, v in enumerate(vals):
         ax[1].text(i, v / 2, f"{v:.2f}", ha="center", va="center", rotation=90, color="white", fontweight="bold")
     ax[1].axhline(0.95, color=INK, lw=0.8, ls="--")
     ax[1].set_xticks([])
-    ax[1].set(ylim=(0, 1.05), yticks=[0, 0.25, 0.5, 0.75, 1.0], ylabel="True LR within bound", title="B  Validity")
-    fig.legend(*ax[0].get_legend_handles_labels(), frameon=False, loc="outside lower center", ncol=3)
+    ax[1].set(ylim=(0, 1.05), yticks=[0, 0.25, 0.5, 0.75, 1.0], ylabel="Bound respected", title="B  Bound validity")
+    h, l = ax[0].get_legend_handles_labels()
+    h.append(matplotlib.patches.Patch(facecolor="white", edgecolor=MUTED, hatch="////", label="claimed, did not hold"))
+    l.append("claimed, did not hold")
+    fig.legend(h, l, frameon=False, loc="outside lower center", ncol=3)
     fig.savefig(FIG / "fig_evidence.pdf")
     plt.close(fig)
 

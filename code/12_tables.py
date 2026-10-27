@@ -26,7 +26,7 @@ def main():
     tex = r"""\begin{table}[t]
 \centering
 \caption{Datasets. \emph{ClinVar labelled}: missense single-nucleotide variants (SNVs) with $\ge$2 review stars and a P/LP or B/LB call (used
-only to fit the common score scale) and their pathogenic share. \emph{Assayed}: missense SNVs with a binary assay label
+only to fit the common score scale) and their pathogenic share. All shares are variant-level (descriptive). \emph{Assayed}: missense SNVs with a binary assay label
 that are not in the ClinVar labelled set, and their LoF share; \emph{assayed VUS}: the subset classified VUS in
 ClinVar. Assay labels are the authors' published classes (authors) or, where none are deposited, derived from the
 assay's own synonymous and nonsense controls (controls).}\label{tab:data}
@@ -177,6 +177,37 @@ Gene & Labels & $n$ & LoF & Per-class & Abstention & Bounds held & LoF-supp.\\
 \end{table}
 """
     (OUT / "tab_app_labels.tex").write_text(tex)
+
+    # supplement: calls judged against ClinVar labels (15_clinvar_check.py)
+    cc = pd.read_csv(RES / "clinvar_check.csv")
+
+    def fmt(v):
+        return "$\\infty$" if v == float("inf") else f"{v:.2f}" if v < 10 else f"{v:.1f}"
+
+    lines = []
+    for _, r in cc.iterrows():
+        lines.append(f"{SHORT_PRED[r.predictor]} & {r.scope} & {r.n_path} & {r.n_benign} & "
+                     f"{r.lof_calls_path}/{r.lof_calls_benign} & {fmt(r.lr_pos_lower)} & "
+                     f"{r.func_calls_path}/{r.func_calls_benign} & {fmt(r.lr_neg_upper)} \\\\")
+    tex = r"""\begin{table}[ht]
+\centering
+\caption{Calls judged against ClinVar labels (exploratory). Thresholds ($\alpha=0.1$) are set on each gene's assay
+labels; one ClinVar variant with $\ge$2 stars is kept per residue. $n$: kept P/LP and B/LB variants; calls: LoF (or
+functional) calls among P/LP / among B/LB variants; $L^+$, $U^-$: likelihood-ratio bounds from one-sided
+Clopper--Pearson endpoints at level 0.025 each (simultaneous level 0.95 per ratio). Pooled rows sum the kept counts over
+genes, each gene with its own thresholds. BAP1 and RAD51C have too few labelled residues to be informative.}
+\label{tab:app_clinvar}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llrrcrcr}
+\toprule
+Pred. & Gene & $n$ P/LP & $n$ B/LB & LoF calls & $L^+$ & func.\ calls & $U^-$\\
+\midrule
+""" + "\n".join(lines) + r"""
+\bottomrule
+\end{tabular}
+\end{table}
+"""
+    (OUT / "tab_app_clinvar.tex").write_text(tex)
     print("tables written")
 
 
