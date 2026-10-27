@@ -1,0 +1,199 @@
+{
+ "BRCA1": {
+  "urn": "urn:mavedb:00000097-0-2",
+  "title": "BRCA1 SGE Normalized Scores",
+  "numVariants": 3893,
+  "target": {
+   "accession": "NM_007294.3",
+   "isBaseEditor": false,
+   "assembly": "GRCh38",
+   "gene": "BRCA1",
+   "recordType": "TargetAccession"
+  },
+  "publications": [
+   "10.1038/s41586-018-0461-z"
+  ],
+  "classes": {
+   "normal": [
+    {
+     "label": "Functional",
+     "range": [
+      -0.748,
+      null
+     ],
+     "classValue": null,
+     "inclusiveLower": true,
+     "inclusiveUpper": false
+    }
+   ],
+   "not_specified": [
+    {
+     "label": "Intermediate",
+     "range": [
+      -1.328,
+      -0.748
+     ],
+     "classValue": null,
+     "inclusiveLower": false,
+     "inclusiveUpper": false
+    }
+   ],
+   "abnormal": [
+    {
+     "label": "Non-functional",
+     "range": [
+      null,
+      -1.328
+     ],
+     "classValue": null,
+     "inclusiveLower": false,
+     "inclusiveUpper": true
+    }
+   ]
+  }
+ },
+ "BRCA2": {
+  "urn": "urn:mavedb:00001279-a-1",
+  "title": "Scores from SGE of BRCA2 exons 15 to 26 in Hap1 cells",
+  "numVariants": 6959,
+  "target": {
+   "accession": "NM_000059.4",
+   "isBaseEditor": false,
+   "gene": "BRCA2",
+   "recordType": "TargetAccession"
+  },
+  "publications": [
+   "10.1038/s41586-024-08388-8"
+  ],
+  "classes": null
+ },
+ "BAP1": {
+  "urn": "urn:mavedb:00000662-0-1",
+  "title": "BAP1 SGE",
+  "numVariants": 18108,
+  "target": {
+   "accession": "ENST00000460680.6",
+   "isBaseEditor": false,
+   "gene": "BAP1",
+   "recordType": "TargetAccession"
+  },
+  "publications": [
+   "10.1038/s41588-024-01799-3"
+  ],
+  "classes": {
+   "abnormal": [
+    {
+     "label": "depleted",
+     "range": null,
+     "classValue": "depleted",
+     "inclusiveLower": null,
+     "inclusiveUpper": null
+    }
+   ],
+   "normal": [
+    {
+     "label": "unchanged",
+     "range": null,
+     "classValue": "unchanged",
+     "inclusiveLower": null,
+     "inclusiveUpper": null
+    }
+   ],
+   "not_specified": [
+    {
+     "label": "enriched",
+     "range": null,
+     "classValue": "enriched",
+     "inclusiveLower": null,
+     "inclusiveUpper": null
+    }
+   ]
+  }
+ },
+ "RAD51C": {
+  "urn": "urn:mavedb:00000673-0-1",
+  "title": "RAD51C SGE",
+  "numVariants": 9188,
+  "target": {
+   "accession": "ENST00000337432.9",
+   "isBaseEditor": false,
+   "assembly": "GRCh38",
+   "gene": "RAD51C",
+   "recordType": "TargetAccession"
+  },
+  "publications": [
+   "10.1016/j.cell.2024.08.039"
+  ],
+  "classes": {
+   "abnormal": [
+    {
+     "label": "Fast depleted",
+     "range": null,
+     "classValue": "fast depleted",
+     "inclusiveLower": null,
+     "inclusiveUpper": null
+    },
+    {
+     "label": "Slow depleted",
+     "range": null,
+     "classValue": "slow depleted",
+     "inclusiveLower": null,
+     "inclusiveUpper": null
+    }
+   ],
+   "normal": [
+    {
+     "label": "Unchanged",
+     "range": null,
+     "classValue": "unchanged",
+     "inclusiveLower": null,
+     "inclusiveUpper": null
+    }
+   ],
+   "not_specified": [
+    {
+     "label": "Enriched",
+     "range": null,
+     "classValue": "enriched",
+     "inclusiveLower": null,
+     "inclusiveUpper": null
+    }
+   ]
+  }
+ },
+ "MSH2": {
+  "urn": "urn:mavedb:00000050-a-1",
+  "title": "MSH2 LOF scores (HAP1)",
+  "numVariants": 17746,
+  "target": null,
+  "publications": [
+   "10.1016/j.ajhg.2020.12.003"
+  ],
+  "classes": {
+   "abnormal": [
+    {
+     "label": "Loss of function",
+     "range": [
+      0.0,
+      null
+     ],
+     "classValue": null,
+     "inclusiveLower": false,
+     "inclusiveUpper": false
+    }
+   ],
+   "normal": [
+    {
+     "label": "WT-like",
+     "range": [
+      null,
+      0.0
+     ],
+     "classValue": null,
+     "inclusiveLower": false,
+     "inclusiveUpper": false
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+data/raw/variant_summary.txt.gz
+data/processed/vep_raw.jsonl
+qc/
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out
+.DS_Store
+paper/
+EASYCHAIR_SUBMISSION.txt

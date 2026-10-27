@@ -1,0 +1,2112 @@
+{
+ "cohort": [
+  {
+   "gene": "BRCA1",
+   "missense": 6331,
+   "clinvar_PLP": 221,
+   "clinvar_BLB": 462,
+   "clinvar_VUS": 1909,
+   "src_labelled": 345,
+   "src_prev": 0.4522,
+   "assayed": 2077,
+   "assay_LoF": 387,
+   "assay_func": 1375,
+   "assay_int": 156,
+   "target_n": 1617,
+   "target_prev": 0.1614,
+   "vus_assayed": 272,
+   "vus_prev": 0.1728
+  },
+  {
+   "gene": "BRCA2",
+   "missense": 12224,
+   "clinvar_PLP": 116,
+   "clinvar_BLB": 718,
+   "clinvar_VUS": 3508,
+   "src_labelled": 309,
+   "src_prev": 0.3042,
+   "assayed": 4583,
+   "assay_LoF": 513,
+   "assay_func": 3023,
+   "assay_int": 899,
+   "target_n": 3435,
+   "target_prev": 0.1304,
+   "vus_assayed": 704,
+   "vus_prev": 0.2074
+  },
+  {
+   "gene": "BAP1",
+   "missense": 4741,
+   "clinvar_PLP": 23,
+   "clinvar_BLB": 28,
+   "clinvar_VUS": 1189,
+   "src_labelled": 14,
+   "src_prev": 0.4286,
+   "assayed": 4723,
+   "assay_LoF": 920,
+   "assay_func": 3386,
+   "assay_int": 210,
+   "target_n": 4294,
+   "target_prev": 0.2129,
+   "vus_assayed": 1069,
+   "vus_prev": 0.1656
+  },
+  {
+   "gene": "RAD51C",
+   "missense": 2384,
+   "clinvar_PLP": 19,
+   "clinvar_BLB": 67,
+   "clinvar_VUS": 596,
+   "src_labelled": 13,
+   "src_prev": 0.7692,
+   "assayed": 2349,
+   "assay_LoF": 581,
+   "assay_func": 1652,
+   "assay_int": 9,
+   "target_n": 2225,
+   "target_prev": 0.2589,
+   "vus_assayed": 550,
+   "vus_prev": 0.3964
+  },
+  {
+   "gene": "MSH2",
+   "missense": 3326,
+   "clinvar_PLP": 150,
+   "clinvar_BLB": 297,
+   "clinvar_VUS": 1707,
+   "src_labelled": 178,
+   "src_prev": 0.6798,
+   "assayed": 3170,
+   "assay_LoF": 270,
+   "assay_func": 2792,
+   "assay_int": 0,
+   "target_n": 2906,
+   "target_prev": 0.0595,
+   "vus_assayed": 1542,
+   "vus_prev": 0.0674
+  }
+ ],
+ "n_target_total": 14477,
+ "n_assayed_total": 16902,
+ "target_prev_min": 0.06,
+ "target_prev_max": 0.259,
+ "vus_prev_min": 0.067,
+ "vus_prev_max": 0.396,
+ "source_prev": 0.451,
+ "source_n": 859,
+ "auroc_AlphaMissense": {
+  "ClinVar>=2*": [
+   0.946,
+   0.922,
+   0.965
+  ],
+  "assay": [
+   0.84,
+   0.829,
+   0.852
+  ],
+  "assay VUS": [
+   0.779,
+   0.757,
+   0.799
+  ]
+ },
+ "auroc_REVEL": {
+  "ClinVar>=2*": [
+   0.919,
+   0.893,
+   0.941
+  ],
+  "assay": [
+   0.7,
+   0.683,
+   0.716
+  ],
+  "assay VUS": [
+   0.626,
+   0.599,
+   0.652
+  ]
+ },
+ "auroc_ESM-2": {
+  "ClinVar>=2*": [
+   0.929,
+   0.899,
+   0.953
+  ],
+  "assay": [
+   0.806,
+   0.792,
+   0.82
+  ],
+  "assay VUS": [
+   0.764,
+   0.74,
+   0.787
+  ]
+ },
+ "dual_n": 422,
+ "dual_agree": 0.974,
+ "ece_by_method": {
+  "+ BBSE prior": 0.243,
+  "+ EM prior": 0.259,
+  "+ oracle prior": 0.102,
+  "Other-gene assays + EM prior": 0.331,
+  "Platt on ClinVar": 0.249,
+  "Platt on other-gene assays": 0.128
+ },
+ "em_abs_err_mean": 0.255,
+ "em_abs_err_max": 0.702,
+ "bbse_abs_err_mean": 0.233,
+ "prior_table": [
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BRCA1",
+   "observed": 0.161,
+   "em": 0.297,
+   "bbse": 0.316
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BRCA2",
+   "observed": 0.13,
+   "em": 0.131,
+   "bbse": 0.178
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BAP1",
+   "observed": 0.213,
+   "em": 0.601,
+   "bbse": 0.588
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "RAD51C",
+   "observed": 0.259,
+   "em": 0.222,
+   "bbse": 0.252
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "MSH2",
+   "observed": 0.06,
+   "em": 0.399,
+   "bbse": 0.395
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BRCA1",
+   "observed": 0.161,
+   "em": 0.429,
+   "bbse": 0.336
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BRCA2",
+   "observed": 0.13,
+   "em": 0.059,
+   "bbse": 0.149
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BAP1",
+   "observed": 0.213,
+   "em": 0.0,
+   "bbse": 0.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "RAD51C",
+   "observed": 0.259,
+   "em": 0.0,
+   "bbse": 0.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "MSH2",
+   "observed": 0.06,
+   "em": 0.701,
+   "bbse": 0.577
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BRCA1",
+   "observed": 0.161,
+   "em": 0.276,
+   "bbse": 0.304
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BRCA2",
+   "observed": 0.13,
+   "em": 0.371,
+   "bbse": 0.371
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BAP1",
+   "observed": 0.213,
+   "em": 0.312,
+   "bbse": 0.327
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "RAD51C",
+   "observed": 0.259,
+   "em": 0.579,
+   "bbse": 0.538
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "MSH2",
+   "observed": 0.06,
+   "em": 0.762,
+   "bbse": 0.67
+  }
+ ],
+ "conformal_alpha_0.1": {
+  "leave-one-gene-out": {
+   "AlphaMissense classes": {
+    "worst_min": 0.546,
+    "worst_max": 0.86,
+    "worst_mean": 0.727,
+    "lof_rw_min": 0.815,
+    "lof_rw_max": 0.951,
+    "func_rw_min": 0.546,
+    "func_rw_max": 0.902,
+    "abstain_min": 0.07,
+    "abstain_max": 0.132,
+    "abstain_mean": 0.108,
+    "n_cells": 5,
+    "n_cells_below_085": 4
+   },
+   "Fixed 0.1/0.9 tiers": {
+    "worst_min": 0.662,
+    "worst_max": 0.996,
+    "worst_mean": 0.871,
+    "lof_rw_min": 0.662,
+    "lof_rw_max": 0.996,
+    "func_rw_min": 0.691,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.232,
+    "abstain_max": 0.978,
+    "abstain_mean": 0.532,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "Label-shift weighted conformal": {
+    "worst_min": 0.581,
+    "worst_max": 0.996,
+    "worst_mean": 0.855,
+    "lof_rw_min": 0.581,
+    "lof_rw_max": 0.996,
+    "func_rw_min": 0.633,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.166,
+    "abstain_max": 0.98,
+    "abstain_mean": 0.539,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "Label-shift weighted, true prior": {
+    "worst_min": 0.523,
+    "worst_max": 0.991,
+    "worst_mean": 0.839,
+    "lof_rw_min": 0.611,
+    "lof_rw_max": 0.996,
+    "func_rw_min": 0.523,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.119,
+    "abstain_max": 0.932,
+    "abstain_mean": 0.512,
+    "n_cells": 15,
+    "n_cells_below_085": 6
+   },
+   "Mondrian conformal": {
+    "worst_min": 0.487,
+    "worst_max": 0.984,
+    "worst_mean": 0.831,
+    "lof_rw_min": 0.7,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.487,
+    "func_rw_max": 0.999,
+    "abstain_min": 0.236,
+    "abstain_max": 0.951,
+    "abstain_mean": 0.455,
+    "n_cells": 15,
+    "n_cells_below_085": 8
+   },
+   "Pooled conformal": {
+    "worst_min": 0.6,
+    "worst_max": 0.991,
+    "worst_mean": 0.844,
+    "lof_rw_min": 0.6,
+    "lof_rw_max": 0.996,
+    "func_rw_min": 0.64,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.181,
+    "abstain_max": 0.923,
+    "abstain_mean": 0.526,
+    "n_cells": 15,
+    "n_cells_below_085": 6
+   },
+   "REVEL PP3/BP4 supporting": {
+    "worst_min": 0.445,
+    "worst_max": 0.804,
+    "worst_mean": 0.701,
+    "lof_rw_min": 0.793,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.445,
+    "func_rw_max": 0.98,
+    "abstain_min": 0.248,
+    "abstain_max": 0.594,
+    "abstain_mean": 0.42,
+    "n_cells": 5,
+    "n_cells_below_085": 5
+   }
+  },
+  "within-gene random split": {
+   "AlphaMissense classes": {
+    "worst_min": 0.54,
+    "worst_max": 0.86,
+    "worst_mean": 0.725,
+    "lof_rw_min": 0.81,
+    "lof_rw_max": 0.951,
+    "func_rw_min": 0.54,
+    "func_rw_max": 0.902,
+    "abstain_min": 0.069,
+    "abstain_max": 0.13,
+    "abstain_mean": 0.107,
+    "n_cells": 5,
+    "n_cells_below_085": 4
+   },
+   "Fixed 0.1/0.9 tiers": {
+    "worst_min": 0.663,
+    "worst_max": 0.997,
+    "worst_mean": 0.871,
+    "lof_rw_min": 0.663,
+    "lof_rw_max": 0.997,
+    "func_rw_min": 0.687,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.232,
+    "abstain_max": 0.977,
+    "abstain_mean": 0.532,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "Label-shift weighted conformal": {
+    "worst_min": 0.039,
+    "worst_max": 0.893,
+    "worst_mean": 0.722,
+    "lof_rw_min": 0.039,
+    "lof_rw_max": 0.979,
+    "func_rw_min": 0.682,
+    "func_rw_max": 0.924,
+    "abstain_min": 0.085,
+    "abstain_max": 0.618,
+    "abstain_mean": 0.356,
+    "n_cells": 15,
+    "n_cells_below_085": 9
+   },
+   "Label-shift weighted, true prior": {
+    "worst_min": 0.559,
+    "worst_max": 0.897,
+    "worst_mean": 0.836,
+    "lof_rw_min": 0.559,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.877,
+    "func_rw_max": 0.999,
+    "abstain_min": 0.093,
+    "abstain_max": 0.796,
+    "abstain_mean": 0.421,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "Mondrian conformal": {
+    "worst_min": 0.896,
+    "worst_max": 0.908,
+    "worst_mean": 0.901,
+    "lof_rw_min": 0.896,
+    "lof_rw_max": 0.92,
+    "func_rw_min": 0.897,
+    "func_rw_max": 0.908,
+    "abstain_min": 0.169,
+    "abstain_max": 0.473,
+    "abstain_mean": 0.352,
+    "n_cells": 15,
+    "n_cells_below_085": 0
+   },
+   "Pooled conformal": {
+    "worst_min": 0.545,
+    "worst_max": 0.897,
+    "worst_mean": 0.836,
+    "lof_rw_min": 0.545,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.88,
+    "func_rw_max": 0.999,
+    "abstain_min": 0.099,
+    "abstain_max": 0.795,
+    "abstain_mean": 0.422,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "REVEL PP3/BP4 supporting": {
+    "worst_min": 0.445,
+    "worst_max": 0.803,
+    "worst_mean": 0.7,
+    "lof_rw_min": 0.792,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.445,
+    "func_rw_max": 0.979,
+    "abstain_min": 0.246,
+    "abstain_max": 0.594,
+    "abstain_mean": 0.42,
+    "n_cells": 5,
+    "n_cells_below_085": 5
+   }
+  },
+  "within-gene region split": {
+   "AlphaMissense classes": {
+    "worst_min": 0.546,
+    "worst_max": 0.86,
+    "worst_mean": 0.727,
+    "lof_rw_min": 0.815,
+    "lof_rw_max": 0.951,
+    "func_rw_min": 0.546,
+    "func_rw_max": 0.902,
+    "abstain_min": 0.07,
+    "abstain_max": 0.132,
+    "abstain_mean": 0.108,
+    "n_cells": 5,
+    "n_cells_below_085": 4
+   },
+   "Fixed 0.1/0.9 tiers": {
+    "worst_min": 0.662,
+    "worst_max": 0.996,
+    "worst_mean": 0.871,
+    "lof_rw_min": 0.662,
+    "lof_rw_max": 0.996,
+    "func_rw_min": 0.691,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.232,
+    "abstain_max": 0.978,
+    "abstain_mean": 0.532,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "Label-shift weighted conformal": {
+    "worst_min": 0.013,
+    "worst_max": 0.901,
+    "worst_mean": 0.719,
+    "lof_rw_min": 0.013,
+    "lof_rw_max": 0.973,
+    "func_rw_min": 0.675,
+    "func_rw_max": 0.938,
+    "abstain_min": 0.108,
+    "abstain_max": 0.611,
+    "abstain_mean": 0.356,
+    "n_cells": 15,
+    "n_cells_below_085": 9
+   },
+   "Label-shift weighted, true prior": {
+    "worst_min": 0.599,
+    "worst_max": 0.914,
+    "worst_mean": 0.84,
+    "lof_rw_min": 0.599,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.847,
+    "func_rw_max": 0.999,
+    "abstain_min": 0.118,
+    "abstain_max": 0.788,
+    "abstain_mean": 0.432,
+    "n_cells": 15,
+    "n_cells_below_085": 6
+   },
+   "Mondrian conformal": {
+    "worst_min": 0.86,
+    "worst_max": 0.923,
+    "worst_mean": 0.894,
+    "lof_rw_min": 0.882,
+    "lof_rw_max": 0.951,
+    "func_rw_min": 0.86,
+    "func_rw_max": 0.923,
+    "abstain_min": 0.201,
+    "abstain_max": 0.501,
+    "abstain_mean": 0.336,
+    "n_cells": 15,
+    "n_cells_below_085": 0
+   },
+   "Pooled conformal": {
+    "worst_min": 0.512,
+    "worst_max": 0.901,
+    "worst_mean": 0.831,
+    "lof_rw_min": 0.512,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.854,
+    "func_rw_max": 0.999,
+    "abstain_min": 0.107,
+    "abstain_max": 0.785,
+    "abstain_mean": 0.413,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "REVEL PP3/BP4 supporting": {
+    "worst_min": 0.445,
+    "worst_max": 0.804,
+    "worst_mean": 0.701,
+    "lof_rw_min": 0.793,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.445,
+    "func_rw_max": 0.98,
+    "abstain_min": 0.248,
+    "abstain_max": 0.594,
+    "abstain_mean": 0.42,
+    "n_cells": 5,
+    "n_cells_below_085": 5
+   }
+  },
+  "within-gene split, calibration at 50% LoF": {
+   "AlphaMissense classes": {
+    "worst_min": 0.542,
+    "worst_max": 0.86,
+    "worst_mean": 0.728,
+    "lof_rw_min": 0.816,
+    "lof_rw_max": 0.951,
+    "func_rw_min": 0.542,
+    "func_rw_max": 0.902,
+    "abstain_min": 0.068,
+    "abstain_max": 0.133,
+    "abstain_mean": 0.108,
+    "n_cells": 5,
+    "n_cells_below_085": 4
+   },
+   "Fixed 0.1/0.9 tiers": {
+    "worst_min": 0.666,
+    "worst_max": 0.996,
+    "worst_mean": 0.871,
+    "lof_rw_min": 0.666,
+    "lof_rw_max": 0.996,
+    "func_rw_min": 0.687,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.232,
+    "abstain_max": 0.977,
+    "abstain_mean": 0.532,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "Label-shift weighted conformal": {
+    "worst_min": 0.034,
+    "worst_max": 0.914,
+    "worst_mean": 0.731,
+    "lof_rw_min": 0.034,
+    "lof_rw_max": 0.976,
+    "func_rw_min": 0.694,
+    "func_rw_max": 0.93,
+    "abstain_min": 0.107,
+    "abstain_max": 0.644,
+    "abstain_mean": 0.367,
+    "n_cells": 15,
+    "n_cells_below_085": 9
+   },
+   "Label-shift weighted, true prior": {
+    "worst_min": 0.561,
+    "worst_max": 0.924,
+    "worst_mean": 0.844,
+    "lof_rw_min": 0.561,
+    "lof_rw_max": 0.997,
+    "func_rw_min": 0.874,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.115,
+    "abstain_max": 0.818,
+    "abstain_mean": 0.434,
+    "n_cells": 15,
+    "n_cells_below_085": 5
+   },
+   "Mondrian conformal": {
+    "worst_min": 0.891,
+    "worst_max": 0.925,
+    "worst_mean": 0.908,
+    "lof_rw_min": 0.902,
+    "lof_rw_max": 0.925,
+    "func_rw_min": 0.891,
+    "func_rw_max": 0.925,
+    "abstain_min": 0.186,
+    "abstain_max": 0.469,
+    "abstain_mean": 0.372,
+    "n_cells": 15,
+    "n_cells_below_085": 0
+   },
+   "Pooled conformal": {
+    "worst_min": 0.803,
+    "worst_max": 0.906,
+    "worst_mean": 0.856,
+    "lof_rw_min": 0.803,
+    "lof_rw_max": 0.992,
+    "func_rw_min": 0.829,
+    "func_rw_max": 1.0,
+    "abstain_min": 0.164,
+    "abstain_max": 0.713,
+    "abstain_mean": 0.438,
+    "n_cells": 15,
+    "n_cells_below_085": 6
+   },
+   "REVEL PP3/BP4 supporting": {
+    "worst_min": 0.444,
+    "worst_max": 0.803,
+    "worst_mean": 0.7,
+    "lof_rw_min": 0.792,
+    "lof_rw_max": 1.0,
+    "func_rw_min": 0.444,
+    "func_rw_max": 0.98,
+    "abstain_min": 0.249,
+    "abstain_max": 0.594,
+    "abstain_mean": 0.421,
+    "n_cells": 5,
+    "n_cells_below_085": 5
+   }
+  }
+ },
+ "mondrian_by_alpha": {
+  "0.05": {
+   "lof_rw_min": 0.952,
+   "func_rw_min": 0.948,
+   "abstain_min": 0.363,
+   "abstain_max": 0.75
+  },
+  "0.1": {
+   "lof_rw_min": 0.896,
+   "func_rw_min": 0.897,
+   "abstain_min": 0.169,
+   "abstain_max": 0.473
+  },
+  "0.2": {
+   "lof_rw_min": 0.795,
+   "func_rw_min": 0.792,
+   "abstain_min": 0.046,
+   "abstain_max": 0.102
+  }
+ },
+ "published_cutoffs": [
+  {
+   "method": "AlphaMissense classes",
+   "gene": "BRCA1",
+   "coverage_func": 0.779,
+   "coverage_lof": 0.922,
+   "abstain": 0.13
+  },
+  {
+   "method": "AlphaMissense classes",
+   "gene": "BRCA2",
+   "coverage_func": 0.873,
+   "coverage_lof": 0.811,
+   "abstain": 0.108
+  },
+  {
+   "method": "AlphaMissense classes",
+   "gene": "BAP1",
+   "coverage_func": 0.541,
+   "coverage_lof": 0.922,
+   "abstain": 0.069
+  },
+  {
+   "method": "AlphaMissense classes",
+   "gene": "RAD51C",
+   "coverage_func": 0.895,
+   "coverage_lof": 0.855,
+   "abstain": 0.109
+  },
+  {
+   "method": "AlphaMissense classes",
+   "gene": "MSH2",
+   "coverage_func": 0.646,
+   "coverage_lof": 0.957,
+   "abstain": 0.119
+  },
+  {
+   "method": "REVEL PP3/BP4 supporting",
+   "gene": "BRCA1",
+   "coverage_func": 0.686,
+   "coverage_lof": 1.0,
+   "abstain": 0.594
+  },
+  {
+   "method": "REVEL PP3/BP4 supporting",
+   "gene": "BRCA2",
+   "coverage_func": 0.818,
+   "coverage_lof": 0.983,
+   "abstain": 0.565
+  },
+  {
+   "method": "REVEL PP3/BP4 supporting",
+   "gene": "BAP1",
+   "coverage_func": 0.976,
+   "coverage_lof": 0.794,
+   "abstain": 0.285
+  },
+  {
+   "method": "REVEL PP3/BP4 supporting",
+   "gene": "RAD51C",
+   "coverage_func": 0.98,
+   "coverage_lof": 0.781,
+   "abstain": 0.246
+  },
+  {
+   "method": "REVEL PP3/BP4 supporting",
+   "gene": "MSH2",
+   "coverage_func": 0.448,
+   "coverage_lof": 0.994,
+   "abstain": 0.408
+  }
+ ],
+ "strata": {
+  "clinvar:vus": {
+   "coverage_lof": 0.881,
+   "coverage_func": 0.896,
+   "abstain": 0.392
+  },
+  "difficulty:easy": {
+   "coverage_lof": 0.966,
+   "coverage_func": 0.929,
+   "abstain": 0.334
+  },
+  "difficulty:hard": {
+   "coverage_lof": 0.865,
+   "coverage_func": 0.873,
+   "abstain": 0.413
+  },
+  "difficulty:medium": {
+   "coverage_lof": 0.929,
+   "coverage_func": 0.912,
+   "abstain": 0.385
+  }
+ },
+ "calibration_size": {
+  "25": {
+   "coverage_lof_rw": 0.996,
+   "coverage_func_rw": 0.919,
+   "abstain": 0.828
+  },
+  "50": {
+   "coverage_lof_rw": 0.955,
+   "coverage_func_rw": 0.911,
+   "abstain": 0.629
+  },
+  "100": {
+   "coverage_lof_rw": 0.931,
+   "coverage_func_rw": 0.904,
+   "abstain": 0.487
+  },
+  "150": {
+   "coverage_lof_rw": 0.916,
+   "coverage_func_rw": 0.903,
+   "abstain": 0.405
+  },
+  "200": {
+   "coverage_lof_rw": 0.919,
+   "coverage_func_rw": 0.901,
+   "abstain": 0.398
+  }
+ },
+ "application": [
+  {
+   "gene": "BRCA1",
+   "unassayed_vus": 1534,
+   "call_lof": 18,
+   "call_func": 1463,
+   "abstain": 53
+  },
+  {
+   "gene": "BRCA2",
+   "unassayed_vus": 2505,
+   "call_lof": 121,
+   "call_func": 1600,
+   "abstain": 784
+  },
+  {
+   "gene": "BAP1",
+   "unassayed_vus": 16,
+   "call_lof": 6,
+   "call_func": 2,
+   "abstain": 8
+  },
+  {
+   "gene": "RAD51C",
+   "unassayed_vus": 26,
+   "call_lof": 6,
+   "call_func": 15,
+   "abstain": 5
+  },
+  {
+   "gene": "MSH2",
+   "unassayed_vus": 110,
+   "call_lof": 22,
+   "call_func": 60,
+   "abstain": 28
+  }
+ ],
+ "simulation": [
+  {
+   "kind": "calibration",
+   "method": "EM prior-adjusted",
+   "pi_t": 0.05,
+   "rep": 149.5,
+   "ece": 0.018,
+   "brier": 0.037,
+   "pi_hat": 0.051,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "EM prior-adjusted",
+   "pi_t": 0.1,
+   "rep": 149.5,
+   "ece": 0.023,
+   "brier": 0.061,
+   "pi_hat": 0.105,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "EM prior-adjusted",
+   "pi_t": 0.15,
+   "rep": 149.5,
+   "ece": 0.024,
+   "brier": 0.08,
+   "pi_hat": 0.152,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "EM prior-adjusted",
+   "pi_t": 0.2,
+   "rep": 149.5,
+   "ece": 0.027,
+   "brier": 0.094,
+   "pi_hat": 0.201,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "EM prior-adjusted",
+   "pi_t": 0.3,
+   "rep": 149.5,
+   "ece": 0.03,
+   "brier": 0.115,
+   "pi_hat": 0.298,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "EM prior-adjusted",
+   "pi_t": 0.45,
+   "rep": 149.5,
+   "ece": 0.031,
+   "brier": 0.13,
+   "pi_hat": 0.45,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "EM prior-adjusted",
+   "pi_t": 0.6,
+   "rep": 149.5,
+   "ece": 0.031,
+   "brier": 0.127,
+   "pi_hat": 0.599,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Oracle prior-adjusted",
+   "pi_t": 0.05,
+   "rep": 149.5,
+   "ece": 0.011,
+   "brier": 0.036,
+   "pi_hat": 0.051,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Oracle prior-adjusted",
+   "pi_t": 0.1,
+   "rep": 149.5,
+   "ece": 0.015,
+   "brier": 0.06,
+   "pi_hat": 0.105,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Oracle prior-adjusted",
+   "pi_t": 0.15,
+   "rep": 149.5,
+   "ece": 0.017,
+   "brier": 0.079,
+   "pi_hat": 0.152,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Oracle prior-adjusted",
+   "pi_t": 0.2,
+   "rep": 149.5,
+   "ece": 0.019,
+   "brier": 0.093,
+   "pi_hat": 0.201,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Oracle prior-adjusted",
+   "pi_t": 0.3,
+   "rep": 149.5,
+   "ece": 0.023,
+   "brier": 0.114,
+   "pi_hat": 0.298,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Oracle prior-adjusted",
+   "pi_t": 0.45,
+   "rep": 149.5,
+   "ece": 0.024,
+   "brier": 0.129,
+   "pi_hat": 0.45,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Oracle prior-adjusted",
+   "pi_t": 0.6,
+   "rep": 149.5,
+   "ece": 0.023,
+   "brier": 0.126,
+   "pi_hat": 0.599,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Platt (source prior)",
+   "pi_t": 0.05,
+   "rep": 149.5,
+   "ece": 0.205,
+   "brier": 0.113,
+   "pi_hat": 0.051,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Platt (source prior)",
+   "pi_t": 0.1,
+   "rep": 149.5,
+   "ece": 0.183,
+   "brier": 0.118,
+   "pi_hat": 0.105,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Platt (source prior)",
+   "pi_t": 0.15,
+   "rep": 149.5,
+   "ece": 0.155,
+   "brier": 0.118,
+   "pi_hat": 0.152,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Platt (source prior)",
+   "pi_t": 0.2,
+   "rep": 149.5,
+   "ece": 0.132,
+   "brier": 0.121,
+   "pi_hat": 0.201,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Platt (source prior)",
+   "pi_t": 0.3,
+   "rep": 149.5,
+   "ece": 0.079,
+   "brier": 0.124,
+   "pi_hat": 0.298,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Platt (source prior)",
+   "pi_t": 0.45,
+   "rep": 149.5,
+   "ece": 0.032,
+   "brier": 0.13,
+   "pi_hat": 0.45,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "calibration",
+   "method": "Platt (source prior)",
+   "pi_t": 0.6,
+   "rep": 149.5,
+   "ece": 0.079,
+   "brier": 0.136,
+   "pi_hat": 0.599,
+   "coverage": NaN,
+   "coverage_lof": NaN,
+   "coverage_func": NaN,
+   "abstain": NaN,
+   "empty": NaN,
+   "error_committed": NaN,
+   "n": NaN
+  },
+  {
+   "kind": "conformal",
+   "method": "Label-shift weighted conformal",
+   "pi_t": 0.05,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.906,
+   "coverage_lof": 0.843,
+   "coverage_func": 0.909,
+   "abstain": 0.157,
+   "empty": 0.004,
+   "error_committed": 0.106,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Label-shift weighted conformal",
+   "pi_t": 0.1,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.906,
+   "coverage_lof": 0.857,
+   "coverage_func": 0.911,
+   "abstain": 0.174,
+   "empty": 0.002,
+   "error_committed": 0.11,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Label-shift weighted conformal",
+   "pi_t": 0.15,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.906,
+   "coverage_lof": 0.858,
+   "coverage_func": 0.914,
+   "abstain": 0.177,
+   "empty": 0.002,
+   "error_committed": 0.111,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Label-shift weighted conformal",
+   "pi_t": 0.2,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.904,
+   "coverage_lof": 0.863,
+   "coverage_func": 0.914,
+   "abstain": 0.182,
+   "empty": 0.0,
+   "error_committed": 0.115,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Label-shift weighted conformal",
+   "pi_t": 0.3,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.905,
+   "coverage_lof": 0.872,
+   "coverage_func": 0.919,
+   "abstain": 0.201,
+   "empty": 0.0,
+   "error_committed": 0.117,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Label-shift weighted conformal",
+   "pi_t": 0.45,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.903,
+   "coverage_lof": 0.882,
+   "coverage_func": 0.919,
+   "abstain": 0.223,
+   "empty": 0.0,
+   "error_committed": 0.123,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Label-shift weighted conformal",
+   "pi_t": 0.6,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.905,
+   "coverage_lof": 0.894,
+   "coverage_func": 0.923,
+   "abstain": 0.251,
+   "empty": 0.0,
+   "error_committed": 0.124,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Mondrian conformal",
+   "pi_t": 0.05,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.907,
+   "coverage_lof": 0.905,
+   "coverage_func": 0.907,
+   "abstain": 0.24,
+   "empty": 0.0,
+   "error_committed": 0.121,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Mondrian conformal",
+   "pi_t": 0.1,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.908,
+   "coverage_lof": 0.91,
+   "coverage_func": 0.908,
+   "abstain": 0.254,
+   "empty": 0.0,
+   "error_committed": 0.122,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Mondrian conformal",
+   "pi_t": 0.15,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.908,
+   "coverage_lof": 0.909,
+   "coverage_func": 0.908,
+   "abstain": 0.252,
+   "empty": 0.0,
+   "error_committed": 0.122,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Mondrian conformal",
+   "pi_t": 0.2,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.908,
+   "coverage_lof": 0.909,
+   "coverage_func": 0.907,
+   "abstain": 0.246,
+   "empty": 0.0,
+   "error_committed": 0.121,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Mondrian conformal",
+   "pi_t": 0.3,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.908,
+   "coverage_lof": 0.908,
+   "coverage_func": 0.908,
+   "abstain": 0.246,
+   "empty": 0.0,
+   "error_committed": 0.12,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Mondrian conformal",
+   "pi_t": 0.45,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.907,
+   "coverage_lof": 0.91,
+   "coverage_func": 0.903,
+   "abstain": 0.245,
+   "empty": 0.0,
+   "error_committed": 0.121,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Mondrian conformal",
+   "pi_t": 0.6,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.908,
+   "coverage_lof": 0.908,
+   "coverage_func": 0.907,
+   "abstain": 0.243,
+   "empty": 0.0,
+   "error_committed": 0.119,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Pooled conformal",
+   "pi_t": 0.05,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.917,
+   "coverage_lof": 0.876,
+   "coverage_func": 0.919,
+   "abstain": 0.195,
+   "empty": 0.0,
+   "error_committed": 0.102,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Pooled conformal",
+   "pi_t": 0.1,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.913,
+   "coverage_lof": 0.882,
+   "coverage_func": 0.917,
+   "abstain": 0.203,
+   "empty": 0.0,
+   "error_committed": 0.108,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Pooled conformal",
+   "pi_t": 0.15,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.914,
+   "coverage_lof": 0.88,
+   "coverage_func": 0.92,
+   "abstain": 0.208,
+   "empty": 0.0,
+   "error_committed": 0.107,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Pooled conformal",
+   "pi_t": 0.2,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.911,
+   "coverage_lof": 0.88,
+   "coverage_func": 0.918,
+   "abstain": 0.207,
+   "empty": 0.0,
+   "error_committed": 0.111,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Pooled conformal",
+   "pi_t": 0.3,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.908,
+   "coverage_lof": 0.882,
+   "coverage_func": 0.92,
+   "abstain": 0.213,
+   "empty": 0.0,
+   "error_committed": 0.115,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Pooled conformal",
+   "pi_t": 0.45,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.901,
+   "coverage_lof": 0.88,
+   "coverage_func": 0.917,
+   "abstain": 0.217,
+   "empty": 0.0,
+   "error_committed": 0.125,
+   "n": 3000.0
+  },
+  {
+   "kind": "conformal",
+   "method": "Pooled conformal",
+   "pi_t": 0.6,
+   "rep": 149.5,
+   "ece": NaN,
+   "brier": NaN,
+   "pi_hat": NaN,
+   "coverage": 0.896,
+   "coverage_lof": 0.88,
+   "coverage_func": 0.919,
+   "abstain": 0.222,
+   "empty": 0.0,
+   "error_committed": 0.132,
+   "n": 3000.0
+  }
+ ],
+ "splice_excluded": 729,
+ "oracle_validity": {
+  "Clopper-Pearson, uncorrected": {
+   "n": 3115,
+   "bound_ok": 0.992,
+   "level_held": 0.999
+  },
+  "bootstrap": {
+   "n": 5266,
+   "bound_ok": 0.766,
+   "level_held": 0.911
+  },
+  "bootstrap, Bonferroni": {
+   "n": 4496,
+   "bound_ok": 0.794,
+   "level_held": 0.912
+  },
+  "certified": {
+   "n": 2181,
+   "bound_ok": 0.999,
+   "level_held": 1.0
+  },
+  "point estimate": {
+   "n": 6671,
+   "bound_ok": 0.355,
+   "level_held": 0.775
+  }
+ },
+ "oracle_by_level": {
+  "Clopper-Pearson, uncorrected|BS3-moderate": {
+   "achieved": 0.076,
+   "holds": 0.965,
+   "n": 114,
+   "yield": 0.544
+  },
+  "Clopper-Pearson, uncorrected|BS3-strong": {
+   "achieved": 0.0,
+   "holds": null,
+   "n": 0,
+   "yield": null
+  },
+  "Clopper-Pearson, uncorrected|BS3-supporting": {
+   "achieved": 0.689,
+   "holds": 1.0,
+   "n": 1034,
+   "yield": 0.623
+  },
+  "Clopper-Pearson, uncorrected|PS3-moderate": {
+   "achieved": 0.345,
+   "holds": 1.0,
+   "n": 517,
+   "yield": 0.151
+  },
+  "Clopper-Pearson, uncorrected|PS3-strong": {
+   "achieved": 0.0,
+   "holds": null,
+   "n": 0,
+   "yield": null
+  },
+  "Clopper-Pearson, uncorrected|PS3-supporting": {
+   "achieved": 0.967,
+   "holds": 1.0,
+   "n": 1450,
+   "yield": 0.275
+  },
+  "bootstrap|BS3-moderate": {
+   "achieved": 0.444,
+   "holds": 0.904,
+   "n": 666,
+   "yield": 0.447
+  },
+  "bootstrap|BS3-strong": {
+   "achieved": 0.348,
+   "holds": 0.295,
+   "n": 522,
+   "yield": 0.21
+  },
+  "bootstrap|BS3-supporting": {
+   "achieved": 0.916,
+   "holds": 1.0,
+   "n": 1374,
+   "yield": 0.636
+  },
+  "bootstrap|PS3-moderate": {
+   "achieved": 0.794,
+   "holds": 0.982,
+   "n": 1191,
+   "yield": 0.179
+  },
+  "bootstrap|PS3-strong": {
+   "achieved": 0.011,
+   "holds": 0.125,
+   "n": 16,
+   "yield": 0.115
+  },
+  "bootstrap|PS3-supporting": {
+   "achieved": 0.998,
+   "holds": 1.0,
+   "n": 1497,
+   "yield": 0.295
+  },
+  "bootstrap, Bonferroni|BS3-moderate": {
+   "achieved": 0.375,
+   "holds": 0.954,
+   "n": 563,
+   "yield": 0.336
+  },
+  "bootstrap, Bonferroni|BS3-strong": {
+   "achieved": 0.344,
+   "holds": 0.289,
+   "n": 516,
+   "yield": 0.212
+  },
+  "bootstrap, Bonferroni|BS3-supporting": {
+   "achieved": 0.761,
+   "holds": 1.0,
+   "n": 1141,
+   "yield": 0.619
+  },
+  "bootstrap, Bonferroni|PS3-moderate": {
+   "achieved": 0.533,
+   "holds": 0.999,
+   "n": 800,
+   "yield": 0.164
+  },
+  "bootstrap, Bonferroni|PS3-strong": {
+   "achieved": 0.001,
+   "holds": 0.0,
+   "n": 2,
+   "yield": 0.135
+  },
+  "bootstrap, Bonferroni|PS3-supporting": {
+   "achieved": 0.983,
+   "holds": 1.0,
+   "n": 1474,
+   "yield": 0.287
+  },
+  "certified|BS3-moderate": {
+   "achieved": 0.021,
+   "holds": 1.0,
+   "n": 31,
+   "yield": 0.528
+  },
+  "certified|BS3-strong": {
+   "achieved": 0.0,
+   "holds": null,
+   "n": 0,
+   "yield": null
+  },
+  "certified|BS3-supporting": {
+   "achieved": 0.436,
+   "holds": 1.0,
+   "n": 654,
+   "yield": 0.611
+  },
+  "certified|PS3-moderate": {
+   "achieved": 0.131,
+   "holds": 1.0,
+   "n": 197,
+   "yield": 0.15
+  },
+  "certified|PS3-strong": {
+   "achieved": 0.0,
+   "holds": null,
+   "n": 0,
+   "yield": null
+  },
+  "certified|PS3-supporting": {
+   "achieved": 0.866,
+   "holds": 1.0,
+   "n": 1299,
+   "yield": 0.258
+  },
+  "point estimate|BS3-moderate": {
+   "achieved": 0.774,
+   "holds": 0.674,
+   "n": 1161,
+   "yield": 0.574
+  },
+  "point estimate|BS3-strong": {
+   "achieved": 0.535,
+   "holds": 0.189,
+   "n": 803,
+   "yield": 0.22
+  },
+  "point estimate|BS3-supporting": {
+   "achieved": 0.997,
+   "holds": 0.999,
+   "n": 1496,
+   "yield": 0.643
+  },
+  "point estimate|PS3-moderate": {
+   "achieved": 0.986,
+   "holds": 0.811,
+   "n": 1479,
+   "yield": 0.227
+  },
+  "point estimate|PS3-strong": {
+   "achieved": 0.155,
+   "holds": 0.185,
+   "n": 232,
+   "yield": 0.119
+  },
+  "point estimate|PS3-supporting": {
+   "achieved": 1.0,
+   "holds": 1.0,
+   "n": 1500,
+   "yield": 0.298
+  }
+ },
+ "evidence_validity": {
+  "Clopper-Pearson, uncorrected": {
+   "n": 2965,
+   "bound_ok": 0.962,
+   "level_held": 0.991
+  },
+  "bootstrap": {
+   "n": 5102,
+   "bound_ok": 0.768,
+   "level_held": 0.908
+  },
+  "bootstrap, Bonferroni": {
+   "n": 4282,
+   "bound_ok": 0.823,
+   "level_held": 0.922
+  },
+  "certified": {
+   "n": 2091,
+   "bound_ok": 0.987,
+   "level_held": 0.997
+  },
+  "point estimate": {
+   "n": 6548,
+   "bound_ok": 0.434,
+   "level_held": 0.784
+  }
+ },
+ "evidence_by_level": {
+  "Clopper-Pearson, uncorrected|BS3-moderate": {
+   "achieved": 0.059,
+   "holds": 0.852,
+   "n": 88,
+   "yield": 0.517
+  },
+  "Clopper-Pearson, uncorrected|BS3-strong": {
+   "achieved": 0.0,
+   "holds": null,
+   "n": 0,
+   "yield": null
+  },
+  "Clopper-Pearson, uncorrected|BS3-supporting": {
+   "achieved": 0.642,
+   "holds": 0.995,
+   "n": 963,
+   "yield": 0.621
+  },
+  "Clopper-Pearson, uncorrected|PS3-moderate": {
+   "achieved": 0.303,
+   "holds": 0.98,
+   "n": 455,
+   "yield": 0.151
+  },
+  "Clopper-Pearson, uncorrected|PS3-strong": {
+   "achieved": 0.0,
+   "holds": null,
+   "n": 0,
+   "yield": null
+  },
+  "Clopper-Pearson, uncorrected|PS3-supporting": {
+   "achieved": 0.973,
+   "holds": 1.0,
+   "n": 1459,
+   "yield": 0.275
+  },
+  "bootstrap|BS3-moderate": {
+   "achieved": 0.398,
+   "holds": 0.799,
+   "n": 597,
+   "yield": 0.429
+  },
+  "bootstrap|BS3-strong": {
+   "achieved": 0.305,
+   "holds": 0.481,
+   "n": 457,
+   "yield": 0.188
+  },
+  "bootstrap|BS3-supporting": {
+   "achieved": 0.905,
+   "holds": 0.996,
+   "n": 1357,
+   "yield": 0.634
+  },
+  "bootstrap|PS3-moderate": {
+   "achieved": 0.785,
+   "holds": 0.922,
+   "n": 1177,
+   "yield": 0.176
+  },
+  "bootstrap|PS3-strong": {
+   "achieved": 0.009,
+   "holds": 0.143,
+   "n": 14,
+   "yield": 0.133
+  },
+  "bootstrap|PS3-supporting": {
+   "achieved": 1.0,
+   "holds": 0.999,
+   "n": 1500,
+   "yield": 0.296
+  },
+  "bootstrap, Bonferroni|BS3-moderate": {
+   "achieved": 0.313,
+   "holds": 0.862,
+   "n": 470,
+   "yield": 0.319
+  },
+  "bootstrap, Bonferroni|BS3-strong": {
+   "achieved": 0.297,
+   "holds": 0.471,
+   "n": 446,
+   "yield": 0.193
+  },
+  "bootstrap, Bonferroni|BS3-supporting": {
+   "achieved": 0.737,
+   "holds": 0.995,
+   "n": 1105,
+   "yield": 0.617
+  },
+  "bootstrap, Bonferroni|PS3-moderate": {
+   "achieved": 0.519,
+   "holds": 0.967,
+   "n": 779,
+   "yield": 0.158
+  },
+  "bootstrap, Bonferroni|PS3-strong": {
+   "achieved": 0.001,
+   "holds": 0.5,
+   "n": 2,
+   "yield": 0.144
+  },
+  "bootstrap, Bonferroni|PS3-supporting": {
+   "achieved": 0.987,
+   "holds": 0.999,
+   "n": 1480,
+   "yield": 0.288
+  },
+  "certified|BS3-moderate": {
+   "achieved": 0.016,
+   "holds": 0.958,
+   "n": 24,
+   "yield": 0.504
+  },
+  "certified|BS3-strong": {
+   "achieved": 0.0,
+   "holds": null,
+   "n": 0,
+   "yield": null
+  },
+  "certified|BS3-supporting": {
+   "achieved": 0.404,
+   "holds": 0.993,
+   "n": 606,
+   "yield": 0.609
+  },
+  "certified|PS3-moderate": {
+   "achieved": 0.115,
+   "holds": 0.994,
+   "n": 172,
+   "yield": 0.14
+  },
+  "certified|PS3-strong": {
+   "achieved": 0.0,
+   "holds": null,
+   "n": 0,
+   "yield": null
+  },
+  "certified|PS3-supporting": {
+   "achieved": 0.859,
+   "holds": 1.0,
+   "n": 1289,
+   "yield": 0.256
+  },
+  "point estimate|BS3-moderate": {
+   "achieved": 0.747,
+   "holds": 0.651,
+   "n": 1121,
+   "yield": 0.565
+  },
+  "point estimate|BS3-strong": {
+   "achieved": 0.495,
+   "holds": 0.315,
+   "n": 742,
+   "yield": 0.187
+  },
+  "point estimate|BS3-supporting": {
+   "achieved": 0.999,
+   "holds": 0.995,
+   "n": 1499,
+   "yield": 0.644
+  },
+  "point estimate|PS3-moderate": {
+   "achieved": 0.995,
+   "holds": 0.75,
+   "n": 1492,
+   "yield": 0.228
+  },
+  "point estimate|PS3-strong": {
+   "achieved": 0.129,
+   "holds": 0.314,
+   "n": 194,
+   "yield": 0.113
+  },
+  "point estimate|PS3-supporting": {
+   "achieved": 1.0,
+   "holds": 0.999,
+   "n": 1500,
+   "yield": 0.298
+  }
+ },
+ "evidence_by_gene": {
+  "BS3-moderate": {
+   "BAP1": 0.01,
+   "BRCA1": 0.0,
+   "BRCA2": 0.0,
+   "MSH2": 0.02,
+   "RAD51C": 0.07
+  },
+  "BS3-strong": {
+   "BAP1": 0.0,
+   "BRCA1": 0.0,
+   "BRCA2": 0.0,
+   "MSH2": 0.0,
+   "RAD51C": 0.0
+  },
+  "BS3-supporting": {
+   "BAP1": 0.43,
+   "BRCA1": 0.31,
+   "BRCA2": 0.35,
+   "MSH2": 0.42,
+   "RAD51C": 0.67
+  },
+  "PS3-moderate": {
+   "BAP1": 0.14,
+   "BRCA1": 0.07,
+   "BRCA2": 0.13,
+   "MSH2": 0.1,
+   "RAD51C": 0.22
+  },
+  "PS3-strong": {
+   "BAP1": 0.0,
+   "BRCA1": 0.0,
+   "BRCA2": 0.0,
+   "MSH2": 0.0,
+   "RAD51C": 0.0
+  },
+  "PS3-supporting": {
+   "BAP1": 0.97,
+   "BRCA1": 0.74,
+   "BRCA2": 0.93,
+   "MSH2": 0.77,
+   "RAD51C": 0.92
+  }
+ },
+ "region_evidence": {
+  "BS3-moderate": {
+   "achieved": 0.008,
+   "n": 12,
+   "holds": 0.75,
+   "bound_ok": 0.75
+  },
+  "BS3-strong": {
+   "achieved": 0.0,
+   "n": 0,
+   "holds": null,
+   "bound_ok": null
+  },
+  "BS3-supporting": {
+   "achieved": 0.353,
+   "n": 529,
+   "holds": 0.915,
+   "bound_ok": 0.854
+  },
+  "PS3-moderate": {
+   "achieved": 0.101,
+   "n": 152,
+   "holds": 0.875,
+   "bound_ok": 0.842
+  },
+  "PS3-strong": {
+   "achieved": 0.0,
+   "n": 0,
+   "holds": null,
+   "bound_ok": null
+  },
+  "PS3-supporting": {
+   "achieved": 0.799,
+   "n": 1198,
+   "holds": 0.957,
+   "bound_ok": 0.922
+  }
+ },
+ "region_bound_ok_all": {
+  "n": 1891,
+  "bound_ok": 0.896,
+  "holds": 0.938
+ },
+ "reliability": {
+  "PAC, delta = 0.1": {
+   "frac_worst_below": 0.179,
+   "frac_lof_below": 0.079,
+   "frac_func_below": 0.108,
+   "mean_worst": 0.92,
+   "abstain": 0.584,
+   "lof_sd": 0.036
+  },
+  "in expectation": {
+   "frac_worst_below": 0.641,
+   "frac_lof_below": 0.364,
+   "frac_func_below": 0.436,
+   "mean_worst": 0.883,
+   "abstain": 0.354,
+   "lof_sd": 0.052
+  }
+ },
+ "vus_shift": {
+  "PAC, delta = 0.1": {
+   "lof_min": 0.957,
+   "lof_max": 1.0,
+   "func_min": 0.881,
+   "func_max": 0.965,
+   "lof_mean": 0.989,
+   "func_mean": 0.935,
+   "abstain_mean": 0.817,
+   "n_pairs_lof_below_09": 0,
+   "n_pairs_func_below_09": 2
+  },
+  "in expectation": {
+   "lof_min": 0.854,
+   "lof_max": 0.958,
+   "func_min": 0.841,
+   "func_max": 0.942,
+   "lof_mean": 0.902,
+   "func_mean": 0.898,
+   "abstain_mean": 0.464,
+   "n_pairs_lof_below_09": 7,
+   "n_pairs_func_below_09": 7
+  }
+ },
+ "vus_shift_prev": {
+  "cal_prev": 0.17,
+  "vus_prev": 0.201
+ },
+ "vus_evidence": {
+  "BS3-moderate": {
+   "achieved": 0.0,
+   "n": 0,
+   "holds": null,
+   "bound_ok": null
+  },
+  "BS3-strong": {
+   "achieved": 0.0,
+   "n": 0,
+   "holds": null,
+   "bound_ok": null
+  },
+  "BS3-supporting": {
+   "achieved": 0.167,
+   "n": 125,
+   "holds": 0.984,
+   "bound_ok": 0.936
+  },
+  "PS3-moderate": {
+   "achieved": 0.037,
+   "n": 28,
+   "holds": 0.893,
+   "bound_ok": 0.893
+  },
+  "PS3-strong": {
+   "achieved": 0.0,
+   "n": 0,
+   "holds": null,
+   "bound_ok": null
+  },
+  "PS3-supporting": {
+   "achieved": 0.591,
+   "n": 443,
+   "holds": 1.0,
+   "bound_ok": 0.986
+  }
+ }
+}
