@@ -2108,5 +2108,239 @@
    "holds": 1.0,
    "bound_ok": 0.986
   }
- }
+ },
+ "oracle_validity_ci": {
+  "Clopper-Pearson, uncorrected": {
+   "ok": 3090,
+   "n": 3115,
+   "draws": 1463,
+   "draws_all_ok": 0.988,
+   "lo": 0.988,
+   "hi": 0.996
+  },
+  "bootstrap": {
+   "ok": 4034,
+   "n": 5266,
+   "draws": 1500,
+   "draws_all_ok": 0.567,
+   "lo": 0.752,
+   "hi": 0.78
+  },
+  "bootstrap, Bonferroni": {
+   "ok": 3569,
+   "n": 4496,
+   "draws": 1487,
+   "draws_all_ok": 0.662,
+   "lo": 0.781,
+   "hi": 0.808
+  },
+  "certified": {
+   "ok": 2178,
+   "n": 2181,
+   "draws": 1326,
+   "draws_all_ok": 0.998,
+   "lo": 0.997,
+   "hi": 1.0
+  },
+  "point estimate": {
+   "ok": 2369,
+   "n": 6671,
+   "draws": 1500,
+   "draws_all_ok": 0.116,
+   "lo": 0.34,
+   "hi": 0.372
+  }
+ },
+ "label_sensitivity": {
+  "alt_worst_min": 0.894,
+  "alt_worst_max": 0.908,
+  "alt_claims": 2533,
+  "alt_ok": 2530,
+  "by_rule": [
+   {
+    "gene": "BAP1",
+    "rule": "controls 0.95",
+    "n": 4221,
+    "lof_share": 0.1,
+    "worst_min": 0.899,
+    "abstain_min": 0.127,
+    "abstain_max": 0.188,
+    "lof_sup_min": 1.0,
+    "func_sup_min": 0.85,
+    "func_sup_max": 0.94,
+    "claims": 777,
+    "ok": 777
+   },
+   {
+    "gene": "BAP1",
+    "rule": "main",
+    "n": 4294,
+    "lof_share": 0.213,
+    "worst_min": 0.901,
+    "abstain_min": 0.392,
+    "abstain_max": 0.471,
+    "lof_sup_min": 0.9,
+    "func_sup_min": 0.34,
+    "func_sup_max": 0.55,
+    "claims": 460,
+    "ok": 460
+   },
+   {
+    "gene": "BRCA2",
+    "rule": "controls 0.80",
+    "n": 3971,
+    "lof_share": 0.136,
+    "worst_min": 0.894,
+    "abstain_min": 0.487,
+    "abstain_max": 0.532,
+    "lof_sup_min": 0.63,
+    "func_sup_min": 0.1,
+    "func_sup_max": 0.17,
+    "claims": 295,
+    "ok": 294
+   },
+   {
+    "gene": "BRCA2",
+    "rule": "controls 0.99",
+    "n": 2341,
+    "lof_share": 0.151,
+    "worst_min": 0.897,
+    "abstain_min": 0.304,
+    "abstain_max": 0.374,
+    "lof_sup_min": 0.94,
+    "func_sup_min": 0.54,
+    "func_sup_max": 0.85,
+    "claims": 593,
+    "ok": 591
+   },
+   {
+    "gene": "BRCA2",
+    "rule": "main",
+    "n": 3435,
+    "lof_share": 0.13,
+    "worst_min": 0.896,
+    "abstain_min": 0.365,
+    "abstain_max": 0.421,
+    "lof_sup_min": 0.9,
+    "func_sup_min": 0.3,
+    "func_sup_max": 0.41,
+    "claims": 423,
+    "ok": 423
+   },
+   {
+    "gene": "RAD51C",
+    "rule": "controls 0.95",
+    "n": 832,
+    "lof_share": 0.538,
+    "worst_min": 0.902,
+    "abstain_min": 0.066,
+    "abstain_max": 0.19,
+    "lof_sup_min": 0.98,
+    "func_sup_min": 0.98,
+    "func_sup_max": 1.0,
+    "claims": 868,
+    "ok": 868
+   },
+   {
+    "gene": "RAD51C",
+    "rule": "main",
+    "n": 2225,
+    "lof_share": 0.259,
+    "worst_min": 0.895,
+    "abstain_min": 0.179,
+    "abstain_max": 0.281,
+    "lof_sup_min": 0.84,
+    "func_sup_min": 0.54,
+    "func_sup_max": 0.91,
+    "claims": 561,
+    "ok": 558
+   }
+  ]
+ },
+ "clinvar_check": [
+  {
+   "predictor": "AlphaMissense",
+   "scope": "pooled",
+   "n_path": 387,
+   "n_benign": 472,
+   "lof_calls_path": 307,
+   "lof_calls_benign": 17,
+   "func_calls_path": 36,
+   "func_calls_benign": 392,
+   "lr_pos_hat": 22.025,
+   "lr_pos_lower": 13.139,
+   "lr_neg_hat": 0.112,
+   "lr_neg_upper": 0.159
+  },
+  {
+   "predictor": "AlphaMissense",
+   "scope": "BRCA1",
+   "n_path": 156,
+   "n_benign": 189,
+   "lof_calls_path": 129,
+   "lof_calls_benign": 2,
+   "func_calls_path": 12,
+   "func_calls_benign": 166,
+   "lr_pos_hat": 78.144,
+   "lr_pos_lower": 20.112,
+   "lr_neg_hat": 0.088,
+   "lr_neg_upper": 0.159
+  },
+  {
+   "predictor": "REVEL",
+   "scope": "pooled",
+   "n_path": 387,
+   "n_benign": 472,
+   "lof_calls_path": 270,
+   "lof_calls_benign": 23,
+   "func_calls_path": 39,
+   "func_calls_benign": 386,
+   "lr_pos_hat": 14.317,
+   "lr_pos_lower": 8.989,
+   "lr_neg_hat": 0.123,
+   "lr_neg_upper": 0.173
+  },
+  {
+   "predictor": "REVEL",
+   "scope": "BRCA1",
+   "n_path": 156,
+   "n_benign": 189,
+   "lof_calls_path": 112,
+   "lof_calls_benign": 11,
+   "func_calls_path": 10,
+   "func_calls_benign": 149,
+   "lr_pos_hat": 12.336,
+   "lr_pos_lower": 6.294,
+   "lr_neg_hat": 0.081,
+   "lr_neg_upper": 0.159
+  },
+  {
+   "predictor": "ESM-2",
+   "scope": "pooled",
+   "n_path": 387,
+   "n_benign": 472,
+   "lof_calls_path": 238,
+   "lof_calls_benign": 8,
+   "func_calls_path": 36,
+   "func_calls_benign": 403,
+   "lr_pos_hat": 36.284,
+   "lr_pos_lower": 17.042,
+   "lr_neg_hat": 0.109,
+   "lr_neg_upper": 0.154
+  },
+  {
+   "predictor": "ESM-2",
+   "scope": "BRCA1",
+   "n_path": 156,
+   "n_benign": 189,
+   "lof_calls_path": 108,
+   "lof_calls_benign": 1,
+   "func_calls_path": 15,
+   "func_calls_benign": 174,
+   "lr_pos_hat": 130.846,
+   "lr_pos_lower": 21.064,
+   "lr_neg_hat": 0.104,
+   "lr_neg_upper": 0.176
+  }
+ ]
 }

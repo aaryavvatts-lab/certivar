@@ -24,6 +24,8 @@ results:
 	cd code && ../$(PY) 07_simulation.py
 	cd code && ../$(PY) 08_experiments.py
 	cd code && ../$(PY) 13_evidence.py
+	cd code && ../$(PY) 14_label_sensitivity.py
+	cd code && ../$(PY) 15_clinvar_check.py
 	cd code && ../$(PY) 11_numbers.py
 
 figures:

@@ -1,4 +1,4 @@
-"""Write LaTeX tables from results/*.csv (no typed numbers)."""
+"""Write LaTeX tables from results/*.csv (no typed numbers). All tables are set at the 10 pt body size."""
 import json
 import pathlib
 
@@ -6,11 +6,12 @@ import pandas as pd
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 RES, OUT = ROOT / "results", ROOT / "paper" / "tables"
-ASSAY = {"BRCA1": ("SGE", "HAP1", "\\cite{Findlay2018}", "investigator"),
+ASSAY = {"BRCA1": ("SGE", "HAP1", "\\cite{Findlay2018}", "authors"),
          "BRCA2": ("SGE", "HAP1", "\\cite{Huang2025}", "controls"),
-         "BAP1": ("SGE", "HAP1", "\\cite{Waters2024}", "investigator"),
-         "RAD51C": ("SGE", "HAP1", "\\cite{OlveraLen2024}", "investigator"),
-         "MSH2": ("DMS", "HAP1", "\\cite{Jia2021}", "investigator")}
+         "BAP1": ("SGE", "HAP1", "\\cite{Waters2024}", "authors"),
+         "RAD51C": ("SGE", "HAP1", "\\cite{OlveraLen2024}", "authors"),
+         "MSH2": ("DMS", "HAP1", "\\cite{Jia2021}", "authors")}
+SHORT_PRED = {"AlphaMissense": "AM", "REVEL": "REVEL", "ESM-2": "ESM-2"}
 
 
 def main():
@@ -24,17 +25,17 @@ def main():
     tot_n = int(co.target_n.sum())
     tex = r"""\begin{table}[t]
 \centering
-\caption{Datasets. \emph{ClinVar labelled}: missense SNVs with $\ge$2 review stars and a P/LP or B/LB call
-(the source set for Platt calibration) and their pathogenic share. \emph{Held-out assayed}: missense SNVs with a
-binary assay label and not in the ClinVar labelled set, with their LoF share; \emph{VUS}: the subset classified VUS
-in ClinVar. Labels come from the assay authors' published classes (investigator) or, where none are deposited,
-from synonymous and nonsense controls of the same assay (controls).}\label{tab:data}
-\small
+\caption{Datasets. \emph{ClinVar labelled}: missense single-nucleotide variants (SNVs) with $\ge$2 review stars and a P/LP or B/LB call (used
+only to fit the common score scale) and their pathogenic share. \emph{Assayed}: missense SNVs with a binary assay label
+that are not in the ClinVar labelled set, and their LoF share; \emph{assayed VUS}: the subset classified VUS in
+ClinVar. Assay labels are the authors' published classes (authors) or, where none are deposited, derived from the
+assay's own synonymous and nonsense controls (controls).}\label{tab:data}
+\setlength{\tabcolsep}{4.5pt}
 \begin{tabular}{llcrrrrrr}
 \toprule
- & & & \multicolumn{2}{c}{ClinVar labelled} & \multicolumn{2}{c}{Held-out assayed} & \multicolumn{2}{c}{Assayed VUS}\\
+ & & & \multicolumn{2}{c}{ClinVar labelled} & \multicolumn{2}{c}{Assayed} & \multicolumn{2}{c}{Assayed VUS}\\
 \cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
-Gene & Assay & Labels & $n$ & share P & $n$ & share LoF & $n$ & share LoF\\
+Gene & Assay & Labels & $n$ & P/LP & $n$ & LoF & $n$ & LoF\\
 \midrule
 """ + "\n".join(rows) + r"""
 \midrule
@@ -58,11 +59,10 @@ Total & & & """ + f"{int(co.src_labelled.sum())}" + r""" & & """ + f"{tot_n:,}" 
             return f"{r.coverage_lof_rw:.2f}/{r.coverage_func_rw:.2f}/{r.abstain:.2f}"
         lines.append(f"{pr} & {g} & {cell('Mondrian conformal')} & {cell('Pooled conformal')} & "
                      f"{cell('Fixed 0.1/0.9 tiers')} \\\\")
-    tex = r"""\begin{table}[h]
+    tex = r"""\begin{table}[ht]
 \centering
 \caption{Within-gene random split, $\alpha=0.1$, mean of 50 splits. Each cell is residue-weighted LoF coverage /
 functional coverage / abstention rate.}\label{tab:app_conformal}
-\scriptsize
 \begin{tabular}{llccc}
 \toprule
 Predictor & Gene & Per-class (ours) & Pooled conformal & Fixed 0.1/0.9\\
@@ -119,21 +119,22 @@ Gene & """ + sub + r"""\\
     lines = []
     for _, r in pri.iterrows():
         e = cal.loc[(r.predictor, r.gene)]
-        lines.append(f"{r.predictor} & {r.gene} & {r.observed:.3f} & {r.em:.3f} & {r.bbse:.3f} & "
+        lines.append(f"{SHORT_PRED[r.predictor]} & {r.gene} & {r.observed:.3f} & {r.em:.3f} & {r.bbse:.3f} & "
                      f"{e['Platt on ClinVar']:.3f} & {e['+ EM prior']:.3f} & {e['+ oracle prior']:.3f} & "
                      f"{e['Platt on other-gene assays']:.3f} \\\\")
-    tex = r"""\begin{table}[h]
+    tex = r"""\begin{table}[ht]
 \centering
-\caption{Prior estimation and calibration on held-out assayed variants. LoF share observed and estimated from
+\caption{Prior estimation and calibration on assayed variants outside the ClinVar labelled set. LoF share observed and estimated from
 unlabeled scores by EM \cite{Saerens2002} and BBSE \cite{Lipton2018}; expected calibration error (10 equal-mass
 bins) of the ClinVar-Platt posterior, after EM prior adjustment, after adjustment to the true prior, and of Platt
-scaling fitted on the other four genes' assay labels.}\label{tab:app_prior}
-\scriptsize
+scaling fitted on the other four genes' assay labels. AM: AlphaMissense.}\label{tab:app_prior}
+\setlength{\tabcolsep}{4.5pt}
 \begin{tabular}{llrrrrrrr}
 \toprule
  & & \multicolumn{3}{c}{LoF share} & \multicolumn{4}{c}{Expected calibration error}\\
 \cmidrule(lr){3-5}\cmidrule(lr){6-9}
-Predictor & Gene & observed & EM & BBSE & ClinVar Platt & + EM & + true prior & other-gene assays\\
+ & & & & & ClinVar & & + true & other\\
+Pred. & Gene & obs. & EM & BBSE & Platt & + EM & prior & genes\\
 \midrule
 """ + "\n".join(lines) + r"""
 \bottomrule
@@ -141,6 +142,41 @@ Predictor & Gene & observed & EM & BBSE & ClinVar Platt & + EM & + true prior & 
 \end{table}
 """
     (OUT / "tab_app_prior.tex").write_text(tex)
+
+    # appendix: sensitivity to the assay-label rule (14_label_sensitivity.py)
+    ls = pd.read_csv(RES / "label_sensitivity.csv")
+    ls["worst"] = ls[["lof_cov", "func_cov"]].min(axis=1)
+    rule_name = {"main": None, "controls 0.80": "controls, 0.80", "controls 0.95": "controls, 0.95",
+                 "controls 0.99": "controls, 0.99"}
+    def rng(v):
+        lo, hi = f"{v.min():.2f}", f"{v.max():.2f}"
+        return lo if lo == hi else f"{lo}--{hi}"
+
+    lines = []
+    for (g, rule), s in ls.groupby(["gene", "rule"], sort=False):
+        name = rule_name[rule] or ("controls, 0.95" if g == "BRCA2" else "authors")
+        main = " (main)" if rule == "main" else ""
+        lines.append(f"{g} & {name}{main} & {int(s.n.iloc[0]):,} & {s.lof_share.iloc[0]:.3f} & {s.worst.min():.3f} & "
+                     f"{rng(s.abstain)} & {int(s.oracle_bound_ok.sum())}/{int(s.oracle_claims.sum())} & "
+                     f"{rng(s.share_lof_supporting)} \\\\")
+    tex = r"""\begin{table}[ht]
+\centering
+\caption{Sensitivity to the assay-label rule. Each gene is relabelled with the authors' classes or with the control
+rule at the stated posterior cut-off; other genes are unchanged. Per-class: lowest mean per-class coverage over the
+three predictors (50 random halvings, $\alpha=0.1$); abstention: range over predictors; bounds held: oracle selections
+whose certified bound the true likelihood ratio respected (100 draws per predictor); LoF-supp.: share of draws
+certifying LoF-supporting calls, range over predictors.}\label{tab:app_labels}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llrrrccc}
+\toprule
+Gene & Labels & $n$ & LoF & Per-class & Abstention & Bounds held & LoF-supp.\\
+\midrule
+""" + "\n".join(lines) + r"""
+\bottomrule
+\end{tabular}
+\end{table}
+"""
+    (OUT / "tab_app_labels.tex").write_text(tex)
     print("tables written")
 
 

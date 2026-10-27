@@ -26,6 +26,8 @@ PROC, RES = ROOT / "data" / "processed", ROOT / "results"
 GENES = ["BRCA1", "BRCA2", "BAP1", "RAD51C", "MSH2"]
 PRED = {"AlphaMissense": "alphamissense", "REVEL": "revel", "ESM-2": "esm_neg"}
 GRID = [0.05, 0.10, 0.20, 0.30]
+# OddsPath levels (Tavtigian 2018, Brnich 2020). The keys are internal names: the paper reports them as LoF- and
+# functional-supporting/moderate/strong, because the likelihood ratios are defined against the assay outcome.
 LEVELS_POS = {"PS3-supporting": 2.1, "PS3-moderate": 4.3, "PS3-strong": 18.7}       # LR+ must exceed
 LEVELS_NEG = {"BS3-supporting": 0.48, "BS3-moderate": 0.23, "BS3-strong": 0.053}   # LR- must be below
 DELTA, SEED = 0.05, 2027

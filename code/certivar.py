@@ -1,5 +1,5 @@
 """certivar: per-class (Mondrian) conformal calls for variant-effect predictors, with PAC thresholds
-and certified likelihood ratios mapped to ACMG/AMP evidence strengths.
+and certified likelihood ratios (with respect to the assay outcome) on the ACMG/AMP OddsPath scale.
 
 Notation. y = 1 for loss of function / pathogenic, 0 otherwise. s(x) is a predictor
 score (higher = more damaging). A *source* calibrator maps s to P_S(y = 1 | s) under

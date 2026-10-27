@@ -121,6 +121,34 @@ def main():
                                  "holds": r3(g[g.achieved].holds.astype(float).mean()) if g.achieved.any() else None,
                                  "bound_ok": r3(g[g.achieved].bound_ok.astype(float).mean()) if g.achieved.any() else None}
                            for lvl, g in ve.groupby("level")}
+    # oracle validity with a 95% interval that resamples whole draws (selections within a draw are dependent)
+    acc = pd.read_csv(RES / "oracle.csv").query("achieved")
+    rng = np.random.default_rng(0)
+    out["oracle_validity_ci"] = {}
+    for sel, g in acc.groupby("selection"):
+        per = g.groupby(["predictor", "gene", "split"]).bound_ok.agg(["sum", "count"])
+        boot = []
+        for _ in range(2000):
+            k = per.iloc[rng.integers(0, len(per), len(per))]
+            boot.append(k["sum"].sum() / k["count"].sum())
+        out["oracle_validity_ci"][sel] = {"ok": int(g.bound_ok.sum()), "n": int(len(g)), "draws": int(len(per)),
+                                          "draws_all_ok": r3((per["sum"] == per["count"]).mean()),
+                                          "lo": r3(np.percentile(boot, 2.5)), "hi": r3(np.percentile(boot, 97.5))}
+    ls = pd.read_csv(RES / "label_sensitivity.csv")
+    ls["worst"] = ls[["lof_cov", "func_cov"]].min(axis=1)
+    alt = ls[ls.rule != "main"]
+    out["label_sensitivity"] = {
+        "alt_worst_min": r3(alt.worst.min()), "alt_worst_max": r3(alt.worst.max()),
+        "alt_claims": int(alt.oracle_claims.sum()), "alt_ok": int(alt.oracle_bound_ok.sum()),
+        "by_rule": ls.groupby(["gene", "rule"]).agg(n=("n", "first"), lof_share=("lof_share", "first"),
+                                                     worst_min=("worst", "min"), abstain_min=("abstain", "min"),
+                                                     abstain_max=("abstain", "max"),
+                                                     lof_sup_min=("share_lof_supporting", "min"),
+                                                     func_sup_min=("share_func_supporting", "min"),
+                                                     func_sup_max=("share_func_supporting", "max"),
+                                                     claims=("oracle_claims", "sum"), ok=("oracle_bound_ok", "sum"))
+                     .round(3).reset_index().to_dict(orient="records")}
+    out["clinvar_check"] = pd.read_csv(RES / "clinvar_check.csv").round(3).to_dict(orient="records")
     (RES / "paper_numbers.json").write_text(json.dumps(out, indent=1, default=str))
     print(json.dumps({k: out[k] for k in ["source_prev", "target_prev_min", "target_prev_max", "em_abs_err_mean",
                                            "em_abs_err_max", "dual_agree", "ece_by_method"]}, indent=1))
