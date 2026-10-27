@@ -30,3 +30,7 @@ where noted, computed directly from a file in `results/`. This table maps each c
 | Strata (variant-weighted): 0.865 / 0.873 nearest the class boundary | `strata` |
 | Label sensitivity: worst-class coverage 0.894-0.908 and 2,530 / 2,533 bounds held under the four alternative rules | `label_sensitivity`, `results/label_sensitivity.csv` |
 | Simulation | `simulation` |
+| Published cut-offs as assay classifiers: functional coverage as low as 0.540 (AlphaMissense classes, BAP1) and 0.445 (REVEL PP3/BP4, MSH2) | `conformal_alpha_0.1` -> `within-gene random split` -> `func_rw_min` |
+| Every claimed bound of a draw held in 1,497 of 1,500 draws (weaker than the all-bounds event of Theorem 1) | `oracle_validity_ci` -> `certified` -> `draws_all_ok_uncond`, `draws_total` |
+| Uncorrected Clopper-Pearson bounds respected in 99.2% of 3,115 selections | `oracle_validity_ci` -> `Clopper-Pearson, uncorrected` |
+| ClinVar-assay agreement 97.4% on 422 variants with both a ≥2-star P/LP or B/LB call and a binary assay label | `dual_agree`; `results/dual_labelled.csv` |

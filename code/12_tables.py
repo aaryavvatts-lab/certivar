@@ -125,7 +125,7 @@ Gene & """ + sub + r"""\\
     tex = r"""\begin{table}[ht]
 \centering
 \caption{Prior estimation and calibration on assayed variants outside the ClinVar labelled set. LoF share observed and estimated from
-unlabeled scores by EM \cite{Saerens2002} and BBSE \cite{Lipton2018}; expected calibration error (10 equal-mass
+unlabelled scores by expectation--maximization (EM) \cite{Saerens2002} and black-box shift estimation (BBSE) \cite{Lipton2018}; expected calibration error (10 equal-mass
 bins) of the ClinVar-Platt posterior, after EM prior adjustment, after adjustment to the true prior, and of Platt
 scaling fitted on the other four genes' assay labels. AM: AlphaMissense.}\label{tab:app_prior}
 \setlength{\tabcolsep}{4.5pt}

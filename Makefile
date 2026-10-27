@@ -2,7 +2,7 @@ PY ?= .venv/bin/python
 RAW = data/raw
 PROC = data/processed
 
-.PHONY: reproduce data annotate results figures manifest clean-results test
+.PHONY: reproduce data check-clinvar annotate results figures manifest clean-results test
 
 reproduce: data annotate test results figures manifest
 
@@ -13,7 +13,17 @@ $(RAW)/variant_summary.txt.gz:
 	mkdir -p $(RAW)
 	curl -sL -o $@ https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz
 
-data: $(RAW)/variant_summary.txt.gz
+# The paper uses the ClinVar release of 26 Oct 2026. The NCBI endpoint always serves the latest release, so a new
+# download is rejected unless its SHA-256 matches data/MANIFEST.txt (set ALLOW_NEW_CLINVAR=1 to use a newer release;
+# the numbers will then differ from the paper). `make test results figures` needs no download.
+CLINVAR_SHA = 657b47d0a00ba3ad4b3ddf03e160835c8a4a3c7a2e130c92c904b70021a35703
+
+check-clinvar: $(RAW)/variant_summary.txt.gz
+	@if [ "$$(shasum -a 256 $< | cut -d' ' -f1)" != "$(CLINVAR_SHA)" ] && [ -z "$(ALLOW_NEW_CLINVAR)" ]; then \
+	  echo "ClinVar file differs from the 26 Oct 2026 release used in the paper (SHA-256 mismatch)."; \
+	  echo "Use the committed data/processed files (make test results figures) or set ALLOW_NEW_CLINVAR=1."; exit 1; fi
+
+data: check-clinvar
 	$(PY) code/01_download.py
 	$(PY) code/02_variants.py
 

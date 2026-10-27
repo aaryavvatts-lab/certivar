@@ -8,7 +8,7 @@ required; LNCS optional.
 
 Data: ClinVar variant_summary.txt.gz (NCBI FTP, Last-Modified 26 Oct 2026 13:50:58 GMT); MaveDB score sets
 urn:mavedb:00000097-0-2 (BRCA1), 00001279-a-1 (BRCA2), 00000662-0-1 (BAP1), 00000673-0-1 (RAD51C), 00000050-a-1 (MSH2);
-Ensembl VEP REST (GRCh38); gnomAD v4 GraphQL; UniProt REST; ESM-2 esm2_t33_650M_UR50D (fair-esm 2.0.0).
+Ensembl VEP REST (GRCh38; queried 26 Oct 2026, service reported release 116 on 27 Oct 2026); gnomAD v4 GraphQL; UniProt REST; ESM-2 esm2_t33_650M_UR50D (fair-esm 2.0.0).
 SHA-256 checksums are in data/MANIFEST.txt.
 
 Thresholds and facts checked at the source (26-27 Oct 2026):

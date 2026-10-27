@@ -59,6 +59,14 @@ present. All random draws use fixed seeds (2027 plus a fixed offset per experime
 read from `results/paper_numbers.json`, and `EVIDENCE.md` maps each claim to its key. SHA-256 checksums of the input
 data are in `data/MANIFEST.txt`; data sources and access dates are in `SOURCES.md`.
 
+Pinned inputs: ClinVar `variant_summary.txt.gz` of 26 Oct 2026 (SHA-256 `657b47d0…a35703`; NCBI serves only the
+latest release at that address, so `make data` stops if a fresh download has a different checksum, and the extract used
+in the paper is committed as `data/processed/clinvar.csv`); MaveDB score sets urn:mavedb:00000097-0-2, 00001279-a-1,
+00000662-0-1, 00000673-0-1 and 00000050-a-1 (raw files committed in `data/raw/`); Ensembl VEP REST on GRCh38
+(annotations retrieved 26 Oct 2026, committed as `data/processed/vep.csv`; the service reported release 116 on
+27 Oct 2026); ESM-2 checkpoint `esm2_t33_650M_UR50D` (fair-esm 2.0.0, scores committed as
+`data/processed/esm2_llr.csv`).
+
 `make test` runs the boundary-case unit tests of the method (zero denominators, empty classes, Platt slope sign,
 disjoint calls, coverage of the certified bounds). To rebuild only the results, figures and tables from the processed
 data already in this repository:
