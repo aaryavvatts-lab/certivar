@@ -39,7 +39,8 @@ predictors on a common scale; it is a monotone map that does not change any call
 
 Our contributions are as follows. (1) We formulate predictor-based calling as abstaining classification with per-class
 error control on residue-clustered data, and prove that the certified likelihood-ratio bounds hold after selection from
-a grid of thresholds, that per-class coverage survives the selection, and that a fixed-sequence variant certifies a
+a grid of thresholds, that per-class coverage after the selection is at least one minus the largest grid level, and that a fixed-sequence
+variant certifies a
 level without a multiplicity correction over the grid (\cref{sec:method}). (2) In a known-truth resampling design,
 exact binomial bounds on one variant per residue held where bootstrap bounds and point estimates often did not, and the
 fixed-sequence variant certified moderate evidence more than twice as often as the Bonferroni correction

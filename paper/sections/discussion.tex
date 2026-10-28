@@ -5,13 +5,13 @@ evidence than held, and most bootstrap failures came from certification samples 
 call-averaged ratios, not the local ratios of ClinGen calibrations, this does not show that published PP3/BP4
 thresholds are wrong, only that point estimates and bootstrap bounds can overstate evidence at single-gene sample sizes.
 \textsc{CertiVar} makes the claim checkable without an estimate of the share of damaging variants, and per-class
-coverage stayed at the target when the calibration LoF share was moved from 5\% to 50\%. The cost is conservatism:
+coverage stayed at or near the target when the calibration LoF share was moved from 5\% to 50\%. The intended use is a gene with a functional assay: calling the variants that the assay missed within the assayed
+regions, and checking whether a predictor's claimed evidence strength holds against the assay. The cost is
+conservatism:
 certified evidence was mostly supporting-level, and PAC thresholds abstained on 58\% to 82\% of variants, suited to
-settings where overstating strength is worse than abstaining. Fixed-sequence testing recovers part of the yield that a
-multiplicity correction loses, provided the order is fixed before the data are seen. Held-out protein regions, a proxy
-for the unassayed regions where predictors are most needed, fall outside the theory: coverage there ranged from 0.860
-to 0.923 and certified bounds held in 88.8\% of cases rather than 95\%, so extrapolation needs local validation or a
-region-aware procedure.
+settings where overstating strength is worse than abstaining. Held-out protein regions, a proxy for the unassayed regions where predictors are most needed,
+fall outside the theory (bounds held in 88.8\% of cases), so extrapolation needs local validation or a region-aware
+procedure.
 
 \paragraph{Limitations.}
 \begin{itemize}
@@ -24,9 +24,10 @@ evidence than the level of its class; ClinGen uses local ratios for this reason 
 \item \emph{Who is covered.} The guarantees assume residues exchangeable with the calibrated ones and do not cover
 intermediate or splice-region variants, which a clinician cannot exclude in advance; 19.6\% of intermediate variants were
 called LoF. Per-class coverage holds for a fixed $\alpha$; at the selected $\alpha$ only $1-\max G$ is guaranteed.
-\item \emph{Data.} One variant per residue discards most labels, but using all of them broke coverage in our data.
-Results cover five cancer-predisposition genes measured by SGE or DMS, four of them in DNA repair; other genes and
-assays may need more calibration residues. REVEL was trained on labelled variants and the AlphaMissense classes were set
+\item \emph{Data.} One variant per residue discards most labels, but using all of them pushed coverage below the target in
+13 of 15 pairs.
+Results cover five cancer-predisposition genes, four of them in DNA repair; other genes may need more
+calibration residues. REVEL was trained on labelled variants and the AlphaMissense classes were set
 on ClinVar, so both may overlap our evaluation sets \cite{Ioannidis2016,Cheng2023,Grimm2015}. ESM-2, trained without
 variant labels, gave the same coverage and validity but certified LoF-supporting calls less often (78\% of oracle draws,
 against 86\% for REVEL and 96\% for AlphaMissense), so such overlap could inflate yields rather than validity.
@@ -36,7 +37,6 @@ against 86\% for REVEL and 96\% for AlphaMissense), so such overlap could inflat
 \textsc{CertiVar} turns a variant-effect predictor and a few hundred assayed residues of a gene into LoF, functional or
 no calls with finite-sample guarantees on per-class error rates at a fixed miscoverage level and on call-averaged
 likelihood ratios with respect to the assay after threshold selection, without an estimate of how common damaging
-variants are. The guarantees are proved under residue sampling and class-conditional invariance; they were consistent
-with the data in random within-gene splits and under shifts of the calibration LoF share, held approximately on assayed
-VUS, and weakened in held-out protein regions. The calls are research results; using the certificates as clinical
-evidence requires clinically validated assays.
+variants are. Empirically, the guarantees held within genes and under shifts of the calibration LoF share,
+approximately on assayed VUS, and less well in held-out protein regions. Clinical use requires clinically validated
+assays. Code and data: \url{https://github.com/aaryavvatts-lab/certivar} (release v1.0.0).

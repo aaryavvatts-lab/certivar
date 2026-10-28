@@ -10,7 +10,7 @@ where noted, computed directly from a file in `results/`. This table maps each c
 | 14,477 assay-labelled variants outside the ClinVar labelled set; LoF share 6.0-25.9% by gene (variant-level) | `n_target_total`, `target_prev_min/max`, `cohort` |
 | 422 dual-labelled variants, 97.4% agreement | `dual_n`, `dual_agree` |
 | 729 splice-region variants excluded | `splice_excluded` |
-| Control rule vs authors' classes (BRCA1, BAP1 216 of 4,023 opposite, RAD51C 77% left intermediate) | `qc/assay_labels.txt` (written by `code/06_assemble.py`) |
+| Control rule vs authors' classes (BRCA1 none opposite; BAP1 216 of 4,023 opposite; RAD51C 77% of authors' functional left intermediate) | `label_rule_comparison` |
 | AUROC 0.946 / 0.840 / 0.779 (AlphaMissense, pooled; residue-bootstrap intervals) | `auroc_AlphaMissense` |
 | EM prior error 0.255 mean, 0.702 max; BBSE 0.233; ECE 0.249 / 0.259 / 0.102 | `em_abs_err_*`, `bbse_abs_err_mean`, `ece_by_method` |
 | Worst-class (lower of the two mean per-class) coverage 0.896-0.908; >= 0.948 at alpha 0.05, >= 0.792 at 0.2; baselines below 0.55 | `conformal_alpha_0.1` -> `within-gene random split`, `mondrian_by_alpha`, `published_cutoffs` |
@@ -45,7 +45,10 @@ where noted, computed directly from a file in `results/`. This table maps each c
 | Fixed-sequence vs Bonferroni (G4): LoF-moderate 29.1% vs 12.9%, functional-supporting 60.6% vs 42.5%; 99.7% of 2,705 claims held; no level falsely claimed in more than 0.4% of draws | `oracle_extended` -> `G4|fixed sequence`, `G4|certified`; `results/oracle_extended.csv` |
 | G20: LoF-moderate 6.2% (Bonferroni) vs 26.7% (fixed sequence); LoF-supporting 73.8% vs 65.3%; functional levels in increasing order 25.7% (G4) and 0.2% (G20) | `oracle_extended` |
 | Variant-weighted truth: certified levels held in 99.9% of claims | `oracle_extended` -> `G4|certified` -> `level_held_vw` |
-| Intermediate variants: 1,274 in all, 1,262 outside the ClinVar labelled set; 19.6% called LoF, 36.6% functional | `intermediates` |
+| Intermediate variants: 1,274 in all, 1,262 outside the ClinVar labelled set (BRCA2 888, BAP1 210, BRCA1 155, RAD51C 9); 19.6% called LoF, 36.6% functional | `intermediates` |
 | Per-predictor LoF-supporting certification in the oracle: 96% (AlphaMissense), 86% (REVEL), 78% (ESM-2) | `results/oracle.csv` (certified, PS3-supporting, mean of `achieved` by predictor) |
 | VUS LoF-moderate 25 of 28 (Clopper-Pearson 95% interval 72-98%) | `vus_evidence`; interval computed with scipy.stats.beta |
 | Runtime about 5 ms per gene (20-level grid, BAP1, laptop CPU) | measured with `time.perf_counter` on `certivar.mondrian_thresholds` + `certify` |
+| Abstract: worst-class coverage 0.89 or above under calibration-share shift (0.897-0.925 at shares 0.05-0.5; 0.891-0.925 in the run that balances the whole calibration half to 50% LoF) | `prior_shift`; `conformal_alpha_0.1` -> `within-gene split, calibration at 50% LoF` -> `Mondrian conformal` |
+| Unassayed BRCA1 VUS (outside the assayed region, AlphaMissense): 1,463 of 1,534 called functional, 53 abstentions | `application` |
+| Per-class coverages: none more than one Monte Carlo standard error below 0.90 | `mondrian_rows` (mean and sd over 50 splits) |

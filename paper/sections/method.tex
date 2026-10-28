@@ -15,7 +15,8 @@ scale (the baselines use its values), so no ClinVar label affects a \textsc{Cert
 The nonconformity of label 1 is $r_1=1-q$ and of label 0 is $r_0=q$. From each residue in $\mathcal A$ we keep one
 variant chosen uniformly at random. For class $k$, let $n_k$ be the number of kept variants with label $k$ and
 $r^{(k)}_{(1)}\le\dots\le r^{(k)}_{(n_k)}$ their sorted nonconformities. The threshold is $\hat t_k=r^{(k)}_{(j_k)}$
-($\infty$ if $j_k>n_k$, and $j_k=n_k+1$ if the PAC set below is empty), with
+($\infty$ if $j_k>n_k$), where $j_k$ is the in-expectation rank or the probably approximately correct (PAC) rank
+($j_k=n_k+1$ if no $j$ qualifies):
 \begin{equation}\label{eq:rank}
 j_k=\bigl\lceil (n_k+1)(1-\alpha_k)\bigr\rceil \;\text{(in expectation)}\quad\text{or}\quad
 j_k=\min\bigl\{\,j:\ F_{\mathrm{Beta}(j,\,n_k-j+1)}(1-\alpha_k)\le\delta\,\bigr\}\;\text{(PAC)}.
@@ -49,8 +50,8 @@ bounds are $L^+(\alpha)=\ell_{\mathrm{TP}}/u_{\mathrm{FP}}$ and
 $U^-(\alpha)=u_{\mathrm{FN}}/\ell_{\mathrm{TN}}$ ($U^-=\infty$, never meeting a level, if $\ell_{\mathrm{TN}}=0$;
 $u_{\mathrm{FP}}>0$ always; for point estimates, $x/0=\infty$ for $x>0$, and $0/0$ is undefined and never selected). For each level, \cref{alg:certivar} returns the $\alpha$ that calls the most variants
 among those whose certified bound meets the level. Because $\hat t_0$ and $\hat t_1$ both decrease weakly in $\alpha$,
-no variant can be called LoF at one $\alpha$ and functional at another (\cref{sec:theory}). Line~7 also restricts
-functional calls to $\alpha\ge\hat\alpha^+$ of the same strength; this is not needed for validity and can only lower
+no variant can be called LoF at one $\alpha$ and functional at another (\cref{sec:theory}). Line~7 also considers, for
+functional calls, only $\alpha$ at least as large as the one selected for LoF calls of the same strength; this is not needed for validity and can only lower
 the functional yield, so the yields we report are conservative. The \emph{fixed-sequence} variant replaces the
 Bonferroni level $\delta/(2|G|)$ by $\delta/2$ and tests the grid in an order fixed in advance, stopping at the first
 $\alpha$ that does not meet the level (Theorem~\ref{thm:fs}). We test LoF levels in increasing $\alpha$ and functional

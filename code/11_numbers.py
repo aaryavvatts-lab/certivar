@@ -66,7 +66,8 @@ def main():
                                          "abstain_min": r3(g.abstain.min()), "abstain_max": r3(g.abstain.max())}
                                 for a, g in mond.groupby("alpha")}
     fixed = c[(c.design == "within-gene random split") & c.method.isin(["AlphaMissense classes", "REVEL PP3/BP4 supporting"])]
-    out["published_cutoffs"] = fixed[["method", "gene", "coverage_func", "coverage_lof", "abstain"]].round(3).to_dict(orient="records")
+    out["published_cutoffs"] = fixed[["method", "predictor", "gene", "coverage_func_rw", "coverage_lof_rw", "coverage_func",
+                                      "coverage_lof", "abstain"]].round(3).to_dict(orient="records")
 
     st = pd.read_csv(RES / "conformal_strata.csv")
     st = st[st.method == "Mondrian conformal"]
@@ -199,6 +200,7 @@ def main():
     vv_src = (vv.stars >= 2) & vv.group.isin(["path", "benign"])
     out["intermediates"] = {"n_variants": int((vv.assay_label == -1).sum()),
                             "n_outside_clinvar_set": int(((vv.assay_label == -1) & ~vv_src).sum()),
+                            "outside_by_gene": {g: int(n) for g, n in vv[(vv.assay_label == -1) & ~vv_src].groupby("gene").size().items()},
                             "lof": r3((it.int_lof * it.n_int).sum() / it.n_int.sum()),
                             "func": r3((it.int_func * it.n_int).sum() / it.n_int.sum())}
     ox = pd.read_csv(RES / "oracle_extended.csv")
@@ -227,6 +229,16 @@ def main():
     out["bootstrap_diagnostic"] = {"n": int(len(b)), "fail": int(b.bad.sum()), "fail_rate": r3(b.bad.mean()),
                                    "share_fail_zero": r3(b[b.bad].zero.mean()), "share_zero": r3(b.zero.mean()),
                                    "fail_rate_zero": r3(b[b.zero].bad.mean()), "fail_rate_nonzero": r3(b[~b.zero].bad.mean())}
+    # authors' classes against the control rule (Section 4.1)
+    cmp = {}
+    for g in ("BRCA1", "BAP1", "RAD51C"):
+        s = vv[(vv.gene == g) & vv.score.notna()]
+        both = s.assay_label.isin([0, 1]) & s.label_ctrl.isin([0, 1])
+        func = s.assay_label == 0
+        cmp[g] = {"both_confident": int(both.sum()),
+                  "opposite": int((both & (s.assay_label != s.label_ctrl)).sum()),
+                  "authors_functional_left_intermediate": r3((func & (s.label_ctrl == -1)).sum() / func.sum())}
+    out["label_rule_comparison"] = cmp
     (RES / "paper_numbers.json").write_text(json.dumps(out, indent=1, default=str))
     print(json.dumps({k: out[k] for k in ["source_prev", "target_prev_min", "target_prev_max", "em_abs_err_mean",
                                            "em_abs_err_max", "dual_agree", "ece_by_method"]}, indent=1))

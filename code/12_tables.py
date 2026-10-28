@@ -101,7 +101,6 @@ of 50 splits). Per-class rule: residue-weighted coverage of LoF and functional (
 Monte Carlo standard errors of the coverages are """ + f"{se.min():.3f}--{se.max():.3f}" + r""". Baselines: worst-class
 coverage (bold if below 0.85) and abstention. Published cut-offs: AlphaMissense classes (AM) and REVEL PP3/BP4
 thresholds; none exist for ESM-2.}\label{tab:main}
-\small
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{llccccccc}
 \toprule

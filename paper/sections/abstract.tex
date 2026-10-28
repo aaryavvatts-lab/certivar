@@ -9,10 +9,10 @@ using class-conditional conformal thresholds learned from saturation genome edit
 with one variant per residue because substitutions at a residue are dependent. It then certifies a
 bound on the likelihood ratio of each call type with respect to the assay outcome, using a Bonferroni correction or
 fixed-sequence testing so that the bound stays valid after a threshold is chosen from a grid. Every guarantee conditions on the
-assay class, so none requires the unknown share of LoF variants among the variants being called, provided that their
+assay class (per-class coverage at a fixed miscoverage level), so none requires the unknown share of LoF variants among the variants being called, provided that their
 within-class score distribution matches that of the assayed variants. On 14,477 assayed
 missense variants in BRCA1, BRCA2, BAP1, RAD51C and MSH2, scored by AlphaMissense, REVEL and ESM-2, worst-class coverage
-was 0.896--0.908 at a 0.90 target in all 15 gene--predictor pairs, and stayed at 0.897 or above when the LoF share of
+was 0.896--0.908 at a 0.90 target in all 15 gene--predictor pairs, and stayed at 0.89 or above when the LoF share of
 the calibration data was moved from 5\% to 50\%; marginal conformal prediction calibrated at a 5\% share covered LoF
 variants at only 0.11 in its worst pair. In resampling experiments
 with known true likelihood ratios, every certified bound in a draw held in 99.8\% of draws, against 56.5\% for

@@ -690,70 +690,100 @@
  "published_cutoffs": [
   {
    "method": "AlphaMissense classes",
+   "predictor": "AlphaMissense",
    "gene": "BRCA1",
+   "coverage_func_rw": 0.773,
+   "coverage_lof_rw": 0.927,
    "coverage_func": 0.779,
    "coverage_lof": 0.922,
    "abstain": 0.13
   },
   {
    "method": "AlphaMissense classes",
+   "predictor": "AlphaMissense",
    "gene": "BRCA2",
+   "coverage_func_rw": 0.866,
+   "coverage_lof_rw": 0.81,
    "coverage_func": 0.873,
    "coverage_lof": 0.811,
    "abstain": 0.108
   },
   {
    "method": "AlphaMissense classes",
+   "predictor": "AlphaMissense",
    "gene": "BAP1",
+   "coverage_func_rw": 0.54,
+   "coverage_lof_rw": 0.921,
    "coverage_func": 0.541,
    "coverage_lof": 0.922,
    "abstain": 0.069
   },
   {
    "method": "AlphaMissense classes",
+   "predictor": "AlphaMissense",
    "gene": "RAD51C",
+   "coverage_func_rw": 0.902,
+   "coverage_lof_rw": 0.86,
    "coverage_func": 0.895,
    "coverage_lof": 0.855,
    "abstain": 0.109
   },
   {
    "method": "AlphaMissense classes",
+   "predictor": "AlphaMissense",
    "gene": "MSH2",
+   "coverage_func_rw": 0.642,
+   "coverage_lof_rw": 0.951,
    "coverage_func": 0.646,
    "coverage_lof": 0.957,
    "abstain": 0.119
   },
   {
    "method": "REVEL PP3/BP4 supporting",
+   "predictor": "REVEL",
    "gene": "BRCA1",
+   "coverage_func_rw": 0.663,
+   "coverage_lof_rw": 1.0,
    "coverage_func": 0.686,
    "coverage_lof": 1.0,
    "abstain": 0.594
   },
   {
    "method": "REVEL PP3/BP4 supporting",
+   "predictor": "REVEL",
    "gene": "BRCA2",
+   "coverage_func_rw": 0.803,
+   "coverage_lof_rw": 0.984,
    "coverage_func": 0.818,
    "coverage_lof": 0.983,
    "abstain": 0.565
   },
   {
    "method": "REVEL PP3/BP4 supporting",
+   "predictor": "REVEL",
    "gene": "BAP1",
+   "coverage_func_rw": 0.975,
+   "coverage_lof_rw": 0.799,
    "coverage_func": 0.976,
    "coverage_lof": 0.794,
    "abstain": 0.285
   },
   {
    "method": "REVEL PP3/BP4 supporting",
+   "predictor": "REVEL",
    "gene": "RAD51C",
+   "coverage_func_rw": 0.979,
+   "coverage_lof_rw": 0.792,
    "coverage_func": 0.98,
    "coverage_lof": 0.781,
    "abstain": 0.246
   },
   {
    "method": "REVEL PP3/BP4 supporting",
+   "predictor": "REVEL",
    "gene": "MSH2",
+   "coverage_func_rw": 0.445,
+   "coverage_lof_rw": 0.995,
    "coverage_func": 0.448,
    "coverage_lof": 0.994,
    "abstain": 0.408
@@ -2888,6 +2918,12 @@
  "intermediates": {
   "n_variants": 1274,
   "n_outside_clinvar_set": 1262,
+  "outside_by_gene": {
+   "BAP1": 210,
+   "BRCA1": 155,
+   "BRCA2": 888,
+   "RAD51C": 9
+  },
   "lof": 0.196,
   "func": 0.366
  },
@@ -3249,5 +3285,22 @@
   "share_zero": 0.138,
   "fail_rate_zero": 0.886,
   "fail_rate_nonzero": 0.109
+ },
+ "label_rule_comparison": {
+  "BRCA1": {
+   "both_confident": 1762,
+   "opposite": 0,
+   "authors_functional_left_intermediate": 0.0
+  },
+  "BAP1": {
+   "both_confident": 4023,
+   "opposite": 216,
+   "authors_functional_left_intermediate": 0.001
+  },
+  "RAD51C": {
+   "both_confident": 837,
+   "opposite": 0,
+   "authors_functional_left_intermediate": 0.768
+  }
  }
 }

@@ -33,8 +33,8 @@ is 1. \hfill$\square$
 
 \paragraph{Proposition 3.}
 Fix $\mathcal A$. Both ranks in \eqref{eq:rank} are non-increasing in $\alpha$ (the in-expectation rank because
-$\lceil (n_k+1)(1-\alpha)\rceil$ is, the PAC rank because $F_{\mathrm{Beta}(j,n_k-j+1)}(1-\alpha)$ increases in $\alpha$
-for each $j$), so $\hat t_k(\alpha)$ is non-increasing in $\alpha$ and the set $\{r_k\le\hat t_k(\alpha)\}$ shrinks as
+$\lceil (n_k+1)(1-\alpha)\rceil$ is, the PAC rank because $F_{\mathrm{Beta}(j,n_k-j+1)}(1-\alpha)$ decreases in $\alpha$
+for each $j$, so the smallest qualifying $j$ cannot increase), so $\hat t_k(\alpha)$ is non-increasing in $\alpha$ and the set $\{r_k\le\hat t_k(\alpha)\}$ shrinks as
 $\alpha$ grows. Hence, for any $\hat\alpha\in G$ that depends on $\mathcal B$ but not on the test variant,
 $\Pr(k\in C_{\hat\alpha}\mid Y=k,\mathcal A,\mathcal B)\ge\Pr(k\in C_{\max G}\mid Y=k,\mathcal A)$, and taking
 expectations over $\mathcal A$ and Proposition~1 at $\alpha_k=\max G$ give the first claim. For the PAC rank at level

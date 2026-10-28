@@ -19,14 +19,11 @@ the template of risk-controlling prediction sets and Learn-then-Test \cite{Bates
 et al.\ reported split-conformal prediction sets for missense predictors on ClinVar benchmarks at 90\% marginal coverage,
 treating a set with both labels as a refusal to call \cite{Harrizi2026}; \textsc{CertiVar} instead controls coverage
 within each class, calibrates on the gene's assay labels and certifies the likelihood ratio of the calls. Our
-certificate divides two exact one-sided Clopper--Pearson endpoints; score-type and log-scale intervals for a ratio of
+certificate divides two exact one-sided Clopper--Pearson endpoints; log-scale and score-type intervals for a ratio of
 binomial proportions \cite{Katz1978,Koopman1984} are usually narrower but only asymptotically valid, which matters at the
 counts of a single gene. The building blocks are known; what is new is their combination into a certificate on the
 OddsPath scale for residue-clustered assay labels, with a coverage guarantee after threshold selection, a
 fixed-sequence variant, and a known-truth benchmark of how often point estimates and bootstrap bounds overstate
-evidence.
-
-\paragraph{Label shift.}
-Label-shift methods adjust posteriors or conformal weights to an estimated target prior
-\cite{Saerens2002,Lipton2018,Podkopaev2021}. Class-conditional quantities do not depend on the prior by construction;
-the difficulty is that the target must satisfy class-conditional invariance (Assumption~\ref{as:shift}), which we test.
+evidence. Label-shift methods instead adjust posteriors or conformal weights to an estimated target prior
+\cite{Saerens2002,Lipton2018,Podkopaev2021}; class-conditional quantities need no prior, provided the target satisfies
+class-conditional invariance (Assumption~\ref{as:shift}), which we test.
