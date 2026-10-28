@@ -6,7 +6,7 @@ We took every GRCh38 missense single-nucleotide variant in BRCA1, BRCA2, BAP1, R
 \cite{Landrum2018} (release of 26 October 2026) or was assayed, annotated each on its MANE Select transcript with the
 Ensembl Variant Effect Predictor \cite{McLaren2016} (AlphaMissense \cite{Cheng2023}, REVEL \cite{Ioannidis2016}) and
 computed ESM-2 650M \cite{Lin2023} log-likelihood ratios by wild-type marginals \cite{Meier2021}. Labels come from five
-MaveDB \cite{Esposito2019} score sets (\cref{tab:data}; accessions in Supplement~S5): the authors' classes for BRCA1,
+MaveDB \cite{Esposito2019} score sets (\cref{tab:data}; accessions in \cref{s:impl}): the authors' classes for BRCA1,
 BAP1 and RAD51C, the authors' threshold for MSH2 (positive loss-of-function score \cite{Jia2021}), and, for BRCA2, which
 deposits no classes, Gaussians fitted to the assay's synonymous and nonsense variants (LoF if the posterior is at least
 0.95, functional if at most 0.05). Because this control rule disagreed with the authors' classes for 216 of the 4,023 BAP1 variants
@@ -21,12 +21,12 @@ its expectation--maximization (EM) estimate \cite{Saerens2002}; fixed tiers ($q\
 published AlphaMissense classes ($>0.564$, $<0.34$); and the REVEL PP3/BP4 thresholds ($\ge0.644$, $\le0.290$)
 \cite{Pejaver2022}. None claims per-class coverage, and the published cut-offs target pathogenicity, so we judge them
 only as assay classifiers. Coverage is residue-weighted as in $Q$; \emph{worst-class coverage} is the smaller of the mean
-LoF and mean functional coverages over repetitions. Every split is by residue (designs in Supplement~S6).
+LoF and mean functional coverages over repetitions. Every split is by residue (designs in \cref{s:designs}).
 
 \subsection{Per-class coverage, and a shift in the calibration LoF share}\label{sec:coverage}
 Over 50 random halvings of each gene's residues (calibrate on one half, test on the other), the in-expectation rule at
 $\alpha=0.1$ gave worst-class coverage between 0.896 and 0.908 in all 15 gene--predictor pairs, none more than one Monte
-Carlo standard error (0.002--0.010) below the target (\cref{fig:main}A; per-pair values in Table~S1). Pooled conformal
+Carlo standard error (0.002--0.010) below the target (\cref{fig:main}A; per-pair values in \cref{tab:app_conformal}). Pooled conformal
 fell to 0.545 on LoF variants and below 0.85 in 5 pairs, because a marginal threshold controls coverage averaged over the two classes, not within each; the published AlphaMissense and REVEL cut-offs covered as little as 0.540 (BAP1) and 0.445 (MSH2) of functional variants. The per-class rule abstained on 35\% of variants on average (17--47\%), against 42\% for pooled conformal
 and 11\% for the AlphaMissense classes, which trade coverage for decisiveness. Calibrating on all variants instead of
 one per residue used five times as many labels and abstained less (30.4\% against 35.2\%), but worst-class coverage fell
@@ -89,7 +89,7 @@ guaranteed 0.70 (Proposition~\ref{prop:select}): selecting for evidence strength
 12.9\% (Bonferroni) to 29.1\% of draws and functional-supporting from 42.5\% to 60.6\% (\cref{fig:shift}B), with 99.7\% of 2,705 claims holding; on a 20-level grid it kept LoF-moderate at 26.7\% where
 the Bonferroni rule fell to 6.2\%. The testing order matters: functional-supporting, tested in increasing $\alpha$, was certified in only 25.7\% of draws (60.6\% in decreasing order). On held-out fifths of the residues, empirical likelihood ratios respected the
 certified bounds in 98.7\% of 2,091 cases (bootstrap: 76.8\%); on VUS at other residues, LoF-supporting held in all 443 certified claims and LoF-moderate in 25 of 28. Against ClinVar labels (exploratory, not independent of the assays),
-LoF calls had likelihood-ratio lower bounds of 4.9--19.6 (BRCA1), 7.6--9.4 (BRCA2) and 2.6--3.2 (MSH2) (Table~S4).
+LoF calls had likelihood-ratio lower bounds of 4.9--19.6 (BRCA1), 7.6--9.4 (BRCA2) and 2.6--3.2 (MSH2) (\cref{tab:app_clinvar}).
 
 \begin{figure}[t]
 \centering
@@ -103,8 +103,8 @@ fixed-sequence testing, on four-level ($G_4$) and 20-level ($G_{20}$) grids.}\la
 Calibration data had to come from the same gene: calibrating on the other four genes left 8 of 15 pairs below 0.85
 (worst 0.487), consistent with gene-specific evidence strength \cite{Tejura2024,Chen2026}. Calibrating on three
 contiguous quarters of a protein and testing on the fourth gave worst-class coverage of 0.860--0.923, and the true ratio respected 88.8\% of 1,891 certified bounds, below the nominal 95\%. With 150 calibration residues drawn at random, coverage
-averaged over genes met the target with 40.5\% abstention (82.8\% with 25 residues; Fig.~S2). Coverage was lower on the third of
+averaged over genes met the target with 40.5\% abstention (82.8\% with 25 residues; \cref{fig:practical}). Coverage was lower on the third of
 variants nearest the assay class boundary (0.865 LoF, 0.873 functional). Intermediate variants, which no guarantee
 covers, were called LoF in 19.6\% and functional in 36.6\% of cases; on 1,534 unassayed BRCA1 VUS outside the assayed
 region, AlphaMissense thresholds abstained on only 53, which suggests a shifted score distribution. Relabelling BRCA2,
-BAP1 and RAD51C with alternative rules (Table~S3) changed yields but not validity: worst-class coverage stayed between 0.894 and 0.908 over rules and predictors, and certified bounds held in 2,530 of 2,533 oracle selections.
+BAP1 and RAD51C with alternative rules (\cref{tab:app_labels}) changed yields but not validity: worst-class coverage stayed between 0.894 and 0.908 over rules and predictors, and certified bounds held in 2,530 of 2,533 oracle selections.

@@ -48,7 +48,7 @@ bounds are $L^+(\alpha)=\ell_{\mathrm{TP}}/u_{\mathrm{FP}}$ and
 $U^-(\alpha)=u_{\mathrm{FN}}/\ell_{\mathrm{TN}}$ ($U^-=\infty$, never meeting a level, if $\ell_{\mathrm{TN}}=0$;
 $u_{\mathrm{FP}}>0$ always; for point estimates, $x/0=\infty$ for $x>0$, and $0/0$ is undefined and never selected). For each level, \cref{alg:certivar} returns the $\alpha$ that calls the most variants
 among those whose certified bound meets the level. Because $\hat t_0$ and $\hat t_1$ both decrease weakly in $\alpha$,
-no variant can be called LoF at one $\alpha$ and functional at another (Supplement~S1). Line~7 also requires, for functional
+no variant can be called LoF at one $\alpha$ and functional at another (\cref{app:proofs}). Line~7 also requires, for functional
 calls, $\alpha$ at least as large as the LoF choice of the same strength; this is a reporting convention, not needed for validity, and can
 only lower functional yields. The \emph{fixed-sequence} variant replaces the
 Bonferroni level $\delta/(2|G|)$ by $\delta/2$ and tests the grid in an order fixed in advance, stopping at the first

@@ -5,10 +5,11 @@ Code and data for the RECOMB 2027 submission
 > **CertiVar: Prevalence-Free Certified Assay Likelihood Ratios for Missense Variant-Effect Predictor Calls**
 > Aaryav Sharma (Eastview High School, Apple Valley, MN, USA)
 
-Release `v1.2.0` is the version that matches the submitted paper. The paper is [`manuscript/CertiVar_RECOMB2027.pdf`](manuscript/CertiVar_RECOMB2027.pdf).
-The supplementary material (full proofs, simulation, per-gene tables, strata, label sensitivity, the ClinVar check and
-implementation details and experimental designs; items S1-S6, Figs. S1-S2, Tables S1-S6) is
-[`supplement/CertiVar_supplement.pdf`](supplement/CertiVar_supplement.pdf). The LaTeX source is in `paper/`.
+Release `v1.2.1` is the version that matches the submitted paper,
+[`manuscript/CertiVar_RECOMB2027.pdf`](manuscript/CertiVar_RECOMB2027.pdf): ten pages of paper and references, followed
+by an appendix with the full proofs, simulation, per-gene tables, strata, label sensitivity, the ClinVar check,
+implementation details and experimental designs (items S1-S6, Figs. S1-S2, Tables S1-S6). The LaTeX source is in
+`paper/`.
 
 ## What CertiVar does
 

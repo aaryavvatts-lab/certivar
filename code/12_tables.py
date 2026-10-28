@@ -25,7 +25,7 @@ def main():
     tot_n = int(co.target_n.sum())
     tex = r"""\begin{table}[t]
 \centering
-\caption{Datasets. \emph{ClinVar labelled}: missense single-nucleotide variants (SNVs) with $\ge$2 review stars and a P/LP or B/LB call (used to fit the common score scale and, in Table~S4 only, for an exploratory check) and the number that are P/LP. All shares are variant-level (descriptive). \emph{Assayed}: missense SNVs with a binary assay label
+\caption{Datasets. \emph{ClinVar labelled}: missense single-nucleotide variants (SNVs) with $\ge$2 review stars and a P/LP or B/LB call (used to fit the common score scale and, in \cref{tab:app_clinvar} only, for an exploratory check) and the number that are P/LP. All shares are variant-level (descriptive). \emph{Assayed}: missense SNVs with a binary assay label
 that are not in the ClinVar labelled set, and their LoF share; \emph{assayed VUS}: the subset classified VUS in
 ClinVar. Assay labels are the authors' published classes (authors) or, where none are deposited, derived from the
 assay's own synonymous and nonsense controls (controls).}\label{tab:data}
