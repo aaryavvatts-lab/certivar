@@ -1,7 +1,8 @@
 \subsection{Guarantees}\label{sec:theory}
 
 Let $Q$ be the law of a variant obtained by drawing a residue from the gene's population of assayed residues and then
-one of its variants uniformly at random (binary-labelled, non-splice variants outside the ClinVar labelled set).
+one of its variants uniformly at random (binary-labelled, non-splice variants outside the ClinVar labelled set). Every
+rate and likelihood ratio below is taken under $Q$, so it weights residues equally.
 
 \begin{assumption}[Clustered sampling]\label{as:cluster}
 Residues in $\mathcal A$, in $\mathcal B$ and of a test variant are independent draws from one residue population;
@@ -20,51 +21,58 @@ $1-\alpha_k\le\Pr(k\in C\mid Y=k,n_k)\le 1-\alpha_k+1/(n_k+1)$, the upper bound 
 
 \begin{proposition}[High-probability per-class coverage]\label{prop:pac}
 Under Assumption~\ref{as:cluster}, for a fixed $\alpha_k$ and with the PAC rank, $\Pr(k\in C\mid Y=k,\hat t_k)\ge1-\alpha_k$
-with probability at least $1-\delta$ over the calibration data for each $k$, and for both classes with probability at
-least $1-2\delta$.
+with probability at least $1-\delta_{\mathrm P}$ over the calibration data for each $k$, and for both classes with
+probability at least $1-2\delta_{\mathrm P}$.
 \end{proposition}
 
 \begin{proposition}[Coverage after selection]\label{prop:select}
 Under Assumption~\ref{as:cluster}, for any $\hat\alpha\in G$ chosen from data independent of the test variant
 (for example by \cref{alg:certivar}), the in-expectation rank gives $\Pr(k\in C\mid Y=k)\ge1-\max G$; the PAC rank at
-level $\delta/|G|$ gives $\Pr(k\in C\mid Y=k,\hat t_k)\ge1-\hat\alpha$ for each $k$ with probability at least $1-\delta$.
+level $\delta_{\mathrm P}/|G|$ gives $\Pr(k\in C\mid Y=k,\hat t_k)\ge1-\hat\alpha$ for each $k$ with probability at least
+$1-\delta_{\mathrm P}$.
 \end{proposition}
 
 \begin{theorem}[Certified likelihood ratios]\label{thm:lr}
 Under Assumption~\ref{as:cluster}, conditionally on $\mathcal A$ and with probability at least $1-\delta$ over
-$\mathcal B$, $\mathrm{LR}^+(\hat t(\alpha))\ge L^+(\alpha)$ under $Q$ for every $\alpha\in G$ simultaneously; the same
-holds for $\mathrm{LR}^-\le U^-$ with a second $\delta$. Because the event does not depend on the level, each call type
-returned by \cref{alg:certivar} reaches its certified level at every evidence level reported, with probability at least
+$\mathcal B$, $\mathrm{LR}^+(\hat t(\alpha))\ge L^+(\alpha)$ for every $\alpha\in G$ simultaneously; the same holds for
+$\mathrm{LR}^-\le U^-$ with a second $\delta$. Because the event does not depend on the level, each call type returned
+by \cref{alg:certivar} reaches its certified level at every evidence level reported, with probability at least
 $1-\delta$ (both call types with probability at least $1-2\delta$), whichever $\alpha$ is selected.
 \end{theorem}
 
 \begin{theorem}[Fixed-sequence certification]\label{thm:fs}
-Under Assumption~\ref{as:cluster}, fix a level $\tau$ and an order of $G$ chosen in advance. Reject $H_\alpha:
-\mathrm{LR}^+(\hat t(\alpha))\le\tau$ when $\ell_{\mathrm{TP}}/u_{\mathrm{FP}}>\tau$ with both endpoints at level
-$\delta/2$, stop at the first $\alpha$ not rejected, and select the rejected $\alpha$ with the largest yield. Then,
-conditionally on $\mathcal A$, the selected LoF calls have $\mathrm{LR}^+>\tau$ with probability at least $1-\delta$.
-The same holds for functional calls with $u_{\mathrm{FN}}/\ell_{\mathrm{TN}}<\tau'$.
+Under Assumption~\ref{as:cluster}, fix a level $\tau$, a confidence $\delta'$ and an order of $G$ chosen in advance.
+Reject $H_\alpha:\mathrm{LR}^+(\hat t(\alpha))\le\tau$ when $\underline{\lambda}_1/\overline{\lambda}_0>\tau$ with both
+endpoints at level $\delta'/2$, stop at the first $\alpha$ not rejected, and select the rejected $\alpha$ with the
+largest yield; the rejected set is a prefix of the order. (a) Conditionally on $\mathcal A$, the selected LoF calls have
+$\mathrm{LR}^+>\tau$ with probability at least $1-\delta'$. (b) If each of $L$ levels is tested in this way with
+$\delta'=\delta/L$, every level claimed for LoF calls holds simultaneously with probability at least $1-\delta$. The same
+holds for functional calls with $\overline{\phi}_1/\underline{\phi}_0<\tau'$, and for both call types together with
+probability at least $1-2\delta$.
 \end{theorem}
 
 \begin{corollary}[No prior needed]\label{cor:shift}
-Under Assumptions~\ref{as:cluster} and~\ref{as:shift}, Propositions~\ref{prop:mondrian}--\ref{prop:select} and
-Theorems~\ref{thm:lr}--\ref{thm:fs} hold for target variants whatever their LoF share $\pi\in(0,1)$: for a fixed
+Under Assumptions~\ref{as:cluster} and~\ref{as:shift}, for target variants drawn residue first as under $Q$,
+Propositions~\ref{prop:mondrian}--\ref{prop:select} and Theorems~\ref{thm:lr}--\ref{thm:fs} hold whatever their LoF
+share $\pi\in(0,1)$: for a fixed
 $\alpha$, LoF variants are called functional at rate at most $\alpha_1$, and the certified likelihood ratios with
-respect to the assay outcome need no prior.
+respect to the assay outcome need no prior. For any $\alpha^+,\alpha^-\in G$, the LoF calls at $\alpha^+$ and the
+functional calls at $\alpha^-$ are disjoint.
 \end{corollary}
 
 Propositions~\ref{prop:mondrian} and~\ref{prop:pac} are the class-conditional and training-conditional conformal
-guarantees \cite{Vovk2005,Sadinle2019,Vovk2013,Tong2018}, here for residue-clustered data. Proposition~\ref{prop:select}
-holds because both ranks in \eqref{eq:rank} are non-increasing in $\alpha$, so coverage at any selected $\alpha$ is at
-least coverage at $\max G$. Theorem~\ref{thm:lr} follows the risk-control template \cite{Bates2021rcps}: given
-$\mathcal A$ and the labels in $\mathcal B$, the four counts are binomial, and a union bound over the $2|G|$
-endpoints covers every $\alpha$, including a selected one. Theorem~\ref{thm:fs} follows Learn-then-Test
-\cite{Angelopoulos2025ltt}: a true $H_\alpha$ is rejected only if an endpoint fails, and a false claim requires
-rejecting the first true hypothesis in the order. Proofs are in Supplement~S1.
+guarantees \cite{Vovk2005,Sadinle2019,Vovk2013,Tong2018}, here under the residue-first law $Q$. Theorem~\ref{thm:lr}
+uses the union-bound template of risk control \cite{Bates2021rcps,Geifman2017} and Theorem~\ref{thm:fs} the
+fixed-sequence argument of Learn-then-Test \cite{Angelopoulos2025ltt}; both are applied here to a \emph{ratio} of two
+class-conditional rates of an abstaining rule, whose four counts are binomial given $\mathcal A$ and the labels in
+$\mathcal B$. What makes selection safe for coverage and for the two call types together is monotonicity: both ranks in
+\eqref{eq:rank} are non-increasing in $\alpha$, so coverage at a selected $\alpha$ is at least coverage at $\max G$, and
+a variant cannot be called LoF at one grid point and functional at another. Proofs are in \cref{app:proofs}.
 
 \paragraph{Scope.}
 After selection, per-class coverage is guaranteed only at $1-\max G$ with the in-expectation rank; we report the coverage
-achieved in \cref{sec:evidence}. Theorem~\ref{thm:fs} certifies one level at a time and gives no numerical bound.
-Assumption~\ref{as:cluster} treats assayed residues as exchangeable, which a contiguous region need not be;
-Assumption~\ref{as:shift} holds only approximately for VUS, on which AlphaMissense discriminates less well
-(\cref{sec:data}), and not for variants whose assay result would be intermediate.
+achieved in \cref{sec:evidence}. Theorem~\ref{thm:fs} certifies levels, not numerical bounds. Assumption~\ref{as:cluster}
+treats assayed residues as independent draws; our random splits draw them without replacement from a finite set, which
+the oracle design of \cref{sec:evidence} avoids, and a contiguous region need not be exchangeable with the rest; Assumption~\ref{as:shift} holds only
+approximately for VUS, on which AlphaMissense discriminates less well (\cref{sec:data}), and not for variants whose assay
+result would be intermediate.

@@ -1,8 +1,8 @@
 \documentclass[10pt,letterpaper]{article}
 \input{preamble}
 
-\title{\vspace{-2.3em}CertiVar: Prevalence-Free Certified Assay Likelihood Ratios for Missense Variant-Effect
-Predictor Calls}
+\title{\vspace{-2.3em}CertiVar: Certified Likelihood Ratios for Variant-Effect Predictor Calls, Calibrated on
+Saturation Mutagenesis Data}
 \author{Aaryav Sharma\\Eastview High School, Apple Valley, MN, USA\\\texttt{aaryavvatts@gmail.com}}
 \date{\vspace{-2em}}
 
@@ -16,8 +16,24 @@ Predictor Calls}
 \input{sections/experiments}
 \input{sections/discussion}
 
-
 \bibliographystyle{unsrtnat}
 \bibliography{refs_short}
+
+\noindent\textbf{Acknowledgments.}
+We thank the authors of the saturation genome editing and deep mutational scanning studies, and the ClinVar, MaveDB and
+Ensembl teams, for making their data public.
+
+
+\clearpage
+\appendix
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\setcounter{equation}{0}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\begin{center}\Large\bfseries Appendix\end{center}
+\input{sections/supplement_body}
 
 \end{document}

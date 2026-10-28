@@ -40,6 +40,7 @@ results:
 	cd code && ../$(PY) 14_label_sensitivity.py
 	cd code && ../$(PY) 15_clinvar_check.py
 	cd code && ../$(PY) 17_extensions.py
+	cd code && ../$(PY) 18_robustness.py
 	cd code && ../$(PY) 11_numbers.py
 
 figures:

@@ -1,0 +1,32 @@
+\begin{table}[ht]
+\centering
+\caption{Certified calls on the ClinVar VUS that are unassayed but lie at assayed residues (\cref{alg:certivar}, $G_4$,
+$\delta=0.05$; mean number of calls over 20 random 40/60 calibration/certification splits of all assayed residues), and
+the share of mixture checks of those VUS rejected ($p<0.05$), run where they span at least 30 residues; where the check
+was run, calls are averaged over the splits it accepted.}
+\label{tab:app_usecase_calls}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrlccccc}
+\toprule
+ & & & \multicolumn{2}{c}{LoF calls} & \multicolumn{2}{c}{Functional calls} & Check\\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Gene & VUS & Predictor & supp. & mod. & supp. & mod. & rejected (\%)\\
+\midrule
+BRCA1 & 29 & AlphaMissense & 7.9 & 0.2 & 11.7 & 0.0 & -- \\
+ &  & REVEL & 7.2 & 0.0 & 3.8 & 0.0 & -- \\
+ &  & ESM-2 & 8.0 & 1.0 & 5.0 & 0.0 & -- \\
+\addlinespace[1pt]
+BAP1 & 3 & AlphaMissense & 2.9 & 0.6 & 0.0 & 0.0 & -- \\
+ &  & REVEL & 2.7 & 0.4 & 0.0 & 0.0 & -- \\
+ &  & ESM-2 & 2.9 & 0.0 & 0.0 & 0.0 & -- \\
+\addlinespace[1pt]
+RAD51C & 10 & AlphaMissense & 2.8 & 0.8 & 5.7 & 1.2 & -- \\
+ &  & REVEL & 3.9 & 0.5 & 3.4 & 0.0 & -- \\
+ &  & ESM-2 & 3.4 & 0.1 & 4.2 & 0.0 & -- \\
+\addlinespace[1pt]
+MSH2 & 105 & AlphaMissense & 31.8 & 5.6 & 60.8 & 4.8 & 40.0 \\
+ &  & REVEL & 20.0 & 0.0 & 22.9 & 0.0 & 35.0 \\
+ &  & ESM-2 & 19.1 & 0.8 & 5.0 & 0.0 & 0.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

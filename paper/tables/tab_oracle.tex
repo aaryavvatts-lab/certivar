@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\caption{Threshold selection judged against the population likelihood ratio (oracle design, grid $G_4$, $\delta=0.05$,
+1,500 draws; all rules on the same draws). Guarantee: finite-sample validity after selection, for every level of a call
+type at once or for each level separately. Bounds held: draws in which every claimed bound was respected (fixed-sequence
+rules certify a level, not a bound; a point estimate is not a bound). Levels held: draws in which every claimed level
+held. Last four columns: share of draws certifying each level (\%); no rule with a guarantee certified a strong level.}
+\label{tab:oracle}
+\setlength{\tabcolsep}{3.4pt}
+\begin{tabular}{llcccccc}
+\toprule
+ & Finite-sample & Bounds & Levels & \multicolumn{2}{c}{LoF calls} & \multicolumn{2}{c}{Functional calls}\\
+\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+Selection rule & guarantee & held & held & supp. & mod. & supp. & mod.\\
+\midrule
+Certified (ours), Bonferroni & yes, all levels & 99.7 & 99.9 & 86.7 & 13.3 & 44.9 & 1.5 \\
+Certified (ours), fixed sequence & yes, all levels & -- & 99.9 & 74.9 & 14.4 & 43.8 & 1.5 \\
+Fixed sequence, each level at $\delta$ & yes, per level & -- & 99.7 & 87.2 & 30.5 & 61.9 & 3.9 \\
+Clopper--Pearson, uncorrected & no & 97.9 & 99.5 & 95.9 & 35.1 & 68.0 & 6.9 \\
+Katz interval, Bonferroni & no & 98.0 & 99.7 & 99.3 & 52.5 & 52.4 & 0.2 \\
+Percentile bootstrap & no & 57.6 & 72.5 & 99.9 & 78.1 & 90.0 & 45.1 \\
+Percentile bootstrap, Bonferroni & no & 65.3 & 75.1 & 98.1 & 52.3 & 74.3 & 36.8 \\
+Percentile bootstrap, $+0.5$ counts & no & 75.4 & 88.2 & 99.9 & 76.6 & 89.3 & 37.3 \\
+Point estimate & no & 15.5 & 42.1 & 100.0 & 98.2 & 99.8 & 75.7 \\
+\bottomrule
+\end{tabular}
+\end{table}

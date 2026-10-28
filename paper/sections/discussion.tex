@@ -1,25 +1,34 @@
 \section{Discussion}\label{sec:discussion}
 
-Thresholds selected on point estimates or percentile-bootstrap bounds often claimed more evidence than held. Because
-these are call-averaged ratios, not the local ratios of ClinGen calibrations, this does not show that published PP3/BP4
-thresholds are wrong, only that point estimates and bootstrap bounds can overstate evidence at single-gene sample sizes.
-\textsc{CertiVar} makes the claim checkable without an estimate of the share of damaging variants. Its intended use is a
-gene with a functional assay: calling variants the assay missed within assayed regions, and checking whether a
-predictor's claimed evidence strength holds against the assay. The cost is conservatism: certified evidence was mostly
-supporting-level, and PAC thresholds abstained on 58\% to 82\% of variants.
+Thresholds selected on point estimates or percentile-bootstrap bounds often claimed more evidence than held. Because these are call-averaged ratios, not the local ratios of ClinGen
+calibrations, this does not show that published PP3/BP4 thresholds are wrong, only that point estimates and bootstrap
+bounds can overstate evidence at single-gene sample sizes. Bounds built as confidence intervals for the ratio, exact or
+Katz, held in at least 97.9\% of draws; the exact certificate is the conservative choice that keeps a guarantee at every
+sample size. \textsc{CertiVar} makes such claims checkable without an estimate of the share of damaging variants, and
+its mixture check says when a target set lies outside what the assay data can certify. It applies to genes with a
+functional assay: to audit whether a predictor's claimed evidence strength holds against the assay, and to call the
+variants the assay missed at assayed residues (147 ClinVar VUS here), for predictors whose scores pass the check. For the
+4,010 unassayed BRCA1 and BRCA2 VUS at other residues, and for AlphaMissense and REVEL in part of the MSH2 samples, the
+check declined. The cost is conservatism: certified evidence was mostly supporting-level, and PAC
+thresholds abstained on 58\% to 82\% of variants.
 
 \paragraph{Limitations.}
-The labels are assay classes, not clinical pathogenicity \cite{Brnich2020}; clinical use requires an assay validated
-against clinical classifications, as its authors did for BRCA1 \cite{Findlay2018} and, with their own classes rather
-than our control-based labels, for BRCA2 \cite{Huang2025}. A certified level describes the calls as a class, so a
-borderline call can carry less evidence than its class. The guarantees assume residues exchangeable with the calibrated
-ones; they do not cover intermediate, splice-region or out-of-region variants, and per-class coverage after selection is
-guaranteed only at $1-\max G$. Results cover five cancer-predisposition genes, four of them in DNA repair. REVEL was
-trained on labelled variants and the AlphaMissense classes were set on ClinVar, so both may overlap our evaluation sets
-\cite{Ioannidis2016,Grimm2015}; ESM-2, trained without variant labels, gave the same coverage and validity.
+The labels are assay classes, not clinical pathogenicity \cite{Brnich2020}, and the ACMG/AMP levels are reused here as a
+reporting scale; clinical use requires an assay validated against clinical classifications, as its authors did for BRCA1
+\cite{Findlay2018} and, with their own classes, for BRCA2 \cite{Huang2025}. The BRCA2 score set has no deposited classes,
+so our BRCA2 labels come from the assay's controls (sensitivity in \cref{tab:app_labels}). A certified level describes the
+calls as a class and weights residues equally, so a borderline call can carry less evidence than its class. The
+guarantees assume residues exchangeable with the calibrated ones; they do not cover intermediate, splice-region or
+out-of-region variants. Intermediate variants are a hazard, because whether a VUS would score intermediate is unknown
+before it is assayed, and 19.6\% of them were called LoF. The mixture check tests only a necessary condition and missed
+most VUS shifts. Results cover five
+cancer-predisposition genes, four of them in DNA repair. None of the predictors was trained on these assay labels, but
+REVEL was trained on labelled variants and the AlphaMissense classes were set on ClinVar, so both may overlap our
+evaluation sets \cite{Ioannidis2016,Grimm2015}; ESM-2, trained without variant labels, gave the same coverage and
+validity.
 
 \section{Conclusion}\label{sec:conclusion}
 \textsc{CertiVar} turns a variant-effect predictor and a few hundred assayed residues of a gene into LoF, functional or
-no calls with finite-sample guarantees on per-class error rates at a fixed miscoverage level and on call-averaged
-likelihood ratios with respect to the assay after threshold selection, without an estimate of how common damaging
-variants are. Code, data and the supplement: \url{https://github.com/aaryavvatts-lab/certivar} (release v1.0.0).
+no calls with finite-sample guarantees on per-class error rates and on call-averaged likelihood ratios for the assay
+after threshold selection, without an estimate of how common damaging variants are, and checks whether a target set can
+inherit them. Code, data and results (release v1.1.0):\newline\url{https://github.com/aaryavvatts-lab/certivar}.

@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Mixture-consistency check of class-conditional invariance (\cref{sec:check}; one target variant per residue,
+300 bootstrap resamples, rejection at $p<0.05$). Coverage: mean over target sets of the smaller per-class coverage of
+in-expectation thresholds ($\alpha=0.1$) set on the same calibration data, where target labels exist.}\label{tab:mixture}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccc}
+\toprule
+ & & Target & Rejected & \multicolumn{2}{c}{Worst-class coverage}\\
+\cmidrule(lr){5-6}
+Target set & Assumption~\ref{as:shift} & sets & (\%) & accepted & rejected\\
+\midrule
+Random half of the residues & holds by design & 1,500 & 4.7 & 0.880 & 0.880 \\
+Assayed VUS at other residues & approximately & 750 & 8.5 & 0.845 & 0.816 \\
+Held-out contiguous quarter & not assumed & 1,500 & 43.9 & 0.837 & 0.788 \\
+Another gene's calibration data & not assumed & 300 & 77.3 & 0.745 & 0.644 \\
+Unassayed VUS, other residues & unknown (no labels) & 120 & 100.0 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

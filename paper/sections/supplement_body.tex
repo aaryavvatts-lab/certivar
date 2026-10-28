@@ -1,12 +1,13 @@
-\noindent Section, equation, figure and table numbers without the prefix S refer to the main paper. Contents: S1 proofs of
+\noindent Section, equation, figure and table numbers without the prefix S refer to the main text. Contents: S1 proofs of
 Propositions 1--3, Theorems 1--2 and Corollary 1; S2 simulation (Fig.~S1) and why marginal thresholds do not control the
 minority class; S3 calibration size, region and gene transfer (Fig.~S2A--C), per-gene coverage (Table~S1) and prior
-estimation (Table~S2); S4 strata, assay-label sensitivity (Table~S3) and calls judged against ClinVar labels
-(Table~S4); S5 implementation; S6 experimental designs (Table~S5) and all baselines by gene and predictor (Table~S6).
+estimation (Table~S2); S4 strata, assay-label sensitivity (Table~S3), calls judged against ClinVar labels (Table~S4),
+ClinVar VUS by assay status and the calls on them (Tables~S5--S6) and the oracle comparison (Fig.~S3); S5
+implementation and the comparison rules; S6 experimental designs (Table~S7) and all baselines by gene and predictor (Table~S8).
 
 \section{Proofs}\label{app:proofs}
-Assumptions, propositions, theorems and the corollary are stated in \cref{sec:theory}; $Q$, $C$, $\hat t_k$, $L^+$
-and $U^-$ are defined in \cref{sec:method}.
+Assumptions, propositions, theorems and the corollary are stated in \cref{sec:theory}; $Q$, $C$, $\hat t_k$, the call
+rates $\lambda_k,\phi_k$ and their bounds, $L^+$ and $U^-$ are defined in \cref{sec:method}.
 
 
 Throughout, fix a class $k$ and write $F_k$ for the distribution function of the nonconformity $r_k$ of a variant drawn
@@ -25,7 +26,7 @@ exactly when $r_k\le\hat t_k$, the claim follows. \hfill$\square$
 \paragraph{Proposition 2.}
 Conditionally on the labels, the coverage of the threshold is $F_k(\hat t_k)=F_k(r^{(k)}_{(j)})$. If $F_k$ is continuous,
 $F_k(r^{(k)}_{(j)})$ is the $j$-th order statistic of $n_k$ independent uniforms and has the
-$\mathrm{Beta}(j,n_k-j+1)$ distribution, so $\Pr\{F_k(\hat t_k)<1-\alpha_k\}=F_{\mathrm{Beta}(j,n_k-j+1)}(1-\alpha_k)\le\delta$
+$\mathrm{Beta}(j,n_k-j+1)$ distribution, so $\Pr\{F_k(\hat t_k)<1-\alpha_k\}=F_{\mathrm{Beta}(j,n_k-j+1)}(1-\alpha_k)\le\delta_{\mathrm P}$
 by the choice of $j_k$ \cite{Vovk2013}. If $F_k$ has atoms, write $r=F_k^{-1}(U)$ with $U$ uniform and
 $F_k^{-1}$ the generalized inverse; then $r^{(k)}_{(j)}=F_k^{-1}(U_{(j)})$ and $F_k(F_k^{-1}(u))\ge u$, so
 $F_k(r^{(k)}_{(j)})\ge U_{(j)}$ and the bound still holds. If no $j\le n_k$ qualifies, $\hat t_k=\infty$ and coverage
@@ -35,41 +36,46 @@ is 1. \hfill$\square$
 Fix $\mathcal A$. Both ranks in \eqref{eq:rank} are non-increasing in $\alpha$ (the in-expectation rank because
 $\lceil (n_k+1)(1-\alpha)\rceil$ is, the PAC rank because $F_{\mathrm{Beta}(j,n_k-j+1)}(1-\alpha)$ decreases in $\alpha$
 for each $j$, so the smallest qualifying $j$ cannot increase), so $\hat t_k(\alpha)$ is non-increasing in $\alpha$ and the set $\{r_k\le\hat t_k(\alpha)\}$ shrinks as
-$\alpha$ grows. Hence, for any $\hat\alpha\in G$ that depends on $\mathcal B$ but not on the test variant,
+$\alpha$ grows. Hence, for any $\hat\alpha\in G$ that depends on $\mathcal A$ and $\mathcal B$ but not on the test variant,
 $\Pr(k\in C_{\hat\alpha}\mid Y=k,\mathcal A,\mathcal B)\ge\Pr(k\in C_{\max G}\mid Y=k,\mathcal A)$, and taking
 expectations over $\mathcal A$ and Proposition~1 at $\alpha_k=\max G$ give the first claim. For the PAC rank at level
-$\delta/|G|$, Proposition~2 applied to each $\alpha\in G$ and a union bound give, with probability at least $1-\delta$,
+$\delta_{\mathrm P}/|G|$, Proposition~2 applied to each $\alpha\in G$ and a union bound give, with probability at least
+$1-\delta_{\mathrm P}$,
 coverage at least $1-\alpha$ for every $\alpha\in G$ simultaneously, in particular for $\hat\alpha$. \hfill$\square$
 
 \paragraph{Theorem 1.}
 The thresholds $\hat t(\alpha)$ depend only on $\mathcal A$ and are fixed given $\mathcal A$. Conditionally on
 $\mathcal A$ and on the labels of the kept variants of $\mathcal B$, the class-1 kept variants of $\mathcal B$ are
 $n_1$ independent draws from $Q(\cdot\mid Y=1)$, so the number of them called LoF is
-$\mathrm{Binomial}(n_1,\mathrm{TP}(\alpha))$ with $\mathrm{TP}(\alpha)=\Pr(\text{call LoF}\mid Y=1)$, and likewise for the
+$\mathrm{Binomial}(n_1,\lambda_1(\alpha))$ with $\lambda_1(\alpha)=\Pr(\text{call LoF}\mid Y=1)$, and likewise for the
 other three counts. Each one-sided Clopper--Pearson bound \cite{ClopperPearson1934} at level $\delta/(2|G|)$ fails with
 probability at most $\delta/(2|G|)$; the conventions for $x=0$, $x=n$ and $n=0$ in Section 3 give the trivial
-bounds 0 and 1, which never fail. For $\mathrm{LR}^+$ there are $2|G|$ such bounds ($\ell_{\mathrm{TP}}$ and
-$u_{\mathrm{FP}}$ for each $\alpha$), so by the union bound all of them hold simultaneously with probability at
-least $1-\delta$. On that event $\mathrm{TP}(\alpha)\ge\ell_{\mathrm{TP}}(\alpha)$ and
-$\mathrm{FP}(\alpha)\le u_{\mathrm{FP}}(\alpha)$ for every $\alpha\in G$, hence
+bounds 0 and 1, which never fail. For $\mathrm{LR}^+$ there are $2|G|$ such bounds ($\underline{\lambda}_1$ and
+$\overline{\lambda}_0$ for each $\alpha$), so by the union bound all of them hold simultaneously with probability at
+least $1-\delta$. On that event $\lambda_1(\alpha)\ge\underline{\lambda}_1(\alpha)$ and
+$\lambda_0(\alpha)\le\overline{\lambda}_0(\alpha)$ for every $\alpha\in G$, hence
 $\mathrm{LR}^+(\hat t(\alpha))\ge L^+(\alpha)$ for every $\alpha$ (with $\mathrm{LR}^+=\infty$ when
-$\mathrm{FP}(\alpha)=0$), including any $\hat\alpha^+$ chosen from these data. Since this probability bound holds for
-every $\mathcal A$, it also holds unconditionally. The argument for $\mathrm{LR}^-$ is identical with $u_{\mathrm{FN}}$ and $\ell_{\mathrm{TN}}$.
+$\lambda_0(\alpha)=0$), including any $\hat\alpha^+$ chosen from these data. Since this probability bound holds for
+every $\mathcal A$, it also holds unconditionally. The argument for $\mathrm{LR}^-$ is identical with $\overline{\phi}_1$
+and $\underline{\phi}_0$.
 The event does not involve the levels $\tau$, so it covers every evidence level reported. \hfill$\square$
 
 \paragraph{Theorem 2.}
-Fix $\mathcal A$, so the thresholds and the hypotheses $H_\alpha:\mathrm{LR}^+(\hat t(\alpha))\le\tau$ are fixed. If
-$H_\alpha$ is true and both endpoints $\ell_{\mathrm{TP}}(\alpha)$ and $u_{\mathrm{FP}}(\alpha)$ at level $\delta/2$
-hold, then $\ell_{\mathrm{TP}}\le\mathrm{TP}\le\tau\,\mathrm{FP}\le\tau\,u_{\mathrm{FP}}$, so $H_\alpha$ is not rejected;
-hence a true $H_\alpha$ is rejected with probability at most $\delta$. Let $\alpha^*$ be the first $\alpha$ in the fixed
-order for which $H_\alpha$ is true (if none, every claim is true). The procedure claims the level at a false $\alpha$
-only if it rejects every hypothesis up to that $\alpha$, which includes $H_{\alpha^*}$; this has probability at most
-$\delta$. The selected $\alpha$ is one of the rejected ones, so the claimed level holds with probability at least
-$1-\delta$. The functional case is identical with $u_{\mathrm{FN}}/\ell_{\mathrm{TN}}<\tau'$. \hfill$\square$
+Fix $\mathcal A$, so the thresholds and the hypotheses $H_\alpha:\mathrm{LR}^+(\hat t(\alpha))\le\tau$ are fixed. (a)
+If $H_\alpha$ is true and both endpoints $\underline{\lambda}_1(\alpha)$ and $\overline{\lambda}_0(\alpha)$ at level
+$\delta'/2$ hold, then $\underline{\lambda}_1\le\lambda_1\le\tau\lambda_0\le\tau\overline{\lambda}_0$, so $H_\alpha$ is
+not rejected; hence a true $H_\alpha$ is rejected with probability at most $\delta'$. Testing stops at the first
+non-rejection, so the rejected set is a prefix of the order. Let $\alpha^*$ be the first $\alpha$ in the order for which
+$H_\alpha$ is true (if there is none, every claim is true). The procedure claims the level at an $\alpha$ where
+$H_\alpha$ is true only if it rejects every hypothesis up to that $\alpha$, which includes $H_{\alpha^*}$; this has
+probability at most $\delta'$. The selected $\alpha$ is one of the rejected ones, so the claimed level holds with
+probability at least $1-\delta'$. (b) With $\delta'=\delta/L$ for each of $L$ levels, a union bound over the levels shows
+that some claimed level fails with probability at most $\delta$. The functional case is identical with
+$\overline{\phi}_1/\underline{\phi}_0<\tau'$. \hfill$\square$
 
 \paragraph{Corollary 1.}
-Every quantity bounded above is a probability conditional on the true class: $\Pr(k\in C\mid Y=k)$, the four call rates,
-and their ratios. Under Assumption 2 these are the same for target variants as for a test variant under
+Every quantity bounded above is a probability conditional on the true class: $\Pr(k\in C\mid Y=k)$, the four call
+rates $\lambda_1,\lambda_0,\phi_1,\phi_0$, and their ratios. Under Assumption 2 these are the same for target variants as for a test variant under
 Assumption 1, whatever $\pi$ is, so Propositions 1--3 and Theorems 1--2 transfer. The two call sets are
 disjoint for any $\alpha^+,\alpha^-\in G$: a LoF call at $\alpha^+$ requires $q>\hat t_0(\alpha^+)$ and
 $1-q\le\hat t_1(\alpha^+)$, a functional call at $\alpha^-$ requires $q\le\hat t_0(\alpha^-)$ and
@@ -83,8 +89,8 @@ likelihood ratio with respect to the assay outcome, not evidence about pathogeni
 the five variants of a residue, unit Gaussian noise, and the class shared within a residue. A Platt calibrator was fitted
 on 600 variants at LoF share 0.45, conformal thresholds were set on another 600 (one variant per residue), and 3,000 test
 variants were drawn at LoF shares from 0.05 to 0.60, with 300 replicates per share (\cref{fig:sim}). Per-class
-thresholds kept LoF coverage at the target at every share; pooled thresholds did not, and reweighting them to the EM
-estimate of the share \cite{Podkopaev2021} kept marginal coverage near the target while LoF coverage fell further as LoF variants
+thresholds kept LoF coverage at the target at every share; pooled thresholds did not, and reweighting them \cite{Podkopaev2021} to the EM
+estimate of the share \cite{Saerens2002} kept marginal coverage near the target while LoF coverage fell further as LoF variants
 became rarer. Adjusting posteriors to the EM estimate removed the calibration error caused by the shift in this
 simulation, where the shift is a pure change of prior, unlike in the real data (\cref{sec:coverage}).
 
@@ -93,7 +99,8 @@ simulation, where the shift is a pure change of prior, unlike in the real data (
 \includegraphics[width=\linewidth]{fig_simulation.pdf}
 \caption{Simulation with residue-clustered scores, calibration at LoF share 0.45 and test share on the horizontal axis
 (300 replicates; error bars are 95\% intervals of the mean). (A) Expected calibration error of Platt scaling at the
-source share, after EM prior adjustment, and after adjustment to the true share. (B) Coverage of LoF variants.
+source share, after EM prior adjustment, and after adjustment to the true share; dotted line: the calibration share
+0.45. (B) Coverage of LoF variants.
 (C) Abstention rate.}\label{fig:sim}
 \end{figure}
 
@@ -116,7 +123,8 @@ line is equality. (C) Worst-class coverage when calibrating on random residues o
 quarters of the protein, or on the other four genes.}\label{fig:practical}
 \end{figure}
 
- \Cref{tab:app_conformal} gives per gene and predictor the residue-weighted coverage of each
+ \Cref{fig:practical} shows coverage and abstention against the number of calibration residues, the EM estimates of
+the LoF share and coverage under region and gene transfer. \Cref{tab:app_conformal} gives per gene and predictor the residue-weighted coverage of each
 class and the abstention rate of the per-class rule and two baselines; \cref{tab:app_prior} gives the estimated LoF
 shares and calibration errors behind \cref{sec:coverage}. When the calibration and test halves of a gene share their LoF
 share, label-shift-weighted conformal prediction \cite{Podkopaev2021} with the true share nearly coincides with pooled
@@ -136,8 +144,10 @@ ClinVar, with abstention rates of 0.334, 0.385, 0.413 and 0.392.
 
 \Cref{tab:app_labels} gives, for each label rule, the number of labelled variants, their LoF share, the coverage and
 abstention of the per-class rule, and the oracle check of the certified selection (\cref{sec:transfer}). This analysis
-is an independent re-run with its own random splits, so its main-label rows differ from \cref{tab:main} by Monte Carlo
-error (for example 0.895 against 0.896 in the lowest pair).
+is an independent run with its own random splits. Means over 50 random halvings move between runs by up to about 0.02 in
+coverage and 0.05 in abstention for a high-variance pair (for RAD51C with ESM-2, LoF coverage 0.895 and abstention 0.28
+here against 0.915 and 0.34 in \cref{tab:app_conformal}), so its main-label rows differ from \cref{tab:app_conformal,tab:main}
+by Monte Carlo error.
 
 \input{tables/tab_app_labels}
 
@@ -148,6 +158,25 @@ classifications already use these assays or predictors as evidence, so this chec
 validation.
 
 \input{tables/tab_app_clinvar}
+
+\Cref{tab:app_usecase} counts the ClinVar missense VUS of each gene by assay status, and \cref{tab:app_usecase_calls}
+gives the certified calls and mixture checks for the 147 that are unassayed but lie at assayed residues
+(\cref{sec:check}).
+
+\input{tables/tab_app_usecase}
+\input{tables/tab_app_usecase_calls}
+
+\Cref{fig:evidence} shows, for the oracle design of \cref{sec:evidence}, how often each selection rule claimed each
+level and how often the claim held.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{fig_evidence.pdf}
+\caption{Threshold selection judged against the population likelihood ratio (oracle design, grid $G_4$, the same 1,500
+draws for every rule). (A) Share of draws in which each rule claims a level (full bar) and in which it held (solid).
+(B) Share of draws in which every claimed bound was respected, with 95\% intervals from resampling draws; a point
+estimate is not a bound and is omitted. Dashed line: the guaranteed 0.90.}\label{fig:evidence}
+\end{figure}
 
 \section{Implementation}\label{s:impl}
 Inputs: ClinVar \nolinkurl{variant_summary.txt.gz} of 26 October 2026 (SHA-256 in \nolinkurl{data/MANIFEST.txt});
@@ -163,14 +192,30 @@ draws use NumPy generators with fixed seeds (2027 plus a fixed offset per experi
 SciPy 1.18, scikit-learn 1.9 and pandas 3.1; ESM-2 scoring used fair-esm 2.0 and PyTorch 2.14 on an Apple-silicon GPU.
 Exact versions and data checksums are in the repository. The Platt map is checked to be increasing (positive
 slope) every time it is fitted, and every fit in the experiments passed. Certified bounds use the conventions of
-Section 3: $U^-=\infty$ when $\ell_{\mathrm{TN}}=0$, an empirical ratio $x/0$ is $\infty$ for $x>0$, and $0/0$ is
+\cref{sec:method}: $U^-=\infty$ when $\underline{\phi}_0=0$, an empirical ratio $x/0$ is $\infty$ for $x>0$, and $0/0$ is
 undefined (never a claim); boundary cases are covered by unit tests (\texttt{make test}). The VUS-shift LoF shares
 are residue-weighted for both the calibration sample (one variant per residue) and the VUS (each residue weighted
 equally, then its variants).
 
+\paragraph{Comparison rules (\cref{tab:oracle}).} All rules select, for each level, the grid point with the largest yield
+whose bound meets the level (functional calls among $\alpha$ at least the LoF choice of the same strength). Uncorrected
+Clopper--Pearson: endpoints at level $\delta/2$ for every grid point. Katz: the one-sided log interval for a ratio of two
+binomial proportions \cite{Katz1978} at level $\delta/|G|$ per ratio, with 0.5 added to every cell of a ratio that has a
+zero count. Percentile bootstrap: 2,000 multinomial resamples of the certification residues, the 5th percentile of
+$\mathrm{LR}^+$ and the 95th of $\mathrm{LR}^-$; corrected: the $100\,\delta/(2|G|)$ percentiles; $+0.5$ counts: 0.5 added to
+each of the six cells of every resample. Fixed sequence: levels tested as in \cref{sec:method}, at $\delta/L$ with $L=3$
+(supporting, moderate, strong) for the simultaneous version and at $\delta$ for the per-level version.
+
+\paragraph{Mixture check.} The statistic of \cref{sec:method} is evaluated on the union of the observed scores, with
+$\pi$ on 201 equally spaced values in $[0,1]$. Each of the 300 bootstrap resamples redraws the two calibration classes
+with replacement at their observed sizes and a target sample of the observed size from the fitted mixture of the
+empirical class laws; the $p$-value is $(1+\#\{D^*\ge D\})/301$. In a simulation with Gaussian classes the check rejected
+4\% of 100 target sets that satisfied invariance and 96\% of 50 that did not. Calibration (one variant per residue) and
+target (one per residue) are drawn afresh in every repetition; \cref{tab:designs} gives the designs.
+
 \section{Experimental designs and all baselines}\label{s:designs}
 \Cref{tab:designs} lists the designs of the main text; every split is by residue, and calibration keeps one variant per
-residue. \Cref{tab:main} gives, for every gene and predictor, the per-class rule next to pooled conformal prediction and
+residue unless stated. \Cref{tab:main} gives, for every gene and predictor, the per-class rule next to pooled conformal prediction and
 the published cut-offs.
 
 \begin{table}[ht]
@@ -185,8 +230,12 @@ Coverage (\ref{sec:coverage}) & halves: calibrate on one, test on the other & Pr
 Calibration share (\ref{sec:coverage}) & halves; calibration half subsampled to LoF share 0.05--0.5 & Cor.~\ref{cor:shift} & 100\\
 Reliability (\ref{sec:shift}) & halves & Props.~\ref{prop:mondrian}--\ref{prop:pac} & 200\\
 VUS (\ref{sec:shift}) & halves; non-VUS of one half (40\% calibrate, 60\% certify); VUS of the other & Cor.~\ref{cor:shift} & 50\\
+Population coverage (\ref{sec:shift}) & half of the residues drawn with replacement; coverage on all residues & Props.~\ref{prop:mondrian}--\ref{prop:pac} & 200\\
+Weighting (\ref{sec:coverage}) & halves; one per residue, all variants, residue weights & Prop.~\ref{prop:mondrian} & 50\\
 Oracle (\ref{sec:evidence}) & 30\% and 50\% of residues drawn with replacement; truth on all residues & Thms.~\ref{thm:lr}--\ref{thm:fs}, Prop.~\ref{prop:select} & 100\\
 Held-out fifth (\ref{sec:evidence}) & disjoint 30\% / 50\% / 20\% & Thm.~\ref{thm:lr} & 100\\
+Mixture check (\ref{sec:check}) & halves; VUS of the other half; quarters; other genes; unassayed VUS & Asm.~\ref{as:shift} & 100/50/25/5/20\\
+Use case (\ref{sec:check}) & all assayed residues, 40\% calibrate, 60\% certify; unassayed VUS & Thm.~\ref{thm:lr} & 20\\
 Regions (\ref{sec:transfer}) & three contiguous quarters / the fourth & beyond Asm.~\ref{as:cluster} & 25/quarter\\
 \bottomrule
 \end{tabular}

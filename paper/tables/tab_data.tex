@@ -1,24 +1,24 @@
 \begin{table}[t]
 \centering
-\caption{Datasets. \emph{ClinVar labelled}: missense single-nucleotide variants (SNVs) with $\ge$2 review stars and a P/LP or B/LB call (used
-only to fit the common score scale) and the number that are P/LP. All shares are variant-level (descriptive). \emph{Assayed}: missense SNVs with a binary assay label
-that are not in the ClinVar labelled set, and their LoF share; \emph{assayed VUS}: the subset classified VUS in
-ClinVar. Assay labels are the authors' published classes (authors) or, where none are deposited, derived from the
-assay's own synonymous and nonsense controls (controls).}\label{tab:data}
-\setlength{\tabcolsep}{4.5pt}
-\begin{tabular}{llcrrrrrr}
+\caption{Datasets. \emph{ClinVar labelled}: missense single-nucleotide variants (SNVs) with $\ge$2 review stars and a
+pathogenic or likely pathogenic (P/LP) or benign or likely benign (B/LB) call, used only to put the scores on a common scale, and the number that are P/LP. \emph{Assayed}: missense
+SNVs with a binary assay label outside that set, their residues and their LoF share; \emph{assayed VUS}: the subset
+classified VUS in ClinVar. Shares are variant-level. Labels: the authors' classes (authors) or a rule fitted to the assay's
+synonymous and nonsense controls (controls; \cref{sec:data}).}\label{tab:data}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcrrrrrrr}
 \toprule
- & & & \multicolumn{2}{c}{ClinVar labelled} & \multicolumn{2}{c}{Assayed} & \multicolumn{2}{c}{Assayed VUS}\\
-\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
-Gene & Assay & Labels & $n$ & P/LP & $n$ & LoF & $n$ & LoF\\
+ & & & \multicolumn{2}{c}{ClinVar labelled} & \multicolumn{3}{c}{Assayed} & \multicolumn{2}{c}{Assayed VUS}\\
+\cmidrule(lr){4-5}\cmidrule(lr){6-8}\cmidrule(lr){9-10}
+Gene & Assay & Labels & $n$ & P/LP & $n$ & Residues & LoF & $n$ & LoF\\
 \midrule
-BRCA1 & SGE \cite{Findlay2018} & authors & 345 & 156 & 1,617 & 0.161 & 272 & 0.173 \\
-BRCA2 & SGE \cite{Huang2025} & controls & 309 & 94 & 3,435 & 0.130 & 704 & 0.207 \\
-BAP1 & SGE \cite{Waters2024} & authors & 14 & 6 & 4,294 & 0.213 & 1,069 & 0.166 \\
-RAD51C & SGE \cite{OlveraLen2024} & authors & 13 & 10 & 2,225 & 0.259 & 550 & 0.396 \\
-MSH2 & DMS \cite{Jia2021} & authors & 178 & 121 & 2,906 & 0.060 & 1,542 & 0.067 \\
+BRCA1 & SGE \cite{Findlay2018} & authors & 345 & 156 & 1,617 & 307 & 0.161 & 272 & 0.173 \\
+BRCA2 & SGE \cite{Huang2025} & controls & 309 & 94 & 3,435 & 676 & 0.130 & 704 & 0.207 \\
+BAP1 & SGE \cite{Waters2024} & authors & 14 & 6 & 4,294 & 696 & 0.213 & 1,069 & 0.166 \\
+RAD51C & SGE \cite{OlveraLen2024} & authors & 13 & 10 & 2,225 & 355 & 0.259 & 550 & 0.396 \\
+MSH2 & DMS \cite{Jia2021} & authors & 178 & 121 & 2,906 & 893 & 0.060 & 1,542 & 0.067 \\
 \midrule
-Total & & & 859 & 387 & 14,477 & & 4,137 & \\
+Total & & & 859 & 387 & 14,477 & 2,927 & 0.164 & 4,137 & 0.167 \\
 \bottomrule
 \end{tabular}
 \end{table}

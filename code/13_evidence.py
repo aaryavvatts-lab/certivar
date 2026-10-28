@@ -75,11 +75,13 @@ def residue_share(y, cl):
     return float(np.sum(w * (y == 1)) / np.sum(w))
 
 
-def boot_bounds(dec, y, rng, pct):
-    """Vectorised percentile bootstrap over residues (one variant per residue) for LR+ and LR-."""
+def boot_bounds(dec, y, rng, pct, pseudo=0.0):
+    """Vectorised percentile bootstrap over residues (one variant per residue) for LR+ and LR-.
+
+    pseudo > 0 adds that count to each of the six cells of every resample (0.5 gives the Haldane-corrected bootstrap)."""
     cells = np.array([np.sum((y == 1) & (dec == 1)), np.sum((y == 1) & (dec == 0)), np.sum((y == 1) & (dec < 0)),
                       np.sum((y == 0) & (dec == 1)), np.sum((y == 0) & (dec == 0)), np.sum((y == 0) & (dec < 0))])
-    c = rng.multinomial(len(y), cells / cells.sum(), size=N_BOOT).astype(float)
+    c = rng.multinomial(len(y), cells / cells.sum(), size=N_BOOT).astype(float) + pseudo
     n1, n0 = c[:, :3].sum(1), c[:, 3:].sum(1)
     ok = (n1 > 0) & (n0 > 0)
     c, n1, n0 = c[ok], n1[ok], n0[ok]
