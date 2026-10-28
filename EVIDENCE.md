@@ -52,3 +52,14 @@ where noted, computed directly from a file in `results/`. This table maps each c
 | Abstract: worst-class coverage 0.89 or above under calibration-share shift (0.897-0.925 at shares 0.05-0.5; 0.891-0.925 in the run that balances the whole calibration half to 50% LoF) | `prior_shift`; `conformal_alpha_0.1` -> `within-gene split, calibration at 50% LoF` -> `Mondrian conformal` |
 | Unassayed BRCA1 VUS (outside the assayed region, AlphaMissense): 1,463 of 1,534 called functional, 53 abstentions | `application` |
 | Per-class coverages: none more than one Monte Carlo standard error below 0.90 | `mondrian_rows` (mean and sd over 50 splits) |
+
+## Appendix S7 (further analyses)
+
+| Claim | Source |
+|---|---|
+| Comparison rules on the same oracle draws (certified 99.7%, Clopper-Pearson 97.9%, Katz 98.0%, bootstraps 57.6/65.3/75.4%; Katz LoF-moderate 52.5% vs 13.3%; fixed sequence at delta/3: 14.4% vs 13.3%, 74.9% vs 86.7%, G20 12.7% vs 6.4%, 50.3% vs 74.8%) | `oracle_g4`, `oracle_g20` (from `results/oracle_baselines.csv`; Table S7) |
+| PAC population coverage below 0.90 in 4.8% / 7.1% of draws, at most 10.0% per pair; in expectation 34.3% / 42.9% | `coverage_oracle` |
+| All-variant calibration 12 of 15 below 0.90 (lowest 0.885); one per residue 5 (0.897); residue weights 1 (0.898), abstention 44.6% vs 35.5% | `calibration_weighting` |
+| Mixture check rejections 4.7% (3.0-7.7% by gene), 43.9%, 77.3%, 100%, 8.5% | `mixture_check` (Table S8) |
+| 8,909 ClinVar VUS; 147 unassayed at assayed residues (105 MSH2); MSH2 check rejected 40% / 35% / 0%; ESM-2 calls 19.1 / 5.0; 4,010 BRCA1/BRCA2 VUS elsewhere rejected in every sample | `results/use_case.csv`, `mixture_check` (Tables S9, S10) |
+| Residues per gene (Table 1) | `residues` |

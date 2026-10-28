@@ -18,6 +18,92 @@ def r3(x):
     return None if x is None or (isinstance(x, float) and np.isnan(x)) else round(float(x), 3)
 
 
+def draw_level(g, col="bound_ok"):
+    """Share of draws in which every claim of the draw satisfied `col` (draws without claims count as successes)."""
+    ok = g.groupby(["predictor", "gene", "draw"]).apply(
+        lambda t: bool((~t.achieved | t[col].fillna(False).astype(bool)).all()))
+    return r3(ok.mean())
+
+
+def robustness_numbers(vv, vv_src):
+    """Numbers from the extended oracle (17_extensions.py) and the robustness experiments (18_robustness.py)."""
+    out = {}
+    # residues per gene in the evaluation set, and the residue-weighted LoF share (law Q)
+    lab = vv[vv.assay_label.isin([0, 1]) & ~vv_src & vv.score.notna() & ~vv.splice_region.fillna(False).astype(bool)]
+    res = {}
+    for g, s in lab.groupby("gene"):
+        w = 1.0 / s.groupby("cluster").cluster.transform("size")
+        res[g] = {"variants": int(len(s)), "residues": int(s.cluster.nunique()),
+                  "lof_share_rw": r3((w * (s.assay_label == 1)).sum() / w.sum())}
+    out["residues"] = res
+    # extended oracle, grid G4: every rule on the same draws
+    ox = pd.read_csv(RES / "oracle_baselines.csv")
+    o4 = ox[ox.grid == "G4"]
+    out["oracle_g4"] = {}
+    for sel, g in o4.groupby("selection"):
+        a = g[g.achieved]
+        out["oracle_g4"][sel] = {
+            "draws": int(g.groupby(["predictor", "gene", "draw"]).ngroups), "claims": int(len(a)),
+            "draws_all_bounds_ok": draw_level(g) if a.bound_ok.notna().any() else None,
+            "draws_all_levels_held": draw_level(g, "holds"),
+            "claims_level_held": r3(a.holds.astype(float).mean()),
+            "claims_bound_ok": r3(a.bound_ok.astype(float).mean()) if a.bound_ok.notna().any() else None,
+            "claims_level_held_vw": r3(a.vw_holds.astype(float).mean()),
+            "achieved": {k: r3(x) for k, x in g.groupby("level").achieved.mean().items()},
+            "yield": {k: r3(x) for k, x in a.groupby("level").ref_yield.mean().items()}}
+    out["oracle_g20"] = {sel: {"achieved": {k: r3(x) for k, x in g.groupby("level").achieved.mean().items()},
+                               "claims_level_held": r3(g[g.achieved].holds.astype(float).mean()),
+                               "draws_all_levels_held": draw_level(g, "holds")}
+                         for sel, g in ox[ox.grid == "G20"].groupby("selection")}
+    # population (conditional) per-class coverage of in-expectation and PAC thresholds
+    co = pd.read_csv(RES / "coverage_oracle.csv")
+    out["coverage_oracle"] = {t: {"frac_lof_below": r3((g.coverage_lof_rw < 0.9).mean()),
+                                  "frac_func_below": r3((g.coverage_func_rw < 0.9).mean()),
+                                  "frac_either_below": r3(((g.coverage_lof_rw < 0.9) | (g.coverage_func_rw < 0.9)).mean()),
+                                  "max_pair_frac_func_below": r3(g.groupby(["predictor", "gene"]).coverage_func_rw
+                                                                 .apply(lambda x: (x < 0.9).mean()).max()),
+                                  "max_pair_frac_lof_below": r3(g.groupby(["predictor", "gene"]).coverage_lof_rw
+                                                                .apply(lambda x: (x < 0.9).mean()).max()),
+                                  "mean_lof": r3(g.coverage_lof_rw.mean()), "mean_func": r3(g.coverage_func_rw.mean()),
+                                  "abstain": r3(g.abstain.mean()), "n": int(len(g))}
+                              for t, g in co.groupby("thresholds")}
+    # calibration on all variants with and without residue weights
+    cw = pd.read_csv(RES / "calibration_weighting.csv")
+    g = cw.groupby(["calibration", "predictor", "gene"])[["coverage_lof_rw", "coverage_func_rw", "abstain"]].mean()
+    g["worst"] = g[["coverage_lof_rw", "coverage_func_rw"]].min(axis=1)
+    out["calibration_weighting"] = {c: {"worst_min": r3(v.worst.min()), "worst_max": r3(v.worst.max()),
+                                        "n_below_090": int((v.worst < 0.90).sum()), "abstain_mean": r3(v.abstain.mean())}
+                                    for c, v in g.groupby(level=0)}
+    # mixture-consistency check of Assumption 2
+    mc = pd.read_csv(RES / "mixture_check.csv")
+    mc["reject"] = mc.pval < 0.05
+    if "coverage_lof" in mc:
+        mc["worst"] = mc[["coverage_lof", "coverage_func"]].min(axis=1)
+    out["mixture_check"] = {}
+    for st, v in mc.groupby("setting"):
+        d = {"n": int(len(v)), "reject": r3(v.reject.mean()),
+             "reject_by_predictor": {k: r3(x) for k, x in v.groupby("predictor").reject.mean().items()}}
+        if v.worst.notna().any():
+            d["worst_mean"] = r3(v.worst.mean())
+            d["worst_mean_rejected"] = r3(v[v.reject].worst.mean()) if v.reject.any() else None
+            d["worst_mean_accepted"] = r3(v[~v.reject].worst.mean()) if (~v.reject).any() else None
+            d["below_085_rejected"] = r3((v[v.reject].worst < 0.85).mean()) if v.reject.any() else None
+            d["below_085_accepted"] = r3((v[~v.reject].worst < 0.85).mean()) if (~v.reject).any() else None
+            d["pi_abs_err"] = r3((v.pi_fit - v.true_share).abs().mean())
+        if "abstain" in v and v.abstain.notna().any():
+            d["abstain_mean"] = r3(v.abstain.mean())
+        d["by_gene"] = {k: r3(x) for k, x in v.groupby("gene").reject.mean().items()}
+        out["mixture_check"][st] = d
+    # use case: ClinVar VUS by assay status and certified calls on unassayed VUS at assayed residues
+    uc = pd.read_csv(RES / "use_case.csv")
+    lv = [c for c in uc.columns if c.startswith(("PS3", "BS3"))]
+    out["use_case"] = uc.groupby(["predictor", "gene"]).agg(
+        vus=("vus", "first"), vus_assayed=("vus_assayed", "first"),
+        at_assayed=("vus_unassayed_at_assayed_residues", "first"), elsewhere=("vus_unassayed_elsewhere", "first"),
+        n_target=("n_target", "first"), **{k: (k, "mean") for k in lv}).round(3).reset_index().to_dict(orient="records")
+    return out
+
+
 def main():
     out = {}
     co = pd.read_csv(RES / "cohort.csv")
@@ -239,6 +325,7 @@ def main():
                   "opposite": int((both & (s.assay_label != s.label_ctrl)).sum()),
                   "authors_functional_left_intermediate": r3((func & (s.label_ctrl == -1)).sum() / func.sum())}
     out["label_rule_comparison"] = cmp
+    out.update(robustness_numbers(vv, vv_src))
     (RES / "paper_numbers.json").write_text(json.dumps(out, indent=1, default=str))
     print(json.dumps({k: out[k] for k in ["source_prev", "target_prev_min", "target_prev_max", "em_abs_err_mean",
                                            "em_abs_err_max", "dual_agree", "ece_by_method"]}, indent=1))

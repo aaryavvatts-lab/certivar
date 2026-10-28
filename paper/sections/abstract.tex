@@ -11,13 +11,13 @@ grid, by a Bonferroni correction, or certifies evidence levels by fixed-sequence
 guarantees condition on the assay class, none needs the unknown share of LoF variants among the variants being called, provided their
 within-class score distribution matches that of the assayed variants.
 On 14,477 assayed missense variants in BRCA1, BRCA2, BAP1, RAD51C and MSH2, scored by AlphaMissense, REVEL and ESM-2,
-worst-class coverage was 0.896--0.908 at a 0.90 target in all 15 gene--predictor pairs and stayed at 0.89 or above when
+mean worst-class coverage over 50 splits was 0.896--0.908 at a 0.90 target in all 15 gene--predictor pairs and stayed at 0.89 or above when
 the LoF share of the calibration data ranged from 5\% to 50\%; marginal conformal prediction calibrated at a 5\% share
 covered LoF variants at only 0.11 in its worst pair. In resampling experiments with known population likelihood ratios,
 all certified bounds of a draw held in 99.8\% of draws (guaranteed: at least 90\%), against 56.5\% for
 percentile-bootstrap bounds, and fixed-sequence testing, which certifies one evidence level at a time, more than doubled
 the certification of moderate LoF evidence. The certificates concern the assay, not pathogenicity; certified evidence was mostly
-supporting-level and held for 88.8\% of certified bounds in held-out protein regions, below the nominal 95\%. Code:
+supporting-level and held for 88.8\% of certified bounds in held-out protein regions, below the nominal 95\% per call type. Code:
 \url{https://github.com/aaryavvatts-lab/certivar}
 
 \medskip\noindent\textbf{Keywords:} variant effect prediction; conformal prediction; likelihood ratio; ACMG/AMP

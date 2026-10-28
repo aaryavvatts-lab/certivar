@@ -5,10 +5,10 @@ Code and data for the RECOMB 2027 submission
 > **CertiVar: Prevalence-Free Certified Assay Likelihood Ratios for Missense Variant-Effect Predictor Calls**
 > Aaryav Sharma (Eastview High School, Apple Valley, MN, USA)
 
-Release `v1.2.1` is the version that matches the submitted paper,
+Release `v1.2.2` is the version that matches the submitted paper,
 [`manuscript/CertiVar_RECOMB2027.pdf`](manuscript/CertiVar_RECOMB2027.pdf): ten pages of paper and references, followed
 by an appendix with the full proofs, simulation, per-gene tables, strata, label sensitivity, the ClinVar check,
-implementation details and experimental designs (items S1-S6, Figs. S1-S2, Tables S1-S6). The LaTeX source is in
+implementation details, experimental designs and further analyses (items S1-S7, Figs. S1-S2, Tables S1-S10). The LaTeX source is in
 `paper/`.
 
 ## What CertiVar does
@@ -94,6 +94,8 @@ make test results figures
 | Sensitivity to the assay-label rule | `code/14_label_sensitivity.py` | `results/label_sensitivity.csv` |
 | Calls judged against ClinVar pathogenicity labels | `code/15_clinvar_check.py` | `results/clinvar_check.csv` |
 | Fixed-sequence certification and a 20-level grid (oracle), calibration-share shift, all-variant calibration and intermediate variants | `code/17_extensions.py` | `results/oracle_extended.csv`, `prior_shift.csv`, `data_use.csv` |
+| Population coverage of in-expectation and PAC thresholds; residue-weighted calibration; mixture-consistency check of class-conditional invariance; ClinVar VUS that receive certified calls (Appendix S7) | `code/18_robustness.py` | `results/coverage_oracle.csv`, `calibration_weighting.csv`, `mixture_check.csv`, `use_case.csv` |
+| Oracle benchmark with Katz intervals, bootstrap variants and level-simultaneous fixed-sequence testing (Appendix S7) | `code/19_baselines.py` | `results/oracle_baselines.csv` |
 | Numbers quoted in the paper | `code/11_numbers.py` | `results/paper_numbers.json` |
 | Figures and tables | `code/09_figures.py`, `code/12_tables.py` | `results/figures/*.pdf`, LaTeX tables |
 | Short-author bibliography for the paper | `code/16_short_bib.py` | `paper/refs_short.bib` |

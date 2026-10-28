@@ -3302,5 +3302,773 @@
    "opposite": 0,
    "authors_functional_left_intermediate": 0.768
   }
- }
+ },
+ "residues": {
+  "BAP1": {
+   "variants": 4294,
+   "residues": 696,
+   "lof_share_rw": 0.207
+  },
+  "BRCA1": {
+   "variants": 1617,
+   "residues": 307,
+   "lof_share_rw": 0.204
+  },
+  "BRCA2": {
+   "variants": 3435,
+   "residues": 676,
+   "lof_share_rw": 0.151
+  },
+  "MSH2": {
+   "variants": 2906,
+   "residues": 893,
+   "lof_share_rw": 0.066
+  },
+  "RAD51C": {
+   "variants": 2225,
+   "residues": 355,
+   "lof_share_rw": 0.26
+  }
+ },
+ "oracle_g4": {
+  "Clopper-Pearson, uncorrected": {
+   "draws": 1500,
+   "claims": 3088,
+   "draws_all_bounds_ok": 0.979,
+   "draws_all_levels_held": 0.995,
+   "claims_level_held": 0.998,
+   "claims_bound_ok": 0.986,
+   "claims_level_held_vw": 0.998,
+   "achieved": {
+    "BS3-moderate": 0.069,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.68,
+    "PS3-moderate": 0.351,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.959
+   },
+   "yield": {
+    "BS3-moderate": 0.548,
+    "BS3-supporting": 0.624,
+    "PS3-moderate": 0.149,
+    "PS3-supporting": 0.273
+   }
+  },
+  "Katz, Bonferroni": {
+   "draws": 1500,
+   "claims": 3066,
+   "draws_all_bounds_ok": 0.98,
+   "draws_all_levels_held": 0.997,
+   "claims_level_held": 0.998,
+   "claims_bound_ok": 0.987,
+   "claims_level_held_vw": 0.999,
+   "achieved": {
+    "BS3-moderate": 0.002,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.524,
+    "PS3-moderate": 0.525,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.993
+   },
+   "yield": {
+    "BS3-moderate": 0.624,
+    "BS3-supporting": 0.623,
+    "PS3-moderate": 0.157,
+    "PS3-supporting": 0.289
+   }
+  },
+  "bootstrap": {
+   "draws": 1500,
+   "claims": 5253,
+   "draws_all_bounds_ok": 0.576,
+   "draws_all_levels_held": 0.725,
+   "claims_level_held": 0.912,
+   "claims_bound_ok": 0.776,
+   "claims_level_held_vw": 0.911,
+   "achieved": {
+    "BS3-moderate": 0.451,
+    "BS3-strong": 0.357,
+    "BS3-supporting": 0.9,
+    "PS3-moderate": 0.781,
+    "PS3-strong": 0.014,
+    "PS3-supporting": 0.999
+   },
+   "yield": {
+    "BS3-moderate": 0.425,
+    "BS3-strong": 0.2,
+    "BS3-supporting": 0.634,
+    "PS3-moderate": 0.176,
+    "PS3-strong": 0.125,
+    "PS3-supporting": 0.293
+   }
+  },
+  "bootstrap, Bonferroni": {
+   "draws": 1500,
+   "claims": 4461,
+   "draws_all_bounds_ok": 0.653,
+   "draws_all_levels_held": 0.751,
+   "claims_level_held": 0.909,
+   "claims_bound_ok": 0.786,
+   "claims_level_held_vw": 0.911,
+   "achieved": {
+    "BS3-moderate": 0.368,
+    "BS3-strong": 0.357,
+    "BS3-supporting": 0.743,
+    "PS3-moderate": 0.523,
+    "PS3-strong": 0.001,
+    "PS3-supporting": 0.981
+   },
+   "yield": {
+    "BS3-moderate": 0.303,
+    "BS3-strong": 0.2,
+    "BS3-supporting": 0.618,
+    "PS3-moderate": 0.159,
+    "PS3-strong": 0.201,
+    "PS3-supporting": 0.285
+   }
+  },
+  "bootstrap, pseudocount": {
+   "draws": 1500,
+   "claims": 4718,
+   "draws_all_bounds_ok": 0.754,
+   "draws_all_levels_held": 0.882,
+   "claims_level_held": 0.96,
+   "claims_bound_ok": 0.864,
+   "claims_level_held_vw": 0.957,
+   "achieved": {
+    "BS3-moderate": 0.373,
+    "BS3-strong": 0.096,
+    "BS3-supporting": 0.893,
+    "PS3-moderate": 0.766,
+    "PS3-strong": 0.019,
+    "PS3-supporting": 0.999
+   },
+   "yield": {
+    "BS3-moderate": 0.451,
+    "BS3-strong": 0.416,
+    "BS3-supporting": 0.634,
+    "PS3-moderate": 0.171,
+    "PS3-strong": 0.098,
+    "PS3-supporting": 0.292
+   }
+  },
+  "certified": {
+   "draws": 1500,
+   "claims": 2196,
+   "draws_all_bounds_ok": 0.997,
+   "draws_all_levels_held": 0.999,
+   "claims_level_held": 0.999,
+   "claims_bound_ok": 0.997,
+   "claims_level_held_vw": 0.999,
+   "achieved": {
+    "BS3-moderate": 0.015,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.449,
+    "PS3-moderate": 0.133,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.867
+   },
+   "yield": {
+    "BS3-moderate": 0.554,
+    "BS3-supporting": 0.614,
+    "PS3-moderate": 0.14,
+    "PS3-supporting": 0.252
+   }
+  },
+  "fixed sequence": {
+   "draws": 1500,
+   "claims": 2753,
+   "draws_all_bounds_ok": null,
+   "draws_all_levels_held": 0.997,
+   "claims_level_held": 0.998,
+   "claims_bound_ok": null,
+   "claims_level_held_vw": 0.998,
+   "achieved": {
+    "BS3-moderate": 0.039,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.619,
+    "PS3-moderate": 0.305,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.872
+   },
+   "yield": {
+    "BS3-moderate": 0.58,
+    "BS3-supporting": 0.633,
+    "PS3-moderate": 0.139,
+    "PS3-supporting": 0.269
+   }
+  },
+  "fixed sequence, all increasing": {
+   "draws": 1500,
+   "claims": 2167,
+   "draws_all_bounds_ok": null,
+   "draws_all_levels_held": 0.999,
+   "claims_level_held": 0.999,
+   "claims_bound_ok": null,
+   "claims_level_held_vw": 0.999,
+   "achieved": {
+    "BS3-moderate": 0.021,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.247,
+    "PS3-moderate": 0.305,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.872
+   },
+   "yield": {
+    "BS3-moderate": 0.473,
+    "BS3-supporting": 0.586,
+    "PS3-moderate": 0.139,
+    "PS3-supporting": 0.269
+   }
+  },
+  "fixed sequence, simultaneous": {
+   "draws": 1500,
+   "claims": 2019,
+   "draws_all_bounds_ok": null,
+   "draws_all_levels_held": 0.999,
+   "claims_level_held": 1.0,
+   "claims_bound_ok": null,
+   "claims_level_held_vw": 0.999,
+   "achieved": {
+    "BS3-moderate": 0.015,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.438,
+    "PS3-moderate": 0.144,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.749
+   },
+   "yield": {
+    "BS3-moderate": 0.568,
+    "BS3-supporting": 0.628,
+    "PS3-moderate": 0.133,
+    "PS3-supporting": 0.251
+   }
+  },
+  "point estimate": {
+   "draws": 1500,
+   "claims": 6447,
+   "draws_all_bounds_ok": 0.155,
+   "draws_all_levels_held": 0.421,
+   "claims_level_held": 0.805,
+   "claims_bound_ok": 0.389,
+   "claims_level_held_vw": 0.801,
+   "achieved": {
+    "BS3-moderate": 0.757,
+    "BS3-strong": 0.405,
+    "BS3-supporting": 0.998,
+    "PS3-moderate": 0.982,
+    "PS3-strong": 0.157,
+    "PS3-supporting": 1.0
+   },
+   "yield": {
+    "BS3-moderate": 0.577,
+    "BS3-strong": 0.269,
+    "BS3-supporting": 0.643,
+    "PS3-moderate": 0.226,
+    "PS3-strong": 0.112,
+    "PS3-supporting": 0.297
+   }
+  }
+ },
+ "oracle_g20": {
+  "Clopper-Pearson, uncorrected": {
+   "achieved": {
+    "BS3-moderate": 0.114,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.777,
+    "PS3-moderate": 0.477,
+    "PS3-strong": 0.001,
+    "PS3-supporting": 0.975
+   },
+   "claims_level_held": 0.996,
+   "draws_all_levels_held": 0.991
+  },
+  "Katz, Bonferroni": {
+   "achieved": {
+    "BS3-moderate": 0.0,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.256,
+    "PS3-moderate": 0.373,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.985
+   },
+   "claims_level_held": 1.0,
+   "draws_all_levels_held": 0.999
+  },
+  "bootstrap": {
+   "achieved": {
+    "BS3-moderate": 0.501,
+    "BS3-strong": 0.405,
+    "BS3-supporting": 0.953,
+    "PS3-moderate": 0.877,
+    "PS3-strong": 0.038,
+    "PS3-supporting": 1.0
+   },
+   "claims_level_held": 0.89,
+   "draws_all_levels_held": 0.65
+  },
+  "bootstrap, Bonferroni": {
+   "achieved": {
+    "BS3-moderate": 0.388,
+    "BS3-strong": 0.405,
+    "BS3-supporting": 0.757,
+    "PS3-moderate": 0.539,
+    "PS3-strong": 0.001,
+    "PS3-supporting": 0.966
+   },
+   "claims_level_held": 0.894,
+   "draws_all_levels_held": 0.701
+  },
+  "bootstrap, pseudocount": {
+   "achieved": {
+    "BS3-moderate": 0.446,
+    "BS3-strong": 0.127,
+    "BS3-supporting": 0.951,
+    "PS3-moderate": 0.883,
+    "PS3-strong": 0.123,
+    "PS3-supporting": 1.0
+   },
+   "claims_level_held": 0.937,
+   "draws_all_levels_held": 0.808
+  },
+  "certified": {
+   "achieved": {
+    "BS3-moderate": 0.003,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.329,
+    "PS3-moderate": 0.064,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.748
+   },
+   "claims_level_held": 0.999,
+   "draws_all_levels_held": 0.999
+  },
+  "fixed sequence": {
+   "achieved": {
+    "BS3-moderate": 0.065,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.671,
+    "PS3-moderate": 0.259,
+    "PS3-strong": 0.001,
+    "PS3-supporting": 0.653
+   },
+   "claims_level_held": 0.996,
+   "draws_all_levels_held": 0.993
+  },
+  "fixed sequence, all increasing": {
+   "achieved": {
+    "BS3-moderate": 0.0,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.001,
+    "PS3-moderate": 0.259,
+    "PS3-strong": 0.001,
+    "PS3-supporting": 0.653
+   },
+   "claims_level_held": 1.0,
+   "draws_all_levels_held": 1.0
+  },
+  "fixed sequence, simultaneous": {
+   "achieved": {
+    "BS3-moderate": 0.019,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.469,
+    "PS3-moderate": 0.127,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.503
+   },
+   "claims_level_held": 0.999,
+   "draws_all_levels_held": 0.999
+  },
+  "point estimate": {
+   "achieved": {
+    "BS3-moderate": 0.83,
+    "BS3-strong": 0.463,
+    "BS3-supporting": 0.999,
+    "PS3-moderate": 0.997,
+    "PS3-strong": 0.489,
+    "PS3-supporting": 1.0
+   },
+   "claims_level_held": 0.731,
+   "draws_all_levels_held": 0.269
+  }
+ },
+ "coverage_oracle": {
+  "PAC, delta = 0.1": {
+   "frac_lof_below": 0.048,
+   "frac_func_below": 0.071,
+   "frac_either_below": 0.116,
+   "max_pair_frac_func_below": 0.1,
+   "max_pair_frac_lof_below": 0.085,
+   "mean_lof": 0.96,
+   "mean_func": 0.927,
+   "abstain": 0.577,
+   "n": 3000
+  },
+  "in expectation": {
+   "frac_lof_below": 0.343,
+   "frac_func_below": 0.429,
+   "frac_either_below": 0.622,
+   "max_pair_frac_func_below": 0.48,
+   "max_pair_frac_lof_below": 0.415,
+   "mean_lof": 0.913,
+   "mean_func": 0.902,
+   "abstain": 0.357,
+   "n": 3000
+  }
+ },
+ "calibration_weighting": {
+  "all variants": {
+   "worst_min": 0.885,
+   "worst_max": 0.903,
+   "n_below_090": 12,
+   "abstain_mean": 0.304
+  },
+  "all variants, residue weights": {
+   "worst_min": 0.898,
+   "worst_max": 0.937,
+   "n_below_090": 1,
+   "abstain_mean": 0.446
+  },
+  "one per residue": {
+   "worst_min": 0.897,
+   "worst_max": 0.908,
+   "n_below_090": 5,
+   "abstain_mean": 0.355
+  }
+ },
+ "mixture_check": {
+  "assayed VUS": {
+   "n": 750,
+   "reject": 0.085,
+   "reject_by_predictor": {
+    "AlphaMissense": 0.152,
+    "ESM-2": 0.044,
+    "REVEL": 0.06
+   },
+   "worst_mean": 0.842,
+   "worst_mean_rejected": 0.816,
+   "worst_mean_accepted": 0.845,
+   "below_085_rejected": 0.672,
+   "below_085_accepted": 0.481,
+   "pi_abs_err": 0.081,
+   "abstain_mean": 0.321,
+   "by_gene": {
+    "BAP1": 0.053,
+    "BRCA1": 0.04,
+    "BRCA2": 0.06,
+    "MSH2": 0.227,
+    "RAD51C": 0.047
+   }
+  },
+  "held-out quarter": {
+   "n": 1500,
+   "reject": 0.439,
+   "reject_by_predictor": {
+    "AlphaMissense": 0.368,
+    "ESM-2": 0.4,
+    "REVEL": 0.55
+   },
+   "worst_mean": 0.815,
+   "worst_mean_rejected": 0.788,
+   "worst_mean_accepted": 0.837,
+   "below_085_rejected": 0.615,
+   "below_085_accepted": 0.461,
+   "pi_abs_err": 0.153,
+   "abstain_mean": 0.312,
+   "by_gene": {
+    "BAP1": 0.61,
+    "BRCA1": 0.323,
+    "BRCA2": 0.457,
+    "MSH2": 0.32,
+    "RAD51C": 0.487
+   }
+  },
+  "other gene": {
+   "n": 300,
+   "reject": 0.773,
+   "reject_by_predictor": {
+    "AlphaMissense": 0.77,
+    "ESM-2": 0.63,
+    "REVEL": 0.92
+   },
+   "worst_mean": 0.667,
+   "worst_mean_rejected": 0.644,
+   "worst_mean_accepted": 0.745,
+   "below_085_rejected": 0.81,
+   "below_085_accepted": 0.676,
+   "pi_abs_err": 0.32,
+   "abstain_mean": 0.258,
+   "by_gene": {
+    "BAP1": 1.0,
+    "BRCA1": 0.717,
+    "BRCA2": 0.65,
+    "MSH2": 0.767,
+    "RAD51C": 0.733
+   }
+  },
+  "random half": {
+   "n": 1500,
+   "reject": 0.047,
+   "reject_by_predictor": {
+    "AlphaMissense": 0.038,
+    "ESM-2": 0.054,
+    "REVEL": 0.048
+   },
+   "worst_mean": 0.88,
+   "worst_mean_rejected": 0.88,
+   "worst_mean_accepted": 0.88,
+   "below_085_rejected": 0.157,
+   "below_085_accepted": 0.199,
+   "pi_abs_err": 0.05,
+   "abstain_mean": 0.355,
+   "by_gene": {
+    "BAP1": 0.043,
+    "BRCA1": 0.043,
+    "BRCA2": 0.077,
+    "MSH2": 0.04,
+    "RAD51C": 0.03
+   }
+  },
+  "unassayed VUS, other residues": {
+   "n": 120,
+   "reject": 1.0,
+   "reject_by_predictor": {
+    "AlphaMissense": 1.0,
+    "ESM-2": 1.0,
+    "REVEL": 1.0
+   },
+   "abstain_mean": 0.089,
+   "by_gene": {
+    "BRCA1": 1.0,
+    "BRCA2": 1.0
+   }
+  }
+ },
+ "use_case": [
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BAP1",
+   "vus": 1189,
+   "vus_assayed": 1173,
+   "at_assayed": 3,
+   "elsewhere": 13,
+   "n_target": 3,
+   "PS3-supporting": 2.9,
+   "PS3-moderate": 0.55,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 0.0,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BRCA1",
+   "vus": 1909,
+   "vus_assayed": 375,
+   "at_assayed": 29,
+   "elsewhere": 1505,
+   "n_target": 29,
+   "PS3-supporting": 7.9,
+   "PS3-moderate": 0.15,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 11.65,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BRCA2",
+   "vus": 3508,
+   "vus_assayed": 1003,
+   "at_assayed": 0,
+   "elsewhere": 2505,
+   "n_target": 0,
+   "PS3-supporting": 0.0,
+   "PS3-moderate": 0.0,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 0.0,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "MSH2",
+   "vus": 1707,
+   "vus_assayed": 1597,
+   "at_assayed": 105,
+   "elsewhere": 5,
+   "n_target": 105,
+   "PS3-supporting": 31.0,
+   "PS3-moderate": 5.75,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 59.9,
+   "BS3-moderate": 2.85,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "RAD51C",
+   "vus": 596,
+   "vus_assayed": 570,
+   "at_assayed": 10,
+   "elsewhere": 16,
+   "n_target": 10,
+   "PS3-supporting": 2.8,
+   "PS3-moderate": 0.75,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 5.65,
+   "BS3-moderate": 1.15,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BAP1",
+   "vus": 1189,
+   "vus_assayed": 1173,
+   "at_assayed": 3,
+   "elsewhere": 13,
+   "n_target": 3,
+   "PS3-supporting": 2.85,
+   "PS3-moderate": 0.0,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 0.0,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BRCA1",
+   "vus": 1909,
+   "vus_assayed": 375,
+   "at_assayed": 29,
+   "elsewhere": 1505,
+   "n_target": 29,
+   "PS3-supporting": 7.95,
+   "PS3-moderate": 1.0,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 5.0,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BRCA2",
+   "vus": 3508,
+   "vus_assayed": 1003,
+   "at_assayed": 0,
+   "elsewhere": 2505,
+   "n_target": 0,
+   "PS3-supporting": 0.0,
+   "PS3-moderate": 0.0,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 0.0,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "MSH2",
+   "vus": 1707,
+   "vus_assayed": 1597,
+   "at_assayed": 105,
+   "elsewhere": 5,
+   "n_target": 105,
+   "PS3-supporting": 19.05,
+   "PS3-moderate": 0.8,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 5.0,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "RAD51C",
+   "vus": 596,
+   "vus_assayed": 570,
+   "at_assayed": 10,
+   "elsewhere": 16,
+   "n_target": 10,
+   "PS3-supporting": 3.4,
+   "PS3-moderate": 0.1,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 4.15,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BAP1",
+   "vus": 1189,
+   "vus_assayed": 1173,
+   "at_assayed": 3,
+   "elsewhere": 13,
+   "n_target": 3,
+   "PS3-supporting": 2.65,
+   "PS3-moderate": 0.35,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 0.0,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BRCA1",
+   "vus": 1909,
+   "vus_assayed": 375,
+   "at_assayed": 29,
+   "elsewhere": 1505,
+   "n_target": 29,
+   "PS3-supporting": 7.15,
+   "PS3-moderate": 0.0,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 3.75,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BRCA2",
+   "vus": 3508,
+   "vus_assayed": 1003,
+   "at_assayed": 0,
+   "elsewhere": 2505,
+   "n_target": 0,
+   "PS3-supporting": 0.0,
+   "PS3-moderate": 0.0,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 0.0,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "MSH2",
+   "vus": 1707,
+   "vus_assayed": 1597,
+   "at_assayed": 105,
+   "elsewhere": 5,
+   "n_target": 105,
+   "PS3-supporting": 17.7,
+   "PS3-moderate": 0.0,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 18.35,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "RAD51C",
+   "vus": 596,
+   "vus_assayed": 570,
+   "at_assayed": 10,
+   "elsewhere": 16,
+   "n_target": 10,
+   "PS3-supporting": 3.85,
+   "PS3-moderate": 0.45,
+   "PS3-strong": 0.0,
+   "BS3-supporting": 3.35,
+   "BS3-moderate": 0.0,
+   "BS3-strong": 0.0
+  }
+ ]
 }

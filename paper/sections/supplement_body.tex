@@ -2,7 +2,9 @@
 Propositions 1--3, Theorems 1--2 and Corollary 1; S2 simulation (Fig.~S1) and why marginal thresholds do not control the
 minority class; S3 calibration size, region and gene transfer (Fig.~S2A--C), per-gene coverage (Table~S1) and prior
 estimation (Table~S2); S4 strata, assay-label sensitivity (Table~S3) and calls judged against ClinVar labels
-(Table~S4); S5 implementation; S6 experimental designs (Table~S5) and all baselines by gene and predictor (Table~S6).
+(Table~S4); S5 implementation; S6 experimental designs (Table~S5) and all baselines by gene and predictor (Table~S6); S7 further analyses: more
+comparison rules, PAC coverage without test-half noise, residue-weighted calibration, a check of class-conditional
+invariance and the number of VUS that receive certified calls (Tables~S7--S10).
 
 \section{Proofs}\label{app:proofs}
 Assumptions, propositions, theorems and the corollary are stated in \cref{sec:theory}; $Q$, $C$, $\hat t_k$, $L^+$
@@ -193,3 +195,58 @@ Regions (\ref{sec:transfer}) & three contiguous quarters / the fourth & beyond A
 \end{table}
 
 \input{tables/tab_main}
+
+\section{Further analyses}\label{s:extra}
+These analyses (\texttt{code/18\_robustness.py} and \texttt{code/19\_baselines.py}) answer questions the main text
+leaves open; they use their own random draws, so their numbers for the main rules differ slightly from
+\cref{sec:experiments}.
+
+\paragraph{More comparison rules.} \Cref{tab:app_baselines} repeats the oracle design of \cref{sec:evidence} with Katz
+intervals for a ratio of binomial proportions \cite{Katz1978} at level $\delta/|G|$ per ratio (0.5 added to every cell
+of a ratio with a zero count), the percentile bootstrap at the Bonferroni level and with 0.5 added to every cell, and
+fixed-sequence testing with each of the three levels of a call type at $\delta/3$, which holds for all levels at once
+(Theorem~\ref{thm:fs} and a union bound over levels). Every claimed bound of a draw held in 99.7\% of 1,500 draws for
+the certified rule, 97.9\% for uncorrected Clopper--Pearson bounds and 98.0\% for Katz intervals, against 57.6\%,
+65.3\% and 75.4\% for the three bootstrap variants. Katz intervals have no finite-sample guarantee but held here and
+certified LoF-moderate in 52.5\% of draws against 13.3\%, so the exact certificate costs yield in exchange for a
+guarantee at every sample size. With the same simultaneous guarantee as the Bonferroni rule, fixed-sequence testing
+traded supporting for moderate evidence: LoF-moderate in 14.4\% of draws against 13.3\% and LoF-supporting in 74.9\%
+against 86.7\% on $G_4$, and LoF-moderate in 12.7\% against 6.4\% and LoF-supporting in 50.3\% against 74.8\% on the
+20-point grid.
+
+\input{tables/tab_app_baselines}
+
+\paragraph{PAC coverage without test-half noise.} For 200 calibration samples per pair drawn with replacement from a
+gene's residues, we computed per-class coverage of the thresholds exactly on all of the gene's residues, the quantity
+Proposition~\ref{prop:pac} bounds. PAC thresholds ($\delta_{\mathrm P}=0.1$) fell below 0.90 in 4.8\% (LoF) and 7.1\%
+(functional) of draws and in at most 10.0\% in any pair, within $\delta_{\mathrm P}$; in-expectation thresholds did so in
+34.3\% and 42.9\%. The 10.8\% of \cref{sec:shift} therefore reflects the sampling noise of a finite test half.
+
+\paragraph{All variants with residue weights.} In a separate run of 50 halvings, calibrating on all variants of the
+calibration half left worst-class coverage below 0.90 in 12 of 15 pairs (lowest 0.885), against 5 (lowest 0.897) for
+one variant per residue. Weighting each variant by one over the number of same-class calibration variants at its
+residue, so that every residue counts once as under $Q$, left 1 pair below 0.90 (lowest 0.898) but abstained on 44.6\%
+of variants against 35.5\% for one variant per residue.
+
+\paragraph{Checking class-conditional invariance.} Under Assumption~\ref{as:shift} the target score law is a mixture
+$\pi F_1+(1-\pi)F_0$ of the two class laws. We test this necessary condition on one target variant per residue with
+$D=\min_{\pi}\sup_x|\hat F_T(x)-\pi\hat F_1(x)-(1-\pi)\hat F_0(x)|$ ($\pi$ on 201 values in $[0,1]$), where $\hat F_1$
+and $\hat F_0$ are the empirical class distribution functions of the calibration data; the $p$-value comes from 300
+bootstrap resamples that redraw both classes and a target sample of the same size from the fitted mixture. A
+rejection shows that the targets are not a re-weighting of the calibration classes; acceptance does not establish
+Assumption~\ref{as:shift}. The check rejected 4.7\% of random halves (3.0--7.7\% by gene), where the assumption holds
+by design, 43.9\% of held-out contiguous quarters, 77.3\% of transfers from another gene and every tested set of
+unassayed ClinVar VUS at residues the BRCA1 and BRCA2 assays did not reach, but only 8.5\% of assayed-VUS targets
+(\cref{tab:app_mixture}); rejected targets had lower coverage than accepted ones.
+
+\input{tables/tab_app_mixture}
+
+\paragraph{How many VUS receive certified calls.} Of the 8,909 ClinVar missense VUS in the five genes, 147 are
+unassayed but lie at assayed residues, 105 of them in MSH2 (\cref{tab:app_usecase}). For MSH2 the check rejected 40\% of
+samples with AlphaMissense and 35\% with REVEL but none with ESM-2, whose thresholds gave certified LoF-supporting calls
+to 19.1 and functional-supporting calls to 5.0 of the 105 on average (\cref{tab:app_usecase_calls}). The 4,010
+unassayed BRCA1 and BRCA2 VUS at other residues are outside what the assays can certify: the check rejected every sample
+of them.
+
+\input{tables/tab_app_usecase}
+\input{tables/tab_app_usecase_calls}

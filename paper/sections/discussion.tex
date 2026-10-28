@@ -4,8 +4,9 @@ Thresholds selected on point estimates or percentile-bootstrap bounds often clai
 these are call-averaged ratios, not the local ratios of ClinGen calibrations, this does not show that published PP3/BP4
 thresholds are wrong, only that point estimates and bootstrap bounds can overstate evidence at single-gene sample sizes.
 \textsc{CertiVar} makes the claim checkable without an estimate of the share of damaging variants. Its intended use is a
-gene with a functional assay: calling variants the assay missed within assayed regions, and checking whether a
-predictor's claimed evidence strength holds against the assay. The cost is conservatism: certified evidence was mostly
+gene with a functional assay: calling variants the assay missed within assayed regions, and checking whether a predictor's claimed evidence strength holds against the assay.
+\Cref{s:extra} counts the ClinVar VUS that receive certified calls, tests the invariance assumption on unlabelled
+targets and adds Katz and smoothed-bootstrap baselines. The cost is conservatism: certified evidence was mostly
 supporting-level, and PAC thresholds abstained on 58\% to 82\% of variants.
 
 \paragraph{Limitations.}
@@ -20,6 +21,6 @@ trained on labelled variants and the AlphaMissense classes were set on ClinVar, 
 
 \section{Conclusion}\label{sec:conclusion}
 \textsc{CertiVar} turns a variant-effect predictor and a few hundred assayed residues of a gene into LoF, functional or
-no calls with finite-sample guarantees on per-class error rates at a fixed miscoverage level and on call-averaged
+no calls with finite-sample guarantees on per-class error rates (in expectation, at a fixed miscoverage level) and on call-averaged
 likelihood ratios with respect to the assay after threshold selection, without an estimate of how common damaging
-variants are. Code and data (release v1.2.1):\newline\url{https://github.com/aaryavvatts-lab/certivar}.
+variants are. Code and data (release v1.2.2):\newline\url{https://github.com/aaryavvatts-lab/certivar}.

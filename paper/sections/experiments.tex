@@ -30,7 +30,7 @@ Carlo standard error (0.002--0.010) below the target (\cref{fig:main}A; per-pair
 fell to 0.545 on LoF variants and below 0.85 in 5 pairs, because a marginal threshold controls coverage averaged over the two classes, not within each; the published AlphaMissense and REVEL cut-offs covered as little as 0.540 (BAP1) and 0.445 (MSH2) of functional variants. The per-class rule abstained on 35\% of variants on average (17--47\%), against 42\% for pooled conformal
 and 11\% for the AlphaMissense classes, which trade coverage for decisiveness. Calibrating on all variants instead of
 one per residue used five times as many labels and abstained less (30.4\% against 35.2\%), but worst-class coverage fell
-below 0.90 in 13 of 15 pairs (4 of 15 with one variant per residue).
+below 0.90 in 13 of 15 pairs (4 of 15, lowest 0.897, with one variant per residue in the same splits).
 
 To test whether per-class thresholds need a prevalence estimate, we subsampled each calibration half to a LoF share of
 0.05 to 0.5 and tested at the natural share (100 repetitions; \cref{fig:shift}A). The per-class rule kept worst-class
@@ -65,13 +65,13 @@ $G_4=\{0.05,0.10,0.20,0.30\}$, and
 computed the true residue-weighted likelihood ratio of every selection on the whole population. We compared
 Clopper--Pearson bounds without multiplicity correction, a one-sided 95\% percentile bootstrap (2,000 resamples), the
 same bootstrap at level $\delta/(2|G|)$, and the point estimate, all applied to the same data. Every bound claimed in a
-draw was respected in 99.8\% of the 1,500 draws for the certified rule (Theorem~\ref{thm:lr} guarantees at least 90\%),
+draw was respected in 99.8\% of the 1,500 draws for the certified rule (Theorem~\ref{thm:lr} guarantees at least 90\% for both call types together and 95\% for each),
 98.8\% for uncorrected bounds, 56.5\% for bootstrap bounds and 65.9\% for the corrected bootstrap
 (\cref{fig:evidence}B); per selection, the bootstrap bound was respected in only 76.5\%. Most bootstrap failures came
 from certification samples with no false call of that type, where the bound failed 89\% of the time. Claimed levels held
 in all 2,181 certified claims, but in only 91.0\% of bootstrap and 79.7\% of point-estimate claims (\cref{fig:evidence}A).
-On this grid the exact bound on one variant per residue, not the multiplicity correction, separates valid rules from
-the others; the correction costs yield (LoF-moderate certified in 13.1\% of draws with it, 34.5\% without).
+On this grid a binomial confidence bound on one variant per residue (exact here; \cref{s:extra} adds Katz intervals),
+not the multiplicity correction, separates valid rules from the others; the correction costs yield (LoF-moderate certified in 13.1\% of draws with it, 34.5\% without).
 
 \begin{figure}[t]
 \centering
@@ -88,7 +88,7 @@ of 1,500 draws, per-class coverage at the selected $\alpha$ averaged 0.82 (LoF) 
 guaranteed 0.70 (Proposition~\ref{prop:select}): selecting for evidence strength trades coverage for confidence. Fixed-sequence testing, which certifies one level at a time, raised LoF-moderate certification in these draws from
 12.9\% (Bonferroni) to 29.1\% of draws and functional-supporting from 42.5\% to 60.6\% (\cref{fig:shift}B), with 99.7\% of 2,705 claims holding; on a 20-level grid it kept LoF-moderate at 26.7\% where
 the Bonferroni rule fell to 6.2\%. The testing order matters: functional-supporting, tested in increasing $\alpha$, was certified in only 25.7\% of draws (60.6\% in decreasing order). On held-out fifths of the residues, empirical likelihood ratios respected the
-certified bounds in 98.7\% of 2,091 cases (bootstrap: 76.8\%); on VUS at other residues, LoF-supporting held in all 443 certified claims and LoF-moderate in 25 of 28. Against ClinVar labels (exploratory, not independent of the assays),
+certified bounds in 98.7\% of 2,091 cases (bootstrap: 76.8\%); on VUS at other residues, LoF-supporting held in all 443 certified claims and LoF-moderate in 25 of 28 (89\%, below the nominal 95\%). Against ClinVar labels (exploratory, not independent of the assays),
 LoF calls had likelihood-ratio lower bounds of 4.9--19.6 (BRCA1), 7.6--9.4 (BRCA2) and 2.6--3.2 (MSH2) (\cref{tab:app_clinvar}).
 
 \begin{figure}[t]
@@ -107,4 +107,4 @@ averaged over genes met the target with 40.5\% abstention (82.8\% with 25 residu
 variants nearest the assay class boundary (0.865 LoF, 0.873 functional). Intermediate variants, which no guarantee
 covers, were called LoF in 19.6\% and functional in 36.6\% of cases; on 1,534 unassayed BRCA1 VUS outside the assayed
 region, AlphaMissense thresholds abstained on only 53, which suggests a shifted score distribution. Relabelling BRCA2,
-BAP1 and RAD51C with alternative rules (\cref{tab:app_labels}) changed yields but not validity: worst-class coverage stayed between 0.894 and 0.908 over rules and predictors, and certified bounds held in 2,530 of 2,533 oracle selections.
+BAP1 and RAD51C with alternative rules (\cref{tab:app_labels}) changed yields but not validity: the lowest per-class coverage over predictors stayed between 0.894 and 0.902, and certified bounds held in 2,530 of 2,533 oracle selections.
