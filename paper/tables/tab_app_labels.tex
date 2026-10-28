@@ -1,0 +1,22 @@
+\begin{table}[ht]
+\centering
+\caption{Sensitivity to the assay-label rule. Each gene is relabelled with the authors' classes or with the control
+rule at the stated posterior cut-off; other genes are unchanged. Per-class: lowest mean per-class coverage over the
+three predictors (50 random halvings, $\alpha=0.1$); abstention: range over predictors; bounds held: oracle selections
+whose certified bound the true likelihood ratio respected (100 draws per predictor); LoF-supp.: share of draws
+certifying LoF-supporting calls, range over predictors.}\label{tab:app_labels}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llrrrccc}
+\toprule
+Gene & Labels & $n$ & LoF & Per-class & Abstention & Bounds held & LoF-supp.\\
+\midrule
+BRCA2 & controls, 0.80 & 3,971 & 0.136 & 0.894 & 0.49--0.53 & 294/295 & 0.63--0.96 \\
+BRCA2 & controls, 0.95 (main) & 3,435 & 0.130 & 0.896 & 0.36--0.42 & 423/423 & 0.90--0.99 \\
+BRCA2 & controls, 0.99 & 2,341 & 0.151 & 0.897 & 0.30--0.37 & 591/593 & 0.94--1.00 \\
+BAP1 & authors (main) & 4,294 & 0.213 & 0.901 & 0.39--0.47 & 460/460 & 0.90--1.00 \\
+BAP1 & controls, 0.95 & 4,221 & 0.100 & 0.899 & 0.13--0.19 & 777/777 & 1.00 \\
+RAD51C & authors (main) & 2,225 & 0.259 & 0.895 & 0.18--0.28 & 558/561 & 0.84--0.99 \\
+RAD51C & controls, 0.95 & 832 & 0.538 & 0.902 & 0.07--0.19 & 868/868 & 0.98--1.00 \\
+\bottomrule
+\end{tabular}
+\end{table}

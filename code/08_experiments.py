@@ -242,8 +242,10 @@ def e4_conformal(d):
                                     strata.append(dict(base, method=m, stratum=f"{key}:{lvl}",
                                                        **sc.coverage_report(dv[pos], y[~mc][pos])))
                 for m, reps in acc.items():
-                    rows.append(dict(base, design="within-gene random split", method=m,
-                                     **pd.DataFrame(reps).mean(numeric_only=True).to_dict()))
+                    r = pd.DataFrame(reps)
+                    sd = {f"{k}_sd": v for k, v in r[["coverage_lof_rw", "coverage_func_rw", "abstain"]].std().items()}
+                    rows.append(dict(base, design="within-gene random split", method=m, n_rep=len(r),
+                                     **r.mean(numeric_only=True).to_dict(), **sd))
                 # (b2) same split, calibration prior shifted to 50% LoF (ClinVar-like), test at natural prior
                 acc = {}
                 for rep in range(50):

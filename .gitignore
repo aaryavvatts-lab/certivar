@@ -9,5 +9,9 @@ paper/*.bbl
 paper/*.blg
 paper/*.out
 .DS_Store
-paper/
+paper/supplement.tex
+paper/supplement.pdf
+paper/paper.pdf
+paper/*.blg
+paper/*.toc
 EASYCHAIR_SUBMISSION.txt

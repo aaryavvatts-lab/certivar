@@ -5,6 +5,7 @@ where noted, computed directly from a file in `results/`. This table maps each c
 
 | Claim | Source (paper_numbers.json key / file) |
 |---|---|
+| 81% of ClinVar missense records (P/LP, B/LB or VUS) in the five genes are VUS | `clinvar_vus_share` |
 | 859 ClinVar >=2-star P/LP or B/LB missense variants, 45.1% P/LP | `source_n`, `source_prev` |
 | 14,477 assay-labelled variants outside the ClinVar labelled set; LoF share 6.0-25.9% by gene (variant-level) | `n_target_total`, `target_prev_min/max`, `cohort` |
 | 422 dual-labelled variants, 97.4% agreement | `dual_n`, `dual_agree` |
@@ -34,3 +35,17 @@ where noted, computed directly from a file in `results/`. This table maps each c
 | Every claimed bound of a draw held in 1,497 of 1,500 draws (weaker than the all-bounds event of Theorem 1) | `oracle_validity_ci` -> `certified` -> `draws_all_ok_uncond`, `draws_total` |
 | Uncorrected Clopper-Pearson bounds respected in 99.2% of 3,115 selections | `oracle_validity_ci` -> `Clopper-Pearson, uncorrected` |
 | ClinVar-assay agreement 97.4% on 422 variants with both a ≥2-star P/LP or B/LB call and a binary assay label | `dual_agree`; `results/dual_labelled.csv` |
+| Monte Carlo standard errors of the per-class coverages 0.002-0.010 (50 splits) | `mondrian_se_range`, `mondrian_rows` |
+| Abstention of the REVEL cut-offs (42%) and AlphaMissense classes (11%) | `conformal_alpha_0.1` -> `within-gene random split` -> `abstain_mean` |
+| All-variant calibration: 1,446 vs 292 labels, abstention 30.4% vs 35.2%, worst-class 0.887-0.903 (13 of 15 below 0.90) vs 0.897-0.915 (4 of 15) | `data_use` |
+| Calibration-share shift: per-class worst-class 0.897-0.925 at shares 0.05-0.5; abstention 37% to 83%; pooled conformal 0.113, weighted 0.53-0.60 (true share) and 0.04 (EM) in the worst pair; 36-176 calibration variants | `prior_shift`, `prior_shift_ncal` |
+| Oracle draw level: every claimed bound held in 99.8% (certified), 98.8% (uncorrected), 56.5% (bootstrap), 65.9% (corrected bootstrap) of draws | `oracle_draw_level` |
+| Bootstrap diagnostic (fresh 1,500 draws): 57% of failures with zero false calls; failure rate 89% with zero counts, 11% otherwise | `bootstrap_diagnostic` |
+| Coverage at the selected alpha: mean 0.82 (LoF) and 0.80 (functional); 10th percentile below 0.69; mean selected alpha 0.18 / 0.24 | `coverage_at_selection` |
+| Fixed-sequence vs Bonferroni (G4): LoF-moderate 29.1% vs 12.9%, functional-supporting 60.6% vs 42.5%; 99.7% of 2,705 claims held; no level falsely claimed in more than 0.4% of draws | `oracle_extended` -> `G4|fixed sequence`, `G4|certified`; `results/oracle_extended.csv` |
+| G20: LoF-moderate 6.2% (Bonferroni) vs 26.7% (fixed sequence); LoF-supporting 73.8% vs 65.3%; functional levels in increasing order 25.7% (G4) and 0.2% (G20) | `oracle_extended` |
+| Variant-weighted truth: certified levels held in 99.9% of claims | `oracle_extended` -> `G4|certified` -> `level_held_vw` |
+| Intermediate variants: 1,274 in all, 1,262 outside the ClinVar labelled set; 19.6% called LoF, 36.6% functional | `intermediates` |
+| Per-predictor LoF-supporting certification in the oracle: 96% (AlphaMissense), 86% (REVEL), 78% (ESM-2) | `results/oracle.csv` (certified, PS3-supporting, mean of `achieved` by predictor) |
+| VUS LoF-moderate 25 of 28 (Clopper-Pearson 95% interval 72-98%) | `vus_evidence`; interval computed with scipy.stats.beta |
+| Runtime about 5 ms per gene (20-level grid, BAP1, laptop CPU) | measured with `time.perf_counter` on `certivar.mondrian_thresholds` + `certify` |

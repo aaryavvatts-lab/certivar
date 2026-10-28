@@ -48,6 +48,7 @@ SHORT = {"Mondrian conformal": "Per-class (ours)", "Pooled conformal": "Pooled c
          "REVEL PP3/BP4 supporting": "REVEL PP3/BP4"}
 GENES = ["BRCA1", "BRCA2", "BAP1", "RAD51C", "MSH2"]
 PRED_MARK = {"AlphaMissense": "o", "REVEL": "s", "ESM-2": "^"}
+RULE_COL = {"in expectation": "#2a78d6", "PAC": "#4d4d4d"}
 
 
 def predictor_legend(fig, **kw):
@@ -56,32 +57,42 @@ def predictor_legend(fig, **kw):
 
 
 def fig_overview():
-    """Schematic of the method (the damaging shares shown in earlier drafts are given in Table 1)."""
+    """Schematic of the method. The ClinVar/Platt path is drawn in grey: it only puts scores on a common scale."""
     src_prev = json.loads((RES / "paper_numbers.json").read_text())["source_prev"]
-    fig = plt.figure(figsize=(WIDTH, 1.62))
+    H = 2.05
+    fig = plt.figure(figsize=(WIDTH, H))
     ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(0, WIDTH); ax.set_ylim(0, 1.62); ax.axis("off")
+    ax.set_xlim(0, WIDTH); ax.set_ylim(0, H); ax.axis("off")
+    GREY_FC, GREY_TXT = "#f2f2f2", "#6b6b6b"
 
-    def box(x, y, w, h, text, fc):
+    def box(x, y, w, h, text, fc, grey=False):
         ax.add_patch(matplotlib.patches.FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.06",
-                                                       fc=fc, ec=MUTED, lw=0.8))
-        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=10, color=INK, linespacing=1.15)
+                                                       fc=fc, ec=MUTED, lw=0.8, ls="--" if grey else "-"))
+        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=10,
+                color=GREY_TXT if grey else INK, linespacing=1.15)
 
-    def arrow(x0, y0, x1, y1):
-        ax.annotate("", xy=(x1, y1), xytext=(x0, y0), arrowprops=dict(arrowstyle="->", color=INK, lw=0.9))
+    def arrow(x0, y0, x1, y1, grey=False):
+        ax.annotate("", xy=(x1, y1), xytext=(x0, y0),
+                    arrowprops=dict(arrowstyle="->", color=MUTED if grey else INK, lw=0.9, ls="--" if grey else "-"))
 
-    h, rows = 0.44, (1.15, 0.60, 0.04)
-    box(0.03, rows[0], 1.85, h, f"ClinVar P/LP vs B/LB\n(≥2 stars, {src_prev:.0%} P/LP)", "#e9f1fb")
-    box(0.03, rows[1], 1.85, h, "Assay labels, part A\n(one variant per residue)", "#e8f6f0")
-    box(0.03, rows[2], 1.85, h, "Assay labels, part B\n(one variant per residue)", "#e8f6f0")
-    box(2.20, rows[0], 1.95, h, "Platt scaling: common\nscore scale $q(s)$", "#f5f5f3")
+    h, rows = 0.40, (1.60, 1.10, 0.60, 0.07)
+    box(0.03, rows[0], 1.85, h, f"ClinVar P/LP vs B/LB\n(≥2 stars, {src_prev:.0%} P/LP)", GREY_FC, grey=True)
+    box(0.03, rows[1], 1.85, h, "Assay labels, part $\\mathcal{A}$\n(one variant per residue)", "#e8f6f0")
+    box(0.03, rows[2], 1.85, h, "Assay labels, part $\\mathcal{B}$\n(one variant per residue)", "#e8f6f0")
+    box(0.03, rows[3], 1.85, h, "Target variants\n(e.g. VUS), score $q(s)$", "#e9f1fb")
+    box(2.20, rows[0], 1.95, h, "Platt scaling: common\nscore scale $q(s)$", GREY_FC, grey=True)
     box(2.20, rows[1], 1.95, h, "Per-class thresholds\n" + r"(miss rate $\leq\alpha$)", "#f5f5f3")
-    box(2.20, rows[2], 1.95, h, "Certify likelihood ratios\n(exact, simultaneous)", "#f5f5f3")
-    box(4.47, 0.27, 2.00, 1.08, "Calls: LoF, functional\nor abstain, each type\nwith a certified LR\nfor the assay outcome", "#fdf3e1")
-    for y in rows:
+    box(2.20, rows[2], 1.95, h, "Certify likelihood ratios\n(exact, after selection)", "#f5f5f3")
+    box(4.47, 0.07, 2.00, 1.43, "Calls: LoF, functional\nor abstain; each call\ntype with a certified\nlikelihood ratio for\nthe assay outcome", "#fdf3e1")
+    arrow(1.90, rows[0] + h / 2, 2.18, rows[0] + h / 2, grey=True)
+    for y in rows[1:3]:
         arrow(1.90, y + h / 2, 2.18, y + h / 2)
-    arrow(3.175, rows[0], 3.175, rows[1] + h + 0.01); arrow(3.175, rows[1], 3.175, rows[2] + h + 0.01)
-    arrow(4.17, rows[1] + h / 2, 4.45, 0.95); arrow(4.17, rows[2] + h / 2, 4.45, 0.55)
+    arrow(3.175, rows[0], 3.175, rows[1] + h + 0.01, grey=True)
+    arrow(3.175, rows[1], 3.175, rows[2] + h + 0.01)
+    arrow(4.17, rows[1] + h / 2, 4.45, rows[1] + h / 2)
+    arrow(4.17, rows[2] + h / 2, 4.45, rows[2] + h / 2)
+    arrow(1.90, rows[3] + h / 2, 4.45, rows[3] + h / 2)
+    ax.text(3.175, rows[3] + h / 2 + 0.05, "apply thresholds", ha="center", va="bottom", fontsize=10, color=INK)
     fig.savefig(FIG / "fig_overview.pdf")
     plt.close(fig)
 
@@ -116,27 +127,29 @@ def fig_main():
     rel["worst"] = rel[["coverage_lof_rw", "coverage_func_rw"]].min(axis=1)
     vs = pd.read_csv(RES / "vus_shift.csv")
     vs = vs[vs.part == "coverage"].groupby(["thresholds", "predictor", "gene"])[["coverage_lof_rw", "coverage_func_rw"]].mean().reset_index()
-    fig, ax = plt.subplots(1, 3, figsize=(WIDTH, 2.45), layout="constrained", gridspec_kw={"width_ratios": [1.15, 1, 1]})
+    fig, ax = plt.subplots(1, 3, figsize=(WIDTH, 2.45), layout="constrained", gridspec_kw={"width_ratios": [1.15, 0.95, 1.1]})
     strip(ax[0], c, "A  By method")
     bins = np.linspace(0.70, 1.0, 31)
-    for name, col, hatch, lab in (("in expectation", "#2a78d6", None, "in expectation"),
-                                  ("PAC, delta = 0.1", "#1baf7a", "///", "PAC")):
+    for name, col, ls, lab in (("in expectation", RULE_COL["in expectation"], "-", "in expectation"),
+                               ("PAC, delta = 0.1", RULE_COL["PAC"], "--", "PAC")):
         v = rel[rel.thresholds == name].worst
-        ax[1].hist(v, bins=bins, color=col, alpha=0.75, label=lab, hatch=hatch, edgecolor="white", lw=0.3)
+        ax[1].hist(v, bins=bins, histtype="step", color=col, lw=1.6, ls=ls, label=lab)
     ax[1].axvline(0.90, color=INK, lw=0.8, ls="--")
     ax[1].set_xticks([0.7, 0.8, 0.9, 1.0])
     ax[1].set(xlabel="Worst-class coverage", ylabel="Splits", title="B  Per split")
-    for j, (name, col, mk) in enumerate((("in expectation", "#2a78d6", "o"), ("PAC, delta = 0.1", "#1baf7a", "s"))):
+    for name, col in (("in expectation", RULE_COL["in expectation"]), ("PAC, delta = 0.1", RULE_COL["PAC"])):
         v = vs[vs.thresholds == name]
-        ax[2].scatter(v.coverage_func_rw, v.coverage_lof_rw, marker=mk, s=20, color=col, edgecolor="white", lw=0.4,
-                      label="in exp." if j == 0 else "PAC", zorder=3)
+        for pr, mk in PRED_MARK.items():
+            w = v[v.predictor == pr]
+            ax[2].scatter(w.coverage_func_rw, w.coverage_lof_rw, marker=mk, s=20, color=col, edgecolor="white",
+                          lw=0.4, zorder=3)
     ax[2].axhline(0.90, color=INK, lw=0.8, ls="--"); ax[2].axvline(0.90, color=INK, lw=0.8, ls="--")
-    ax[2].set(xlim=(0.80, 1.01), ylim=(0.80, 1.01), xlabel="Func. coverage", ylabel="LoF coverage",
+    ax[2].set(xlim=(0.80, 1.01), ylim=(0.80, 1.01), xlabel="Functional coverage", ylabel="LoF coverage",
               title="C  Test on VUS")
     ax[2].set_xticks([0.8, 0.9, 1.0]); ax[2].set_yticks([0.8, 0.9, 1.0])
     marks = [plt.Line2D([], [], marker=mk, ls="", color=MUTED, markersize=6, label=pr) for pr, mk in PRED_MARK.items()]
-    rules = [matplotlib.patches.Patch(facecolor="#2a78d6", alpha=0.75, label="in expectation"),
-             matplotlib.patches.Patch(facecolor="#1baf7a", alpha=0.75, hatch="///", edgecolor="white", label="PAC")]
+    rules = [plt.Line2D([], [], color=RULE_COL["in expectation"], lw=1.6, label="in expectation"),
+             plt.Line2D([], [], color=RULE_COL["PAC"], lw=1.6, ls="--", label="PAC")]
     fig.legend(handles=marks + rules, frameon=False, loc="outside lower center", ncol=5, columnspacing=1.0)
     fig.savefig(FIG / "fig_main.pdf")
     plt.close(fig)
@@ -144,7 +157,7 @@ def fig_main():
 
 # selection rules of the oracle experiment: (key in oracle.csv, legend label, colour)
 RULES = [("certified", "Certified (ours)", "#2a78d6"),
-         ("Clopper-Pearson, uncorrected", "Clopper-Pearson, uncorr.", "#6250d6"),
+         ("Clopper-Pearson, uncorrected", "Clopper\u2013Pearson, uncorr.", "#6250d6"),
          ("bootstrap", "Bootstrap 95%", "#eda100"),
          ("bootstrap, Bonferroni", "Bootstrap, corrected", "#1baf7a"),
          ("point estimate", "Point estimate", "#eb6834")]
@@ -156,7 +169,7 @@ def fig_evidence():
     """Selection rules judged against the exact population likelihood ratio (oracle design)."""
     ev = pd.read_csv(RES / "oracle.csv")
     ci = json.loads((RES / "paper_numbers.json").read_text())["oracle_validity_ci"]
-    fig, ax = plt.subplots(1, 2, figsize=(WIDTH, 2.55), layout="constrained", gridspec_kw={"width_ratios": [2.6, 1]})
+    fig, ax = plt.subplots(1, 2, figsize=(WIDTH, 2.55), layout="constrained", gridspec_kw={"width_ratios": [2.45, 1.15]})
     x = np.arange(len(LEVELS)) + np.array([0, 0, 0, 0.5, 0.5, 0.5])
     w = 0.16
     for i, (sel, lab, col) in enumerate(RULES):
@@ -172,15 +185,16 @@ def fig_evidence():
     ax[0].set_ylim(0, 1.05)
     ax[0].set(ylabel="Share of draws", title="A  Level claimed (bar) and truly held (solid)")
     bound_rules = [r for r in RULES if r[0] != "point estimate"]   # a point estimate is not a confidence bound
-    vals = [ci[s]["ok"] / ci[s]["n"] for s, *_ in bound_rules]
-    err = np.array([[v - ci[s]["lo"], ci[s]["hi"] - v] for v, (s, *_) in zip(vals, bound_rules)]).T
+    dl = json.loads((RES / "paper_numbers.json").read_text())["oracle_draw_level"]
+    vals = [dl[s]["all_bounds_ok"] for s, *_ in bound_rules]
+    err = np.array([[v - dl[s]["lo"], dl[s]["hi"] - v] for v, (s, *_) in zip(vals, bound_rules)]).T
     ax[1].bar(range(len(bound_rules)), vals, color=[r[2] for r in bound_rules], edgecolor="white",
               yerr=np.clip(err, 0, None), error_kw=dict(lw=0.9, capsize=2, ecolor=INK))
     for i, v in enumerate(vals):
-        ax[1].text(i, v / 2, f"{v:.2f}", ha="center", va="center", rotation=90, color="white", fontweight="bold")
-    ax[1].axhline(0.95, color=INK, lw=0.8, ls="--")
+        ax[1].text(i, v / 2, f"{v:.3f}", ha="center", va="center", rotation=90, color="white", fontweight="bold")
+    ax[1].axhline(0.90, color=INK, lw=0.8, ls="--")
     ax[1].set_xticks([])
-    ax[1].set(ylim=(0, 1.05), yticks=[0, 0.25, 0.5, 0.75, 1.0], ylabel="Bound respected", title="B  Bound validity")
+    ax[1].set(ylim=(0, 1.05), yticks=[0, 0.25, 0.5, 0.75, 1.0], ylabel="Share of draws", title="B  All bounds held")
     h, l = ax[0].get_legend_handles_labels()
     h.append(matplotlib.patches.Patch(facecolor="white", edgecolor=MUTED, hatch="////", label="claimed, did not hold"))
     l.append("claimed, did not hold")
@@ -265,8 +279,55 @@ def fig_simulation():
     plt.close(fig)
 
 
+SHIFT_STYLE = {"Per-class (ours)": dict(color="#2a78d6", marker="o", ls="-"),
+               "Pooled conformal": dict(color="#eb6834", marker="^", ls=":"),
+               "Weighted, true prior": dict(color="#6b6b6b", marker="s", ls="--"),
+               "Weighted, EM prior": dict(color="#1baf7a", marker="D", ls="-.")}
+FS_RULES = [("G4", "certified", "Bonferroni, $G_4$", "#2a78d6", None),
+            ("G4", "fixed sequence", "fixed seq., $G_4$", "#2a78d6", "////"),
+            ("G20", "certified", "Bonferroni, $G_{20}$", "#eda100", None),
+            ("G20", "fixed sequence", "fixed seq., $G_{20}$", "#eda100", "////")]
+FS_LEVELS = [("PS3-supporting", "LoF\nsupp."), ("PS3-moderate", "LoF\nmod."), ("BS3-supporting", "func.\nsupp."),
+             ("BS3-moderate", "func.\nmod.")]
+
+
+def fig_shift():
+    """(A) Per-class coverage when the calibration LoF share differs from the target's. (B) Yield of the certified
+    selection with a Bonferroni correction or fixed-sequence testing, on the 4-level and 20-level grids."""
+    s = pd.read_csv(RES / "prior_shift.csv")
+    g = s.groupby(["method", "cal_share", "predictor", "gene"])[["coverage_lof_rw", "coverage_func_rw"]].mean()
+    g["worst"] = g[["coverage_lof_rw", "coverage_func_rw"]].min(axis=1)
+    o = pd.read_csv(RES / "oracle_extended.csv")
+    fig, ax = plt.subplots(1, 2, figsize=(WIDTH, 3.0), layout="constrained", gridspec_kw={"width_ratios": [1, 1.25]})
+    for m, st in SHIFT_STYLE.items():
+        v = g.loc[m].groupby(level=0).worst
+        xs = np.arange(len(v.mean()))
+        ax[0].plot(xs, v.mean().values, label=m, **st)
+        ax[0].plot(xs, v.min().values, color=st["color"], ls=st["ls"], marker=st["marker"],
+                   lw=0.9, markersize=3, alpha=0.6)
+    ax[0].axhline(0.90, color=INK, lw=0.8, ls="--")
+    ax[0].set(xlabel="LoF share of calibration set", ylabel="Worst-class coverage", ylim=(0, 1.02),
+              title="A  Calibration share shift")
+    ax[0].set_xticks(range(5), ["0.05", "0.1", "0.2", "0.3", "0.5"])
+    fig.legend(*ax[0].get_legend_handles_labels(), frameon=False, loc="outside lower center", ncol=2,
+               handlelength=2.2, columnspacing=1.5)
+    w = 0.2
+    for i, (gr, sel, lab, col, hatch) in enumerate(FS_RULES):
+        sub_ = o[(o.grid == gr) & (o.selection == sel)].groupby("level").achieved.mean()
+        vals = [sub_.get(k, 0.0) for k, _ in FS_LEVELS]
+        ax[1].bar(np.arange(len(FS_LEVELS)) + (i - 1.5) * w, vals, w, color="white" if hatch else col,
+                  edgecolor=col, hatch=hatch, lw=0.9, label=lab)
+    ax[1].set_xticks(range(len(FS_LEVELS)), [lab for _, lab in FS_LEVELS])
+    ax[1].set(ylim=(0, 1.3), yticks=[0, 0.25, 0.5, 0.75, 1.0], ylabel="Share of draws certified",
+              title="B  Bonferroni vs fixed sequence")
+    ax[1].legend(frameon=False, loc="upper center", ncol=2, handlelength=1.4, borderaxespad=0.1, columnspacing=1.0)
+    fig.savefig(FIG / "fig_shift.pdf")
+    plt.close(fig)
+
+
 def main():
     FIG.mkdir(parents=True, exist_ok=True)
+    fig_shift()
     fig_simulation()
     fig_overview()
     fig_main()

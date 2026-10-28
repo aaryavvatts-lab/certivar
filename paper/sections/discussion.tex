@@ -1,0 +1,42 @@
+\section{Discussion}\label{sec:discussion}
+
+In our resampling design, thresholds selected on point estimates or percentile-bootstrap bounds often claimed more
+evidence than held, and most bootstrap failures came from certification samples with no false call. Because these are
+call-averaged ratios, not the local ratios of ClinGen calibrations, this does not show that published PP3/BP4
+thresholds are wrong, only that point estimates and bootstrap bounds can overstate evidence at single-gene sample sizes.
+\textsc{CertiVar} makes the claim checkable without an estimate of the share of damaging variants, and per-class
+coverage stayed at the target when the calibration LoF share was moved from 5\% to 50\%. The cost is conservatism:
+certified evidence was mostly supporting-level, and PAC thresholds abstained on 58\% to 82\% of variants, suited to
+settings where overstating strength is worse than abstaining. Fixed-sequence testing recovers part of the yield that a
+multiplicity correction loses, provided the order is fixed before the data are seen. Held-out protein regions, a proxy
+for the unassayed regions where predictors are most needed, fall outside the theory: coverage there ranged from 0.860
+to 0.923 and certified bounds held in 88.8\% of cases rather than 95\%, so extrapolation needs local validation or a
+region-aware procedure.
+
+\paragraph{Limitations.}
+\begin{itemize}
+\item \emph{Assay, not pathogenicity.} The labels are assay classes \cite{Brnich2020}; clinical use of the certified
+ratios requires an assay validated against clinical classifications, as its authors did for BRCA1 \cite{Findlay2018}
+and, with their own classes rather than our control-based labels, for BRCA2 \cite{Huang2025}.
+\item \emph{Call-averaged, not local.} A certified level describes the calls as a class. Variants near the assay class
+boundary are covered less often (0.865 and 0.873 on the nearest third), so a single borderline call can carry less
+evidence than the level of its class; ClinGen uses local ratios for this reason \cite{Pejaver2022}.
+\item \emph{Who is covered.} The guarantees assume residues exchangeable with the calibrated ones and do not cover
+intermediate or splice-region variants, which a clinician cannot exclude in advance; 19.6\% of intermediate variants were
+called LoF. Per-class coverage holds for a fixed $\alpha$; at the selected $\alpha$ only $1-\max G$ is guaranteed.
+\item \emph{Data.} One variant per residue discards most labels, but using all of them broke coverage in our data.
+Results cover five cancer-predisposition genes measured by SGE or DMS, four of them in DNA repair; other genes and
+assays may need more calibration residues. REVEL was trained on labelled variants and the AlphaMissense classes were set
+on ClinVar, so both may overlap our evaluation sets \cite{Ioannidis2016,Cheng2023,Grimm2015}. ESM-2, trained without
+variant labels, gave the same coverage and validity but certified LoF-supporting calls less often (78\% of oracle draws,
+against 86\% for REVEL and 96\% for AlphaMissense), so such overlap could inflate yields rather than validity.
+\end{itemize}
+
+\section{Conclusion}\label{sec:conclusion}
+\textsc{CertiVar} turns a variant-effect predictor and a few hundred assayed residues of a gene into LoF, functional or
+no calls with finite-sample guarantees on per-class error rates at a fixed miscoverage level and on call-averaged
+likelihood ratios with respect to the assay after threshold selection, without an estimate of how common damaging
+variants are. The guarantees are proved under residue sampling and class-conditional invariance; they were consistent
+with the data in random within-gene splits and under shifts of the calibration LoF share, held approximately on assayed
+VUS, and weakened in held-out protein regions. The calls are research results; using the certificates as clinical
+evidence requires clinically validated assays.

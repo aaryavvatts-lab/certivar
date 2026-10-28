@@ -23,3 +23,8 @@ Thresholds and facts checked at the source (26-27 Oct 2026):
   sign of the score.
 
 References: every entry of paper/refs.bib resolves by DOI (Crossref) or arXiv id; checked with citation_check.py --online.
+- Added references checked against Crossref on 27 Oct 2026: Richards et al. 2015 (10.1038/gim.2015.30), Chow 1970
+  (10.1109/TIT.1970.1054406), Katz et al. 1978 (10.2307/2530610), Koopman 1984 (10.2307/2531405).
+- Uncertainty in cited calibration workflows: Pejaver et al. 2022 and Bergquist et al. 2025 (local posterior method with
+  bootstrap bounds; Bergquist abstract via Europe PMC); Badonyi and Marsh 2025 (1,000 resamples, sign-test bounds on the
+  median log likelihood ratio; Bioinformatics full text, Sections 2.1-2.2).

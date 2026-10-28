@@ -293,3 +293,20 @@ def certify(dec, y, level):
         "lr_neg_upper": np.inf if tn_lo == 0 else fn_hi / tn_lo, "lr_neg_hat": ratio(c / n1, e / n0) if both else np.nan,
         "yield_lof": float((dec == 1).mean()), "yield_func": float((dec == 0).mean()), "n1": n1, "n0": n0,
     }
+
+
+def fixed_sequence_select(alphas, bounds, yields, tau, lof=True):
+    """Fixed-sequence certification of one evidence level (Theorem 2 of the paper).
+
+    alphas, bounds, yields: per threshold level, in the testing order fixed in advance; bounds are l_TP / u_FP
+    (lof=True) or u_FN / l_TN (lof=False), with each Clopper-Pearson endpoint at level delta / 2. Hypotheses are tested
+    in the given order and testing stops at the first level that does not meet tau (bound > tau for LoF calls,
+    bound < tau for functional calls). Returns the rejected alpha with the largest yield (ties: the larger alpha), or
+    None if the first level already fails. This is the rule used in code/17_extensions.py.
+    """
+    rejected = []
+    for a, b, y in zip(alphas, bounds, yields):
+        if not (b > tau if lof else b < tau):
+            break
+        rejected.append((y, a))
+    return max(rejected)[1] if rejected else None

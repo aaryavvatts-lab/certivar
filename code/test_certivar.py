@@ -89,6 +89,32 @@ def test_disjoint_calls_across_levels():
             assert not np.any(lof & fun)
 
 
+def test_fixed_sequence_stops_at_first_failure():
+    # levels in the fixed order; the third fails, so the fourth (largest yield) must not be selected
+    g = [0.05, 0.10, 0.20, 0.30]
+    assert cv.fixed_sequence_select(g, [5.0, 4.5, 2.0, 9.0], [0.1, 0.2, 0.3, 0.9], tau=4.3) == 0.10
+    assert cv.fixed_sequence_select(g[:2], [3.0, 9.0], [0.1, 0.2], tau=4.3) is None
+    assert cv.fixed_sequence_select(g[::-1][:3], [0.2, 0.3, 0.6], [0.6, 0.5, 0.4], tau=0.48, lof=False) == 0.30
+
+
+def test_fixed_sequence_level_control():
+    # the level LR+ > tau is false at every threshold, so any claim is false; claims must occur at most delta of the time
+    rng = np.random.default_rng(3)
+    delta, tau, claims = 0.05, 4.3, 0
+    tp, fp = 0.40, 0.40 / 4.3            # true LR+ equals tau exactly (worst case for the test)
+    for _ in range(2000):
+        alphas, bounds, yields = [0.05, 0.10, 0.20, 0.30], [], []
+        for _ in range(4):
+            a = rng.binomial(60, tp)
+            b = rng.binomial(140, fp)
+            lo, _ = cv.clopper_pearson(a, 60, delta / 2)
+            _, hi = cv.clopper_pearson(b, 140, delta / 2)
+            bounds.append(cv.ratio(lo, hi))
+            yields.append(a + b)
+        claims += cv.fixed_sequence_select(alphas, bounds, yields, tau) is not None
+    assert claims / 2000 <= delta
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:

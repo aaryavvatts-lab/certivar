@@ -2526,5 +2526,728 @@
  "n_cal_lof_range": [
   17,
   93
- ]
+ ],
+ "clinvar_vus_share": 0.809,
+ "mondrian_se_range": [
+  0.002,
+  0.01
+ ],
+ "mondrian_rows": [
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BRCA1",
+   "coverage_lof_rw": 0.9161,
+   "coverage_lof_rw_sd": 0.047,
+   "coverage_func_rw": 0.9014,
+   "coverage_func_rw_sd": 0.0381,
+   "abstain": 0.2468,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BRCA2",
+   "coverage_lof_rw": 0.8993,
+   "coverage_lof_rw_sd": 0.0502,
+   "coverage_func_rw": 0.9035,
+   "coverage_func_rw_sd": 0.0143,
+   "abstain": 0.3625,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "BAP1",
+   "coverage_lof_rw": 0.9089,
+   "coverage_lof_rw_sd": 0.0402,
+   "coverage_func_rw": 0.8983,
+   "coverage_func_rw_sd": 0.017,
+   "abstain": 0.3907,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "RAD51C",
+   "coverage_lof_rw": 0.901,
+   "coverage_lof_rw_sd": 0.0492,
+   "coverage_func_rw": 0.9052,
+   "coverage_func_rw_sd": 0.0284,
+   "abstain": 0.1686,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "AlphaMissense",
+   "gene": "MSH2",
+   "coverage_lof_rw": 0.9149,
+   "coverage_lof_rw_sd": 0.0606,
+   "coverage_func_rw": 0.9013,
+   "coverage_func_rw_sd": 0.0199,
+   "abstain": 0.2875,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BRCA1",
+   "coverage_lof_rw": 0.9142,
+   "coverage_lof_rw_sd": 0.0729,
+   "coverage_func_rw": 0.9022,
+   "coverage_func_rw_sd": 0.037,
+   "abstain": 0.3406,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BRCA2",
+   "coverage_lof_rw": 0.9122,
+   "coverage_lof_rw_sd": 0.0384,
+   "coverage_func_rw": 0.8991,
+   "coverage_func_rw_sd": 0.025,
+   "abstain": 0.4226,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "BAP1",
+   "coverage_lof_rw": 0.9035,
+   "coverage_lof_rw_sd": 0.0401,
+   "coverage_func_rw": 0.9038,
+   "coverage_func_rw_sd": 0.019,
+   "abstain": 0.416,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "RAD51C",
+   "coverage_lof_rw": 0.9086,
+   "coverage_lof_rw_sd": 0.0494,
+   "coverage_func_rw": 0.9036,
+   "coverage_func_rw_sd": 0.0328,
+   "abstain": 0.2709,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "REVEL",
+   "gene": "MSH2",
+   "coverage_lof_rw": 0.911,
+   "coverage_lof_rw_sd": 0.0688,
+   "coverage_func_rw": 0.9013,
+   "coverage_func_rw_sd": 0.0199,
+   "abstain": 0.3717,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BRCA1",
+   "coverage_lof_rw": 0.9115,
+   "coverage_lof_rw_sd": 0.0638,
+   "coverage_func_rw": 0.8974,
+   "coverage_func_rw_sd": 0.0285,
+   "abstain": 0.3715,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BRCA2",
+   "coverage_lof_rw": 0.8961,
+   "coverage_lof_rw_sd": 0.0454,
+   "coverage_func_rw": 0.9028,
+   "coverage_func_rw_sd": 0.0215,
+   "abstain": 0.3623,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "BAP1",
+   "coverage_lof_rw": 0.9097,
+   "coverage_lof_rw_sd": 0.0402,
+   "coverage_func_rw": 0.9052,
+   "coverage_func_rw_sd": 0.0234,
+   "abstain": 0.473,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "RAD51C",
+   "coverage_lof_rw": 0.9148,
+   "coverage_lof_rw_sd": 0.0511,
+   "coverage_func_rw": 0.908,
+   "coverage_func_rw_sd": 0.0274,
+   "abstain": 0.3357,
+   "n_rep": 50.0
+  },
+  {
+   "predictor": "ESM-2",
+   "gene": "MSH2",
+   "coverage_lof_rw": 0.9203,
+   "coverage_lof_rw_sd": 0.0701,
+   "coverage_func_rw": 0.9021,
+   "coverage_func_rw_sd": 0.0161,
+   "abstain": 0.4639,
+   "n_rep": 50.0
+  }
+ ],
+ "oracle_draw_level": {
+  "Clopper-Pearson, uncorrected": {
+   "draws": 1500,
+   "all_bounds_ok": 0.988,
+   "all_levels_held": 0.997,
+   "lo": 0.983,
+   "hi": 0.993
+  },
+  "bootstrap": {
+   "draws": 1500,
+   "all_bounds_ok": 0.565,
+   "all_levels_held": 0.717,
+   "lo": 0.539,
+   "hi": 0.59
+  },
+  "bootstrap, Bonferroni": {
+   "draws": 1500,
+   "all_bounds_ok": 0.659,
+   "all_levels_held": 0.745,
+   "lo": 0.635,
+   "hi": 0.682
+  },
+  "certified": {
+   "draws": 1500,
+   "all_bounds_ok": 0.998,
+   "all_levels_held": 1.0,
+   "lo": 0.995,
+   "hi": 1.0
+  },
+  "point estimate": {
+   "draws": 1500,
+   "all_bounds_ok": 0.141,
+   "all_levels_held": 0.407,
+   "lo": 0.123,
+   "hi": 0.159
+  }
+ },
+ "prior_shift": {
+  "Per-class (ours)|0.05": {
+   "worst_mean": 0.906,
+   "worst_min": 0.899,
+   "worst_max": 0.912,
+   "lof_min": 0.999,
+   "abstain_mean": 0.827
+  },
+  "Per-class (ours)|0.1": {
+   "worst_mean": 0.907,
+   "worst_min": 0.902,
+   "worst_max": 0.911,
+   "lof_min": 0.915,
+   "abstain_mean": 0.637
+  },
+  "Per-class (ours)|0.2": {
+   "worst_mean": 0.908,
+   "worst_min": 0.899,
+   "worst_max": 0.916,
+   "lof_min": 0.902,
+   "abstain_mean": 0.438
+  },
+  "Per-class (ours)|0.3": {
+   "worst_mean": 0.908,
+   "worst_min": 0.902,
+   "worst_max": 0.914,
+   "lof_min": 0.907,
+   "abstain_mean": 0.415
+  },
+  "Per-class (ours)|0.5": {
+   "worst_mean": 0.91,
+   "worst_min": 0.897,
+   "worst_max": 0.925,
+   "lof_min": 0.897,
+   "abstain_mean": 0.373
+  },
+  "Pooled conformal|0.05": {
+   "worst_mean": 0.783,
+   "worst_min": 0.113,
+   "worst_max": 0.908,
+   "lof_min": 0.113,
+   "abstain_mean": 0.433
+  },
+  "Pooled conformal|0.1": {
+   "worst_mean": 0.8,
+   "worst_min": 0.265,
+   "worst_max": 0.908,
+   "lof_min": 0.265,
+   "abstain_mean": 0.421
+  },
+  "Pooled conformal|0.2": {
+   "worst_mean": 0.834,
+   "worst_min": 0.542,
+   "worst_max": 0.905,
+   "lof_min": 0.542,
+   "abstain_mean": 0.432
+  },
+  "Pooled conformal|0.3": {
+   "worst_mean": 0.848,
+   "worst_min": 0.682,
+   "worst_max": 0.9,
+   "lof_min": 0.682,
+   "abstain_mean": 0.438
+  },
+  "Pooled conformal|0.5": {
+   "worst_mean": 0.854,
+   "worst_min": 0.801,
+   "worst_max": 0.896,
+   "lof_min": 0.801,
+   "abstain_mean": 0.431
+  },
+  "Weighted, EM prior|0.05": {
+   "worst_mean": 0.718,
+   "worst_min": 0.038,
+   "worst_max": 0.902,
+   "lof_min": 0.038,
+   "abstain_mean": 0.49
+  },
+  "Weighted, EM prior|0.1": {
+   "worst_mean": 0.722,
+   "worst_min": 0.04,
+   "worst_max": 0.898,
+   "lof_min": 0.04,
+   "abstain_mean": 0.422
+  },
+  "Weighted, EM prior|0.2": {
+   "worst_mean": 0.725,
+   "worst_min": 0.038,
+   "worst_max": 0.903,
+   "lof_min": 0.038,
+   "abstain_mean": 0.383
+  },
+  "Weighted, EM prior|0.3": {
+   "worst_mean": 0.726,
+   "worst_min": 0.042,
+   "worst_max": 0.902,
+   "lof_min": 0.042,
+   "abstain_mean": 0.369
+  },
+  "Weighted, EM prior|0.5": {
+   "worst_mean": 0.729,
+   "worst_min": 0.044,
+   "worst_max": 0.905,
+   "lof_min": 0.044,
+   "abstain_mean": 0.361
+  },
+  "Weighted, true prior|0.05": {
+   "worst_mean": 0.859,
+   "worst_min": 0.598,
+   "worst_max": 0.902,
+   "lof_min": 0.598,
+   "abstain_mean": 0.5
+  },
+  "Weighted, true prior|0.1": {
+   "worst_mean": 0.846,
+   "worst_min": 0.558,
+   "worst_max": 0.904,
+   "lof_min": 0.558,
+   "abstain_mean": 0.453
+  },
+  "Weighted, true prior|0.2": {
+   "worst_mean": 0.845,
+   "worst_min": 0.558,
+   "worst_max": 0.907,
+   "lof_min": 0.558,
+   "abstain_mean": 0.439
+  },
+  "Weighted, true prior|0.3": {
+   "worst_mean": 0.841,
+   "worst_min": 0.538,
+   "worst_max": 0.91,
+   "lof_min": 0.538,
+   "abstain_mean": 0.432
+  },
+  "Weighted, true prior|0.5": {
+   "worst_mean": 0.841,
+   "worst_min": 0.528,
+   "worst_max": 0.919,
+   "lof_min": 0.528,
+   "abstain_mean": 0.428
+  }
+ },
+ "prior_shift_ncal": [
+  36,
+  176
+ ],
+ "data_use": {
+  "all variants": {
+   "worst_min": 0.887,
+   "worst_max": 0.903,
+   "worst_mean": 0.896,
+   "n_below_090": 13,
+   "abstain_mean": 0.304,
+   "n_cal_mean": 1445.537
+  },
+  "one per residue": {
+   "worst_min": 0.897,
+   "worst_max": 0.915,
+   "worst_mean": 0.903,
+   "n_below_090": 4,
+   "abstain_mean": 0.352,
+   "n_cal_mean": 292.4
+  }
+ },
+ "intermediates": {
+  "n_variants": 1274,
+  "n_outside_clinvar_set": 1262,
+  "lof": 0.196,
+  "func": 0.366
+ },
+ "oracle_extended": {
+  "G20|Clopper-Pearson, uncorrected": {
+   "claims": 3501,
+   "level_held": 0.996,
+   "level_held_vw": 0.995,
+   "bound_ok": 0.989,
+   "draws_all_levels_held": 0.991,
+   "achieved": {
+    "BS3-moderate": 0.095,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.787,
+    "PS3-moderate": 0.479,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.972
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.909,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.999,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 143,
+    "BS3-supporting": 1181,
+    "PS3-moderate": 719,
+    "PS3-supporting": 1458
+   }
+  },
+  "G20|bootstrap": {
+   "claims": 5634,
+   "level_held": 0.896,
+   "level_held_vw": 0.895,
+   "bound_ok": 0.789,
+   "draws_all_levels_held": 0.669,
+   "achieved": {
+    "BS3-moderate": 0.467,
+    "BS3-strong": 0.397,
+    "BS3-supporting": 0.965,
+    "PS3-moderate": 0.886,
+    "PS3-strong": 0.041,
+    "PS3-supporting": 1.0
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.891,
+    "BS3-strong": 0.281,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.968,
+    "PS3-strong": 0.419,
+    "PS3-supporting": 0.999
+   },
+   "n_by_level": {
+    "BS3-moderate": 700,
+    "BS3-strong": 595,
+    "BS3-supporting": 1448,
+    "PS3-moderate": 1329,
+    "PS3-strong": 62,
+    "PS3-supporting": 1500
+   }
+  },
+  "G20|certified": {
+   "claims": 1666,
+   "level_held": 1.0,
+   "level_held_vw": 1.0,
+   "bound_ok": 0.999,
+   "draws_all_levels_held": 1.0,
+   "achieved": {
+    "BS3-moderate": 0.003,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.307,
+    "PS3-moderate": 0.062,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.738
+   },
+   "held_by_level": {
+    "BS3-moderate": 1.0,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 1.0,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 5,
+    "BS3-supporting": 461,
+    "PS3-moderate": 93,
+    "PS3-supporting": 1107
+   }
+  },
+  "G20|fixed sequence": {
+   "claims": 2464,
+   "level_held": 0.997,
+   "level_held_vw": 0.996,
+   "bound_ok": null,
+   "draws_all_levels_held": 0.995,
+   "achieved": {
+    "BS3-moderate": 0.059,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.663,
+    "PS3-moderate": 0.267,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.653
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.91,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 1.0,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 89,
+    "BS3-supporting": 995,
+    "PS3-moderate": 401,
+    "PS3-supporting": 979
+   }
+  },
+  "G20|fixed sequence, all increasing": {
+   "claims": 1383,
+   "level_held": 1.0,
+   "level_held_vw": 1.0,
+   "bound_ok": null,
+   "draws_all_levels_held": 1.0,
+   "achieved": {
+    "BS3-moderate": 0.0,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.002,
+    "PS3-moderate": 0.267,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.653
+   },
+   "held_by_level": {
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 1.0,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-supporting": 3,
+    "PS3-moderate": 401,
+    "PS3-supporting": 979
+   }
+  },
+  "G20|point estimate": {
+   "claims": 7156,
+   "level_held": 0.738,
+   "level_held_vw": 0.731,
+   "bound_ok": 0.376,
+   "draws_all_levels_held": 0.279,
+   "achieved": {
+    "BS3-moderate": 0.839,
+    "BS3-strong": 0.442,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.996,
+    "PS3-strong": 0.494,
+    "PS3-supporting": 1.0
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.647,
+    "BS3-strong": 0.217,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.681,
+    "PS3-strong": 0.414,
+    "PS3-supporting": 0.999
+   },
+   "n_by_level": {
+    "BS3-moderate": 1258,
+    "BS3-strong": 663,
+    "BS3-supporting": 1500,
+    "PS3-moderate": 1494,
+    "PS3-strong": 741,
+    "PS3-supporting": 1500
+   }
+  },
+  "G4|Clopper-Pearson, uncorrected": {
+   "claims": 3017,
+   "level_held": 0.998,
+   "level_held_vw": 0.998,
+   "bound_ok": 0.991,
+   "draws_all_levels_held": 0.995,
+   "achieved": {
+    "BS3-moderate": 0.062,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.663,
+    "PS3-moderate": 0.334,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.952
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.935,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.998,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 93,
+    "BS3-supporting": 995,
+    "PS3-moderate": 501,
+    "PS3-supporting": 1428
+   }
+  },
+  "G4|bootstrap": {
+   "claims": 5168,
+   "level_held": 0.917,
+   "level_held_vw": 0.917,
+   "bound_ok": 0.784,
+   "draws_all_levels_held": 0.742,
+   "achieved": {
+    "BS3-moderate": 0.415,
+    "BS3-strong": 0.339,
+    "BS3-supporting": 0.913,
+    "PS3-moderate": 0.775,
+    "PS3-strong": 0.005,
+    "PS3-supporting": 0.999
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.913,
+    "BS3-strong": 0.315,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.983,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 622,
+    "BS3-strong": 508,
+    "BS3-supporting": 1369,
+    "PS3-moderate": 1163,
+    "PS3-strong": 7,
+    "PS3-supporting": 1499
+   }
+  },
+  "G4|certified": {
+   "claims": 2128,
+   "level_held": 0.999,
+   "level_held_vw": 0.999,
+   "bound_ok": 0.997,
+   "draws_all_levels_held": 0.998,
+   "achieved": {
+    "BS3-moderate": 0.013,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.425,
+    "PS3-moderate": 0.129,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.852
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.895,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.995,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 19,
+    "BS3-supporting": 637,
+    "PS3-moderate": 194,
+    "PS3-supporting": 1278
+   }
+  },
+  "G4|fixed sequence": {
+   "claims": 2705,
+   "level_held": 0.997,
+   "level_held_vw": 0.997,
+   "bound_ok": null,
+   "draws_all_levels_held": 0.995,
+   "achieved": {
+    "BS3-moderate": 0.034,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.606,
+    "PS3-moderate": 0.291,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.872
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.882,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.998,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 51,
+    "BS3-supporting": 909,
+    "PS3-moderate": 437,
+    "PS3-supporting": 1308
+   }
+  },
+  "G4|fixed sequence, all increasing": {
+   "claims": 2173,
+   "level_held": 0.999,
+   "level_held_vw": 0.999,
+   "bound_ok": null,
+   "draws_all_levels_held": 0.999,
+   "achieved": {
+    "BS3-moderate": 0.028,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.257,
+    "PS3-moderate": 0.291,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.872
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.976,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.998,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 42,
+    "BS3-supporting": 386,
+    "PS3-moderate": 437,
+    "PS3-supporting": 1308
+   }
+  },
+  "G4|point estimate": {
+   "claims": 6371,
+   "level_held": 0.813,
+   "level_held_vw": 0.808,
+   "bound_ok": 0.394,
+   "draws_all_levels_held": 0.44,
+   "achieved": {
+    "BS3-moderate": 0.746,
+    "BS3-strong": 0.38,
+    "BS3-supporting": 0.997,
+    "PS3-moderate": 0.983,
+    "PS3-strong": 0.142,
+    "PS3-supporting": 1.0
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.707,
+    "BS3-strong": 0.26,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.818,
+    "PS3-strong": 0.178,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 1119,
+    "BS3-strong": 570,
+    "BS3-supporting": 1495,
+    "PS3-moderate": 1474,
+    "PS3-strong": 213,
+    "PS3-supporting": 1500
+   }
+  }
+ },
+ "coverage_at_selection": {
+  "cov_lof_mean": 0.818,
+  "cov_func_mean": 0.801,
+  "cov_lof_min": 0.482,
+  "cov_func_min": 0.51,
+  "cov_lof_p10": 0.684,
+  "cov_func_p10": 0.689,
+  "alpha_mean_lof_calls": 0.183,
+  "alpha_mean_func_calls": 0.242
+ },
+ "bootstrap_diagnostic": {
+  "n": 5168,
+  "fail": 1115,
+  "fail_rate": 0.216,
+  "share_fail_zero": 0.566,
+  "share_zero": 0.138,
+  "fail_rate_zero": 0.886,
+  "fail_rate_nonzero": 0.109
+ }
 }

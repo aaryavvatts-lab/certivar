@@ -1,0 +1,34 @@
+\begin{table}[ht]
+\centering
+\caption{Calls judged against ClinVar labels (exploratory). Thresholds ($\alpha=0.1$) are set on each gene's assay
+labels; one ClinVar variant with $\ge$2 stars is kept per residue. $n$: kept P/LP and B/LB variants; calls: LoF (or
+functional) calls among P/LP / among B/LB variants; $L^+$, $U^-$: likelihood-ratio bounds from one-sided
+Clopper--Pearson endpoints at level 0.025 each (simultaneous level 0.95 per ratio). Pooled rows sum the kept counts over
+genes, each gene with its own thresholds. BAP1 and RAD51C have too few labelled residues to be informative.}
+\label{tab:app_clinvar}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llrrcrcr}
+\toprule
+Pred. & Gene & $n$ P/LP & $n$ B/LB & LoF calls & $L^+$ & func.\ calls & $U^-$\\
+\midrule
+AM & BRCA1 & 75 & 170 & 56/1 & 19.6 & 8/153 & 0.24 \\
+AM & BRCA2 & 60 & 210 & 49/8 & 9.44 & 6/164 & 0.29 \\
+AM & BAP1 & 6 & 8 & 5/0 & 0.97 & 1/8 & 1.02 \\
+AM & RAD51C & 8 & 3 & 5/1 & 0.27 & 2/2 & 6.90 \\
+AM & MSH2 & 72 & 55 & 50/6 & 2.58 & 9/46 & 0.31 \\
+AM & pooled & 221 & 446 & 165/16 & 11.9 & 26/373 & 0.21 \\
+REVEL & BRCA1 & 75 & 170 & 48/10 & 4.94 & 8/134 & 0.28 \\
+REVEL & BRCA2 & 60 & 210 & 44/9 & 7.56 & 11/182 & 0.37 \\
+REVEL & BAP1 & 6 & 8 & 4/0 & 0.60 & 2/8 & 1.23 \\
+REVEL & RAD51C & 8 & 3 & 6/0 & 0.49 & 2/3 & 2.23 \\
+REVEL & MSH2 & 72 & 55 & 43/3 & 3.14 & 5/38 & 0.28 \\
+REVEL & pooled & 221 & 446 & 145/22 & 7.99 & 28/365 & 0.23 \\
+ESM-2 & BRCA1 & 75 & 170 & 47/1 & 15.7 & 10/159 & 0.26 \\
+ESM-2 & BRCA2 & 60 & 210 & 33/4 & 8.66 & 9/184 & 0.32 \\
+ESM-2 & BAP1 & 6 & 8 & 5/0 & 0.97 & 1/5 & 2.62 \\
+ESM-2 & RAD51C & 8 & 3 & 5/0 & 0.35 & 1/1 & 62.7 \\
+ESM-2 & MSH2 & 72 & 55 & 44/3 & 3.23 & 3/33 & 0.25 \\
+ESM-2 & pooled & 221 & 446 & 134/8 & 15.4 & 24/382 & 0.19 \\
+\bottomrule
+\end{tabular}
+\end{table}

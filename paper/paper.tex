@@ -1,0 +1,37 @@
+\documentclass[10pt,letterpaper]{article}
+\input{preamble}
+
+\title{\vspace{-2.3em}CertiVar: Certified Assay Likelihood Ratios with Per-Class Error Control for Missense
+Variant-Effect Predictor Calls}
+\author{Aaryav Sharma\\Eastview High School, Apple Valley, MN, USA\\\texttt{aaryavvatts@gmail.com}}
+\date{\vspace{-2em}}
+
+\begin{document}
+% Title page (permitted in addition to the 10-page limit)
+\pagenumbering{gobble}
+\maketitle
+\input{sections/abstract}
+\clearpage
+\pagenumbering{arabic}
+
+\input{sections/intro}
+\input{sections/related}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/discussion}
+
+\paragraph{Code, data and appendix.}
+\input{sections/availability}
+
+\bibliographystyle{unsrtnat}
+\bibliography{refs_short}
+
+\clearpage
+\appendix
+\setcounter{section}{0}\setcounter{table}{0}\setcounter{figure}{0}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\begin{center}{\large\bfseries Appendix}\end{center}
+\input{sections/supplement_body}
+\end{document}

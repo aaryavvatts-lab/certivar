@@ -20,13 +20,13 @@ def main():
     rows = []
     for _, r in co.iterrows():
         a = ASSAY[r.gene]
-        rows.append(f"{r.gene} & {a[0]} {a[2]} & {a[3]} & {int(r.src_labelled)} & {r.src_prev:.2f} & "
+        rows.append(f"{r.gene} & {a[0]} {a[2]} & {a[3]} & {int(r.src_labelled)} & {int(round(r.src_prev * r.src_labelled))} & "
                     f"{int(r.target_n):,} & {r.target_prev:.3f} & {int(r.vus_assayed):,} & {r.vus_prev:.3f} \\\\")
     tot_n = int(co.target_n.sum())
     tex = r"""\begin{table}[t]
 \centering
 \caption{Datasets. \emph{ClinVar labelled}: missense single-nucleotide variants (SNVs) with $\ge$2 review stars and a P/LP or B/LB call (used
-only to fit the common score scale) and their pathogenic share. All shares are variant-level (descriptive). \emph{Assayed}: missense SNVs with a binary assay label
+only to fit the common score scale) and the number that are P/LP. All shares are variant-level (descriptive). \emph{Assayed}: missense SNVs with a binary assay label
 that are not in the ClinVar labelled set, and their LoF share; \emph{assayed VUS}: the subset classified VUS in
 ClinVar. Assay labels are the authors' published classes (authors) or, where none are deposited, derived from the
 assay's own synonymous and nonsense controls (controls).}\label{tab:data}
@@ -39,7 +39,7 @@ Gene & Assay & Labels & $n$ & P/LP & $n$ & LoF & $n$ & LoF\\
 \midrule
 """ + "\n".join(rows) + r"""
 \midrule
-Total & & & """ + f"{int(co.src_labelled.sum())}" + r""" & & """ + f"{tot_n:,}" + r""" & & """ + f"{int(co.vus_assayed.sum()):,}" + r""" & \\
+Total & & & """ + f"{int(co.src_labelled.sum())}" + r""" & """ + f"{int(round((co.src_prev * co.src_labelled).sum()))}" + r""" & """ + f"{tot_n:,}" + r""" & & """ + f"{int(co.vus_assayed.sum()):,}" + r""" & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -56,7 +56,7 @@ Total & & & """ + f"{int(co.src_labelled.sum())}" + r""" & & """ + f"{tot_n:,}" 
             if m not in s.index:
                 return "--"
             r = s.loc[m]
-            return f"{r.coverage_lof_rw:.2f}/{r.coverage_func_rw:.2f}/{r.abstain:.2f}"
+            return f"{r.coverage_lof_rw:.3f}/{r.coverage_func_rw:.3f}/{r.abstain:.2f}"
         lines.append(f"{pr} & {g} & {cell('Mondrian conformal')} & {cell('Pooled conformal')} & "
                      f"{cell('Fixed 0.1/0.9 tiers')} \\\\")
     tex = r"""\begin{table}[ht]
@@ -74,35 +74,40 @@ Predictor & Gene & Per-class (ours) & Pooled conformal & Fixed 0.1/0.9\\
 """
     (OUT / "tab_app_conformal.tex").write_text(tex)
 
-    # main text: AlphaMissense, within-gene random split, alpha 0.1
-    a = c[c.predictor == "AlphaMissense"].set_index(["gene", "method"])
-    meths = [("Mondrian conformal", "Mondrian (ours)"), ("Pooled conformal", "Pooled conformal"),
-             ("Label-shift weighted, true prior", "Weighted, true prior"),
-             ("AlphaMissense classes", "AlphaMissense classes")]
+    # main text: every gene and predictor, within-gene random split, alpha 0.1
+    pub = {"AlphaMissense": "AlphaMissense classes", "REVEL": "REVEL PP3/BP4 supporting"}
+    fmt = lambda v: f"\\textbf{{{v:.3f}}}" if v < 0.85 else f"{v:.3f}"
     lines = []
     for g in ["BRCA1", "BRCA2", "BAP1", "RAD51C", "MSH2"]:
-        cells = []
-        for m, _ in meths:
-            r = a.loc[(g, m)]
-            lo, fu = r.coverage_lof_rw, r.coverage_func_rw
-            fmt = lambda v: f"\\textbf{{{v:.2f}}}" if v < 0.85 else f"{v:.2f}"
-            cells.append(f"{fmt(lo)} & {fmt(fu)} & {r.abstain:.2f}")
-        lines.append(f"{g} & " + " & ".join(cells) + " \\\\")
-    head = " & ".join(f"\\multicolumn{{3}}{{c}}{{{lab}}}" for _, lab in meths)
-    rules = "".join(f"\\cmidrule(lr){{{2 + 3 * i}-{4 + 3 * i}}}" for i in range(len(meths)))
-    sub = " & ".join(["LoF & Fun & Abs"] * len(meths))
+        for pr in ["AlphaMissense", "REVEL", "ESM-2"]:
+            s = c[(c.gene == g) & (c.predictor == pr)].set_index("method")
+            r = s.loc["Mondrian conformal"]
+            cells = [f"{r.coverage_lof_rw:.3f}", f"{r.coverage_func_rw:.3f}", f"{r.abstain:.2f}"]
+            for m in ("Pooled conformal", pub.get(pr)):
+                if m is None:
+                    cells += ["--", "--"]
+                else:
+                    q = s.loc[m]
+                    cells += [fmt(min(q.coverage_lof_rw, q.coverage_func_rw)), f"{q.abstain:.2f}"]
+            lines.append(f"{g if pr == 'AlphaMissense' else ''} & {SHORT_PRED[pr]} & " + " & ".join(cells) + " \\\\")
+        if g != "MSH2":
+            lines.append("\\addlinespace[1pt]")
+    m = c[c.method == "Mondrian conformal"]
+    se = pd.concat([m.coverage_lof_rw_sd, m.coverage_func_rw_sd]) / m.n_rep.iloc[0] ** 0.5
     tex = (r"""\begin{table}[t]
 \centering
-\caption{AlphaMissense calls in each gene ($\alpha=0.1$, calibration and test on disjoint halves of the gene's residues,
-mean of 50 splits): residue-weighted coverage of LoF (LoF) and functional (Fun) variants, and abstention rate (Abs).
-Coverage below 0.85 in bold. The published AlphaMissense classes need no calibration data.}\label{tab:main}
-\footnotesize
-\setlength{\tabcolsep}{3.2pt}
-\begin{tabular}{l""" + "ccc" * len(meths) + r"""}
+\caption{Calls by gene and predictor ($\alpha=0.1$; calibration and test on disjoint halves of the gene's residues, mean
+of 50 splits). Per-class rule: residue-weighted coverage of LoF and functional (Fun) variants and abstention rate (Abs);
+Monte Carlo standard errors of the coverages are """ + f"{se.min():.3f}--{se.max():.3f}" + r""". Baselines: worst-class
+coverage (bold if below 0.85) and abstention. Published cut-offs: AlphaMissense classes (AM) and REVEL PP3/BP4
+thresholds; none exist for ESM-2.}\label{tab:main}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llccccccc}
 \toprule
- & """ + head + r"""\\
-""" + rules + r"""
-Gene & """ + sub + r"""\\
+ & & \multicolumn{3}{c}{Per-class (ours)} & \multicolumn{2}{c}{Pooled conformal} & \multicolumn{2}{c}{Published cut-off}\\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Gene & Predictor & LoF & Fun & Abs & Worst & Abs & Worst & Abs\\
 \midrule
 """ + "\n".join(lines) + r"""
 \bottomrule

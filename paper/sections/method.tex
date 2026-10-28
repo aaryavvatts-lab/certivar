@@ -1,0 +1,80 @@
+\section{Method}\label{sec:method}
+
+\paragraph{Setting.}
+Each missense variant has a predictor score $s$, oriented so that higher means more damaging, and an assay label
+$Y\in\{0,1\}$, with $Y=1$ for loss of function (LoF). A \emph{residue} is a protein position of one gene; the
+substitutions at a residue share structural context and form one cluster. A gene's assayed missense variants are split
+by residue into a calibration part $\mathcal A$ and a certification part $\mathcal B$; the variants to be called (for
+example VUS) form the target. We write $q(s)\in[0,1]$ for the score after Platt scaling \cite{Platt1999} fitted to
+confidently labelled ClinVar variants (pathogenic or likely pathogenic, P/LP, against benign or likely benign, B/LB);
+$q(s)$ estimates the probability that such a ClinVar variant is pathogenic, not that an assay outcome is LoF. Because $q$
+is increasing in $s$, every procedure below makes the same calls on $q$ as on $s$; $q$ only puts predictors on one
+scale (the baselines use its values), so no ClinVar label affects a \textsc{CertiVar} call.
+
+\paragraph{Per-class thresholds.}
+The nonconformity of label 1 is $r_1=1-q$ and of label 0 is $r_0=q$. From each residue in $\mathcal A$ we keep one
+variant chosen uniformly at random. For class $k$, let $n_k$ be the number of kept variants with label $k$ and
+$r^{(k)}_{(1)}\le\dots\le r^{(k)}_{(n_k)}$ their sorted nonconformities. The threshold is $\hat t_k=r^{(k)}_{(j_k)}$
+($\infty$ if $j_k>n_k$, and $j_k=n_k+1$ if the PAC set below is empty), with
+\begin{equation}\label{eq:rank}
+j_k=\bigl\lceil (n_k+1)(1-\alpha_k)\bigr\rceil \;\text{(in expectation)}\quad\text{or}\quad
+j_k=\min\bigl\{\,j:\ F_{\mathrm{Beta}(j,\,n_k-j+1)}(1-\alpha_k)\le\delta\,\bigr\}\;\text{(PAC)}.
+\end{equation}
+The prediction set is $C(q)=\{k: r_k\le \hat t_k\}$; \textsc{CertiVar} calls LoF if $C=\{1\}$, functional if $C=\{0\}$,
+and abstains otherwise. A functional call on a LoF variant requires $1\notin C$, so per-class coverage bounds both
+error rates.
+
+\paragraph{Certified likelihood ratios.}
+The ACMG/AMP guidelines \cite{Richards2015} grade evidence in qualitative categories; in their Bayesian adaptation, supporting,
+moderate, strong and very strong evidence towards pathogenicity correspond to a likelihood ratio above 2.1, 4.3, 18.7
+and 350, and supporting, moderate and strong evidence towards benignity to one below 0.48, 0.23 and 0.053
+\cite{Tavtigian2018,Brnich2020}. We use these values as levels and write, for example, \emph{LoF-supporting} for LoF
+calls whose likelihood ratio exceeds 2.1. Our likelihood ratios are defined with respect to the assay outcome $Y$ and
+averaged over all variants that receive a call, as OddsPath is for a functional assay \cite{Brnich2020}; they are not
+the local, score-specific ratios that ClinGen uses for the computational criteria PP3/BP4 \cite{Pejaver2022}. A level thus describes the call class as a
+whole and need not hold for each call (\cref{sec:discussion}), and states how strongly a call predicts the assay
+result. It is evidence about pathogenicity only to the extent that the assay is clinically validated, and it must not
+be combined with the same assay's functional evidence (PS3/BS3) or with PP3/BP4 from the same predictor. For
+thresholds $t$, the call rates (probabilities, not counts) are $\mathrm{TP}(t)=\Pr(\text{call LoF}\mid Y=1)$,
+$\mathrm{FP}(t)=\Pr(\text{call LoF}\mid Y=0)$, $\mathrm{FN}(t)=\Pr(\text{call functional}\mid Y=1)$ and
+$\mathrm{TN}(t)=\Pr(\text{call functional}\mid Y=0)$, and $\mathrm{LR}^+=\mathrm{TP}/\mathrm{FP}$,
+$\mathrm{LR}^-=\mathrm{FN}/\mathrm{TN}$.
+
+For each $\alpha$ on a grid $G$ we compute thresholds on $\mathcal A$ ($\alpha_0=\alpha_1=\alpha$), call one variant per
+residue of $\mathcal B$, and bound the four rates by one-sided Clopper--Pearson bounds \cite{ClopperPearson1934} at level
+$\epsilon=\delta/(2|G|)$, written $\ell$ (lower endpoint) and $u$ (upper endpoint) to keep them apart from the
+rates themselves: for $x$ calls among $n$ variants of a class, $\ell=F^{-1}_{\mathrm{Beta}(x,n-x+1)}(\epsilon)$
+($0$ if $x=0$) and $u=F^{-1}_{\mathrm{Beta}(x+1,n-x)}(1-\epsilon)$ ($1$ if $x=n$, including $n=0$). The certified
+bounds are $L^+(\alpha)=\ell_{\mathrm{TP}}/u_{\mathrm{FP}}$ and
+$U^-(\alpha)=u_{\mathrm{FN}}/\ell_{\mathrm{TN}}$ ($U^-=\infty$, never meeting a level, if $\ell_{\mathrm{TN}}=0$;
+$u_{\mathrm{FP}}>0$ always; for point estimates, $x/0=\infty$ for $x>0$, and $0/0$ is undefined and never selected). For each level, \cref{alg:certivar} returns the $\alpha$ that calls the most variants
+among those whose certified bound meets the level. Because $\hat t_0$ and $\hat t_1$ both decrease weakly in $\alpha$,
+no variant can be called LoF at one $\alpha$ and functional at another (\cref{sec:theory}). Line~7 also restricts
+functional calls to $\alpha\ge\hat\alpha^+$ of the same strength; this is not needed for validity and can only lower
+the functional yield, so the yields we report are conservative. The \emph{fixed-sequence} variant replaces the
+Bonferroni level $\delta/(2|G|)$ by $\delta/2$ and tests the grid in an order fixed in advance, stopping at the first
+$\alpha$ that does not meet the level (Theorem~\ref{thm:fs}). We test LoF levels in increasing $\alpha$ and functional
+levels in decreasing $\alpha$, because few variants are called functional at small $\alpha$. Computing all thresholds and bounds costs
+$O(|G|\,n\log n)$ for $n$ calibration and certification residues, about 5\,ms per gene on a laptop CPU.
+
+\begin{algorithm}[t]
+\caption{\textsc{CertiVar} for one gene and one evidence level}\label{alg:certivar}
+\begin{algorithmic}[1]
+\Require scores $q$; assay labels split by residue into $\mathcal A,\mathcal B$; grid $G$; $\delta$; targets $\tau$
+(LoF) and $\tau'$ (functional)
+\State keep one variant per residue of $\mathcal A$ and of $\mathcal B$
+\For{$\alpha\in G$}
+\State thresholds $\hat t_0,\hat t_1$ on the kept variants of $\mathcal A$ by \eqref{eq:rank}; call the kept variants of
+$\mathcal B$
+\State $L^+(\alpha)\gets \ell_{\mathrm{TP}}/u_{\mathrm{FP}}$, $U^-(\alpha)\gets u_{\mathrm{FN}}/\ell_{\mathrm{TN}}$
+(Clopper--Pearson, level $\delta/(2|G|)$ each)
+\EndFor
+\State $\hat\alpha^+\gets\arg\max_{\alpha\in G}\{\text{share called LoF on }\mathcal B : L^+(\alpha)>\tau\}$
+\State $\hat\alpha^-\gets\arg\max_{\alpha\in G}\{\text{share called functional on }\mathcal B : U^-(\alpha)<\tau',\ \alpha\ge\hat\alpha^+\}$
+(over all $\alpha\in G$ if $\hat\alpha^+$ does not exist)
+\State \textbf{output} LoF calls at $\hat\alpha^+$ and functional calls at $\hat\alpha^-$ with their certified levels (no
+calls of a type whose set is empty); abstain otherwise
+\end{algorithmic}
+\end{algorithm}
+
+\input{sections/theory}

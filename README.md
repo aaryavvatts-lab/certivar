@@ -2,29 +2,33 @@
 
 Code and data for the RECOMB 2027 submission
 
-> **CertiVar: Prevalence-Free Certified Error Rates and Likelihood Ratios for Missense Variant-Effect Predictor Calls**
+> **CertiVar: Certified Assay Likelihood Ratios with Per-Class Error Control for Missense Variant-Effect Predictor Calls**
 > Aaryav Sharma (Eastview High School, Apple Valley, MN, USA)
 
-Release `v1.0.0` is the version that matches the submitted paper. The supplementary material (full proofs,
+Release `v1.0.0` is the version that matches the submitted paper. The paper, with its appendix (full proofs,
 simulation, per-gene tables, strata, label sensitivity, the ClinVar check and implementation details; items S1-S5,
-Figs. S1-S2, Tables S1-S4) is in
-[`supplement/CertiVar_supplement.pdf`](supplement/CertiVar_supplement.pdf).
+Figs. S1-S2, Tables S1-S4), is [`manuscript/CertiVar_RECOMB2027.pdf`](manuscript/CertiVar_RECOMB2027.pdf); the appendix
+alone is [`supplement/CertiVar_supplement.pdf`](supplement/CertiVar_supplement.pdf), and the LaTeX source is in
+`paper/`.
 
 ## What CertiVar does
 
-CertiVar turns any variant-effect predictor score into three-way calls (loss of function, functional, abstain) for a
+CertiVar turns a variant-effect predictor score (oriented so that higher means more damaging) into three-way calls (loss of function, functional, abstain) for a
 gene with saturation genome editing (SGE) or deep mutational scanning (DMS) data:
 
 1. **Per-class thresholds.** Class-conditional ("Mondrian") split-conformal thresholds, set from assay labels with one
    variant per residue, bound the rate at which each class is mis-called, either in expectation or with probability at
    least 1 - delta over the calibration data (PAC version).
 2. **Certified likelihood ratios.** One-sided Clopper-Pearson endpoints `l_TP`, `u_FP`, `u_FN`, `l_TN` give
-   `L+ = l_TP / u_FP` and `U- = u_FN / l_TN` (`U- = inf` when `l_TN = 0`), valid simultaneously over a grid of
-   thresholds, for the call-averaged likelihood ratio of each call type **against the assay labels**. These are
-   compared with the numerical OddsPath thresholds (2.1 / 4.3 / 18.7 and 0.48 / 0.23 / 0.053; Tavtigian et al. 2018,
-   Brnich et al. 2020).
+   `L+ = l_TP / u_FP` and `U- = u_FN / l_TN` (`U- = inf` when `l_TN = 0`) for the call-averaged likelihood ratio of
+   each call type **against the assay labels**, valid after a threshold is selected from a grid: either simultaneously
+   over the grid (Bonferroni, Theorem 1) or level by level with fixed-sequence testing (Theorem 2,
+   `certivar.fixed_sequence_select`). These are compared with the numerical OddsPath thresholds (2.1 / 4.3 / 18.7 / 350
+   and 0.48 / 0.23 / 0.053; Tavtigian et al. 2018, Brnich et al. 2020).
 3. **No prevalence estimate.** Both certificates are class-conditional, so they hold whatever the share of damaging
-   variants among the variants being called, provided that within each class those variants resemble the assayed ones.
+   variants among the variants being called, provided that within each class those variants have the same score
+   distribution as the assayed ones. Per-class coverage holds at a fixed miscoverage level; after a level is selected,
+   it is guaranteed at `1 - max(grid)` (Proposition 3).
 
 ## What it certifies, and what it does not
 
@@ -68,8 +72,9 @@ in the paper is committed as `data/processed/clinvar.csv`); MaveDB score sets ur
 `data/processed/esm2_llr.csv`).
 
 `make test` runs the boundary-case unit tests of the method (zero denominators, empty classes, Platt slope sign,
-disjoint calls, coverage of the certified bounds). To rebuild only the results, figures and tables from the processed
-data already in this repository:
+disjoint calls, coverage of the certified bounds, fixed-sequence stopping and level control). To rebuild only the results, figures and tables from the processed
+data already in this repository (on a laptop CPU, `08_experiments.py` and `17_extensions.py` take about
+8 minutes each):
 
 ```bash
 make test results figures
@@ -88,6 +93,7 @@ make test results figures
 | Certified likelihood ratios (oracle and data splits), reliability, VUS shift, region split | `code/13_evidence.py` | `results/oracle.csv`, `evidence.csv`, `reliability.csv`, `vus_shift.csv`, `region_evidence.csv` |
 | Sensitivity to the assay-label rule | `code/14_label_sensitivity.py` | `results/label_sensitivity.csv` |
 | Calls judged against ClinVar pathogenicity labels | `code/15_clinvar_check.py` | `results/clinvar_check.csv` |
+| Fixed-sequence certification and a 20-level grid (oracle), calibration-share shift, all-variant calibration and intermediate variants | `code/17_extensions.py` | `results/oracle_extended.csv`, `prior_shift.csv`, `data_use.csv` |
 | Numbers quoted in the paper | `code/11_numbers.py` | `results/paper_numbers.json` |
 | Figures and tables | `code/09_figures.py`, `code/12_tables.py` | `results/figures/*.pdf`, LaTeX tables |
 | Short-author bibliography for the paper | `code/16_short_bib.py` | `paper/refs_short.bib` |

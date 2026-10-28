@@ -160,6 +160,73 @@ def main():
     pooled = conf[(conf.alpha == A) & (conf.design == "within-gene random split") & (conf.method == "Pooled conformal")]
     out["pooled_abstain_AM_BAP1"] = r3(pooled[(pooled.predictor == "AlphaMissense") & (pooled.gene == "BAP1")].abstain.iloc[0])
     out["n_cal_lof_range"] = [int(rel.n_cal_lof.min()), int(rel.n_cal_lof.max())]
+    # ---- additions for the revised paper
+    tot = co[["clinvar_PLP", "clinvar_BLB", "clinvar_VUS"]].sum()
+    out["clinvar_vus_share"] = r3(tot.clinvar_VUS / tot.sum())
+    m = conf[(conf.alpha == A) & (conf.design == "within-gene random split") & (conf.method == "Mondrian conformal")].copy()
+    if "coverage_lof_rw_sd" in m:
+        se = pd.concat([m.coverage_lof_rw_sd, m.coverage_func_rw_sd]) / np.sqrt(m.n_rep.iloc[0])
+        out["mondrian_se_range"] = [r3(se.min()), r3(se.max())]
+        out["mondrian_rows"] = m[["predictor", "gene", "coverage_lof_rw", "coverage_lof_rw_sd", "coverage_func_rw",
+                                  "coverage_func_rw_sd", "abstain", "n_rep"]].round(4).to_dict(orient="records")
+    # draw-level validity: every bound claimed in a draw respected (draws without claims count as successes)
+    out["oracle_draw_level"] = {}
+    for sel, g in orc.groupby("selection"):
+        ok = g.groupby(["predictor", "gene", "split"]).apply(
+            lambda t: bool((~t.achieved | t.bound_ok.fillna(False).astype(bool)).all())).values
+        lvl = g.groupby(["predictor", "gene", "split"]).apply(
+            lambda t: bool((~t.achieved | t.holds.fillna(False).astype(bool)).all())).values
+        boot = [ok[rng.integers(0, len(ok), len(ok))].mean() for _ in range(2000)]
+        out["oracle_draw_level"][sel] = {"draws": int(len(ok)), "all_bounds_ok": r3(ok.mean()),
+                                         "all_levels_held": r3(lvl.mean()),
+                                         "lo": r3(np.percentile(boot, 2.5)), "hi": r3(np.percentile(boot, 97.5))}
+    ps = pd.read_csv(RES / "prior_shift.csv")
+    g = ps.groupby(["method", "cal_share", "predictor", "gene"])[["coverage_lof_rw", "coverage_func_rw", "abstain"]].mean()
+    g["worst"] = g[["coverage_lof_rw", "coverage_func_rw"]].min(axis=1)
+    out["prior_shift"] = {f"{mt}|{sh}": {"worst_mean": r3(v.worst.mean()), "worst_min": r3(v.worst.min()),
+                                         "worst_max": r3(v.worst.max()), "lof_min": r3(v.coverage_lof_rw.min()),
+                                         "abstain_mean": r3(v.abstain.mean())}
+                          for (mt, sh), v in g.groupby(level=[0, 1])}
+    out["prior_shift_ncal"] = [int(ps.n_cal.min()), int(ps.n_cal.max())]
+    du = pd.read_csv(RES / "data_use.csv")
+    g = du.groupby(["calibration", "predictor", "gene"])[["coverage_lof_rw", "coverage_func_rw", "abstain", "n_cal"]].mean()
+    g["worst"] = g[["coverage_lof_rw", "coverage_func_rw"]].min(axis=1)
+    out["data_use"] = {c: {"worst_min": r3(v.worst.min()), "worst_max": r3(v.worst.max()), "worst_mean": r3(v.worst.mean()),
+                           "n_below_090": int((v.worst < 0.90).sum()), "abstain_mean": r3(v.abstain.mean()),
+                           "n_cal_mean": r3(v.n_cal.mean())} for c, v in g.groupby(level=0)}
+    it = du[(du.calibration == "one per residue") & du.n_int.notna() & (du.n_int > 0)]
+    vv = pd.read_csv(ROOT / "data" / "processed" / "variants.csv", low_memory=False)
+    vv_src = (vv.stars >= 2) & vv.group.isin(["path", "benign"])
+    out["intermediates"] = {"n_variants": int((vv.assay_label == -1).sum()),
+                            "n_outside_clinvar_set": int(((vv.assay_label == -1) & ~vv_src).sum()),
+                            "lof": r3((it.int_lof * it.n_int).sum() / it.n_int.sum()),
+                            "func": r3((it.int_func * it.n_int).sum() / it.n_int.sum())}
+    ox = pd.read_csv(RES / "oracle_extended.csv")
+    out["oracle_extended"] = {}
+    for (gr, sel), v in ox.groupby(["grid", "selection"]):
+        a = v[v.achieved]
+        lvl = v.groupby(["predictor", "gene", "draw"]).apply(
+            lambda t: bool((~t.achieved | t.holds.fillna(False).astype(bool)).all())).values
+        out["oracle_extended"][f"{gr}|{sel}"] = {
+            "claims": int(len(a)), "level_held": r3(a.holds.astype(float).mean()),
+            "level_held_vw": r3(a.vw_holds.astype(float).mean()),
+            "bound_ok": r3(a.bound_ok.astype(float).mean()) if a.bound_ok.notna().any() else None,
+            "draws_all_levels_held": r3(lvl.mean()),
+            "achieved": {k: r3(x) for k, x in v.groupby("level").achieved.mean().items()},
+            "held_by_level": {k: r3(x) for k, x in a.groupby("level").holds.mean().items()},
+            "n_by_level": {k: int(x) for k, x in a.groupby("level").size().items()}}
+    c = ox[(ox.grid == "G4") & (ox.selection == "certified") & ox.achieved]
+    lof, fun = c[c.level.str.startswith("PS3")], c[c.level.str.startswith("BS3")]
+    out["coverage_at_selection"] = {"cov_lof_mean": r3(c.cov_lof.mean()), "cov_func_mean": r3(c.cov_func.mean()),
+                                    "cov_lof_min": r3(c.cov_lof.min()), "cov_func_min": r3(c.cov_func.min()),
+                                    "cov_lof_p10": r3(c.cov_lof.quantile(0.1)), "cov_func_p10": r3(c.cov_func.quantile(0.1)),
+                                    "alpha_mean_lof_calls": r3(lof.alpha.mean()), "alpha_mean_func_calls": r3(fun.alpha.mean())}
+    b = ox[(ox.grid == "G4") & (ox.selection == "bootstrap") & ox.achieved].copy()
+    b["bad"] = ~b.bound_ok.astype(bool)
+    b["zero"] = np.where(b.level.str.startswith("PS3"), b.cert_fp == 0, b.cert_fn == 0)
+    out["bootstrap_diagnostic"] = {"n": int(len(b)), "fail": int(b.bad.sum()), "fail_rate": r3(b.bad.mean()),
+                                   "share_fail_zero": r3(b[b.bad].zero.mean()), "share_zero": r3(b.zero.mean()),
+                                   "fail_rate_zero": r3(b[b.zero].bad.mean()), "fail_rate_nonzero": r3(b[~b.zero].bad.mean())}
     (RES / "paper_numbers.json").write_text(json.dumps(out, indent=1, default=str))
     print(json.dumps({k: out[k] for k in ["source_prev", "target_prev_min", "target_prev_max", "em_abs_err_mean",
                                            "em_abs_err_max", "dual_agree", "ece_by_method"]}, indent=1))
