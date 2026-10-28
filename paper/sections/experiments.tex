@@ -30,7 +30,7 @@ Carlo standard error (0.002--0.010) below the target (\cref{fig:main}A; per-pair
 fell to 0.545 on LoF variants and below 0.85 in 5 pairs, because a marginal threshold controls coverage averaged over the two classes, not within each; the published AlphaMissense and REVEL cut-offs covered as little as 0.540 (BAP1) and 0.445 (MSH2) of functional variants. The per-class rule abstained on 35\% of variants on average (17--47\%), against 42\% for pooled conformal
 and 11\% for the AlphaMissense classes, which trade coverage for decisiveness. Calibrating on all variants instead of
 one per residue used five times as many labels and abstained less (30.4\% against 35.2\%), but worst-class coverage fell
-below 0.90 in 13 of 15 pairs (4 of 15, lowest 0.897, with one variant per residue in the same splits).
+below 0.90 in 13 of 15 pairs (4 of 15, lowest 0.897, for one variant per residue in that run).
 
 To test whether per-class thresholds need a prevalence estimate, we subsampled each calibration half to a LoF share of
 0.05 to 0.5 and tested at the natural share (100 repetitions; \cref{fig:shift}A). The per-class rule kept worst-class
@@ -52,7 +52,7 @@ repetitions); in C, blue: in expectation, grey: PAC.}\label{fig:main}
 \subsection{Reliability across splits and a real change of population}\label{sec:shift}
 With 17 to 93 LoF residues per calibration half, a single split can miss the in-expectation guarantee: over 200 splits
 per pair, LoF coverage was below 0.90 in 36.4\% of splits and functional coverage in 43.6\% (\cref{fig:main}B). PAC
-thresholds ($\delta=0.1$) reduced these to 7.9\% and 10.8\% (test-half estimates of the coverage that Proposition~\ref{prop:pac} bounds) at the price of abstaining on 58.4\% of variants against
+thresholds ($\delta_{\mathrm P}=0.1$) reduced these to 7.9\% and 10.8\% (test-half estimates of the coverage that Proposition~\ref{prop:pac} bounds) at the price of abstaining on 58.4\% of variants against
 35.4\%. Calibrated on non-VUS variants of one half of each gene's residues and applied to the assayed VUS of the other
 half (residue-weighted LoF share 17.0\% in calibration, 19.8\% in VUS), in-expectation thresholds kept LoF coverage between 0.854 and 0.958
 and functional coverage between 0.841 and 0.942, each below 0.90 in 7 of 15 pairs (\cref{fig:main}C); PAC thresholds
@@ -86,7 +86,8 @@ line at the guaranteed 0.90.}\label{fig:evidence}
 calls in 43.6\% (61.1\% called), LoF-moderate in 13.1\% and functional-moderate in 2.1\%, and never a strong level. In a fresh set
 of 1,500 draws, per-class coverage at the selected $\alpha$ averaged 0.82 (LoF) and 0.80 (functional), above the
 guaranteed 0.70 (Proposition~\ref{prop:select}): selecting for evidence strength trades coverage for confidence. Fixed-sequence testing, which certifies one level at a time, raised LoF-moderate certification in these draws from
-12.9\% (Bonferroni) to 29.1\% of draws and functional-supporting from 42.5\% to 60.6\% (\cref{fig:shift}B), with 99.7\% of 2,705 claims holding; on a 20-level grid it kept LoF-moderate at 26.7\% where
+12.9\% (Bonferroni) to 29.1\% of draws and functional-supporting from 42.5\% to 60.6\% (\cref{fig:shift}B; with an all-levels guarantee it
+trades supporting for moderate evidence, \cref{s:extra}), with 99.7\% of 2,705 claims holding; on a 20-point grid $G_{20}$ (0.02 to 0.40) it kept LoF-moderate at 26.7\% where
 the Bonferroni rule fell to 6.2\%. The testing order matters: functional-supporting, tested in increasing $\alpha$, was certified in only 25.7\% of draws (60.6\% in decreasing order). On held-out fifths of the residues, empirical likelihood ratios respected the
 certified bounds in 98.7\% of 2,091 cases (bootstrap: 76.8\%); on VUS at other residues, LoF-supporting held in all 443 certified claims and LoF-moderate in 25 of 28 (89\%, below the nominal 95\%). Against ClinVar labels (exploratory, not independent of the assays),
 LoF calls had likelihood-ratio lower bounds of 4.9--19.6 (BRCA1), 7.6--9.4 (BRCA2) and 2.6--3.2 (MSH2) (\cref{tab:app_clinvar}).
@@ -96,7 +97,7 @@ LoF calls had likelihood-ratio lower bounds of 4.9--19.6 (BRCA1), 7.6--9.4 (BRCA
 \includegraphics[width=\linewidth]{fig_shift.pdf}
 \caption{(A) Worst-class coverage when the calibration half is subsampled to a given LoF share (evenly spaced axis): mean over 15
 pairs (thick) and worst pair (thin). (B) Share of oracle draws certifying each level with a Bonferroni correction or
-fixed-sequence testing, on four-level ($G_4$) and 20-level ($G_{20}$) grids.}\label{fig:shift}
+fixed-sequence testing, on the four-point ($G_4$) and 20-point ($G_{20}$) grids.}\label{fig:shift}
 \end{figure}
 
 \subsection{How much data, from where, and with which labels}\label{sec:transfer}
@@ -105,6 +106,5 @@ Calibration data had to come from the same gene: calibrating on the other four g
 contiguous quarters of a protein and testing on the fourth gave worst-class coverage of 0.860--0.923, and the true ratio respected 88.8\% of 1,891 certified bounds, below the nominal 95\%. With 150 calibration residues drawn at random, coverage
 averaged over genes met the target with 40.5\% abstention (82.8\% with 25 residues; \cref{fig:practical}). Coverage was lower on the third of
 variants nearest the assay class boundary (0.865 LoF, 0.873 functional). Intermediate variants, which no guarantee
-covers, were called LoF in 19.6\% and functional in 36.6\% of cases; on 1,534 unassayed BRCA1 VUS outside the assayed
-region, AlphaMissense thresholds abstained on only 53, which suggests a shifted score distribution. Relabelling BRCA2,
+covers, were called LoF in 19.6\% and functional in 36.6\% of cases; on 1,534 unassayed BRCA1 VUS, AlphaMissense thresholds abstained on only 53, which suggests a shifted score distribution. Relabelling BRCA2,
 BAP1 and RAD51C with alternative rules (\cref{tab:app_labels}) changed yields but not validity: the lowest per-class coverage over predictors stayed between 0.894 and 0.902, and certified bounds held in 2,530 of 2,533 oracle selections.

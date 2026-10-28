@@ -95,7 +95,7 @@ simulation, where the shift is a pure change of prior, unlike in the real data (
 \caption{Simulation with residue-clustered scores, calibration at LoF share 0.45 and test share on the horizontal axis
 (300 replicates; error bars are 95\% intervals of the mean). (A) Expected calibration error of Platt scaling at the
 source share, after EM prior adjustment, and after adjustment to the true share. (B) Coverage of LoF variants.
-(C) Abstention rate.}\label{fig:sim}
+(C) Abstention rate. Panel A has its own legend.}\label{fig:sim}
 \end{figure}
 
 
@@ -117,7 +117,7 @@ line is equality. (C) Worst-class coverage when calibrating on random residues o
 quarters of the protein, or on the other four genes.}\label{fig:practical}
 \end{figure}
 
- \Cref{tab:app_conformal} gives per gene and predictor the residue-weighted coverage of each
+ \Cref{fig:practical} shows calibration size, prior estimates and calibration source; \cref{tab:app_conformal} gives per gene and predictor the residue-weighted coverage of each
 class and the abstention rate of the per-class rule and two baselines; \cref{tab:app_prior} gives the estimated LoF
 shares and calibration errors behind \cref{sec:coverage}. When the calibration and test halves of a gene share their LoF
 share, label-shift-weighted conformal prediction \cite{Podkopaev2021} with the true share nearly coincides with pooled
@@ -155,7 +155,7 @@ validation.
 Inputs: ClinVar \nolinkurl{variant_summary.txt.gz} of 26 October 2026 (SHA-256 in \nolinkurl{data/MANIFEST.txt});
 MaveDB score sets \nolinkurl{urn:mavedb:00000097-0-2} (BRCA1), \nolinkurl{00001279-a-1} (BRCA2), \nolinkurl{00000662-0-1}
 (BAP1), \mbox{\nolinkurl{00000673-0-1}} (RAD51C) and \nolinkurl{00000050-a-1} (MSH2, positive scores = loss of function); Ensembl VEP
-REST on GRCh38 (release 116) with the AlphaMissense and REVEL annotations; ESM-2 \nolinkurl{esm2_t33_650M_UR50D}.
+REST on GRCh38 (release 116) with the AlphaMissense and REVEL annotations; ESM-2 \mbox{\nolinkurl{esm2_t33_650M_UR50D}}.
 Distance from the class boundary is the absolute difference between a variant's assay score
 and the midpoint of the two class medians in its gene, divided by the distance between the medians. Expected calibration
 error uses ten equal-mass bins. AUROC intervals are percentiles of 1,000 bootstrap resamples of residues. The region split
@@ -203,7 +203,7 @@ leaves open; they use their own random draws, so their numbers for the main rule
 
 \paragraph{More comparison rules.} \Cref{tab:app_baselines} repeats the oracle design of \cref{sec:evidence} with Katz
 intervals for a ratio of binomial proportions \cite{Katz1978} at level $\delta/|G|$ per ratio (0.5 added to every cell
-of a ratio with a zero count), the percentile bootstrap at the Bonferroni level and with 0.5 added to every cell, and
+of a ratio with a zero count), the percentile bootstrap at the Bonferroni level, the uncorrected percentile bootstrap with 0.5 added to every cell, and
 fixed-sequence testing with each of the three levels of a call type at $\delta/3$, which holds for all levels at once
 (Theorem~\ref{thm:fs} and a union bound over levels). Every claimed bound of a draw held in 99.7\% of 1,500 draws for
 the certified rule, 97.9\% for uncorrected Clopper--Pearson bounds and 98.0\% for Katz intervals, against 57.6\%,
@@ -233,11 +233,11 @@ $\pi F_1+(1-\pi)F_0$ of the two class laws. We test this necessary condition on 
 $D=\min_{\pi}\sup_x|\hat F_T(x)-\pi\hat F_1(x)-(1-\pi)\hat F_0(x)|$ ($\pi$ on 201 values in $[0,1]$), where $\hat F_1$
 and $\hat F_0$ are the empirical class distribution functions of the calibration data; the $p$-value comes from 300
 bootstrap resamples that redraw both classes and a target sample of the same size from the fitted mixture. A
-rejection shows that the targets are not a re-weighting of the calibration classes; acceptance does not establish
+rejection shows that the targets are not a reweighting of the calibration classes; acceptance does not establish
 Assumption~\ref{as:shift}. The check rejected 4.7\% of random halves (3.0--7.7\% by gene), where the assumption holds
 by design, 43.9\% of held-out contiguous quarters, 77.3\% of transfers from another gene and every tested set of
 unassayed ClinVar VUS at residues the BRCA1 and BRCA2 assays did not reach, but only 8.5\% of assayed-VUS targets
-(\cref{tab:app_mixture}); rejected targets had lower coverage than accepted ones.
+(\cref{tab:app_mixture}); except for random halves, where the two were equal, rejected targets had lower coverage than accepted ones.
 
 \input{tables/tab_app_mixture}
 
