@@ -133,30 +133,6 @@ def mondrian_thresholds(p_cal, y_cal, alpha, delta=None):
     return thr
 
 
-def residue_weighted_thresholds(p_cal, y_cal, clusters, alpha):
-    """Per-class thresholds from all calibration variants with residue weights.
-
-    Each class-k variant gets weight 1 / (number of class-k calibration variants at its residue), so every residue
-    carries total weight one within a class. The threshold is the smallest nonconformity whose cumulative weight
-    reaches the in-expectation rank ceil((m_k + 1)(1 - alpha)), where m_k is the number of residues with a class-k
-    variant (infinite if the rank exceeds m_k). This uses every label while matching the residue-first law Q.
-    """
-    p_cal, y_cal, clusters = map(np.asarray, (p_cal, y_cal, clusters))
-    thr = {}
-    for k in (0, 1):
-        m = y_cal == k
-        r = 1 - p_cal[m] if k == 1 else p_cal[m]
-        _, inv, cnt = np.unique(clusters[m], return_inverse=True, return_counts=True)
-        rank = int(np.ceil((len(cnt) + 1) * (1 - alpha)))
-        if rank > len(cnt):
-            thr[k] = np.inf
-            continue
-        order = np.argsort(r, kind="stable")
-        cum = np.cumsum((1.0 / cnt[inv])[order])
-        thr[k] = r[order][np.searchsorted(cum, rank - 1e-9)]
-    return thr
-
-
 def weighted_decisions(p_cal, y_cal, p_tst, alpha, pi_t):
     """Label-shift weighted split conformal (Podkopaev and Ramdas 2021), marginal nonconformity.
 
@@ -317,66 +293,6 @@ def certify(dec, y, level):
         "lr_neg_upper": np.inf if tn_lo == 0 else fn_hi / tn_lo, "lr_neg_hat": ratio(c / n1, e / n0) if both else np.nan,
         "yield_lof": float((dec == 1).mean()), "yield_func": float((dec == 0).mean()), "n1": n1, "n0": n0,
     }
-
-
-def katz_bounds(dec, y, level):
-    """One-sided Katz log intervals (Katz et al. 1978) for LR+ = TP/FP (lower) and LR- = FN/TN (upper) at `level`.
-
-    The usual large-sample interval for a ratio of two binomial proportions; when a count in a ratio is zero, 0.5 is
-    added to every cell of that ratio (each count and its complement). Returns (L+, U-), nan if a class is absent.
-    """
-    from scipy.stats import norm
-    dec, y = np.asarray(dec), np.asarray(y)
-    n1, n0 = int((y == 1).sum()), int((y == 0).sum())
-    if n1 == 0 or n0 == 0:
-        return np.nan, np.nan
-    z = float(norm.ppf(1 - level))
-
-    def one(a, b, sign):
-        m1, m0 = n1, n0
-        if a == 0 or b == 0:
-            a, b, m1, m0 = a + 0.5, b + 0.5, n1 + 1, n0 + 1
-        se = np.sqrt(max(1 / a - 1 / m1 + 1 / b - 1 / m0, 0.0))
-        return (a / m1) / (b / m0) * np.exp(sign * z * se)
-
-    a = int(((dec == 1) & (y == 1)).sum()); b = int(((dec == 1) & (y == 0)).sum())
-    c = int(((dec == 0) & (y == 1)).sum()); e = int(((dec == 0) & (y == 0)).sum())
-    return one(a, b, -1.0), one(c, e, 1.0)
-
-
-def _mixture_distance(s1, s0, st, pis):
-    """min over pi of the Kolmogorov distance between the target ECDF and pi F1 + (1 - pi) F0; returns (D, pi)."""
-    x = np.unique(np.concatenate([s1, s0, st]))
-    f1 = np.searchsorted(np.sort(s1), x, side="right") / len(s1)
-    f0 = np.searchsorted(np.sort(s0), x, side="right") / len(s0)
-    ft = np.searchsorted(np.sort(st), x, side="right") / len(st)
-    dist = np.abs(ft[None, :] - pis[:, None] * f1[None, :] - (1 - pis[:, None]) * f0[None, :]).max(axis=1)
-    i = int(np.argmin(dist))
-    return float(dist[i]), float(pis[i])
-
-
-def mixture_check(s1, s0, st, n_boot=300, rng=None, n_grid=201):
-    """Necessary-condition check of class-conditional invariance (Assumption 2 of the paper).
-
-    s1, s0: calibration scores of LoF and functional variants (one per residue); st: unlabelled target scores (one per
-    residue). Under Assumption 2 the target score law is pi F1 + (1 - pi) F0 for some pi in [0, 1]. The statistic is the
-    smallest Kolmogorov distance between the target empirical distribution and such a mixture. Its null distribution is
-    approximated by a bootstrap that redraws both calibration classes from their empirical laws and a target sample of
-    the same size from the fitted mixture. Returns (statistic, fitted pi, p-value). A small p-value shows that the target
-    is not a re-weighting of the calibration classes, so the guarantees need not transfer; a large p-value does not
-    prove invariance.
-    """
-    rng = rng if rng is not None else np.random.default_rng(0)
-    s1, s0, st = map(np.asarray, (s1, s0, st))
-    pis = np.linspace(0, 1, n_grid)
-    d, pi = _mixture_distance(s1, s0, st, pis)
-    exceed = 0
-    for _ in range(n_boot):
-        b1, b0 = rng.choice(s1, len(s1)), rng.choice(s0, len(s0))
-        lof = rng.random(len(st)) < pi
-        bt = np.where(lof, rng.choice(s1, len(st)), rng.choice(s0, len(st)))
-        exceed += _mixture_distance(b1, b0, bt, pis)[0] >= d
-    return d, pi, (1 + exceed) / (1 + n_boot)
 
 
 def fixed_sequence_select(alphas, bounds, yields, tau, lof=True):

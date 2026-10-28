@@ -2,13 +2,10 @@
 
 E11 oracle_extended.csv  Oracle design of 13_evidence.py (calibration 30% and certification 50% of residues drawn with
                          replacement, 100 draws per pair) on two grids: the main grid G4 = {0.05, 0.10, 0.20, 0.30}
-                         and a finer grid G20 of 20 levels from 0.02 to 0.40. Selection rules, all on the same draws:
-                         certified with a Bonferroni correction over the grid (Algorithm 1); fixed-sequence testing
-                         (LoF levels in increasing alpha, functional levels in decreasing alpha) with each level at
-                         delta / 3 (simultaneous over the three levels of a call type) or at delta (per level), and a
-                         variant with every level in increasing alpha; uncorrected Clopper-Pearson; Katz intervals with
-                         a Bonferroni correction; one-sided 95% percentile bootstrap, the same at the Bonferroni level,
-                         and with 0.5 added to every cell; and the point estimate. For every selection we
+                         and a finer grid G20 of 20 levels from 0.02 to 0.40. Selection rules: certified with a
+                         Bonferroni correction over the grid (Algorithm 1), certified by fixed-sequence testing over
+                         the grid ordered by increasing alpha (Algorithm 1, fixed-sequence variant), uncorrected
+                         Clopper-Pearson, one-sided 95% percentile bootstrap and point estimate. For every selection we
                          record the true residue-weighted and variant-weighted likelihood ratios on the population, the
                          population per-class coverage of the selected thresholds, and the certification counts.
 E12 prior_shift.csv      Calibration share shift: in each of 100 random halvings, the calibration half (one variant per
@@ -45,30 +42,21 @@ def variant_rates(dec, y):
     return sc.ratio(tp, fp), sc.ratio(fn, tn)
 
 
-ev.KEYS.update({"bootstrap, Bonferroni": ("lr_pos_bootb", "lr_neg_bootb"),
-                "bootstrap, pseudocount": ("lr_pos_bootpc", "lr_neg_bootpc"),
-                "Katz, Bonferroni": ("lr_pos_katz", "lr_neg_katz")})
-N_LEVELS = len(ev.LEVELS_POS)   # evidence levels tested per call type (supporting, moderate, strong)
-
-
-def fixed_sequence(cert, grid, func_descending=True, key="fs"):
-    """Key "fs" tests each level at delta (a per-level guarantee, Theorem 2); key "fs3" tests each level at
-    delta / N_LEVELS, so that by a union bound every level of a call type holds simultaneously with probability at least
-    1 - delta. Fixed-sequence testing over the grid in an order fixed in advance. For LoF level tau the hypothesis at alpha is
+def fixed_sequence(cert, grid, func_descending=True):
+    """Fixed-sequence testing over the grid in an order fixed in advance. For LoF level tau the hypothesis at alpha is
     LR+(alpha) <= tau; it is rejected when l_TP / u_FP > tau with both Clopper-Pearson endpoints at level delta/2,
     a level-delta test. Testing stops at the first non-rejection; among the rejected alphas the one with the largest
     yield is selected. LoF levels are tested in increasing alpha. Functional levels are treated in the same way with
     u_FN / l_TN < tau', in decreasing alpha (func_descending=True) or in increasing alpha."""
     out = {}
-    kp, kn = f"{key}_pos", f"{key}_neg"
     for name, tau in ev.LEVELS_POS.items():
-        a = sc.fixed_sequence_select(grid, [cert[x][kp] for x in grid], [cert[x]["yield_lof"] for x in grid], tau)
-        out[name] = (a, cert[a][kp]) if a is not None else None
+        a = sc.fixed_sequence_select(grid, [cert[x]["fs_pos"] for x in grid], [cert[x]["yield_lof"] for x in grid], tau)
+        out[name] = (a, cert[a]["fs_pos"]) if a is not None else None
     order = sorted(grid, reverse=True) if func_descending else list(grid)
     for name, tau in ev.LEVELS_NEG.items():
-        a = sc.fixed_sequence_select(order, [cert[x][kn] for x in order], [cert[x]["yield_func"] for x in order],
+        a = sc.fixed_sequence_select(order, [cert[x]["fs_neg"] for x in order], [cert[x]["yield_func"] for x in order],
                                      tau, lof=False)
-        out[name] = (a, cert[a][kn]) if a is not None else None
+        out[name] = (a, cert[a]["fs_neg"]) if a is not None else None
     return out
 
 
@@ -95,19 +83,12 @@ def oracle_extended(d):
                         u = sc.certify(dz, y[iz], DELTA / 2)
                         c["lr_pos_unc"], c["lr_neg_unc"] = u["lr_pos_lower"], u["lr_neg_upper"]
                         c["fs_pos"], c["fs_neg"] = u["lr_pos_lower"], u["lr_neg_upper"]
-                        s3 = sc.certify(dz, y[iz], DELTA / (2 * N_LEVELS))
-                        c["fs3_pos"], c["fs3_neg"] = s3["lr_pos_lower"], s3["lr_neg_upper"]
                         c["lr_pos_boot"], c["lr_neg_boot"] = ev.boot_bounds(dz, y[iz], rng, 5.0)
-                        c["lr_pos_bootb"], c["lr_neg_bootb"] = ev.boot_bounds(dz, y[iz], rng, 100 * level)
-                        c["lr_pos_bootpc"], c["lr_neg_bootpc"] = ev.boot_bounds(dz, y[iz], rng, 5.0, pseudo=0.5)
-                        c["lr_pos_katz"], c["lr_neg_katz"] = sc.katz_bounds(dz, y[iz], DELTA / len(grid))
                         c["counts"] = counts(dz, y[iz])
                         cert[a] = c
                     sels = {m: ev.select(cert, m) for m in
-                            ("certified", "Clopper-Pearson, uncorrected", "bootstrap", "bootstrap, Bonferroni",
-                             "bootstrap, pseudocount", "Katz, Bonferroni", "point estimate")}
+                            ("certified", "Clopper-Pearson, uncorrected", "bootstrap", "point estimate")}
                     sels["fixed sequence"] = fixed_sequence(cert, grid)
-                    sels["fixed sequence, simultaneous"] = fixed_sequence(cert, grid, key="fs3")
                     sels["fixed sequence, all increasing"] = fixed_sequence(cert, grid, func_descending=False)
                     for mode, chosen in sels.items():
                         for name, best in chosen.items():

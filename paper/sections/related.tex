@@ -1,18 +1,22 @@
 \section{Related work}\label{sec:related}
 
 ClinGen maps predictor scores to ACMG/AMP evidence strengths through local likelihood ratios estimated against ClinVar
-labels with a one-sided bootstrap bound \cite{Pejaver2022}, extended to more predictors \cite{Bergquist2025}, to assay
-scores \cite{Brnich2020,Fayer2021,Zeiberg2025} and to gene- and domain-specific calibration
-\cite{Tejura2024,Chen2026,Badonyi2025}, the last with sign-test bounds on resampled likelihood ratios \cite{Badonyi2025}.
-Split conformal prediction gives finite-sample coverage \cite{Vovk2005}; its class-conditional (Mondrian) form controls
-coverage within each class \cite{Vovk2005,Sadinle2019,Ding2023}; order-statistic thresholds give training-conditional
-control \cite{Vovk2013,Tong2018,Park2020}; keeping one member per group handles clustered data \cite{Dunn2023}; and
-abstaining classifiers trade coverage against error \cite{Chow1970}. Selecting a threshold with exact binomial bounds and
-a union bound underlies selective classification with guaranteed risk \cite{Geifman2017} and risk-controlling prediction
-sets \cite{Bates2021rcps}; fixed-sequence testing over an ordered grid is the Learn-then-Test template
-\cite{Angelopoulos2025ltt}. Harrizi et al.\ reported split-conformal prediction sets for missense predictors on ClinVar
-at 90\% coverage \cite{Harrizi2026}; \textsc{CertiVar} instead controls coverage within each class, calibrates on assay
-labels and certifies the likelihood ratio of the calls. Large-sample intervals for a ratio of binomial proportions
-\cite{Katz1978,Koopman1984} carry no finite-sample guarantee (\cref{sec:evidence} compares Katz intervals). Label-shift methods
-adjust posteriors or conformal weights to an estimated target prior \cite{Saerens2002,Lipton2018,Podkopaev2021};
-class-conditional quantities need none, provided class-conditional invariance holds, which \cref{sec:method} tests.
+labels, with a one-sided bootstrap bound \cite{Pejaver2022}; the approach has been extended to more predictors
+\cite{Bergquist2025}, to assay scores \cite{Brnich2020,Fayer2021,Zeiberg2025} and to gene- and domain-specific
+calibration \cite{Tejura2024,Chen2026,Badonyi2025}, with uncertainty from the bootstrap \cite{Pejaver2022,Bergquist2025}
+or sign-test bounds on resampled likelihood ratios \cite{Badonyi2025}. Split conformal prediction gives finite-sample
+coverage \cite{Vovk2005}; its class-conditional (Mondrian) form controls coverage within each class
+\cite{Vovk2005,Sadinle2019}; order-statistic thresholds give training-conditional control \cite{Vovk2013,Tong2018};
+keeping one member per group handles clustered data \cite{Dunn2023}; and abstaining classifiers trade the share of inputs
+classified against error \cite{Chow1970}. Selecting a threshold from a grid with binomial bounds and a multiplicity
+correction, or by fixed-sequence testing, is the template of selective classification with guaranteed risk, risk-controlling prediction sets and Learn-then-Test
+\cite{Geifman2017,Bates2021rcps,Angelopoulos2025ltt}. Harrizi et al.\ reported split-conformal prediction sets for missense
+predictors on ClinVar benchmarks at 90\% coverage \cite{Harrizi2026}; \textsc{CertiVar} instead controls
+coverage within each class, calibrates on the gene's assay labels and certifies the likelihood ratio of the calls.
+Large-sample intervals for a ratio of binomial proportions \cite{Katz1978,Koopman1984} are narrower than our ratio
+of exact endpoints but carry no finite-sample guarantee. Label-shift methods adjust posteriors or conformal
+weights to an estimated target prior \cite{Saerens2002,Lipton2018,Podkopaev2021}; class-conditional quantities need no
+prior, provided the target satisfies class-conditional invariance (Assumption~\ref{as:shift}). Relative to these methods, \textsc{CertiVar} contributes a certificate on the OddsPath scale for both call types of
+an abstaining rule on residue-clustered assay labels,
+with coverage after threshold selection, a fixed-sequence variant, and a known-truth benchmark of how often point
+estimates and bootstrap bounds overstate evidence.

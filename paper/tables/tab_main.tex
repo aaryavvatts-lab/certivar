@@ -2,35 +2,35 @@
 \centering
 \caption{Calls by gene and predictor ($\alpha=0.1$; calibration and test on disjoint halves of the gene's residues, mean
 of 50 splits). Per-class rule: residue-weighted coverage of LoF and functional (Fun) variants and abstention rate (Abs);
-Monte Carlo standard errors of the coverages are 0.002--0.010. Pooled conformal:
-worst-class coverage and abstention. Published cut-offs (AlphaMissense classes for AM, REVEL PP3/BP4 thresholds for
-REVEL; none exist for ESM-2): coverage of each class and abstention. Bold: below 0.85.}\label{tab:main}
-\setlength{\tabcolsep}{3.6pt}
-\begin{tabular}{llcccccccc}
+Monte Carlo standard errors of the coverages are 0.002--0.010. Baselines: worst-class
+coverage (bold if below 0.85) and abstention. Published cut-offs: AlphaMissense classes (AM) and REVEL PP3/BP4
+thresholds; none exist for ESM-2.}\label{tab:main}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llccccccc}
 \toprule
- & & \multicolumn{3}{c}{Per-class (ours)} & \multicolumn{2}{c}{Pooled conformal} & \multicolumn{3}{c}{Published cut-off}\\
-\cmidrule(lr){3-5}\cmidrule(lr){6-7}\cmidrule(lr){8-10}
-Gene & Predictor & LoF & Fun & Abs & Worst & Abs & LoF & Fun & Abs\\
+ & & \multicolumn{3}{c}{Per-class (ours)} & \multicolumn{2}{c}{Pooled conformal} & \multicolumn{2}{c}{Published cut-off}\\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Gene & Predictor & LoF & Fun & Abs & Worst & Abs & Worst & Abs\\
 \midrule
-BRCA1 & AM & 0.916 & 0.901 & 0.25 & 0.889 & 0.32 & 0.927 & \textbf{0.773} & 0.13 \\
- & REVEL & 0.914 & 0.902 & 0.34 & 0.883 & 0.48 & 1.000 & \textbf{0.663} & 0.59 \\
- & ESM-2 & 0.911 & 0.897 & 0.37 & 0.893 & 0.34 & -- & -- & -- \\
+BRCA1 & AM & 0.916 & 0.901 & 0.25 & 0.889 & 0.32 & \textbf{0.773} & 0.13 \\
+ & REVEL & 0.914 & 0.902 & 0.34 & 0.883 & 0.48 & \textbf{0.663} & 0.59 \\
+ & ESM-2 & 0.911 & 0.897 & 0.37 & 0.893 & 0.34 & -- & -- \\
 \addlinespace[1pt]
-BRCA2 & AM & 0.899 & 0.903 & 0.36 & \textbf{0.808} & 0.17 & \textbf{0.810} & 0.866 & 0.11 \\
- & REVEL & 0.912 & 0.899 & 0.42 & \textbf{0.841} & 0.24 & 0.984 & \textbf{0.803} & 0.57 \\
- & ESM-2 & 0.896 & 0.903 & 0.36 & 0.894 & 0.51 & -- & -- & -- \\
+BRCA2 & AM & 0.899 & 0.903 & 0.36 & \textbf{0.808} & 0.17 & \textbf{0.810} & 0.11 \\
+ & REVEL & 0.912 & 0.899 & 0.42 & \textbf{0.841} & 0.24 & \textbf{0.803} & 0.57 \\
+ & ESM-2 & 0.896 & 0.903 & 0.36 & 0.894 & 0.51 & -- & -- \\
 \addlinespace[1pt]
-BAP1 & AM & 0.909 & 0.898 & 0.39 & 0.880 & 0.69 & 0.921 & \textbf{0.540} & 0.07 \\
- & REVEL & 0.903 & 0.904 & 0.42 & \textbf{0.545} & 0.15 & \textbf{0.799} & 0.975 & 0.29 \\
- & ESM-2 & 0.910 & 0.905 & 0.47 & 0.878 & 0.36 & -- & -- & -- \\
+BAP1 & AM & 0.909 & 0.898 & 0.39 & 0.880 & 0.69 & \textbf{0.540} & 0.07 \\
+ & REVEL & 0.903 & 0.904 & 0.42 & \textbf{0.545} & 0.15 & \textbf{0.799} & 0.29 \\
+ & ESM-2 & 0.910 & 0.905 & 0.47 & 0.878 & 0.36 & -- & -- \\
 \addlinespace[1pt]
-RAD51C & AM & 0.901 & 0.905 & 0.17 & \textbf{0.824} & 0.10 & 0.860 & 0.902 & 0.11 \\
- & REVEL & 0.909 & 0.904 & 0.27 & \textbf{0.625} & 0.20 & \textbf{0.792} & 0.979 & 0.25 \\
- & ESM-2 & 0.915 & 0.908 & 0.34 & 0.886 & 0.50 & -- & -- & -- \\
+RAD51C & AM & 0.901 & 0.905 & 0.17 & \textbf{0.824} & 0.10 & 0.860 & 0.11 \\
+ & REVEL & 0.909 & 0.904 & 0.27 & \textbf{0.625} & 0.20 & \textbf{0.792} & 0.25 \\
+ & ESM-2 & 0.915 & 0.908 & 0.34 & 0.886 & 0.50 & -- & -- \\
 \addlinespace[1pt]
-MSH2 & AM & 0.915 & 0.901 & 0.29 & 0.897 & 0.70 & 0.951 & \textbf{0.642} & 0.12 \\
- & REVEL & 0.911 & 0.901 & 0.37 & 0.896 & 0.79 & 0.995 & \textbf{0.445} & 0.41 \\
- & ESM-2 & 0.920 & 0.902 & 0.46 & 0.895 & 0.80 & -- & -- & -- \\
+MSH2 & AM & 0.915 & 0.901 & 0.29 & 0.897 & 0.70 & \textbf{0.642} & 0.12 \\
+ & REVEL & 0.911 & 0.901 & 0.37 & 0.896 & 0.79 & \textbf{0.445} & 0.41 \\
+ & ESM-2 & 0.920 & 0.902 & 0.46 & 0.895 & 0.80 & -- & -- \\
 \bottomrule
 \end{tabular}
 \end{table}

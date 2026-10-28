@@ -2929,210 +2929,119 @@
  },
  "oracle_extended": {
   "G20|Clopper-Pearson, uncorrected": {
-   "claims": 3517,
+   "claims": 3501,
    "level_held": 0.996,
    "level_held_vw": 0.995,
-   "bound_ok": 0.986,
+   "bound_ok": 0.989,
    "draws_all_levels_held": 0.991,
    "achieved": {
-    "BS3-moderate": 0.114,
+    "BS3-moderate": 0.095,
     "BS3-strong": 0.0,
-    "BS3-supporting": 0.777,
-    "PS3-moderate": 0.477,
-    "PS3-strong": 0.001,
-    "PS3-supporting": 0.975
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.936,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 0.997,
-    "PS3-strong": 1.0,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 171,
-    "BS3-supporting": 1166,
-    "PS3-moderate": 716,
-    "PS3-strong": 1,
-    "PS3-supporting": 1463
-   }
-  },
-  "G20|Katz, Bonferroni": {
-   "claims": 2422,
-   "level_held": 1.0,
-   "level_held_vw": 1.0,
-   "bound_ok": 0.996,
-   "draws_all_levels_held": 0.999,
-   "achieved": {
-    "BS3-moderate": 0.0,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.256,
-    "PS3-moderate": 0.373,
+    "BS3-supporting": 0.787,
+    "PS3-moderate": 0.479,
     "PS3-strong": 0.0,
-    "PS3-supporting": 0.985
+    "PS3-supporting": 0.972
    },
    "held_by_level": {
+    "BS3-moderate": 0.909,
     "BS3-supporting": 1.0,
-    "PS3-moderate": 0.998,
+    "PS3-moderate": 0.999,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-supporting": 384,
-    "PS3-moderate": 560,
-    "PS3-supporting": 1478
+    "BS3-moderate": 143,
+    "BS3-supporting": 1181,
+    "PS3-moderate": 719,
+    "PS3-supporting": 1458
    }
   },
   "G20|bootstrap": {
-   "claims": 5662,
-   "level_held": 0.89,
-   "level_held_vw": 0.891,
-   "bound_ok": 0.781,
-   "draws_all_levels_held": 0.65,
+   "claims": 5634,
+   "level_held": 0.896,
+   "level_held_vw": 0.895,
+   "bound_ok": 0.789,
+   "draws_all_levels_held": 0.669,
    "achieved": {
-    "BS3-moderate": 0.501,
-    "BS3-strong": 0.405,
-    "BS3-supporting": 0.953,
-    "PS3-moderate": 0.877,
-    "PS3-strong": 0.038,
+    "BS3-moderate": 0.467,
+    "BS3-strong": 0.397,
+    "BS3-supporting": 0.965,
+    "PS3-moderate": 0.886,
+    "PS3-strong": 0.041,
     "PS3-supporting": 1.0
    },
    "held_by_level": {
-    "BS3-moderate": 0.874,
-    "BS3-strong": 0.271,
+    "BS3-moderate": 0.891,
+    "BS3-strong": 0.281,
     "BS3-supporting": 1.0,
-    "PS3-moderate": 0.964,
-    "PS3-strong": 0.404,
-    "PS3-supporting": 1.0
+    "PS3-moderate": 0.968,
+    "PS3-strong": 0.419,
+    "PS3-supporting": 0.999
    },
    "n_by_level": {
-    "BS3-moderate": 752,
-    "BS3-strong": 608,
-    "BS3-supporting": 1429,
-    "PS3-moderate": 1316,
-    "PS3-strong": 57,
-    "PS3-supporting": 1500
-   }
-  },
-  "G20|bootstrap, Bonferroni": {
-   "claims": 4585,
-   "level_held": 0.894,
-   "level_held_vw": 0.894,
-   "bound_ok": 0.784,
-   "draws_all_levels_held": 0.701,
-   "achieved": {
-    "BS3-moderate": 0.388,
-    "BS3-strong": 0.405,
-    "BS3-supporting": 0.757,
-    "PS3-moderate": 0.539,
-    "PS3-strong": 0.001,
-    "PS3-supporting": 0.966
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.931,
-    "BS3-strong": 0.271,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 0.996,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 582,
-    "BS3-strong": 608,
-    "BS3-supporting": 1135,
-    "PS3-moderate": 809,
-    "PS3-strong": 2,
-    "PS3-supporting": 1449
-   }
-  },
-  "G20|bootstrap, pseudocount": {
-   "claims": 5296,
-   "level_held": 0.937,
-   "level_held_vw": 0.935,
-   "bound_ok": 0.847,
-   "draws_all_levels_held": 0.808,
-   "achieved": {
-    "BS3-moderate": 0.446,
-    "BS3-strong": 0.127,
-    "BS3-supporting": 0.951,
-    "PS3-moderate": 0.883,
-    "PS3-strong": 0.123,
-    "PS3-supporting": 1.0
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.879,
-    "BS3-strong": 0.131,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 0.973,
-    "PS3-strong": 0.719,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 669,
-    "BS3-strong": 191,
-    "BS3-supporting": 1427,
-    "PS3-moderate": 1324,
-    "PS3-strong": 185,
+    "BS3-moderate": 700,
+    "BS3-strong": 595,
+    "BS3-supporting": 1448,
+    "PS3-moderate": 1329,
+    "PS3-strong": 62,
     "PS3-supporting": 1500
    }
   },
   "G20|certified": {
-   "claims": 1715,
-   "level_held": 0.999,
-   "level_held_vw": 0.999,
+   "claims": 1666,
+   "level_held": 1.0,
+   "level_held_vw": 1.0,
    "bound_ok": 0.999,
-   "draws_all_levels_held": 0.999,
+   "draws_all_levels_held": 1.0,
    "achieved": {
     "BS3-moderate": 0.003,
     "BS3-strong": 0.0,
-    "BS3-supporting": 0.329,
-    "PS3-moderate": 0.064,
+    "BS3-supporting": 0.307,
+    "PS3-moderate": 0.062,
     "PS3-strong": 0.0,
-    "PS3-supporting": 0.748
+    "PS3-supporting": 0.738
    },
    "held_by_level": {
-    "BS3-moderate": 0.75,
+    "BS3-moderate": 1.0,
     "BS3-supporting": 1.0,
     "PS3-moderate": 1.0,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-moderate": 4,
-    "BS3-supporting": 493,
-    "PS3-moderate": 96,
-    "PS3-supporting": 1122
+    "BS3-moderate": 5,
+    "BS3-supporting": 461,
+    "PS3-moderate": 93,
+    "PS3-supporting": 1107
    }
   },
   "G20|fixed sequence": {
-   "claims": 2474,
-   "level_held": 0.996,
+   "claims": 2464,
+   "level_held": 0.997,
    "level_held_vw": 0.996,
    "bound_ok": null,
-   "draws_all_levels_held": 0.993,
+   "draws_all_levels_held": 0.995,
    "achieved": {
-    "BS3-moderate": 0.065,
+    "BS3-moderate": 0.059,
     "BS3-strong": 0.0,
-    "BS3-supporting": 0.671,
-    "PS3-moderate": 0.259,
-    "PS3-strong": 0.001,
+    "BS3-supporting": 0.663,
+    "PS3-moderate": 0.267,
+    "PS3-strong": 0.0,
     "PS3-supporting": 0.653
    },
    "held_by_level": {
-    "BS3-moderate": 0.898,
+    "BS3-moderate": 0.91,
     "BS3-supporting": 1.0,
     "PS3-moderate": 1.0,
-    "PS3-strong": 1.0,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-moderate": 98,
-    "BS3-supporting": 1007,
-    "PS3-moderate": 388,
-    "PS3-strong": 1,
-    "PS3-supporting": 980
+    "BS3-moderate": 89,
+    "BS3-supporting": 995,
+    "PS3-moderate": 401,
+    "PS3-supporting": 979
    }
   },
   "G20|fixed sequence, all increasing": {
-   "claims": 1371,
+   "claims": 1383,
    "level_held": 1.0,
    "level_held_vw": 1.0,
    "bound_ok": null,
@@ -3140,387 +3049,242 @@
    "achieved": {
     "BS3-moderate": 0.0,
     "BS3-strong": 0.0,
-    "BS3-supporting": 0.001,
-    "PS3-moderate": 0.259,
-    "PS3-strong": 0.001,
+    "BS3-supporting": 0.002,
+    "PS3-moderate": 0.267,
+    "PS3-strong": 0.0,
     "PS3-supporting": 0.653
    },
    "held_by_level": {
     "BS3-supporting": 1.0,
     "PS3-moderate": 1.0,
-    "PS3-strong": 1.0,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-supporting": 2,
-    "PS3-moderate": 388,
-    "PS3-strong": 1,
-    "PS3-supporting": 980
-   }
-  },
-  "G20|fixed sequence, simultaneous": {
-   "claims": 1677,
-   "level_held": 0.999,
-   "level_held_vw": 0.999,
-   "bound_ok": null,
-   "draws_all_levels_held": 0.999,
-   "achieved": {
-    "BS3-moderate": 0.019,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.469,
-    "PS3-moderate": 0.127,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.503
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.931,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 1.0,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 29,
-    "BS3-supporting": 703,
-    "PS3-moderate": 191,
-    "PS3-supporting": 754
+    "BS3-supporting": 3,
+    "PS3-moderate": 401,
+    "PS3-supporting": 979
    }
   },
   "G20|point estimate": {
-   "claims": 7166,
-   "level_held": 0.731,
-   "level_held_vw": 0.726,
-   "bound_ok": 0.373,
-   "draws_all_levels_held": 0.269,
+   "claims": 7156,
+   "level_held": 0.738,
+   "level_held_vw": 0.731,
+   "bound_ok": 0.376,
+   "draws_all_levels_held": 0.279,
    "achieved": {
-    "BS3-moderate": 0.83,
-    "BS3-strong": 0.463,
-    "BS3-supporting": 0.999,
-    "PS3-moderate": 0.997,
-    "PS3-strong": 0.489,
+    "BS3-moderate": 0.839,
+    "BS3-strong": 0.442,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.996,
+    "PS3-strong": 0.494,
     "PS3-supporting": 1.0
    },
    "held_by_level": {
-    "BS3-moderate": 0.642,
-    "BS3-strong": 0.187,
+    "BS3-moderate": 0.647,
+    "BS3-strong": 0.217,
     "BS3-supporting": 1.0,
-    "PS3-moderate": 0.688,
-    "PS3-strong": 0.386,
-    "PS3-supporting": 1.0
+    "PS3-moderate": 0.681,
+    "PS3-strong": 0.414,
+    "PS3-supporting": 0.999
    },
    "n_by_level": {
-    "BS3-moderate": 1245,
-    "BS3-strong": 694,
-    "BS3-supporting": 1499,
-    "PS3-moderate": 1495,
-    "PS3-strong": 733,
+    "BS3-moderate": 1258,
+    "BS3-strong": 663,
+    "BS3-supporting": 1500,
+    "PS3-moderate": 1494,
+    "PS3-strong": 741,
     "PS3-supporting": 1500
    }
   },
   "G4|Clopper-Pearson, uncorrected": {
-   "claims": 3088,
+   "claims": 3017,
    "level_held": 0.998,
    "level_held_vw": 0.998,
-   "bound_ok": 0.986,
+   "bound_ok": 0.991,
    "draws_all_levels_held": 0.995,
    "achieved": {
-    "BS3-moderate": 0.069,
+    "BS3-moderate": 0.062,
     "BS3-strong": 0.0,
-    "BS3-supporting": 0.68,
-    "PS3-moderate": 0.351,
+    "BS3-supporting": 0.663,
+    "PS3-moderate": 0.334,
     "PS3-strong": 0.0,
-    "PS3-supporting": 0.959
+    "PS3-supporting": 0.952
    },
    "held_by_level": {
-    "BS3-moderate": 0.942,
+    "BS3-moderate": 0.935,
     "BS3-supporting": 1.0,
     "PS3-moderate": 0.998,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-moderate": 104,
-    "BS3-supporting": 1020,
-    "PS3-moderate": 526,
-    "PS3-supporting": 1438
+    "BS3-moderate": 93,
+    "BS3-supporting": 995,
+    "PS3-moderate": 501,
+    "PS3-supporting": 1428
    }
   },
-  "G4|Katz, Bonferroni": {
-   "claims": 3066,
-   "level_held": 0.998,
-   "level_held_vw": 0.999,
-   "bound_ok": 0.987,
-   "draws_all_levels_held": 0.997,
+  "G4|bootstrap": {
+   "claims": 5168,
+   "level_held": 0.917,
+   "level_held_vw": 0.917,
+   "bound_ok": 0.784,
+   "draws_all_levels_held": 0.742,
    "achieved": {
-    "BS3-moderate": 0.002,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.524,
-    "PS3-moderate": 0.525,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.993
+    "BS3-moderate": 0.415,
+    "BS3-strong": 0.339,
+    "BS3-supporting": 0.913,
+    "PS3-moderate": 0.775,
+    "PS3-strong": 0.005,
+    "PS3-supporting": 0.999
    },
    "held_by_level": {
-    "BS3-moderate": 0.667,
+    "BS3-moderate": 0.913,
+    "BS3-strong": 0.315,
+    "BS3-supporting": 1.0,
+    "PS3-moderate": 0.983,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 1.0
+   },
+   "n_by_level": {
+    "BS3-moderate": 622,
+    "BS3-strong": 508,
+    "BS3-supporting": 1369,
+    "PS3-moderate": 1163,
+    "PS3-strong": 7,
+    "PS3-supporting": 1499
+   }
+  },
+  "G4|certified": {
+   "claims": 2128,
+   "level_held": 0.999,
+   "level_held_vw": 0.999,
+   "bound_ok": 0.997,
+   "draws_all_levels_held": 0.998,
+   "achieved": {
+    "BS3-moderate": 0.013,
+    "BS3-strong": 0.0,
+    "BS3-supporting": 0.425,
+    "PS3-moderate": 0.129,
+    "PS3-strong": 0.0,
+    "PS3-supporting": 0.852
+   },
+   "held_by_level": {
+    "BS3-moderate": 0.895,
     "BS3-supporting": 1.0,
     "PS3-moderate": 0.995,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-moderate": 3,
-    "BS3-supporting": 786,
-    "PS3-moderate": 787,
-    "PS3-supporting": 1490
-   }
-  },
-  "G4|bootstrap": {
-   "claims": 5253,
-   "level_held": 0.912,
-   "level_held_vw": 0.911,
-   "bound_ok": 0.776,
-   "draws_all_levels_held": 0.725,
-   "achieved": {
-    "BS3-moderate": 0.451,
-    "BS3-strong": 0.357,
-    "BS3-supporting": 0.9,
-    "PS3-moderate": 0.781,
-    "PS3-strong": 0.014,
-    "PS3-supporting": 0.999
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.913,
-    "BS3-strong": 0.313,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 0.981,
-    "PS3-strong": 0.381,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 676,
-    "BS3-strong": 536,
-    "BS3-supporting": 1350,
-    "PS3-moderate": 1172,
-    "PS3-strong": 21,
-    "PS3-supporting": 1498
-   }
-  },
-  "G4|bootstrap, Bonferroni": {
-   "claims": 4461,
-   "level_held": 0.909,
-   "level_held_vw": 0.911,
-   "bound_ok": 0.786,
-   "draws_all_levels_held": 0.751,
-   "achieved": {
-    "BS3-moderate": 0.368,
-    "BS3-strong": 0.357,
-    "BS3-supporting": 0.743,
-    "PS3-moderate": 0.523,
-    "PS3-strong": 0.001,
-    "PS3-supporting": 0.981
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.94,
-    "BS3-strong": 0.313,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 0.996,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 552,
-    "BS3-strong": 536,
-    "BS3-supporting": 1115,
-    "PS3-moderate": 785,
-    "PS3-strong": 1,
-    "PS3-supporting": 1472
-   }
-  },
-  "G4|bootstrap, pseudocount": {
-   "claims": 4718,
-   "level_held": 0.96,
-   "level_held_vw": 0.957,
-   "bound_ok": 0.864,
-   "draws_all_levels_held": 0.882,
-   "achieved": {
-    "BS3-moderate": 0.373,
-    "BS3-strong": 0.096,
-    "BS3-supporting": 0.893,
-    "PS3-moderate": 0.766,
-    "PS3-strong": 0.019,
-    "PS3-supporting": 0.999
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.918,
-    "BS3-strong": 0.208,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 0.986,
-    "PS3-strong": 0.464,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 559,
-    "BS3-strong": 144,
-    "BS3-supporting": 1340,
-    "PS3-moderate": 1149,
-    "PS3-strong": 28,
-    "PS3-supporting": 1498
-   }
-  },
-  "G4|certified": {
-   "claims": 2196,
-   "level_held": 0.999,
-   "level_held_vw": 0.999,
-   "bound_ok": 0.997,
-   "draws_all_levels_held": 0.999,
-   "achieved": {
-    "BS3-moderate": 0.015,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.449,
-    "PS3-moderate": 0.133,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.867
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.909,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 1.0,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 22,
-    "BS3-supporting": 674,
-    "PS3-moderate": 200,
-    "PS3-supporting": 1300
+    "BS3-moderate": 19,
+    "BS3-supporting": 637,
+    "PS3-moderate": 194,
+    "PS3-supporting": 1278
    }
   },
   "G4|fixed sequence": {
-   "claims": 2753,
-   "level_held": 0.998,
-   "level_held_vw": 0.998,
+   "claims": 2705,
+   "level_held": 0.997,
+   "level_held_vw": 0.997,
    "bound_ok": null,
-   "draws_all_levels_held": 0.997,
+   "draws_all_levels_held": 0.995,
    "achieved": {
-    "BS3-moderate": 0.039,
+    "BS3-moderate": 0.034,
     "BS3-strong": 0.0,
-    "BS3-supporting": 0.619,
-    "PS3-moderate": 0.305,
+    "BS3-supporting": 0.606,
+    "PS3-moderate": 0.291,
     "PS3-strong": 0.0,
     "PS3-supporting": 0.872
    },
    "held_by_level": {
-    "BS3-moderate": 0.932,
+    "BS3-moderate": 0.882,
     "BS3-supporting": 1.0,
     "PS3-moderate": 0.998,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-moderate": 59,
-    "BS3-supporting": 929,
-    "PS3-moderate": 457,
+    "BS3-moderate": 51,
+    "BS3-supporting": 909,
+    "PS3-moderate": 437,
     "PS3-supporting": 1308
    }
   },
   "G4|fixed sequence, all increasing": {
-   "claims": 2167,
+   "claims": 2173,
    "level_held": 0.999,
    "level_held_vw": 0.999,
    "bound_ok": null,
    "draws_all_levels_held": 0.999,
    "achieved": {
-    "BS3-moderate": 0.021,
+    "BS3-moderate": 0.028,
     "BS3-strong": 0.0,
-    "BS3-supporting": 0.247,
-    "PS3-moderate": 0.305,
+    "BS3-supporting": 0.257,
+    "PS3-moderate": 0.291,
     "PS3-strong": 0.0,
     "PS3-supporting": 0.872
    },
    "held_by_level": {
-    "BS3-moderate": 0.969,
+    "BS3-moderate": 0.976,
     "BS3-supporting": 1.0,
     "PS3-moderate": 0.998,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-moderate": 32,
-    "BS3-supporting": 370,
-    "PS3-moderate": 457,
+    "BS3-moderate": 42,
+    "BS3-supporting": 386,
+    "PS3-moderate": 437,
     "PS3-supporting": 1308
    }
   },
-  "G4|fixed sequence, simultaneous": {
-   "claims": 2019,
-   "level_held": 1.0,
-   "level_held_vw": 0.999,
-   "bound_ok": null,
-   "draws_all_levels_held": 0.999,
-   "achieved": {
-    "BS3-moderate": 0.015,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.438,
-    "PS3-moderate": 0.144,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.749
-   },
-   "held_by_level": {
-    "BS3-moderate": 0.955,
-    "BS3-supporting": 1.0,
-    "PS3-moderate": 1.0,
-    "PS3-supporting": 1.0
-   },
-   "n_by_level": {
-    "BS3-moderate": 22,
-    "BS3-supporting": 657,
-    "PS3-moderate": 216,
-    "PS3-supporting": 1124
-   }
-  },
   "G4|point estimate": {
-   "claims": 6447,
-   "level_held": 0.805,
-   "level_held_vw": 0.801,
-   "bound_ok": 0.389,
-   "draws_all_levels_held": 0.421,
+   "claims": 6371,
+   "level_held": 0.813,
+   "level_held_vw": 0.808,
+   "bound_ok": 0.394,
+   "draws_all_levels_held": 0.44,
    "achieved": {
-    "BS3-moderate": 0.757,
-    "BS3-strong": 0.405,
-    "BS3-supporting": 0.998,
-    "PS3-moderate": 0.982,
-    "PS3-strong": 0.157,
+    "BS3-moderate": 0.746,
+    "BS3-strong": 0.38,
+    "BS3-supporting": 0.997,
+    "PS3-moderate": 0.983,
+    "PS3-strong": 0.142,
     "PS3-supporting": 1.0
    },
    "held_by_level": {
-    "BS3-moderate": 0.697,
-    "BS3-strong": 0.239,
+    "BS3-moderate": 0.707,
+    "BS3-strong": 0.26,
     "BS3-supporting": 1.0,
-    "PS3-moderate": 0.819,
-    "PS3-strong": 0.213,
+    "PS3-moderate": 0.818,
+    "PS3-strong": 0.178,
     "PS3-supporting": 1.0
    },
    "n_by_level": {
-    "BS3-moderate": 1135,
-    "BS3-strong": 607,
-    "BS3-supporting": 1497,
-    "PS3-moderate": 1473,
-    "PS3-strong": 235,
+    "BS3-moderate": 1119,
+    "BS3-strong": 570,
+    "BS3-supporting": 1495,
+    "PS3-moderate": 1474,
+    "PS3-strong": 213,
     "PS3-supporting": 1500
    }
   }
  },
  "coverage_at_selection": {
-  "cov_lof_mean": 0.814,
-  "cov_func_mean": 0.803,
-  "cov_lof_min": 0.384,
-  "cov_func_min": 0.572,
-  "cov_lof_p10": 0.682,
-  "cov_func_p10": 0.692,
-  "alpha_mean_lof_calls": 0.182,
-  "alpha_mean_func_calls": 0.244
+  "cov_lof_mean": 0.818,
+  "cov_func_mean": 0.801,
+  "cov_lof_min": 0.482,
+  "cov_func_min": 0.51,
+  "cov_lof_p10": 0.684,
+  "cov_func_p10": 0.689,
+  "alpha_mean_lof_calls": 0.183,
+  "alpha_mean_func_calls": 0.242
  },
  "bootstrap_diagnostic": {
-  "n": 5253,
-  "fail": 1176,
-  "fail_rate": 0.224,
-  "share_fail_zero": 0.594,
-  "share_zero": 0.149,
-  "fail_rate_zero": 0.89,
-  "fail_rate_nonzero": 0.107
+  "n": 5168,
+  "fail": 1115,
+  "fail_rate": 0.216,
+  "share_fail_zero": 0.566,
+  "share_zero": 0.138,
+  "fail_rate_zero": 0.886,
+  "fail_rate_nonzero": 0.109
  },
  "label_rule_comparison": {
   "BRCA1": {
@@ -3538,773 +3302,5 @@
    "opposite": 0,
    "authors_functional_left_intermediate": 0.768
   }
- },
- "residues": {
-  "BAP1": {
-   "variants": 4294,
-   "residues": 696,
-   "lof_share_rw": 0.207
-  },
-  "BRCA1": {
-   "variants": 1617,
-   "residues": 307,
-   "lof_share_rw": 0.204
-  },
-  "BRCA2": {
-   "variants": 3435,
-   "residues": 676,
-   "lof_share_rw": 0.151
-  },
-  "MSH2": {
-   "variants": 2906,
-   "residues": 893,
-   "lof_share_rw": 0.066
-  },
-  "RAD51C": {
-   "variants": 2225,
-   "residues": 355,
-   "lof_share_rw": 0.26
-  }
- },
- "oracle_g4": {
-  "Clopper-Pearson, uncorrected": {
-   "draws": 1500,
-   "claims": 3088,
-   "draws_all_bounds_ok": 0.979,
-   "draws_all_levels_held": 0.995,
-   "claims_level_held": 0.998,
-   "claims_bound_ok": 0.986,
-   "claims_level_held_vw": 0.998,
-   "achieved": {
-    "BS3-moderate": 0.069,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.68,
-    "PS3-moderate": 0.351,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.959
-   },
-   "yield": {
-    "BS3-moderate": 0.548,
-    "BS3-supporting": 0.624,
-    "PS3-moderate": 0.149,
-    "PS3-supporting": 0.273
-   }
-  },
-  "Katz, Bonferroni": {
-   "draws": 1500,
-   "claims": 3066,
-   "draws_all_bounds_ok": 0.98,
-   "draws_all_levels_held": 0.997,
-   "claims_level_held": 0.998,
-   "claims_bound_ok": 0.987,
-   "claims_level_held_vw": 0.999,
-   "achieved": {
-    "BS3-moderate": 0.002,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.524,
-    "PS3-moderate": 0.525,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.993
-   },
-   "yield": {
-    "BS3-moderate": 0.624,
-    "BS3-supporting": 0.623,
-    "PS3-moderate": 0.157,
-    "PS3-supporting": 0.289
-   }
-  },
-  "bootstrap": {
-   "draws": 1500,
-   "claims": 5253,
-   "draws_all_bounds_ok": 0.576,
-   "draws_all_levels_held": 0.725,
-   "claims_level_held": 0.912,
-   "claims_bound_ok": 0.776,
-   "claims_level_held_vw": 0.911,
-   "achieved": {
-    "BS3-moderate": 0.451,
-    "BS3-strong": 0.357,
-    "BS3-supporting": 0.9,
-    "PS3-moderate": 0.781,
-    "PS3-strong": 0.014,
-    "PS3-supporting": 0.999
-   },
-   "yield": {
-    "BS3-moderate": 0.425,
-    "BS3-strong": 0.2,
-    "BS3-supporting": 0.634,
-    "PS3-moderate": 0.176,
-    "PS3-strong": 0.125,
-    "PS3-supporting": 0.293
-   }
-  },
-  "bootstrap, Bonferroni": {
-   "draws": 1500,
-   "claims": 4461,
-   "draws_all_bounds_ok": 0.653,
-   "draws_all_levels_held": 0.751,
-   "claims_level_held": 0.909,
-   "claims_bound_ok": 0.786,
-   "claims_level_held_vw": 0.911,
-   "achieved": {
-    "BS3-moderate": 0.368,
-    "BS3-strong": 0.357,
-    "BS3-supporting": 0.743,
-    "PS3-moderate": 0.523,
-    "PS3-strong": 0.001,
-    "PS3-supporting": 0.981
-   },
-   "yield": {
-    "BS3-moderate": 0.303,
-    "BS3-strong": 0.2,
-    "BS3-supporting": 0.618,
-    "PS3-moderate": 0.159,
-    "PS3-strong": 0.201,
-    "PS3-supporting": 0.285
-   }
-  },
-  "bootstrap, pseudocount": {
-   "draws": 1500,
-   "claims": 4718,
-   "draws_all_bounds_ok": 0.754,
-   "draws_all_levels_held": 0.882,
-   "claims_level_held": 0.96,
-   "claims_bound_ok": 0.864,
-   "claims_level_held_vw": 0.957,
-   "achieved": {
-    "BS3-moderate": 0.373,
-    "BS3-strong": 0.096,
-    "BS3-supporting": 0.893,
-    "PS3-moderate": 0.766,
-    "PS3-strong": 0.019,
-    "PS3-supporting": 0.999
-   },
-   "yield": {
-    "BS3-moderate": 0.451,
-    "BS3-strong": 0.416,
-    "BS3-supporting": 0.634,
-    "PS3-moderate": 0.171,
-    "PS3-strong": 0.098,
-    "PS3-supporting": 0.292
-   }
-  },
-  "certified": {
-   "draws": 1500,
-   "claims": 2196,
-   "draws_all_bounds_ok": 0.997,
-   "draws_all_levels_held": 0.999,
-   "claims_level_held": 0.999,
-   "claims_bound_ok": 0.997,
-   "claims_level_held_vw": 0.999,
-   "achieved": {
-    "BS3-moderate": 0.015,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.449,
-    "PS3-moderate": 0.133,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.867
-   },
-   "yield": {
-    "BS3-moderate": 0.554,
-    "BS3-supporting": 0.614,
-    "PS3-moderate": 0.14,
-    "PS3-supporting": 0.252
-   }
-  },
-  "fixed sequence": {
-   "draws": 1500,
-   "claims": 2753,
-   "draws_all_bounds_ok": null,
-   "draws_all_levels_held": 0.997,
-   "claims_level_held": 0.998,
-   "claims_bound_ok": null,
-   "claims_level_held_vw": 0.998,
-   "achieved": {
-    "BS3-moderate": 0.039,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.619,
-    "PS3-moderate": 0.305,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.872
-   },
-   "yield": {
-    "BS3-moderate": 0.58,
-    "BS3-supporting": 0.633,
-    "PS3-moderate": 0.139,
-    "PS3-supporting": 0.269
-   }
-  },
-  "fixed sequence, all increasing": {
-   "draws": 1500,
-   "claims": 2167,
-   "draws_all_bounds_ok": null,
-   "draws_all_levels_held": 0.999,
-   "claims_level_held": 0.999,
-   "claims_bound_ok": null,
-   "claims_level_held_vw": 0.999,
-   "achieved": {
-    "BS3-moderate": 0.021,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.247,
-    "PS3-moderate": 0.305,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.872
-   },
-   "yield": {
-    "BS3-moderate": 0.473,
-    "BS3-supporting": 0.586,
-    "PS3-moderate": 0.139,
-    "PS3-supporting": 0.269
-   }
-  },
-  "fixed sequence, simultaneous": {
-   "draws": 1500,
-   "claims": 2019,
-   "draws_all_bounds_ok": null,
-   "draws_all_levels_held": 0.999,
-   "claims_level_held": 1.0,
-   "claims_bound_ok": null,
-   "claims_level_held_vw": 0.999,
-   "achieved": {
-    "BS3-moderate": 0.015,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.438,
-    "PS3-moderate": 0.144,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.749
-   },
-   "yield": {
-    "BS3-moderate": 0.568,
-    "BS3-supporting": 0.628,
-    "PS3-moderate": 0.133,
-    "PS3-supporting": 0.251
-   }
-  },
-  "point estimate": {
-   "draws": 1500,
-   "claims": 6447,
-   "draws_all_bounds_ok": 0.155,
-   "draws_all_levels_held": 0.421,
-   "claims_level_held": 0.805,
-   "claims_bound_ok": 0.389,
-   "claims_level_held_vw": 0.801,
-   "achieved": {
-    "BS3-moderate": 0.757,
-    "BS3-strong": 0.405,
-    "BS3-supporting": 0.998,
-    "PS3-moderate": 0.982,
-    "PS3-strong": 0.157,
-    "PS3-supporting": 1.0
-   },
-   "yield": {
-    "BS3-moderate": 0.577,
-    "BS3-strong": 0.269,
-    "BS3-supporting": 0.643,
-    "PS3-moderate": 0.226,
-    "PS3-strong": 0.112,
-    "PS3-supporting": 0.297
-   }
-  }
- },
- "oracle_g20": {
-  "Clopper-Pearson, uncorrected": {
-   "achieved": {
-    "BS3-moderate": 0.114,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.777,
-    "PS3-moderate": 0.477,
-    "PS3-strong": 0.001,
-    "PS3-supporting": 0.975
-   },
-   "claims_level_held": 0.996,
-   "draws_all_levels_held": 0.991
-  },
-  "Katz, Bonferroni": {
-   "achieved": {
-    "BS3-moderate": 0.0,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.256,
-    "PS3-moderate": 0.373,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.985
-   },
-   "claims_level_held": 1.0,
-   "draws_all_levels_held": 0.999
-  },
-  "bootstrap": {
-   "achieved": {
-    "BS3-moderate": 0.501,
-    "BS3-strong": 0.405,
-    "BS3-supporting": 0.953,
-    "PS3-moderate": 0.877,
-    "PS3-strong": 0.038,
-    "PS3-supporting": 1.0
-   },
-   "claims_level_held": 0.89,
-   "draws_all_levels_held": 0.65
-  },
-  "bootstrap, Bonferroni": {
-   "achieved": {
-    "BS3-moderate": 0.388,
-    "BS3-strong": 0.405,
-    "BS3-supporting": 0.757,
-    "PS3-moderate": 0.539,
-    "PS3-strong": 0.001,
-    "PS3-supporting": 0.966
-   },
-   "claims_level_held": 0.894,
-   "draws_all_levels_held": 0.701
-  },
-  "bootstrap, pseudocount": {
-   "achieved": {
-    "BS3-moderate": 0.446,
-    "BS3-strong": 0.127,
-    "BS3-supporting": 0.951,
-    "PS3-moderate": 0.883,
-    "PS3-strong": 0.123,
-    "PS3-supporting": 1.0
-   },
-   "claims_level_held": 0.937,
-   "draws_all_levels_held": 0.808
-  },
-  "certified": {
-   "achieved": {
-    "BS3-moderate": 0.003,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.329,
-    "PS3-moderate": 0.064,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.748
-   },
-   "claims_level_held": 0.999,
-   "draws_all_levels_held": 0.999
-  },
-  "fixed sequence": {
-   "achieved": {
-    "BS3-moderate": 0.065,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.671,
-    "PS3-moderate": 0.259,
-    "PS3-strong": 0.001,
-    "PS3-supporting": 0.653
-   },
-   "claims_level_held": 0.996,
-   "draws_all_levels_held": 0.993
-  },
-  "fixed sequence, all increasing": {
-   "achieved": {
-    "BS3-moderate": 0.0,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.001,
-    "PS3-moderate": 0.259,
-    "PS3-strong": 0.001,
-    "PS3-supporting": 0.653
-   },
-   "claims_level_held": 1.0,
-   "draws_all_levels_held": 1.0
-  },
-  "fixed sequence, simultaneous": {
-   "achieved": {
-    "BS3-moderate": 0.019,
-    "BS3-strong": 0.0,
-    "BS3-supporting": 0.469,
-    "PS3-moderate": 0.127,
-    "PS3-strong": 0.0,
-    "PS3-supporting": 0.503
-   },
-   "claims_level_held": 0.999,
-   "draws_all_levels_held": 0.999
-  },
-  "point estimate": {
-   "achieved": {
-    "BS3-moderate": 0.83,
-    "BS3-strong": 0.463,
-    "BS3-supporting": 0.999,
-    "PS3-moderate": 0.997,
-    "PS3-strong": 0.489,
-    "PS3-supporting": 1.0
-   },
-   "claims_level_held": 0.731,
-   "draws_all_levels_held": 0.269
-  }
- },
- "coverage_oracle": {
-  "PAC, delta = 0.1": {
-   "frac_lof_below": 0.048,
-   "frac_func_below": 0.071,
-   "frac_either_below": 0.116,
-   "max_pair_frac_func_below": 0.1,
-   "max_pair_frac_lof_below": 0.085,
-   "mean_lof": 0.96,
-   "mean_func": 0.927,
-   "abstain": 0.577,
-   "n": 3000
-  },
-  "in expectation": {
-   "frac_lof_below": 0.343,
-   "frac_func_below": 0.429,
-   "frac_either_below": 0.622,
-   "max_pair_frac_func_below": 0.48,
-   "max_pair_frac_lof_below": 0.415,
-   "mean_lof": 0.913,
-   "mean_func": 0.902,
-   "abstain": 0.357,
-   "n": 3000
-  }
- },
- "calibration_weighting": {
-  "all variants": {
-   "worst_min": 0.885,
-   "worst_max": 0.903,
-   "n_below_090": 12,
-   "abstain_mean": 0.304
-  },
-  "all variants, residue weights": {
-   "worst_min": 0.898,
-   "worst_max": 0.937,
-   "n_below_090": 1,
-   "abstain_mean": 0.446
-  },
-  "one per residue": {
-   "worst_min": 0.897,
-   "worst_max": 0.908,
-   "n_below_090": 5,
-   "abstain_mean": 0.355
-  }
- },
- "mixture_check": {
-  "assayed VUS": {
-   "n": 750,
-   "reject": 0.085,
-   "reject_by_predictor": {
-    "AlphaMissense": 0.152,
-    "ESM-2": 0.044,
-    "REVEL": 0.06
-   },
-   "worst_mean": 0.842,
-   "worst_mean_rejected": 0.816,
-   "worst_mean_accepted": 0.845,
-   "below_085_rejected": 0.672,
-   "below_085_accepted": 0.481,
-   "pi_abs_err": 0.081,
-   "abstain_mean": 0.321,
-   "by_gene": {
-    "BAP1": 0.053,
-    "BRCA1": 0.04,
-    "BRCA2": 0.06,
-    "MSH2": 0.227,
-    "RAD51C": 0.047
-   }
-  },
-  "held-out quarter": {
-   "n": 1500,
-   "reject": 0.439,
-   "reject_by_predictor": {
-    "AlphaMissense": 0.368,
-    "ESM-2": 0.4,
-    "REVEL": 0.55
-   },
-   "worst_mean": 0.815,
-   "worst_mean_rejected": 0.788,
-   "worst_mean_accepted": 0.837,
-   "below_085_rejected": 0.615,
-   "below_085_accepted": 0.461,
-   "pi_abs_err": 0.153,
-   "abstain_mean": 0.312,
-   "by_gene": {
-    "BAP1": 0.61,
-    "BRCA1": 0.323,
-    "BRCA2": 0.457,
-    "MSH2": 0.32,
-    "RAD51C": 0.487
-   }
-  },
-  "other gene": {
-   "n": 300,
-   "reject": 0.773,
-   "reject_by_predictor": {
-    "AlphaMissense": 0.77,
-    "ESM-2": 0.63,
-    "REVEL": 0.92
-   },
-   "worst_mean": 0.667,
-   "worst_mean_rejected": 0.644,
-   "worst_mean_accepted": 0.745,
-   "below_085_rejected": 0.81,
-   "below_085_accepted": 0.676,
-   "pi_abs_err": 0.32,
-   "abstain_mean": 0.258,
-   "by_gene": {
-    "BAP1": 1.0,
-    "BRCA1": 0.717,
-    "BRCA2": 0.65,
-    "MSH2": 0.767,
-    "RAD51C": 0.733
-   }
-  },
-  "random half": {
-   "n": 1500,
-   "reject": 0.047,
-   "reject_by_predictor": {
-    "AlphaMissense": 0.038,
-    "ESM-2": 0.054,
-    "REVEL": 0.048
-   },
-   "worst_mean": 0.88,
-   "worst_mean_rejected": 0.88,
-   "worst_mean_accepted": 0.88,
-   "below_085_rejected": 0.157,
-   "below_085_accepted": 0.199,
-   "pi_abs_err": 0.05,
-   "abstain_mean": 0.355,
-   "by_gene": {
-    "BAP1": 0.043,
-    "BRCA1": 0.043,
-    "BRCA2": 0.077,
-    "MSH2": 0.04,
-    "RAD51C": 0.03
-   }
-  },
-  "unassayed VUS, other residues": {
-   "n": 120,
-   "reject": 1.0,
-   "reject_by_predictor": {
-    "AlphaMissense": 1.0,
-    "ESM-2": 1.0,
-    "REVEL": 1.0
-   },
-   "abstain_mean": 0.089,
-   "by_gene": {
-    "BRCA1": 1.0,
-    "BRCA2": 1.0
-   }
-  }
- },
- "use_case": [
-  {
-   "predictor": "AlphaMissense",
-   "gene": "BAP1",
-   "vus": 1189,
-   "vus_assayed": 1173,
-   "at_assayed": 3,
-   "elsewhere": 13,
-   "n_target": 3,
-   "PS3-supporting": 2.9,
-   "PS3-moderate": 0.55,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 0.0,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "AlphaMissense",
-   "gene": "BRCA1",
-   "vus": 1909,
-   "vus_assayed": 375,
-   "at_assayed": 29,
-   "elsewhere": 1505,
-   "n_target": 29,
-   "PS3-supporting": 7.9,
-   "PS3-moderate": 0.15,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 11.65,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "AlphaMissense",
-   "gene": "BRCA2",
-   "vus": 3508,
-   "vus_assayed": 1003,
-   "at_assayed": 0,
-   "elsewhere": 2505,
-   "n_target": 0,
-   "PS3-supporting": 0.0,
-   "PS3-moderate": 0.0,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 0.0,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "AlphaMissense",
-   "gene": "MSH2",
-   "vus": 1707,
-   "vus_assayed": 1597,
-   "at_assayed": 105,
-   "elsewhere": 5,
-   "n_target": 105,
-   "PS3-supporting": 31.0,
-   "PS3-moderate": 5.75,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 59.9,
-   "BS3-moderate": 2.85,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "AlphaMissense",
-   "gene": "RAD51C",
-   "vus": 596,
-   "vus_assayed": 570,
-   "at_assayed": 10,
-   "elsewhere": 16,
-   "n_target": 10,
-   "PS3-supporting": 2.8,
-   "PS3-moderate": 0.75,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 5.65,
-   "BS3-moderate": 1.15,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "ESM-2",
-   "gene": "BAP1",
-   "vus": 1189,
-   "vus_assayed": 1173,
-   "at_assayed": 3,
-   "elsewhere": 13,
-   "n_target": 3,
-   "PS3-supporting": 2.85,
-   "PS3-moderate": 0.0,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 0.0,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "ESM-2",
-   "gene": "BRCA1",
-   "vus": 1909,
-   "vus_assayed": 375,
-   "at_assayed": 29,
-   "elsewhere": 1505,
-   "n_target": 29,
-   "PS3-supporting": 7.95,
-   "PS3-moderate": 1.0,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 5.0,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "ESM-2",
-   "gene": "BRCA2",
-   "vus": 3508,
-   "vus_assayed": 1003,
-   "at_assayed": 0,
-   "elsewhere": 2505,
-   "n_target": 0,
-   "PS3-supporting": 0.0,
-   "PS3-moderate": 0.0,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 0.0,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "ESM-2",
-   "gene": "MSH2",
-   "vus": 1707,
-   "vus_assayed": 1597,
-   "at_assayed": 105,
-   "elsewhere": 5,
-   "n_target": 105,
-   "PS3-supporting": 19.05,
-   "PS3-moderate": 0.8,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 5.0,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "ESM-2",
-   "gene": "RAD51C",
-   "vus": 596,
-   "vus_assayed": 570,
-   "at_assayed": 10,
-   "elsewhere": 16,
-   "n_target": 10,
-   "PS3-supporting": 3.4,
-   "PS3-moderate": 0.1,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 4.15,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "REVEL",
-   "gene": "BAP1",
-   "vus": 1189,
-   "vus_assayed": 1173,
-   "at_assayed": 3,
-   "elsewhere": 13,
-   "n_target": 3,
-   "PS3-supporting": 2.65,
-   "PS3-moderate": 0.35,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 0.0,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "REVEL",
-   "gene": "BRCA1",
-   "vus": 1909,
-   "vus_assayed": 375,
-   "at_assayed": 29,
-   "elsewhere": 1505,
-   "n_target": 29,
-   "PS3-supporting": 7.15,
-   "PS3-moderate": 0.0,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 3.75,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "REVEL",
-   "gene": "BRCA2",
-   "vus": 3508,
-   "vus_assayed": 1003,
-   "at_assayed": 0,
-   "elsewhere": 2505,
-   "n_target": 0,
-   "PS3-supporting": 0.0,
-   "PS3-moderate": 0.0,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 0.0,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "REVEL",
-   "gene": "MSH2",
-   "vus": 1707,
-   "vus_assayed": 1597,
-   "at_assayed": 105,
-   "elsewhere": 5,
-   "n_target": 105,
-   "PS3-supporting": 17.7,
-   "PS3-moderate": 0.0,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 18.35,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  },
-  {
-   "predictor": "REVEL",
-   "gene": "RAD51C",
-   "vus": 596,
-   "vus_assayed": 570,
-   "at_assayed": 10,
-   "elsewhere": 16,
-   "n_target": 10,
-   "PS3-supporting": 3.85,
-   "PS3-moderate": 0.45,
-   "PS3-strong": 0.0,
-   "BS3-supporting": 3.35,
-   "BS3-moderate": 0.0,
-   "BS3-strong": 0.0
-  }
- ]
+ }
 }

@@ -1,42 +1,42 @@
 \section{Introduction}\label{sec:intro}
 
-In the five cancer-predisposition genes studied here, 81\% of the 11,010 ClinVar missense records classified as (likely)
-pathogenic, (likely) benign or of uncertain significance are variants of uncertain significance (VUS; our count from the
-release of 26 October 2026 \cite{Landrum2018}), and for many of them computational predictors are among the few sources
-of evidence \cite{Pejaver2022}. The ACMG/AMP guidelines of the American College of Medical Genetics and Genomics and the
-Association for Molecular Pathology grade evidence qualitatively \cite{Richards2015}; their Bayesian adaptation equates
-each strength with a likelihood ratio, the odds of pathogenicity (OddsPath) \cite{Tavtigian2018,Brnich2020}.
-Calibration workflows report this ratio as a point estimate or a resampling-based bound
-\cite{Pejaver2022,Bergquist2025,Badonyi2025}, but for a single gene few labelled variants are available and the
-threshold is chosen from the same data; these bounds are not designed to remain valid after that choice. Two
-features of the data make the estimate fragile. The share of damaging variants differs between calibration sets and the
-variants being classified: 45\% of confidently labelled ClinVar missense variants in our genes are pathogenic, whereas
-6.0\% to 25.9\% of the other assayed variants lose function in saturation genome editing (SGE) or deep mutational
-scanning (DMS) experiments (\cref{tab:data}). And labelled sets are small, with dependent substitutions at each residue:
-when the population likelihood ratio was known, thresholds selected on percentile-bootstrap bounds respected every
-claimed bound in only 57.6\% of resampled data sets (\cref{sec:evidence}).
+In the five cancer-predisposition genes studied here, 81\% of the ClinVar missense records classified as (likely)
+pathogenic, (likely) benign or uncertain are variants of uncertain significance (VUS; our count from the 26 October 2026 release
+\cite{Landrum2018}), and for many of
+them computational predictors are among the few sources of evidence \cite{Pejaver2022}. The guidelines of the American
+College of Medical Genetics and Genomics and the Association for Molecular Pathology (ACMG/AMP) grade evidence
+qualitatively \cite{Richards2015}; their Bayesian adaptation equates each strength with a likelihood ratio, the odds of
+pathogenicity (OddsPath) \cite{Tavtigian2018,Brnich2020}. Calibration workflows report this ratio as a point estimate or
+a resampling-based bound \cite{Pejaver2022,Bergquist2025,Badonyi2025}. For a single gene, few labelled variants are
+available and the threshold that defines the evidence is chosen from the same data; these bounds are not designed to remain valid
+after this choice.
+
+Two features of the data make the estimate fragile. First, the share of damaging variants differs between calibration
+sets and the variants being classified, and is unknown for the latter: in our genes, 45\% of confidently labelled
+ClinVar missense variants are pathogenic, whereas 6.0\% to 25.9\% of the other assayed missense variants lose function
+in saturation genome editing (SGE) or deep mutational scanning (DMS) experiments (\cref{tab:data}). Second, gene-level
+labelled sets are small and substitutions at one residue are dependent: in a resampling design with known truth,
+percentile-bootstrap bounds were respected in only 76.5\% of threshold selections (\cref{sec:evidence}).
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{fig_overview.pdf}
 \caption{\textsc{CertiVar}. Per-class thresholds are set on part $\mathcal A$ of a gene's assayed residues, the
-likelihood ratio of each call type with respect to the assay outcome is certified on a disjoint part $\mathcal B$, and a
-mixture check asks whether the unlabelled target scores are a re-weighting of the two classes of $\mathcal A$. On the
-score axis the two thresholds give three outcomes.}\label{fig:overview}
+likelihood ratio of each call type with respect to the assay outcome is certified on a disjoint part $\mathcal B$, and
+the thresholds are applied to the target variants. The grey path (Platt scaling on ClinVar labels) only puts predictors on
+a common scale and does not change any call.}\label{fig:overview}
 \end{figure}
 
 We introduce \textsc{CertiVar} (\cref{fig:overview}), which turns a predictor score into loss-of-function (LoF),
-functional or no calls by two cut-offs: per-class (Mondrian) conformal thresholds, set from SGE or DMS labels with one
-variant per residue, bound how often each class is mis-called, and a certification step bounds the likelihood ratio of
-each call type with respect to the assay outcome after a threshold is selected from a grid. Neither step needs the LoF
-share of the variants being called, provided their within-class score distribution matches that of the assayed
-variants, and a mixture-consistency check tests a necessary condition for this. The certified quantity is evidence about
-pathogenicity only to the extent that the assay is clinically validated. Our contributions are: (1) certified likelihood
-ratios for both call types of an abstaining classifier on residue-clustered data, valid after threshold selection with
-a Bonferroni correction (evidence levels also with fixed-sequence testing), with a coverage guarantee after selection and disjoint call sets
-(\cref{sec:method}); (2) a label-free check of class-conditional invariance, which kept close to its 5\% level on random
-splits and rejected every tested set of unassayed VUS outside the assayed residues (\cref{sec:check}); (3) a benchmark
-against known population likelihood ratios in which exact and Katz bounds held while bootstrap bounds and point
-estimates overstated evidence (\cref{sec:evidence}); and (4) evidence on five genes and three predictors that marginal and
-prior-reweighted conformal prediction lose coverage of one class under a shift of the calibration LoF share, while
-per-class coverage holds (\cref{sec:coverage}).
+functional or no calls.
+Per-class (Mondrian) conformal thresholds set from SGE or DMS labels bound how often each class is mis-called, and a
+certification step bounds the likelihood ratio of each call type with respect to the assay outcome, valid after a
+threshold has been selected; neither needs an estimate of the LoF share. The certified quantity is how strongly a call
+predicts the assay result; it is evidence about pathogenicity only to the extent that the assay is clinically validated.
+Our contributions: (1) a formulation of predictor-based calling as abstaining classification on residue-clustered data,
+with proofs that the certified likelihood-ratio bounds hold after threshold selection, that per-class coverage after
+selection is at least one minus the largest grid level, and that a fixed-sequence variant needs no multiplicity
+correction over the grid (\cref{sec:method}); (2) a known-truth benchmark in which exact binomial bounds held where
+bootstrap bounds and point estimates did not (\cref{sec:evidence}); (3) evidence on five genes and three predictors that
+per-class coverage stays at or near the target when the calibration LoF share moves from 5\% to 50\%, where marginal and
+prior-reweighted conformal prediction fail (\cref{sec:coverage}); and (4) where the guarantees stop (\cref{sec:transfer}).

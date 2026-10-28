@@ -115,37 +115,6 @@ def test_fixed_sequence_level_control():
     assert claims / 2000 <= delta
 
 
-def test_residue_weights_reduce_to_one_per_residue():
-    rng = np.random.default_rng(3)
-    p = rng.random(400)
-    y = (rng.random(400) < p).astype(int)
-    for alpha in (0.05, 0.1, 0.3):
-        assert cv.residue_weighted_thresholds(p, y, np.arange(400), alpha) == cv.mondrian_thresholds(p, y, alpha)
-
-
-def test_katz_bounds_bracket_point_estimate():
-    dec = np.array([1] * 20 + [0] * 80 + [-1] * 50)
-    y = np.array([1] * 18 + [0] * 2 + [1] * 5 + [0] * 75 + [1] * 10 + [0] * 40)
-    lo, hi = cv.katz_bounds(dec, y, 0.0125)
-    lr_pos = (18 / 33) / (2 / 117)
-    lr_neg = (5 / 33) / (75 / 117)
-    assert 0 < lo < lr_pos and hi > lr_neg
-    assert all(np.isnan(cv.katz_bounds(dec, np.ones_like(y), 0.05)))
-
-
-def test_mixture_check_level_and_power():
-    rng = np.random.default_rng(4)
-    null = power = 0
-    for _ in range(40):
-        s1, s0 = rng.normal(2, 1, 80), rng.normal(0, 1, 250)
-        lof = rng.random(200) < 0.3
-        st = np.where(lof, rng.normal(2, 1, 200), rng.normal(0, 1, 200))
-        null += cv.mixture_check(s1, s0, st, n_boot=100, rng=rng)[2] < 0.05
-        shifted = np.where(lof, rng.normal(1.5, 1, 200), rng.normal(0.5, 1, 200))
-        power += cv.mixture_check(s1, s0, shifted, n_boot=100, rng=rng)[2] < 0.05
-    assert null / 40 <= 0.15 and power / 40 >= 0.7
-
-
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:
