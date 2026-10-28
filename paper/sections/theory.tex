@@ -54,31 +54,17 @@ respect to the assay outcome need no prior.
 \end{corollary}
 
 Propositions~\ref{prop:mondrian} and~\ref{prop:pac} are the class-conditional and training-conditional conformal
-guarantees \cite{Vovk2005,Sadinle2019,Vovk2013,Tong2018}, here for residue-clustered data; Theorems~\ref{thm:lr}
-and~\ref{thm:fs} follow the risk-control and Learn-then-Test templates \cite{Bates2021rcps,Angelopoulos2025ltt} for a
-ratio of class-conditional call rates. Full proofs are in Supplement~S1; we sketch three of them.
-
-\noindent\emph{Proof sketches.} Proposition~\ref{prop:select}: given $\mathcal A$, both ranks in \eqref{eq:rank} are
-non-increasing in $\alpha$, so $\hat t_k(\hat\alpha)\ge\hat t_k(\max G)$ and coverage at $\hat\alpha$ is at least
-coverage at $\max G$; for the PAC rank, a union bound over the $|G|$ thresholds of class $k$ gives the second claim.
-Theorem~\ref{thm:lr}: given $\mathcal A$ the thresholds are fixed, and given the labels of the kept variants of
-$\mathcal B$ the class-$k$ kept variants are independent draws from $Q(\cdot\mid Y=k)$, so each of the four counts is
-binomial with the corresponding call rate. Each of the $2|G|$ Clopper--Pearson endpoints entering $L^+$ fails with
-probability at most $\delta/(2|G|)$, so all hold with probability at least $1-\delta$, and on that event
-$L^+(\alpha)\le\mathrm{LR}^+(\hat t(\alpha))$ for every $\alpha\in G$, including any selected one.
-Theorem~\ref{thm:fs}: if $\mathrm{LR}^+\le\tau$ and both endpoints hold, then
-$\ell_{\mathrm{TP}}\le\mathrm{TP}\le\tau\,\mathrm{FP}\le\tau\,u_{\mathrm{FP}}$, so a false rejection requires an
-endpoint to fail. A false claim requires rejecting the first true $H_\alpha$ in the order, which happens with
-probability at most $\delta$. LoF and functional calls are disjoint for any $\alpha^+,\alpha^-\in G$ because $\hat t_0$
-and $\hat t_1$ are both non-increasing in $\alpha$ (Supplement~S1).
+guarantees \cite{Vovk2005,Sadinle2019,Vovk2013,Tong2018}, here for residue-clustered data. Proposition~\ref{prop:select}
+holds because both ranks in \eqref{eq:rank} are non-increasing in $\alpha$, so coverage at any selected $\alpha$ is at
+least coverage at $\max G$. Theorem~\ref{thm:lr} follows the risk-control template \cite{Bates2021rcps}: given
+$\mathcal A$ and the labels in $\mathcal B$, the four counts are binomial, and a union bound over the $2|G|$
+endpoints covers every $\alpha$, including a selected one. Theorem~\ref{thm:fs} follows Learn-then-Test
+\cite{Angelopoulos2025ltt}: a true $H_\alpha$ is rejected only if an endpoint fails, and a false claim requires
+rejecting the first true hypothesis in the order. Proofs are in Supplement~S1.
 
 \paragraph{Scope.}
-Propositions~\ref{prop:mondrian} and~\ref{prop:pac} hold for a fixed $\alpha$. After \cref{alg:certivar} selects
-$\hat\alpha$, the likelihood-ratio certificates still hold (Theorems~\ref{thm:lr} and~\ref{thm:fs}), but with the
-in-expectation rank per-class coverage is guaranteed only at $1-\max G$ (Proposition~\ref{prop:select}); we report the
-coverage achieved at the selected $\alpha$ in \cref{sec:evidence}. Theorem~\ref{thm:lr} gives a numerical bound valid
-for all levels at once; Theorem~\ref{thm:fs} certifies one level at a time and does not give a numerical bound.
+After selection, per-class coverage is guaranteed only at $1-\max G$ with the in-expectation rank; we report the coverage
+achieved in \cref{sec:evidence}. Theorem~\ref{thm:fs} certifies one level at a time and gives no numerical bound.
 Assumption~\ref{as:cluster} treats assayed residues as exchangeable, which a contiguous region need not be;
 Assumption~\ref{as:shift} holds only approximately for VUS, on which AlphaMissense discriminates less well
-(\cref{sec:data}), and not for variants whose assay result would be intermediate. \Cref{tab:designs} lists the
-experiments that test each guarantee.
+(\cref{sec:data}), and not for variants whose assay result would be intermediate.

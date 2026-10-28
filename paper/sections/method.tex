@@ -33,9 +33,8 @@ and 350, and supporting, moderate and strong evidence towards benignity to one b
 calls whose likelihood ratio exceeds 2.1. Our likelihood ratios are defined with respect to the assay outcome $Y$ and
 averaged over all variants that receive a call, as OddsPath is for a functional assay \cite{Brnich2020}; they are not
 the local, score-specific ratios that ClinGen uses for the computational criteria PP3/BP4 \cite{Pejaver2022}. A level thus describes the call class as a
-whole and need not hold for each call (\cref{sec:discussion}), and states how strongly a call predicts the assay
-result. It is evidence about pathogenicity only to the extent that the assay is clinically validated, and it must not
-be combined with the same assay's functional evidence (PS3/BS3) or with PP3/BP4 from the same predictor. For
+whole, need not hold for each call, and must not be combined with the same assay's functional evidence (PS3/BS3) or
+with PP3/BP4 from the same predictor. For
 thresholds $t$, the call rates (probabilities, not counts) are $\mathrm{TP}(t)=\Pr(\text{call LoF}\mid Y=1)$,
 $\mathrm{FP}(t)=\Pr(\text{call LoF}\mid Y=0)$, $\mathrm{FN}(t)=\Pr(\text{call functional}\mid Y=1)$ and
 $\mathrm{TN}(t)=\Pr(\text{call functional}\mid Y=0)$, and $\mathrm{LR}^+=\mathrm{TP}/\mathrm{FP}$,
@@ -43,20 +42,19 @@ $\mathrm{LR}^-=\mathrm{FN}/\mathrm{TN}$.
 
 For each $\alpha$ on a grid $G$ we compute thresholds on $\mathcal A$ ($\alpha_0=\alpha_1=\alpha$), call one variant per
 residue of $\mathcal B$, and bound the four rates by one-sided Clopper--Pearson bounds \cite{ClopperPearson1934} at level
-$\epsilon=\delta/(2|G|)$, written $\ell$ (lower endpoint) and $u$ (upper endpoint) to keep them apart from the
-rates themselves: for $x$ calls among $n$ variants of a class, $\ell=F^{-1}_{\mathrm{Beta}(x,n-x+1)}(\epsilon)$
+$\epsilon=\delta/(2|G|)$, written $\ell$ (lower) and $u$ (upper): for $x$ calls among $n$ variants of a class, $\ell=F^{-1}_{\mathrm{Beta}(x,n-x+1)}(\epsilon)$
 ($0$ if $x=0$) and $u=F^{-1}_{\mathrm{Beta}(x+1,n-x)}(1-\epsilon)$ ($1$ if $x=n$, including $n=0$). The certified
 bounds are $L^+(\alpha)=\ell_{\mathrm{TP}}/u_{\mathrm{FP}}$ and
 $U^-(\alpha)=u_{\mathrm{FN}}/\ell_{\mathrm{TN}}$ ($U^-=\infty$, never meeting a level, if $\ell_{\mathrm{TN}}=0$;
 $u_{\mathrm{FP}}>0$ always; for point estimates, $x/0=\infty$ for $x>0$, and $0/0$ is undefined and never selected). For each level, \cref{alg:certivar} returns the $\alpha$ that calls the most variants
 among those whose certified bound meets the level. Because $\hat t_0$ and $\hat t_1$ both decrease weakly in $\alpha$,
-no variant can be called LoF at one $\alpha$ and functional at another (\cref{sec:theory}). Line~7 also considers, for
-functional calls, only $\alpha$ at least as large as the one selected for LoF calls of the same strength; this is not needed for validity and can only lower
-the functional yield, so the yields we report are conservative. The \emph{fixed-sequence} variant replaces the
+no variant can be called LoF at one $\alpha$ and functional at another (\cref{sec:theory}). Line~7 also requires, for functional
+calls, $\alpha$ at least as large as the LoF choice of the same strength; this is not needed for validity and can only
+lower functional yields. The \emph{fixed-sequence} variant replaces the
 Bonferroni level $\delta/(2|G|)$ by $\delta/2$ and tests the grid in an order fixed in advance, stopping at the first
-$\alpha$ that does not meet the level (Theorem~\ref{thm:fs}). We test LoF levels in increasing $\alpha$ and functional
-levels in decreasing $\alpha$, because few variants are called functional at small $\alpha$. Computing all thresholds and bounds costs
-$O(|G|\,n\log n)$ for $n$ calibration and certification residues, about 5\,ms per gene on a laptop CPU.
+$\alpha$ that does not meet the level (Theorem~\ref{thm:fs}). We test LoF levels in increasing and functional levels in
+decreasing $\alpha$, because few variants are called functional at small $\alpha$. All thresholds and bounds cost
+$O(|G|\,n\log n)$ for $n$ residues, about 5\,ms per gene on a laptop CPU.
 
 \begin{algorithm}[t]
 \caption{\textsc{CertiVar} for one gene and one evidence level}\label{alg:certivar}

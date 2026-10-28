@@ -2,7 +2,7 @@
 Propositions 1--3, Theorems 1--2 and Corollary 1; S2 simulation (Fig.~S1) and why marginal thresholds do not control the
 minority class; S3 calibration size, region and gene transfer (Fig.~S2A--C), per-gene coverage (Table~S1) and prior
 estimation (Table~S2); S4 strata, assay-label sensitivity (Table~S3) and calls judged against ClinVar labels
-(Table~S4); S5 implementation.
+(Table~S4); S5 implementation; S6 experimental designs (Table~S5) and all baselines by gene and predictor (Table~S6).
 
 \section{Proofs}\label{app:proofs}
 Assumptions, propositions, theorems and the corollary are stated in \cref{sec:theory}; $Q$, $C$, $\hat t_k$, $L^+$
@@ -167,3 +167,29 @@ Section 3: $U^-=\infty$ when $\ell_{\mathrm{TN}}=0$, an empirical ratio $x/0$ is
 undefined (never a claim); boundary cases are covered by unit tests (\texttt{make test}). The VUS-shift LoF shares
 are residue-weighted for both the calibration sample (one variant per residue) and the VUS (each residue weighted
 equally, then its variants).
+
+\section{Experimental designs and all baselines}\label{s:designs}
+\Cref{tab:designs} lists the designs of the main text; every split is by residue, and calibration keeps one variant per
+residue. \Cref{tab:main} gives, for every gene and predictor, the per-class rule next to pooled conformal prediction and
+the published cut-offs.
+
+\begin{table}[ht]
+\centering
+\caption{Experimental designs.}\label{tab:designs}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{6.5cm}>{\raggedright\arraybackslash}p{2.9cm}c}
+\toprule
+Experiment & Residue split & Tests & Reps\\
+\midrule
+Coverage (\ref{sec:coverage}) & halves: calibrate on one, test on the other & Prop.~\ref{prop:mondrian} & 50\\
+Calibration share (\ref{sec:coverage}) & halves; calibration half subsampled to LoF share 0.05--0.5 & Cor.~\ref{cor:shift} & 100\\
+Reliability (\ref{sec:shift}) & halves & Props.~\ref{prop:mondrian}--\ref{prop:pac} & 200\\
+VUS (\ref{sec:shift}) & halves; non-VUS of one half (40\% calibrate, 60\% certify); VUS of the other & Cor.~\ref{cor:shift} & 50\\
+Oracle (\ref{sec:evidence}) & 30\% and 50\% of residues drawn with replacement; truth on all residues & Thms.~\ref{thm:lr}--\ref{thm:fs}, Prop.~\ref{prop:select} & 100\\
+Held-out fifth (\ref{sec:evidence}) & disjoint 30\% / 50\% / 20\% & Thm.~\ref{thm:lr} & 100\\
+Regions (\ref{sec:transfer}) & three contiguous quarters / the fourth & beyond Asm.~\ref{as:cluster} & 25/quarter\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\input{tables/tab_main}
