@@ -9,7 +9,6 @@ paper/*.bbl
 paper/*.blg
 paper/*.out
 .DS_Store
-paper/supplement.tex
 paper/supplement.pdf
 paper/paper.pdf
 paper/*.blg

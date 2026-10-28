@@ -7,7 +7,7 @@ ClinVar \cite{Landrum2018} (release of 26 October 2026) or was assayed, annotate
 NCBI and EMBL-EBI (MANE) Select transcript with the Ensembl Variant Effect Predictor \cite{McLaren2016}
 (AlphaMissense \cite{Cheng2023}, REVEL \cite{Ioannidis2016}) and computed ESM-2 650M \cite{Lin2023} log-likelihood
 ratios by wild-type marginals \cite{Meier2021}. Labels come from five MaveDB \cite{Esposito2019} score sets
-(\cref{tab:data}; accessions and versions in Appendix~S5). For BRCA1, BAP1 and RAD51C we used the assay authors'
+(\cref{tab:data}; accessions and versions in Supplement~S5). For BRCA1, BAP1 and RAD51C we used the assay authors'
 classes (for BAP1 recomputed from the deposited false-discovery rates and score signs, which reproduces the deposited
 class counts exactly), and for MSH2 the authors' threshold (a positive loss-of-function score \cite{Jia2021}). BRCA2
 deposits no per-variant classes in MaveDB, so its labels come from Gaussians fitted to the assay's own synonymous and
@@ -78,7 +78,7 @@ the whole calibration half to 50\% LoF), at the cost of abstention that rose fro
 calibrated at share 0.05 covered LoF variants at 0.113 in its worst pair, and label-shift-weighted conformal fell to
 0.53--0.60 in its worst pair with the true target share and to 0.04 with the EM estimate. The estimate is the weak point:
 from unlabelled ClinVar-calibrated scores, EM missed the LoF share of a gene's assayed variants by
-0.255 on average and by up to 0.702 (black-box shift estimation \cite{Lipton2018}: 0.233; Appendix~S3), because
+0.255 on average and by up to 0.702 (black-box shift estimation \cite{Lipton2018}: 0.233; Supplement~S3), because
 ClinVar pathogenicity and assay loss of function differ in label definition as well as in class share.
 
 \begin{figure}[t]
@@ -184,7 +184,7 @@ cases and the claimed level held in 93.0\%, below the nominal 95\%, because anot
 exchangeable with the calibrated ones. With 150 calibration residues drawn at random, coverage averaged over genes and
 predictors met the target with 40.5\% abstention, against 39.8\% with 200 and 82.8\% with 25 (Fig.~S2A). Coverage is
 marginal within a class: on the third of variants whose assay score lies nearest the boundary between the two class
-medians it was 0.865 for LoF and 0.873 for functional variants (one split per pair, variant-weighted; Appendix~S4). The
+medians it was 0.865 for LoF and 0.873 for functional variants (one split per pair, variant-weighted; Supplement~S4). The
 1,262 intermediate variants outside the ClinVar labelled set (BRCA2 888, BAP1 210, BRCA1 155, RAD51C 9), which no
 guarantee covers, were called LoF in 19.6\% and functional in 36.6\% of cases. Applied outside the assayed region, to 1,534 unassayed BRCA1 VUS, AlphaMissense thresholds called
 1,463 functional and abstained on only 53, far fewer abstentions than on assayed variants; this suggests a shifted

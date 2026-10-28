@@ -56,7 +56,7 @@ respect to the assay outcome need no prior.
 Propositions~\ref{prop:mondrian} and~\ref{prop:pac} are the class-conditional and training-conditional conformal
 guarantees \cite{Vovk2005,Sadinle2019,Vovk2013,Tong2018}, here for residue-clustered data; Theorems~\ref{thm:lr}
 and~\ref{thm:fs} follow the risk-control and Learn-then-Test templates \cite{Bates2021rcps,Angelopoulos2025ltt} for a
-ratio of class-conditional call rates. Full proofs are in Appendix~S1; we sketch three of them.
+ratio of class-conditional call rates. Full proofs are in Supplement~S1; we sketch three of them.
 
 \noindent\emph{Proof sketches.} Proposition~\ref{prop:select}: given $\mathcal A$, both ranks in \eqref{eq:rank} are
 non-increasing in $\alpha$, so $\hat t_k(\hat\alpha)\ge\hat t_k(\max G)$ and coverage at $\hat\alpha$ is at least
@@ -70,7 +70,7 @@ Theorem~\ref{thm:fs}: if $\mathrm{LR}^+\le\tau$ and both endpoints hold, then
 $\ell_{\mathrm{TP}}\le\mathrm{TP}\le\tau\,\mathrm{FP}\le\tau\,u_{\mathrm{FP}}$, so a false rejection requires an
 endpoint to fail. A false claim requires rejecting the first true $H_\alpha$ in the order, which happens with
 probability at most $\delta$. LoF and functional calls are disjoint for any $\alpha^+,\alpha^-\in G$ because $\hat t_0$
-and $\hat t_1$ are both non-increasing in $\alpha$ (Appendix~S1).
+and $\hat t_1$ are both non-increasing in $\alpha$ (Supplement~S1).
 
 \paragraph{Scope.}
 Propositions~\ref{prop:mondrian} and~\ref{prop:pac} hold for a fixed $\alpha$. After \cref{alg:certivar} selects
