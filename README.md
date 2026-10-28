@@ -2,7 +2,7 @@
 
 Code and data for the RECOMB 2027 submission
 
-> **CertiVar: Certified Assay Likelihood Ratios with Per-Class Error Control for Missense Variant-Effect Predictor Calls**
+> **CertiVar: Prevalence-Free Certified Assay Likelihood Ratios for Missense Variant-Effect Predictor Calls**
 > Aaryav Sharma (Eastview High School, Apple Valley, MN, USA)
 
 Release `v1.0.0` is the version that matches the submitted paper. The paper, with its appendix (full proofs,
