@@ -3,7 +3,8 @@ Propositions 1--3, Theorems 1--2 and Corollary 1; S2 simulation (Fig.~S1) and wh
 minority class; S3 calibration size, region and gene transfer (Fig.~S2A--C), per-gene coverage (Table~S1) and prior
 estimation (Table~S2); S4 strata, assay-label sensitivity (Table~S3), calls judged against ClinVar labels (Table~S4),
 ClinVar VUS by assay status and the calls on them (Tables~S5--S6) and the oracle comparison (Fig.~S3); S5
-implementation and the comparison rules; S6 experimental designs (Table~S7) and all baselines by gene and predictor (Table~S8).
+implementation and the comparison rules; S6 experimental designs (Table~S7) and all baselines by gene and predictor (Table~S8); S7 coverage and
+certification figures (Figs.~S4--S5) and further results.
 
 \section{Proofs}\label{app:proofs}
 Assumptions, propositions, theorems and the corollary are stated in \cref{sec:theory}; $Q$, $C$, $\hat t_k$, the call
@@ -144,10 +145,9 @@ ClinVar, with abstention rates of 0.334, 0.385, 0.413 and 0.392.
 
 \Cref{tab:app_labels} gives, for each label rule, the number of labelled variants, their LoF share, the coverage and
 abstention of the per-class rule, and the oracle check of the certified selection (\cref{sec:transfer}). This analysis
-is an independent run with its own random splits. Means over 50 random halvings move between runs by up to about 0.02 in
+uses its own random splits. Means over 50 random halvings move between runs by up to about 0.02 in
 coverage and 0.05 in abstention for a high-variance pair (for RAD51C with ESM-2, LoF coverage 0.895 and abstention 0.28
-here against 0.915 and 0.34 in \cref{tab:app_conformal}), so its main-label rows differ from \cref{tab:app_conformal,tab:main}
-by Monte Carlo error.
+here against 0.915 and 0.34 in \cref{tab:app_conformal}), which explains its differences from \cref{tab:app_conformal,tab:main}.
 
 \input{tables/tab_app_labels}
 
@@ -181,7 +181,7 @@ estimate is not a bound and is omitted. Dashed line: the guaranteed 0.90.}\label
 \section{Implementation}\label{s:impl}
 Inputs: ClinVar \nolinkurl{variant_summary.txt.gz} of 26 October 2026 (SHA-256 in \nolinkurl{data/MANIFEST.txt});
 MaveDB score sets \nolinkurl{urn:mavedb:00000097-0-2} (BRCA1), \nolinkurl{00001279-a-1} (BRCA2), \nolinkurl{00000662-0-1}
-(BAP1), \nolinkurl{00000673-0-1} (RAD51C) and \nolinkurl{00000050-a-1} (MSH2, positive scores = loss of function); Ensembl VEP
+(BAP1), \mbox{\nolinkurl{00000673-0-1}} (RAD51C) and \nolinkurl{00000050-a-1} (MSH2, positive scores = loss of function); Ensembl VEP
 REST on GRCh38 (release 116) with the AlphaMissense and REVEL annotations; ESM-2 \nolinkurl{esm2_t33_650M_UR50D}.
 Distance from the class boundary is the absolute difference between a variant's assay score
 and the midpoint of the two class medians in its gene, divided by the distance between the medians. Expected calibration
@@ -242,3 +242,48 @@ Regions (\ref{sec:transfer}) & three contiguous quarters / the fourth & beyond A
 \end{table}
 
 \input{tables/tab_main}
+
+\section{Coverage and certification figures, and further results}\label{s:figs}
+\Cref{fig:main} shows per-class coverage by method, per split and on VUS (\cref{sec:coverage,sec:shift});
+\cref{fig:shift} shows coverage under a shift of the calibration LoF share and the certification yields of the
+Bonferroni and fixed-sequence rules (\cref{sec:coverage,sec:evidence}).
+
+\paragraph{Further results.} In MSH2, with 6\% LoF variants, pooled conformal prediction left the functional class
+marginally below 0.90 (\cref{tab:main}), so which class a marginal threshold under-covers depends on the gene. Calibrating
+on all variants of the calibration half instead of one per residue used about five times as many labels and abstained
+less (30.4\% against 35.5\%); but in a separate run of 50 halvings that compared the two, worst-class coverage fell below
+0.90 in 12 of 15 pairs (lowest 0.885), against 5 (lowest 0.897) for one variant per residue. All-variant calibration
+weights variants while the test weights residues; weighting each residue equally left 1 pair below 0.90 (lowest 0.898)
+but abstained more (44.6\%), which points to the weighting rather than the dependence, so we keep one variant per
+residue. Under the calibration-share shift, a separate run balanced at 50\% LoF gave worst-class coverage of
+0.891--0.925. In the oracle design, claimed levels held in 99.9\% of certified claims when the likelihood ratio was
+weighted by variant rather than by residue; testing each level by fixed sequence at the full $\delta$, which guarantees
+one level at a time, reached LoF-moderate in 30.5\% of draws on $G_4$; and functional levels tested in increasing
+$\alpha$ reached functional-supporting in 24.7\% of draws against 61.9\% in decreasing order. The control label rule
+left 76.8\% of the authors' functional RAD51C variants intermediate, which is why $n$ falls from 2,225 to 832 in
+\cref{tab:app_labels} (\texttt{label\_rule\_comparison} in \texttt{paper\_numbers.json}). With 150 calibration
+residues drawn at random, coverage averaged over genes met the target with 40.5\% abstention (worst pair 0.890; 82.8\%
+abstention with 25 residues; \cref{fig:practical}A). Coverage was lower on the third of variants nearest the assay class
+boundary (0.865 LoF, 0.873 functional; \cref{s:strata}). Against ClinVar labels (exploratory, not independent of the
+assays), LoF calls had likelihood-ratio lower bounds of 4.9--19.6 (BRCA1), 7.6--9.4 (BRCA2) and 2.6--3.2 (MSH2)
+(\cref{tab:app_clinvar}).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{fig_main.pdf}
+\caption{Per-class coverage at $\alpha=0.1$. Marker shape: predictor (panels A, C); colour and line style: threshold
+rule (panels B, C). (A) Worst-class coverage for each gene--predictor pair (50 splits); AlphaMissense cl.: the published
+AlphaMissense classes. (B) Smaller of the two per-class coverages in each test half, pooled over pairs (3,000 splits per
+rule). (C) Coverage on assayed VUS with thresholds set on non-VUS variants at other residues (50
+repetitions).}\label{fig:main}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{fig_shift.pdf}
+\caption{(A) Worst-class coverage when the calibration half is subsampled to a given LoF share (0.05, 0.1, 0.2, 0.3 and
+0.5, log scale): mean over 15 pairs (thick) and worst pair (thin, open markers). (B) Share of oracle draws certifying each
+level with a Bonferroni correction, with fixed-sequence testing simultaneous over levels (fixed seq.), or with
+fixed-sequence testing of each level at the full $\delta$ (per level), on the four-point ($G_4$) and 20-point
+($G_{20}$) grids.}\label{fig:shift}
+\end{figure}

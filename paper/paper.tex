@@ -1,5 +1,7 @@
 \documentclass[10pt,letterpaper]{article}
+\usepackage{xr-hyper}
 \input{preamble}
+\externaldocument{supplement}
 
 \title{\vspace{-2.3em}CertiVar: Certified Likelihood Ratios for Variant-Effect Predictor Calls, Calibrated on
 Saturation Mutagenesis Data}
@@ -19,21 +21,7 @@ Saturation Mutagenesis Data}
 \bibliographystyle{unsrtnat}
 \bibliography{refs_short}
 
-\noindent\textbf{Acknowledgments.}
-We thank the authors of the saturation genome editing and deep mutational scanning studies, and the ClinVar, MaveDB and
-Ensembl teams, for making their data public.
-
-
-\clearpage
-\appendix
-\setcounter{table}{0}
-\setcounter{figure}{0}
-\setcounter{equation}{0}
-\renewcommand{\thesection}{S\arabic{section}}
-\renewcommand{\thetable}{S\arabic{table}}
-\renewcommand{\thefigure}{S\arabic{figure}}
-\renewcommand{\theequation}{S\arabic{equation}}
-\begin{center}\Large\bfseries Appendix\end{center}
-\input{sections/supplement_body}
+\noindent\textbf{Acknowledgments.} We thank the authors of the saturation genome editing and deep mutational scanning
+studies, and the ClinVar, MaveDB and Ensembl teams, for making their data public.
 
 \end{document}

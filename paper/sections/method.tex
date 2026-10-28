@@ -60,16 +60,14 @@ decreasing $\alpha$, because few variants are called functional at small $\alpha
 $O(|G|\,n\log n)$ for $n$ residues, about 5\,ms per gene on a laptop CPU.
 
 \paragraph{Checking class-conditional invariance.}
-The guarantees transfer to a target set whose LoF share differs from the calibration data only if, within each class,
-target scores follow the calibration law (Assumption~\ref{as:shift} below). This implies that the target score law is a
-mixture $\pi F_1+(1-\pi)F_0$ of the two class laws for some $\pi\in[0,1]$. We test this necessary condition on one
-target variant per residue with
+The guarantees transfer to a target set only if, within each class, target scores follow the calibration law
+(Assumption~\ref{as:shift} below), which makes the target score law a mixture $\pi F_1+(1-\pi)F_0$ of the two class laws.
+We test this necessary condition on one target variant per residue with
 $D=\min_{\pi}\sup_x\bigl|\hat F_T(x)-\pi\hat F_1(x)-(1-\pi)\hat F_0(x)\bigr|$, where $\hat F_T$, $\hat F_1$ and
 $\hat F_0$ are the empirical distribution functions of the target scores and of the two classes in $\mathcal A$, and
 $\pi$ runs over a grid of step 0.005. The null distribution of $D$ is approximated by a bootstrap that redraws both
-calibration classes and a target sample of the same size from the fitted mixture (300 resamples). A rejection shows
-that the target is not a re-weighting of the calibration classes, so the guarantees need not transfer, and we do not
-report calls for such a target set; acceptance does not establish Assumption~\ref{as:shift}.
+calibration classes and a target sample of the same size from the fitted mixture (300 resamples). After a rejection we do not
+report calls for that target set; acceptance does not establish Assumption~\ref{as:shift}.
 
 \begin{algorithm}[t]
 \caption{\textsc{CertiVar} for one gene and one evidence level (Bonferroni version)}\label{alg:certivar}

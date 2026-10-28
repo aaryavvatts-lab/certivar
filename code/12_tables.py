@@ -29,11 +29,10 @@ def main():
     tot_n = int(co.target_n.sum())
     tex = r"""\begin{table}[t]
 \centering
-\caption{Datasets. \emph{ClinVar labelled}: missense single-nucleotide variants (SNVs) with $\ge$2 review stars and a
-pathogenic or likely pathogenic (P/LP) or benign or likely benign (B/LB) call, used only to put the scores on a common scale, and the number that are P/LP. \emph{Assayed}: missense
-SNVs with a binary assay label outside that set, their residues and their LoF share; \emph{assayed VUS}: the subset
-classified VUS in ClinVar. Shares are variant-level. Labels: the authors' classes (authors) or a rule fitted to the assay's
-synonymous and nonsense controls (controls; \cref{sec:data}).}\label{tab:data}
+\caption{Datasets. \emph{ClinVar labelled}: missense variants with $\ge$2 review stars and a P/LP or B/LB call (used
+for the common score scale and an exploratory check). \emph{Assayed}: missense variants with a binary assay label outside that set;
+\emph{assayed VUS}: the subset classified VUS. LoF shares are variant-level. Labels: authors' classes or a rule fitted to
+the assay's controls (\cref{sec:data}).}\label{tab:data}
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{llcrrrrrrr}
 \toprule
@@ -260,10 +259,8 @@ def revision_tables():
                      f"{v.abstain.mean():.2f} & {shift} \\\\")
     tex = r"""\begin{table}[t]
 \centering
-\caption{Per-class coverage at $\alpha=0.1$ (residue-weighted; 50 random halvings of each gene's residues). Worst
-class: the smaller of the mean LoF and mean functional coverage of a gene--predictor pair. Last column: worst pair when
-the calibration half is subsampled to a LoF share of 0.05 and tested at the natural share (100 halvings); fixed cut-offs
-use no calibration data.}\label{tab:methods}
+\caption{Per-class coverage at $\alpha=0.1$ (residue-weighted; 50 random halvings per gene). Last column: worst pair
+when the calibration half is subsampled to a LoF share of 0.05 (100 halvings); fixed cut-offs use no calibration data.}\label{tab:methods}
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{lcccccc}
 \toprule
@@ -282,27 +279,25 @@ Method & Pairs & mean & worst pair & pairs $<0.85$ & Abstention & share 0.05\\
     o = num["oracle_g4"]
     rules = [("certified", "Certified (ours), Bonferroni", "yes, all levels"),
              ("fixed sequence, simultaneous", "Certified (ours), fixed sequence", "yes, all levels"),
-             ("fixed sequence", "Fixed sequence, each level at $\\delta$", "yes, per level"),
              ("Clopper-Pearson, uncorrected", "Clopper--Pearson, uncorrected", "no"),
              ("Katz, Bonferroni", "Katz interval, Bonferroni", "no"),
              ("bootstrap", "Percentile bootstrap", "no"),
-             ("bootstrap, Bonferroni", "Percentile bootstrap, Bonferroni", "no"),
              ("bootstrap, pseudocount", "Percentile bootstrap, $+0.5$ counts", "no"),
              ("point estimate", "Point estimate", "no")]
     lines = []
     for key, lab, guar in rules:
         r = o[key]
         a = r["achieved"]
-        lines.append(f"{lab} & {guar} & {pct(r['draws_all_bounds_ok'])} & {pct(r['draws_all_levels_held'])} & "
+        bounds = "--" if key == "point estimate" else pct(r["draws_all_bounds_ok"])   # a point estimate is no bound
+        lines.append(f"{lab} & {guar} & {bounds} & {pct(r['draws_all_levels_held'])} & "
                      f"{pct(a['PS3-supporting'])} & {pct(a['PS3-moderate'])} & {pct(a['BS3-supporting'])} & "
                      f"{pct(a['BS3-moderate'])} \\\\")
     tex = r"""\begin{table}[t]
 \centering
-\caption{Threshold selection judged against the population likelihood ratio (oracle design, grid $G_4$, $\delta=0.05$,
-1,500 draws; all rules on the same draws). Guarantee: finite-sample validity after selection, for every level of a call
-type at once or for each level separately. Bounds held: draws in which every claimed bound was respected (fixed-sequence
-rules certify a level, not a bound; a point estimate is not a bound). Levels held: draws in which every claimed level
-held. Last four columns: share of draws certifying each level (\%); no rule with a guarantee certified a strong level.}
+\caption{Selection rules against the population likelihood ratio (oracle design, $G_4$, $\delta=0.05$, the same 1,500
+draws). Guarantee: finite-sample validity after selection for all levels at once. Bounds and levels held: draws in which
+every claimed bound (fixed sequence certifies levels only; a point estimate is no bound) or level held (\%). Last four columns: draws certifying each
+level (\%).}
 \label{tab:oracle}
 \setlength{\tabcolsep}{3.4pt}
 \begin{tabular}{llcccccc}
@@ -332,9 +327,9 @@ Selection rule & guarantee & held & held & supp. & mod. & supp. & mod.\\
                      f"{fmt3(r.get('worst_mean_accepted'))} & {fmt3(r.get('worst_mean_rejected'))} \\\\")
     tex = r"""\begin{table}[t]
 \centering
-\caption{Mixture-consistency check of class-conditional invariance (\cref{sec:check}; one target variant per residue,
-300 bootstrap resamples, rejection at $p<0.05$). Coverage: mean over target sets of the smaller per-class coverage of
-in-expectation thresholds ($\alpha=0.1$) set on the same calibration data, where target labels exist.}\label{tab:mixture}
+\caption{Mixture-consistency check ($p<0.05$; one target variant per residue). Coverage: mean over target sets of the
+smaller per-class coverage in each set (a per-set measure, unlike \cref{tab:methods}) of in-expectation thresholds
+($\alpha=0.1$) set on the same calibration data.}\label{tab:mixture}
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{llcccc}
 \toprule

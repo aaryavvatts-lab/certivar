@@ -60,19 +60,15 @@ respect to the assay outcome need no prior. For any $\alpha^+,\alpha^-\in G$, th
 functional calls at $\alpha^-$ are disjoint.
 \end{corollary}
 
-Propositions~\ref{prop:mondrian} and~\ref{prop:pac} are the class-conditional and training-conditional conformal
-guarantees \cite{Vovk2005,Sadinle2019,Vovk2013,Tong2018}, here under the residue-first law $Q$. Theorem~\ref{thm:lr}
-uses the union-bound template of risk control \cite{Bates2021rcps,Geifman2017} and Theorem~\ref{thm:fs} the
-fixed-sequence argument of Learn-then-Test \cite{Angelopoulos2025ltt}; both are applied here to a \emph{ratio} of two
-class-conditional rates of an abstaining rule, whose four counts are binomial given $\mathcal A$ and the labels in
-$\mathcal B$. What makes selection safe for coverage and for the two call types together is monotonicity: both ranks in
-\eqref{eq:rank} are non-increasing in $\alpha$, so coverage at a selected $\alpha$ is at least coverage at $\max G$, and
-a variant cannot be called LoF at one grid point and functional at another. Proofs are in \cref{app:proofs}.
+Propositions~\ref{prop:mondrian}--\ref{prop:pac} are the class-conditional and training-conditional conformal
+guarantees \cite{Vovk2005,Sadinle2019,Vovk2013,Tong2018} under $Q$; Theorems~\ref{thm:lr}--\ref{thm:fs} apply the union
+bound of risk control \cite{Bates2021rcps,Geifman2017} and the fixed-sequence argument of Learn-then-Test
+\cite{Angelopoulos2025ltt} to a \emph{ratio} of class-conditional rates of an abstaining rule. Monotonicity of both ranks
+in $\alpha$ makes coverage at a selected $\alpha$ at least that at $\max G$ and keeps the call types disjoint. Proofs are
+in \cref{app:proofs}.
 
 \paragraph{Scope.}
-After selection, per-class coverage is guaranteed only at $1-\max G$ with the in-expectation rank; we report the coverage
-achieved in \cref{sec:evidence}. Theorem~\ref{thm:fs} certifies levels, not numerical bounds. Assumption~\ref{as:cluster}
-treats assayed residues as independent draws; our random splits draw them without replacement from a finite set, which
-the oracle design of \cref{sec:evidence} avoids, and a contiguous region need not be exchangeable with the rest; Assumption~\ref{as:shift} holds only
-approximately for VUS, on which AlphaMissense discriminates less well (\cref{sec:data}), and not for variants whose assay
-result would be intermediate.
+After selection, per-class coverage is guaranteed only at $1-\max G$; Theorem~\ref{thm:fs} certifies levels, not
+bounds. Assumption~\ref{as:cluster} treats residues as independent draws (our random splits draw without replacement;
+the oracle design does not), and a contiguous region need not be exchangeable with the rest; Assumption~\ref{as:shift}
+holds only approximately for VUS (\cref{sec:shift}) and not for variants whose assay result would be intermediate.

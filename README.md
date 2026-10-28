@@ -5,9 +5,11 @@ Code, data and results for the RECOMB 2027 submission
 > **CertiVar: Certified Likelihood Ratios for Variant-Effect Predictor Calls, Calibrated on Saturation Mutagenesis Data**
 > Aaryav Sharma (Eastview High School, Apple Valley, MN, USA)
 
-Release `v1.1.0` matches the submitted paper, [`manuscript/CertiVar_RECOMB2027.pdf`](manuscript/CertiVar_RECOMB2027.pdf):
-ten pages of main text, the references, and an appendix (proofs, simulation, per-gene tables, label sensitivity, the
-ClinVar check, the VUS counts, implementation and experimental designs). The LaTeX source is in `paper/`.
+Release `v1.1.1` matches the submitted paper, [`manuscript/CertiVar_RECOMB2027.pdf`](manuscript/CertiVar_RECOMB2027.pdf)
+(10 pages including references), and its supplementary material,
+[`manuscript/CertiVar_RECOMB2027_supplement.pdf`](manuscript/CertiVar_RECOMB2027_supplement.pdf) (proofs, simulation,
+per-gene tables, label sensitivity, the ClinVar check, the VUS counts, implementation, experimental designs and further
+figures). The LaTeX source is in `paper/` (`paper.tex` and `supplement.tex`).
 
 ## What CertiVar does
 
@@ -98,8 +100,9 @@ make test results figures
 | Figures and tables | `code/09_figures.py`, `code/12_tables.py` | `results/figures/*.pdf`, `paper/tables/*.tex` |
 | Short-author bibliography for the paper | `code/16_short_bib.py` | `paper/refs_short.bib` |
 
-The method itself is in `code/certivar.py` (NumPy, SciPy and scikit-learn only). The paper builds with
-`tectonic paper.tex` (or `latexmk -pdf paper.tex`), run from `paper/`.
+The method itself is in `code/certivar.py` (NumPy, SciPy and scikit-learn only). The paper and supplement
+cross-reference each other, so build each twice from `paper/`, keeping the auxiliary files:
+`tectonic -X compile --keep-intermediates paper.tex` and the same for `supplement.tex`.
 
 ## Using the method on your own scores
 
